@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="820" viewBox="0 0 1200 820" role="img" aria-labelledby="title desc">
+  <title id="title">Digital Logbook component diagram</title>
+  <desc id="desc">Browser client, Render services, Supabase platform, and external AI providers.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0 0L10 3.5L0 7Z" fill="#58443d"/></marker>
+    <style>text{font-family:Arial,sans-serif;fill:#332824}.heading{font-size:25px;font-weight:700}.label{font-size:18px;font-weight:700}.detail{font-size:15px}.edge{stroke:#58443d;stroke-width:2;fill:none;marker-end:url(#arrow)}.box{stroke:#8d6e63;stroke-width:2;rx:12}.boundary{fill:#fdf6f2;stroke:#c5a28e;stroke-width:2;stroke-dasharray:8 6;rx:18}</style>
+  </defs>
+  <rect width="1200" height="820" fill="#fffaf7"/>
+  <text x="600" y="42" text-anchor="middle" class="heading">Digital Logbook Component Diagram</text>
+  <rect x="55" y="105" width="260" height="590" class="boundary"/><text x="75" y="137" class="label">Browser client boundary</text>
+  <rect x="105" y="180" width="160" height="62" class="box" fill="#e7f4f0"/><text x="185" y="207" text-anchor="middle" class="label">React + Vite</text><text x="185" y="228" text-anchor="middle" class="detail">frontend</text>
+  <ellipse cx="185" cy="340" rx="80" ry="34" fill="#e8edf8" stroke="#6c7da8" stroke-width="2"/><text x="185" y="346" text-anchor="middle" class="label">IndexedDB cache</text>
+  <rect x="105" y="470" width="160" height="62" class="box" fill="#f9ecd9"/><text x="185" y="508" text-anchor="middle" class="label">User</text>
+  <rect x="390" y="105" width="435" height="590" class="boundary"/><text x="410" y="137" class="label">Render deployment boundary</text>
+  <g fill="#f5e7ef" stroke="#a66a88" stroke-width="2"><rect x="440" y="180" width="150" height="90" class="box"/><rect x="635" y="180" width="150" height="90" class="box"/><rect x="440" y="360" width="150" height="115" class="box"/><rect x="635" y="360" width="150" height="115" class="box"/></g>
+  <g text-anchor="middle"><text x="515" y="210" class="label">auth-service</text><text x="515" y="234" class="detail">Account lifecycle</text><text x="515" y="254" class="detail">Port 5001</text><text x="710" y="210" class="label">dashboard-service</text><text x="710" y="234" class="detail">Search, dashboard</text><text x="710" y="254" class="detail">Port 5002</text><text x="515" y="391" class="label">project-service</text><text x="515" y="415" class="detail">Projects, entries, AI, SSE</text><text x="515" y="438" class="detail">Port 5003</text><text x="710" y="391" class="label">profile-service</text><text x="710" y="415" class="detail">Profile routes</text><text x="710" y="438" class="detail">Port 5004</text></g>
+  <rect x="895" y="105" width="250" height="390" class="boundary"/><text x="915" y="137" class="label">Supabase platform</text>
+  <rect x="940" y="180" width="160" height="65" class="box" fill="#e7f4f0"/><text x="1020" y="207" text-anchor="middle" class="label">Supabase Auth</text><text x="1020" y="228" text-anchor="middle" class="detail">JWT and JWKS</text>
+  <ellipse cx="1020" cy="350" rx="80" ry="35" fill="#e8edf8" stroke="#6c7da8" stroke-width="2"/><text x="1020" y="356" text-anchor="middle" class="label">PostgreSQL</text>
+  <rect x="940" y="590" width="160" height="65" class="box" fill="#f9ecd9"/><text x="1020" y="617" text-anchor="middle" class="label">External AI</text><text x="1020" y="638" text-anchor="middle" class="detail">providers</text>
+  <path d="M185 242V303" class="edge"/><path d="M185 470V242" class="edge"/><path d="M265 210H430" class="edge"/><text x="340" y="198" text-anchor="middle" class="detail">HTTPS REST + Bearer JWT</text>
+  <path d="M265 205H630" class="edge"/><path d="M265 215H430V410" class="edge"/><path d="M265 225H625V410" class="edge"/>
+  <path d="M265 190H930V212" class="edge"/><text x="670" y="180" text-anchor="middle" class="detail">Direct auth/session SDK calls</text>
+  <path d="M590 410H930V350" class="edge"/><path d="M590 390H930V230" class="edge"/><path d="M785 420H930V350" class="edge"/><path d="M590 445H930V620" class="edge"/><path d="M515 475H185V260" class="edge"/><text x="350" y="510" text-anchor="middle" class="detail">SSE events</text>
+</svg>

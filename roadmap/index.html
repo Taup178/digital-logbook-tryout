@@ -1,0 +1,2290 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the COMS3011A Digital Logbook project">
+      
+      
+      
+      
+        <link rel="prev" href="../Architecture/third-party/">
+      
+      
+        <link rel="next" href="../Meetings/sprint-one-meetings/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Roadmap - Digital Logbook Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lora";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#roadmap" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Digital Logbook Docs" class="md-header__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Logbook Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Roadmap
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Digital Logbook Docs" class="md-nav__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Digital Logbook Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/cicd-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD & Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/api-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/teck-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/ui-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/voice-feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexedDB Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/sse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSE Real-Time Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/daemon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keep-Alive Daemons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/entry-summaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entry Summaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/uml-diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UML Architecture Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/third-party/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sprint-1-completed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 1 - Completed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sprint 1 - Completed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commit-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit History
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-1-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 1 Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprint-2-in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 2 - In Progress
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sprint 2 - In Progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#completed-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completed Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planned Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Debt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Meetings/sprint-one-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Meetings/sprint-two-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stakeholder Interactions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stakeholder Interactions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Stakeholder_Interactions/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Stakeholder_Interactions/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Stories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User_Stories/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User_Stories/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Management
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Management
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology & Git Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/work-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions & Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issues & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/ai-attribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Attribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing/code-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & User Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sprint-1-completed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 1 - Completed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sprint 1 - Completed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#commit-history" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Commit History
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sprint-1-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 1 Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprint-2-in-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 2 - In Progress
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sprint 2 - In Progress">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#completed-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Completed Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#planned-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Planned Features
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#technical-debt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical Debt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="roadmap">Roadmap<a class="headerlink" href="#roadmap" title="Permanent link">&para;</a></h1>
+<h2 id="sprint-1-completed">Sprint 1 - Completed<a class="headerlink" href="#sprint-1-completed" title="Permanent link">&para;</a></h2>
+<p>Sprint 1 established the foundation of the Digital Logbook application, implementing core functionality across frontend, backend services, and infrastructure.</p>
+<h3 id="commit-history">Commit History<a class="headerlink" href="#commit-history" title="Permanent link">&para;</a></h3>
+<h4 id="infrastructure-deployment">Infrastructure &amp; Deployment<a class="headerlink" href="#infrastructure-deployment" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>088cf84</code> - initial backend services setup</li>
+<li><code>cb1aab7</code> - add README with setup instructions and project structure</li>
+<li><code>0dfb300</code> - Initial setup</li>
+<li><code>c96f863</code> - fix: flatten frontend folder</li>
+<li><code>200169d</code> - Project setup</li>
+<li><code>da642ed</code> - Move files to root</li>
+<li><code>c7177e0</code> - Configure GitHub Pages deployment setup</li>
+<li><code>4859dbf</code> - Organize frontend into frontend/ folder</li>
+<li><code>d61d050</code> - Organize backend into project-service/ folder</li>
+<li><code>a5ea2ce</code> - add README with setup instructions and project structure</li>
+<li><code>6c2b30b</code> - Update README.md</li>
+<li><code>26d650a</code> - Updated it in order to use gitea pages</li>
+<li><code>9ff0b20</code> - To set up Gitea pages</li>
+<li><code>6a270dd</code> - Merge services branch contents into project-service directory</li>
+<li><code>d4a6d18</code> - fix: update Vite base path to root for Render deployment</li>
+<li><code>d1745bc</code> - Update README.md</li>
+<li><code>7c64764</code> - ci: add Gitea Actions workflow for frontend and microservices</li>
+<li><code>2eaf2ea</code> - ci: add Render Blueprint configuration</li>
+<li><code>7f8b0c8</code> - fix: update render.yaml services to free tier plan</li>
+<li><code>d9a6706</code> - fix: specify rootDir for each microservice in render.yaml</li>
+<li><code>5e1a0da</code> - refactor: rename project-service parent folder to services</li>
+<li><code>bc49152</code> - docs: add deployed microservice live URLs to README</li>
+<li><code>0f2167f</code> - docs: add deployed microservice live URLs to README</li>
+<li><code>34d66ea</code> - ci(render): configure microservices deployment and environment variables in render.yaml</li>
+<li><code>d9623c4</code> - docs: add MkDocs documentation site</li>
+<li><code>91d2661</code> - chore: remove Zone.Identifier files</li>
+</ul>
+<h4 id="backend-services-setup">Backend Services Setup<a class="headerlink" href="#backend-services-setup" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>e3965e5</code> - feat(services): add Express server setup and health routes to index.js</li>
+<li><code>8c61030</code> - fix: add start script to microservice package.json files</li>
+<li><code>fdd93e1</code> - feat(services): add Express server setup and health routes to index.js</li>
+<li><code>4547e81</code> - fix: add start script to microservice package.json files</li>
+<li><code>16ac687</code> - feat(services): add Express server setup and health routes to index.js</li>
+<li><code>c5fb7f7</code> - fix: add start script to microservice package.json files</li>
+<li><code>c4fafc4</code> - fix: update package.json entry point path to src/index.js</li>
+<li><code>1086530</code> - fix: update package.json entry point path to src/index.js</li>
+<li><code>330dc37</code> - fix: update package.json entry point path to src/index.js</li>
+<li><code>15a00e7</code> - style: polish sign-in page UI</li>
+</ul>
+<h4 id="database-schema">Database Schema<a class="headerlink" href="#database-schema" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>fccffab</code> - added users and projects table</li>
+<li><code>61f7b20</code> - Added fields and entries table</li>
+<li><code>44c4d8b</code> - Added due date column on entries table</li>
+<li><code>1751599</code> - docs: update schema users.email as PK, projects.user_id → user_email FK</li>
+<li><code>191ac36</code> - schema: add priority enum to entries; sync docs with users/projects PK-to-email migration</li>
+<li><code>5e44bf8</code> - feat: add users table SQL and update delete_user RPC to clean profile data</li>
+<li><code>352a5b1</code> - Fix delete_user RPC: cascade delete entries, fields, projects before user deletion</li>
+</ul>
+<h4 id="authentication-system">Authentication System<a class="headerlink" href="#authentication-system" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>ba20871</code> - feat: Digital Logbook frontend with auth, dashboard, settings and CAPTCHA</li>
+<li><code>b9d5671</code> - feat: add reset password access from sign-in page and settings panel</li>
+<li><code>130e5c5</code> - docs: add frontend README and AI declaration document</li>
+<li><code>a689a8d</code> - feat: add email-password sign-in/sign-up to support password reset flow; update docs</li>
+<li><code>1f3ec96</code> - fix: pass Turnstile captcha token to Supabase auth calls</li>
+<li><code>3a7f2bf</code> - fix: use refs for Turnstile token to avoid state timing issues on auth submit</li>
+<li><code>ce1ad53</code> - style: convert Google/GitHub sign-in buttons to round icon buttons</li>
+<li><code>ed8349b</code> - Merge Authentication branch into main</li>
+<li><code>ff4f7bf</code> - fix: remove duplicate App.jsx and main.jsx leftover from merge</li>
+<li><code>7a61190</code> - fix: remove duplicate vite.config.js so @ alias resolves correctly</li>
+<li><code>d6194c1</code> - style: move OAuth buttons below email-password form on sign-in page</li>
+<li><code>c129c1a</code> - Add meeting notes for 13 August 2026</li>
+<li><code>4c4b0b9</code> - config: allow JS/JSX files alongside TS in tsconfig</li>
+<li><code>7d3dc58</code> - Added architectural rules</li>
+<li><code>28a8679</code> - Update frontend/.oxlintrc.json</li>
+<li><code>cfc0a9a</code> - Added more rules</li>
+<li><code>f1e3d4e</code> - fix: load dotenv before imports, connect project/entry/priority/field routes, add SUPABASE_KEY fallback</li>
+</ul>
+<h4 id="cors-security">CORS &amp; Security<a class="headerlink" href="#cors-security" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>1d2eec4</code> - fix: explicit CORS config on all 4 backend services (origin, methods, allowedHeaders + OPTIONS preflight)</li>
+<li><code>cb181c3</code> - fix: remove app.options('*', cors()) — Express 5 path-to-regexp doesn't support bare wildcard</li>
+<li><code>5074223</code> - fix: replace cors() package with manual CORS middleware for Express 5 compatibility</li>
+<li><code>44df03d</code> - fix: remove unused cors imports from all services</li>
+<li><code>9f8aa39</code> - fix: use cors() package with specific origin and credentials for all services</li>
+<li><code>1ac877e</code> - fix: on checkUser error, default to dashboard instead of create-profile</li>
+<li><code>a118b05</code> - fix: dynamic CORS origin checking + global error handler with CORS headers on all services</li>
+<li><code>7ef7f31</code> - fix: add Express 5 safe preflight wildcard handler using regex /(.<em>)/ instead of '</em>'</li>
+<li><code>9279eb3</code> - fix: add robust error handling to all route handlers across all services (try/catch, safe instantiation, parameter validation, JSON error responses)</li>
+<li><code>ab3fe21</code> - fix: remove throw in supabase.js that crashed services on startup - use null client + warnings instead</li>
+</ul>
+<h4 id="profile-service">Profile Service<a class="headerlink" href="#profile-service" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>8f7f457</code> - feat: complete profile-service with routes, tests, and frontend functions</li>
+<li><code>600e8d1</code> - feat: integrate profile service into settings, add AvatarPicker, fix SignIn useEffect</li>
+<li><code>d576704</code> - fix: convert CreateProfile to tsx, fix Avatar page, add routing for /create-profile and /avatar</li>
+<li><code>f20bcc1</code> - feat: add pink, blue, purple, green themes alongside light and dark</li>
+<li><code>5035356</code> - feat: add getProjectsByEmail function across full stack (service, route, frontend)</li>
+<li><code>529b642</code> - fix: remove unused variables in SettingsPanel (displayName, setProfile, theme)</li>
+<li><code>fd2de57</code> - fix: split Theme type import for verbatimModuleSyntax compatibility</li>
+<li><code>ee62693</code> - feat: modern UI redesign - Plus Jakarta Sans font, book icon logo, polished styling</li>
+<li><code>16a596f</code> - feat: replace emoji avatars with React Icons (Feather icons) in AvatarPicker</li>
+<li><code>812688a</code> - fix: correct navigation flow - checkUser response, remove PublicRoute race, fix AuthCallback routing</li>
+<li><code>b931ecd</code> - fix: replace SVG favicon with notebook.jpeg</li>
+<li><code>87d29a0</code> - fix: replace SVG logo with notebook.jpeg in SignIn</li>
+<li><code>7107a54</code> - fix: fit SignIn within 100vh - reduce padding, margins, logo size, spacing</li>
+<li><code>a3c8134</code> - fix: remove purple gradient border from auth logo</li>
+<li><code>e4088d7</code> - fix: replace SVG icon with notebook.jpeg on all auth pages (CreateProfile, ResetPassword, UpdatePassword, Avatar)</li>
+<li><code>2e5cec0</code> - fix: CreateProfile now inserts user row before updating name/username</li>
+</ul>
+<h4 id="uiux-themes-styling">UI/UX - Themes &amp; Styling<a class="headerlink" href="#uiux-themes-styling" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>ed654de</code> - feat: add video background to SignIn + font picker in Settings (Playfair, Lora, Crimson Text, EB Garamond)</li>
+<li><code>6edb5e6</code> - feat: split-screen SignIn layout — video left panel, form right panel</li>
+<li><code>6795305</code> - feat: add brown vintage theme + corner style picker (rounded/soft/sharp)</li>
+<li><code>f19bdd9</code> - feat: make Lora the default font across the entire app</li>
+<li><code>9e6abd9</code> - fix: ensure font applies to all elements including form controls on every page</li>
+<li><code>6714248</code> - feat: replace all themes with softer pastel-vintage palettes (ivory, blush, powder blue, pale lilac, sage mist, soft tan)</li>
+<li><code>4a42659</code> - feat: pair all themes with dark vintage button tones (espresso, navy ink, deep plum, forest, terracotta, walnut)</li>
+<li><code>c7e5c95</code> - fix: restore auth-container/auth-card/auth-logo CSS for onboarding pages (CreateProfile, Avatar, ResetPassword, UpdatePassword, AuthCallback)</li>
+<li><code>3735299</code> - fix: dark theme to pure black/white/grey, auto-create profile if missing</li>
+<li><code>4eb2c50</code> - debug: show getProfile response in settings panel</li>
+<li><code>9b3356a</code> - chore: remove test file, update import paths</li>
+<li><code>a4c25b7</code> - fix: checkUser failure now navigates to create-profile instead of dashboard</li>
+<li><code>4790842</code> - refactor: dashboard with entries feed, drawer, search, FAB</li>
+<li><code>82667a8</code> - fix: dark theme buttons use black text on light backgrounds for visibility</li>
+<li><code>c9e24c9</code> - update: Avatar page changes</li>
+<li><code>1ad3cc9</code> - fix: theme persists from localStorage - settings panel reads current theme from useTheme hook instead of hardcoded 'light' default</li>
+<li><code>3132024</code> - style: apply vintage notebook aesthetic to dashboard</li>
+<li><code>35bd98b</code> - style: warm earth-tone palette for sign-in right panel to match nature LHS</li>
+<li><code>95f76ee</code> - fix: ensure post-sign-in redirect always navigates away from /signin</li>
+<li><code>f1b4533</code> - style: revert right panel to classic dark theme</li>
+<li><code>da342d0</code> - fix: add null checks to profile functions + fix CreateProfile error handling to match backend response format</li>
+<li><code>c7bc54e</code> - docs: update README with auth methods, email flow, AI usage, and troubles encountered</li>
+<li><code>09956d0</code> - docs: add external services setup guide (Google Cloud, Turnstile, Brevo SMTP)</li>
+<li><code>20d9686</code> - feat: add confirm password field to signup form</li>
+<li><code>3df6376</code> - fix: correct profile-service URL in frontend (was pointing to non-existent domain) + add to README</li>
+</ul>
+<h4 id="archive-feature">Archive Feature<a class="headerlink" href="#archive-feature" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>9f88146</code> - feat: archive support end-to-end (backend, route, frontend, tests, schema)</li>
+<li><code>6321d94</code> - docs+fix: sync schema with Supabase, use is_archived for projects</li>
+<li><code>3000025</code> - Merge branch 'main' of https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook</li>
+<li><code>dfb0958</code> - Merge branch 'main' of https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook</li>
+<li><code>40556dd</code> - Update README.md</li>
+<li><code>dd2afd6</code> - Update README.md</li>
+<li><code>ae56102</code> - feat: add Archives section to drawer menu</li>
+<li><code>ded1da5</code> - feat: wire up archive functions across backend and frontend</li>
+<li><code>c6eff19</code> - fix: archive entry uses id instead of JSONB object</li>
+<li><code>09c25b3</code> - fix: entry update uses id, due soon/upnext NULL fix</li>
+<li><code>23fd7f2</code> - refactor: remove colored section wrappers, simplify headers</li>
+<li><code>cc12325</code> - align AddEntry + EntryBox with entries table schema</li>
+</ul>
+<h4 id="dashboard-entries">Dashboard &amp; Entries<a class="headerlink" href="#dashboard-entries" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>f0a2d9e</code> - refactor: split dashboard into Due Soon and Up Next sections</li>
+<li><code>4d2e00e</code> - feat: wire dashboard.js and EntryBox into Dashboard</li>
+<li><code>4245903</code> - Use provided functions: search, sort, archives + fix sections visibility</li>
+<li><code>2d6dc65</code> - Replace custom new entry modal with user-provided AddEntry component</li>
+<li><code>178e2cc</code> - Add My Stats to drawer + fix unused variable build errors</li>
+<li><code>508abf6</code> - Due Soon top-left, Up Next top-right + full EntryBox styling</li>
+<li><code>e93043c</code> - Notion-style EntryBox: bold project title, colored priority/status tags, table fields</li>
+<li><code>5913d92</code> - feat: themed section backgrounds, search-aware sections, remove entries feed</li>
+<li><code>4d416d9</code> - feat: compact sections, AddEntry uses getFields</li>
+<li><code>38e9b45</code> - Bigger three-dots button, themed ProjectSettingsPanel with field badges and panel footer</li>
+<li><code>ded1da5</code> - feat: wire up archive functions across backend and frontend</li>
+</ul>
+<h4 id="testing-verification">Testing &amp; Verification<a class="headerlink" href="#testing-verification" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>940ecf6</code> - Add test-entries.js verification script with curl and Supabase fallback</li>
+<li><code>1c52ace</code> - Update test-entries.js to use curl with Supabase service-role key</li>
+<li><code>5b681d5</code> - Add test-entries.js verification script with curl and Supabase fallback</li>
+<li><code>1c57b02</code> - Update test-entries.js to use curl with Supabase service-role key</li>
+<li><code>4b700ff</code> - Add tsconfig.json to silence casing warning on Windows</li>
+<li><code>f36200d</code> - Add tsconfig.json to silence casing warning on Windows</li>
+<li><code>1af5b15</code> - Fix CSS warnings: remove empty ruleset, add standard line-clamp property</li>
+<li><code>5ce7a2d</code> - Add lazy entries script: 10 casual human-like test entries via curl</li>
+<li><code>0b77a1a</code> - Merge hlulani to main</li>
+<li><code>fc65db7</code> - Sign out user after successful account deletion</li>
+</ul>
+<h4 id="bug-fixes-improvements">Bug Fixes &amp; Improvements<a class="headerlink" href="#bug-fixes-improvements" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>e11fd64</code> - Fix priority.js imports: AI named export and field.js filename</li>
+<li><code>431e9c6</code> - Fix Dashboard.tsx: remove duplicated trailing code causing build failure</li>
+<li><code>634db8f</code> - Remove unused sortArchivedEntries import</li>
+<li><code>20e540f</code> - Fix natural language entry: proper error handling and AI key config</li>
+<li><code>d8ddb10</code> - Wire up unused backend functions to frontend</li>
+<li><code>07b08b4</code> - Add nodemon as dev dependency to project-service</li>
+</ul>
+<h4 id="ai-integration">AI Integration<a class="headerlink" href="#ai-integration" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>783bc76</code> - Fix natural language prompt: shorter, stricter JSON-only response with better cleaning</li>
+<li><code>42e2e11</code> - Fixes: avatar sync, username display, NL prompt, priority wiring, AI.js updates</li>
+<li><code>c8e5beb</code> - Fix supabase import in ai.js: use named import</li>
+<li><code>b21a500</code> - Merge branch 'hlulani'</li>
+<li><code>d0b09c7</code> - Add comprehensive debug logging to ai.js</li>
+<li><code>a1aeea1</code> - Merge branch 'hlulani'</li>
+<li><code>1454d59</code> - Fix supabase import path in ai.js: ../supabase.js not ./supabase.js</li>
+<li><code>4c6db91</code> - Add auto-create project feature to natural language entry + updated tests</li>
+</ul>
+<h4 id="activity-logging">Activity Logging<a class="headerlink" href="#activity-logging" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>25909a8</code> - feat: add activity log to track user actions</li>
+<li><code>f221369</code> - Merge pull request 'feat: add activity log to track user actions' (#4) from feature/activity-log into main</li>
+</ul>
+<h4 id="accessibility-mobile">Accessibility &amp; Mobile<a class="headerlink" href="#accessibility-mobile" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>b0a9938</code> - Increase base font size for accessibility: 18px desktop, 20px mobile</li>
+<li><code>27d7c21</code> - Merge branch 'hlulani'</li>
+<li><code>79fc70f</code> - Reduce mobile font size: 17px instead of 20px</li>
+<li><code>070a197</code> - Merge branch 'hlulani'</li>
+<li><code>5bf0b38</code> - Fix sign-in page on mobile: reduce video height, compact form, scrollable right panel</li>
+<li><code>f680f2b</code> - Merge branch 'hlulani'</li>
+</ul>
+<h4 id="ui-polish">UI Polish<a class="headerlink" href="#ui-polish" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>a05b73f</code> - Fix dark theme button text color + close settings on save</li>
+<li><code>ccae9cf</code> - Merge branch 'hlulani'</li>
+<li><code>f074f5b</code> - Add AI comment to natural language entry + pretty toast notification</li>
+<li><code>c92cfc4</code> - Fix dark theme button text: black text on light buttons (quick-entry, auth-submit, panel-close)</li>
+<li><code>8797675</code> - Merge branch 'hlulani'</li>
+<li><code>883b9d5</code> - Merge branch 'main' of https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook</li>
+</ul>
+<h4 id="testing-infrastructure">Testing Infrastructure<a class="headerlink" href="#testing-infrastructure" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>158465e</code> - Add test workflow with coverage badges + install coverage-badges-cli</li>
+</ul>
+<h4 id="archive-feature-removal">Archive Feature Removal<a class="headerlink" href="#archive-feature-removal" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>8b7eaa4</code> - Remove archive feature from frontend, leave placeholders</li>
+<li><code>3c7e1f2</code> - Fix TypeScript errors: remove archive references</li>
+</ul>
+<h3 id="sprint-1-summary">Sprint 1 Summary<a class="headerlink" href="#sprint-1-summary" title="Permanent link">&para;</a></h3>
+<p><strong>Total Commits</strong>: 200+</p>
+<p><strong>Key Achievements</strong>:</p>
+<ol>
+<li>✅ Full-stack monorepo architecture with 4 microservices</li>
+<li>✅ Supabase authentication with email/password and OAuth</li>
+<li>✅ Project and entry management with custom fields</li>
+<li>✅ Natural language entry parsing with AI provider chain</li>
+<li>✅ Activity logging for user actions</li>
+<li>✅ Responsive UI with vintage notebook aesthetic</li>
+<li>✅ Multiple themes (light, dark, pastel, brown vintage)</li>
+<li>✅ CI/CD pipeline with Gitea Actions and Render deployment</li>
+<li>✅ Comprehensive error handling and CORS configuration</li>
+<li>✅ Testing infrastructure with coverage badges</li>
+</ol>
+<p><strong>Technologies Used</strong>:</p>
+<ul>
+<li>Frontend: React, TypeScript, Vite</li>
+<li>Backend: Node.js, Express</li>
+<li>Database: Supabase (PostgreSQL)</li>
+<li>AI: Multi-provider chain (HuggingFace, OpenRouter, Cerebras, Gemini, Groq)</li>
+<li>Deployment: Render, Gitea Actions</li>
+<li>Documentation: MkDocs</li>
+</ul>
+<p><strong>Live Services</strong>:</p>
+<ul>
+<li>Frontend: <code>https://digital-logbook-bxgv.onrender.com</code></li>
+<li>Auth Service: <code>https://auth-service-hl52.onrender.com</code></li>
+<li>Project Service: <code>https://project-service-96ml.onrender.com</code></li>
+<li>Dashboard Service: <code>https://dashboard-service-bpc5.onrender.com</code></li>
+</ul>
+<h2 id="sprint-2-in-progress">Sprint 2 - In Progress<a class="headerlink" href="#sprint-2-in-progress" title="Permanent link">&para;</a></h2>
+<h3 id="completed-features">Completed Features<a class="headerlink" href="#completed-features" title="Permanent link">&para;</a></h3>
+<h4 id="soft-delete-account-recovery">Soft-Delete &amp; Account Recovery<a class="headerlink" href="#soft-delete-account-recovery" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>005_add_soft_delete_column.sql</code> — migration adding <code>deleted</code> column to all tables, <code>delete_user()</code> and <code>restore_user()</code> RPC functions</li>
+<li><code>checkUser</code> now returns <code>{ exists, deleted }</code> instead of boolean</li>
+<li>Frontend auto-restores soft-deleted users on sign-in (SignIn.tsx, AuthCallback.tsx)</li>
+<li>Fixed PL/pgSQL variable ambiguity: renamed <code>user_email</code> → <code>v_email</code> in <code>delete_user()</code> and <code>restore_user()</code> to prevent "column reference is ambiguous" Postgres error</li>
+</ul>
+<h4 id="onboarding-enhancements">Onboarding Enhancements<a class="headerlink" href="#onboarding-enhancements" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Theme Setup page — 7 colour themes, 5 fonts, 3 corner styles with live preview</li>
+<li>Frequency Setup page — nudge frequency picker (silent / gentle / daily / active)</li>
+<li>Tone Setup now navigates to ThemeSetup instead of dashboard</li>
+<li>Full onboarding flow: CreateProfile → Avatar → ToneSetup → ThemeSetup → FrequencySetup → Dashboard</li>
+</ul>
+<h4 id="calendar-view">Calendar View<a class="headerlink" href="#calendar-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Month and week calendar views showing entries on their due dates</li>
+<li>Drag-to-reschedule entries directly on the calendar</li>
+<li>Colour-coded entries by priority</li>
+<li>Key files: <code>frontend/src/pages/Calendar.tsx</code>, <code>frontend/src/pages/Calendar.css</code></li>
+</ul>
+<h4 id="kanban-board">Kanban Board<a class="headerlink" href="#kanban-board" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Status columns (Not Started, In Progress, Blocked, Done) with drag-to-change-status</li>
+<li>Entries grouped by status with visual priority indicators</li>
+<li>Click-to-edit entries inline from the board</li>
+<li>Key files: <code>frontend/src/pages/Kanban.tsx</code>, <code>frontend/src/pages/Kanban.css</code></li>
+</ul>
+<h4 id="today-view">Today View<a class="headerlink" href="#today-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Prioritized daily work list showing entries due today or overdue</li>
+<li>Grouped by urgency (overdue, today, this week)</li>
+<li>Quick status toggles and inline editing</li>
+<li>Key files: <code>frontend/src/pages/Today.tsx</code>, <code>frontend/src/pages/Today.css</code></li>
+</ul>
+<h4 id="timeline-view">Timeline View<a class="headerlink" href="#timeline-view" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Horizontal Gantt-style view showing entries on a time axis</li>
+<li>Dependency arrows between linked entries</li>
+<li>Zoom levels (day, week, month)</li>
+<li>Key files: <code>frontend/src/pages/Timeline.tsx</code>, <code>frontend/src/pages/Timeline.css</code></li>
+</ul>
+<h4 id="import-export">Import &amp; Export<a class="headerlink" href="#import-export" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Export all project data as JSON, CSV, or Markdown</li>
+<li>Import from JSON to restore or migrate data between instances</li>
+<li>Drawer menu links for quick access</li>
+<li>Key files: <code>frontend/src/lib/exportUtils.ts</code>, <code>frontend/src/lib/importUtils.ts</code>, <code>frontend/src/pages/ExportPage.tsx</code></li>
+</ul>
+<h4 id="icalendar-ics-export">iCalendar (.ics) Export<a class="headerlink" href="#icalendar-ics-export" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Export entries as <code>.ics</code> files compatible with Google Calendar, Outlook, and Apple Calendar</li>
+<li>Each entry becomes a calendar event with due date and priority</li>
+<li>Key files: <code>frontend/src/lib/icalExport.ts</code></li>
+</ul>
+<h4 id="backup-restore-versioned-schema-migrations">Backup, Restore &amp; Versioned Schema Migrations<a class="headerlink" href="#backup-restore-versioned-schema-migrations" title="Permanent link">&para;</a></h4>
+<ul>
+<li>CLI tools for full database backup and restore (<code>npm run db:backup</code>, <code>npm run db:restore</code>)</li>
+<li>Versioned migration files in <code>supabase/migrations/</code> applied in order</li>
+<li><code>npm run db:migrate</code> applies pending migrations</li>
+<li>Key files: <code>scripts/backup.js</code>, <code>scripts/restore.js</code>, <code>scripts/migrate.js</code></li>
+</ul>
+<h4 id="openapi-3-specification-swagger-ui">OpenAPI 3 Specification &amp; Swagger UI<a class="headerlink" href="#openapi-3-specification-swagger-ui" title="Permanent link">&para;</a></h4>
+<ul>
+<li>985-line OpenAPI 3.0 YAML specification covering all 15 endpoint paths across 4 microservices</li>
+<li>Browsable Swagger UI served at <code>/api-docs</code> on project-service</li>
+<li>12 validation tests ensuring spec matches implemented routes</li>
+<li>CORS updated on all services to allow localhost origins for cross-service "Try it out"</li>
+<li>Key files: <code>services/project-service/docs/openapi.yaml</code>, <code>services/project-service/src/index.js</code></li>
+</ul>
+<h4 id="bug-fixes">Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Entry card dropdown positioning — added <code>position: relative</code> to <code>.entry-box__menu-wrap</code></li>
+<li>Duration formatting — <code>durationToMs()</code> now parses Postgres interval format (e.g. "2 days 06:27:39.557")</li>
+<li>Natural language AI prompt — added rule to never create <code>due_date</code>, <code>priority</code>, or <code>status</code> as custom fields</li>
+<li>Login route double-wrap fix — <code>res.json(result)</code> instead of <code>res.json({ exists: result })</code></li>
+<li>project-service <code>supabase.js</code> UTF-16 encoding crash — converted to UTF-8</li>
+<li>AuthCallback TypeScript build error — added null guard for <code>email</code> parameter</li>
+<li>Drawer overflow — Timeline and Import/Export links were clipped by <code>overflow: hidden</code> on the navigation drawer; fixed with <code>overflow-y: auto</code></li>
+</ul>
+<h4 id="guided-tour-with-live-navigation-voice-narration">Guided Tour with Live Navigation &amp; Voice Narration<a class="headerlink" href="#guided-tour-with-live-navigation-voice-narration" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Interactive walkthrough (driver.js) anchored to real UI elements across all views; the tour really navigates — it changes routes and opens/closes the navigation drawer for the user</li>
+<li>Friendly voice narration via the browser SpeechSynthesis API, with a persisted speaker mute/unmute toggle in the popover</li>
+<li>Hands-free auto-advance paced by the narration end event (speech is never cut off), with a draining progress bar, hover pause, and a hard cap</li>
+<li>Offered automatically on the first dashboard visit; replayable from the dashboard banner and navbar; completion persists in localStorage</li>
+<li>Addresses Sprint 2 survey problem 2 (no onboarding or in-app guidance, issue #119); intro video remains tracked in #126</li>
+<li>Key files: <code>frontend/src/lib/tour.ts</code>, <code>frontend/src/index.css</code></li>
+<li>PRs #158, #161–165</li>
+</ul>
+<h3 id="planned-features">Planned Features<a class="headerlink" href="#planned-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Server-side caching (Redis)</li>
+<li>Rate limiting middleware</li>
+<li>API versioning</li>
+<li>Background job queue for AI calls</li>
+<li>Comprehensive logging (Winston/Pino)</li>
+<li>Nudge engine implementation</li>
+<li>Drag-and-drop entry reordering</li>
+</ul>
+<h3 id="technical-debt">Technical Debt<a class="headerlink" href="#technical-debt" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Consolidate archive feature (currently placeholder)</li>
+<li>Add comprehensive frontend tests</li>
+<li>Implement API rate limiting</li>
+<li>Add request validation middleware</li>
+<li>Set up monitoring and alerting</li>
+<li>Convert remaining JS pages to TypeScript</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mermaid.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3004 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the COMS3011A Digital Logbook project">
+      
+      
+      
+      
+        <link rel="prev" href="../system-design/">
+      
+      
+        <link rel="next" href="../ui-design/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Tech Stack - Digital Logbook Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lora";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#tech-stack" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Logbook Docs" class="md-header__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Logbook Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tech Stack
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Logbook Docs" class="md-nav__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Digital Logbook Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cicd-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD & Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#react-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        React 18
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-custom-properties-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSS Custom Properties (Variables)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-router-v6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        React Router v6
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodejs-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node.js 20
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Express.js
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microservices-architecture-4-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microservices Architecture (4 services)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#es-modules-esm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ES Modules (ESM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supabase-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supabase (PostgreSQL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-schema-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-provider-ai-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Provider AI Chain
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitea-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitea Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Render
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supabase-mock-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supabase Mock Client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coverage-badges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage Badges
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supabase-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supabase Auth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitea-self-hosted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitea (Self-Hosted)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-mirror-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub (Mirror Only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-branching-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Branching Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-with-material-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MkDocs with Material Theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Services
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="External Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloudflare-turnstile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloudflare Turnstile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brevo-formerly-sendinblue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brevo (formerly Sendinblue)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-cloud-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Cloud Console
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice-feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexedDB Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSE Real-Time Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../daemon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keep-Alive Daemons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entry-summaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entry Summaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uml-diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UML Architecture Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../third-party/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-one-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-two-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stakeholder Interactions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stakeholder Interactions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Stories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Management
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Management
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology & Git Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/work-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions & Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issues & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/ai-attribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Attribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/code-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & User Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#frontend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#react-18" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        React 18
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        TypeScript
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vite" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vite
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#css-custom-properties-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CSS Custom Properties (Variables)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-router-v6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        React Router v6
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#nodejs-20" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node.js 20
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expressjs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Express.js
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#microservices-architecture-4-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Microservices Architecture (4 services)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#es-modules-esm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ES Modules (ESM)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#database" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Database">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supabase-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supabase (PostgreSQL)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#database-schema-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Database Schema Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multi-provider-ai-chain" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Multi-Provider AI Chain
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cicd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CI/CD
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CI/CD">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitea-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitea Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#render" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Render
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#jest" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Jest
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supabase-mock-client" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supabase Mock Client
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coverage-badges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage Badges
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supabase-auth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supabase Auth
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#version-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Version Control
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Version Control">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gitea-self-hosted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gitea (Self-Hosted)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#github-mirror-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        GitHub (Mirror Only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git-branching-strategy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Git Branching Strategy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-with-material-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MkDocs with Material Theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External Services
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="External Services">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cloudflare-turnstile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloudflare Turnstile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#brevo-formerly-sendinblue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Brevo (formerly Sendinblue)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#google-cloud-console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Google Cloud Console
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary-table" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary Table
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="tech-stack">Tech Stack<a class="headerlink" href="#tech-stack" title="Permanent link">&para;</a></h1>
+<h2 id="frontend">Frontend<a class="headerlink" href="#frontend" title="Permanent link">&para;</a></h2>
+<h3 id="react-18">React 18<a class="headerlink" href="#react-18" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Component-based UI library for building interactive interfaces.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Team had prior React experience from coursework and personal projects</li>
+<li>Massive ecosystem (component libraries, hooks, dev tools) reduces build time</li>
+<li>Component reusability maps well to our repeated UI patterns (EntryBox, drawer items, stats cards)</li>
+<li>Concurrent features in React 18 improve perceived performance during AI calls and data fetching</li>
+<li>Easy to hire for — most frontend developers know React</li>
+</ul>
+<h3 id="typescript">TypeScript<a class="headerlink" href="#typescript" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Superset of JavaScript that adds static type checking.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Catches bugs at compile time instead of runtime (e.g., wrong prop types, missing fields)</li>
+<li>IDE autocompletion speeds up development and reduces typos</li>
+<li>Self-documenting code — types serve as inline documentation for team members</li>
+<li>Refactoring is safer — the compiler flags every place that breaks when you rename a field</li>
+<li>The frontend started as JavaScript but was converted to TypeScript early because type errors from API responses were causing silent failures</li>
+</ul>
+<h3 id="vite">Vite<a class="headerlink" href="#vite" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Next-generation frontend build tool and dev server.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Near-instant dev server startup (uses native ES modules instead of bundling)</li>
+<li>Hot Module Replacement (HMR) updates components in milliseconds without losing state</li>
+<li>Built-in TypeScript support — no separate <code>tsc</code> config needed for development</li>
+<li>Smaller production bundles than Webpack/CRA thanks to Rollup-based optimization</li>
+<li>We switched from Create React App to Vite because CRA was deprecated and its Webpack builds took 30+ seconds</li>
+</ul>
+<h3 id="css-custom-properties-variables">CSS Custom Properties (Variables)<a class="headerlink" href="#css-custom-properties-variables" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Native CSS theming system using <code>--variable-name</code> syntax.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Enables runtime theme switching without JavaScript or CSS-in-JS libraries</li>
+<li>One set of variable definitions powers all 6 themes (light, dark, pastel, brown vintage, etc.)</li>
+<li>No build step needed — the browser handles variable resolution natively</li>
+<li>Dark mode is a simple <code>[data-theme="dark"]</code> selector override, not a separate stylesheet</li>
+<li>Avoids the complexity and bundle size of styled-components or Tailwind for a project our size</li>
+</ul>
+<h3 id="react-router-v6">React Router v6<a class="headerlink" href="#react-router-v6" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Client-side routing library for single-page applications.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Standard routing solution for React with declarative <code>&lt;Route&gt;</code> syntax</li>
+<li>Nested routes map cleanly to our layout (Dashboard wraps all authenticated pages)</li>
+<li><code>useNavigate</code> hook replaces the deprecated <code>useHistory</code> for programmatic navigation</li>
+<li>Protected route pattern lets us gate authenticated pages behind <code>requireAuth</code> logic</li>
+</ul>
+<hr />
+<h2 id="backend">Backend<a class="headerlink" href="#backend" title="Permanent link">&para;</a></h2>
+<h3 id="nodejs-20">Node.js 20<a class="headerlink" href="#nodejs-20" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: JavaScript runtime for server-side applications.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Same language (JavaScript/TypeScript) on frontend and backend reduces context switching</li>
+<li>Team already knew JavaScript from the frontend — no need to learn Python, Java, or Go</li>
+<li>Non-blocking I/O handles concurrent API calls (especially AI provider chains) efficiently</li>
+<li>Massive npm ecosystem means we never build common things (CORS, JWT verification, HTTP clients) from scratch</li>
+<li>Render's native support for Node.js means zero-config deployment</li>
+</ul>
+<h3 id="expressjs">Express.js<a class="headerlink" href="#expressjs" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Minimal web framework for building REST APIs in Node.js.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Industry standard for Node.js APIs — well-documented, battle-tested</li>
+<li>Middleware pattern lets us layer CORS, auth verification, and error handling cleanly</li>
+<li>Lightweight — no opinionated structure, so we control our own architecture</li>
+<li>Each microservice is ~100 lines of boilerplate (app setup, middleware, routes, error handler)</li>
+<li>Express 5 (which we use) adds better async error handling and improved path matching</li>
+</ul>
+<h3 id="microservices-architecture-4-services">Microservices Architecture (4 services)<a class="headerlink" href="#microservices-architecture-4-services" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Separate Express apps for auth, project, dashboard, and profile concerns.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li><strong>auth-service</strong> (port 5001): Isolates all authentication logic — other services just verify a JWT token, they never handle passwords or OAuth flows directly</li>
+<li><strong>project-service</strong> (port 5003): Owns the core data (projects, entries, fields, priorities, activity log, natural language parsing) — the heaviest service with the most business logic</li>
+<li><strong>dashboard-service</strong> (port 5002): Aggregates cross-project data (search, stats) without polluting project-service with reporting concerns</li>
+<li><strong>profile-service</strong> (port 5004): Manages user profiles (username, avatar) separately from auth — profiles can be updated without touching authentication</li>
+<li>Each service deploys independently on Render — if one crashes, the others keep running</li>
+<li>Satisfies the course requirement for a "hand-written API" since each endpoint is explicitly coded</li>
+</ul>
+<h3 id="es-modules-esm">ES Modules (ESM)<a class="headerlink" href="#es-modules-esm" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Native JavaScript module system using <code>import</code>/<code>export</code> syntax.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Modern standard — matches the frontend's module system</li>
+<li>Tree-shaking support reduces bundle size</li>
+<li><code>"type": "module"</code> in package.json enables ESM across all services</li>
+<li>Consistent syntax between frontend and backend reduces mental overhead</li>
+</ul>
+<hr />
+<h2 id="database">Database<a class="headerlink" href="#database" title="Permanent link">&para;</a></h2>
+<h3 id="supabase-postgresql">Supabase (PostgreSQL)<a class="headerlink" href="#supabase-postgresql" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Open-source Firebase alternative built on top of PostgreSQL.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li><strong>Auth built in</strong>: Email/password, Google OAuth, GitHub OAuth — all handled by Supabase Auth with JWT issuance, token refresh, and password reset flows. We would have spent weeks building this from scratch.</li>
+<li><strong>PostgreSQL</strong>: Full relational database with ACID compliance, foreign keys, and advanced features like JSONB — not a NoSQL store that limits us later</li>
+<li><strong>JSONB support</strong>: Entry fields are stored as JSONB because each project has different custom fields. PostgreSQL JSONB supports indexing and querying, so we don't sacrifice query power for flexibility</li>
+<li><strong>Real-time subscriptions</strong> (available but not yet used): Could power live dashboard updates in Sprint 2</li>
+<li><strong>Free tier</strong>: Generous enough for our course project — 500MB database, 50,000 monthly active auth users</li>
+<li><strong>Row Level Security</strong> (available): Could add an extra layer of data isolation if needed</li>
+</ul>
+<h3 id="database-schema-design">Database Schema Design<a class="headerlink" href="#database-schema-design" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: 5 core tables with email-based foreign keys.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li><code>users</code> (email PK): Email as primary key avoids a separate user_id lookup — the auth system already identifies users by email</li>
+<li><code>projects</code> (user_email FK): Direct foreign key to users without an intermediate join table</li>
+<li><code>entries</code> (user_email + project_name FK): Composite foreign key ensures entries always belong to a valid user-project pair</li>
+<li><code>fields</code> (user_email + project_name FK): Custom fields are per-project, so the FK mirrors the project relationship</li>
+<li><code>activity_log</code> (user_email FK): Append-only log for auditing — never deletes, only inserts</li>
+<li>Cascade deletes on foreign keys ensure cleaning up a user removes all their data in one operation</li>
+</ul>
+<hr />
+<h2 id="ai-integration">AI Integration<a class="headerlink" href="#ai-integration" title="Permanent link">&para;</a></h2>
+<h3 id="multi-provider-ai-chain">Multi-Provider AI Chain<a class="headerlink" href="#multi-provider-ai-chain" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Sequential fallback through 5 AI providers for natural language parsing.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li><strong>HuggingFace</strong> (free tier): Tried first — zero cost, good for simple parsing tasks</li>
+<li><strong>OpenRouter</strong> (pay-per-use): Second fallback — accesses multiple models through one API, reliable</li>
+<li><strong>Cerebras</strong> (fast inference): Third — extremely fast response times for time-sensitive parsing</li>
+<li><strong>Gemini</strong> (Google): Fourth — strong at structured JSON output</li>
+<li><strong>Groq</strong> (fast inference): Fifth — another fast option with good JSON compliance</li>
+<li>Cooldown tracking prevents rapid retries to a rate-limited provider</li>
+<li>Lazy-loaded SDKs keep memory footprint small — only the active provider's SDK is loaded</li>
+<li>If all providers fail, the user gets a clear error message instead of a silent failure</li>
+</ul>
+<hr />
+<h2 id="cicd">CI/CD<a class="headerlink" href="#cicd" title="Permanent link">&para;</a></h2>
+<h3 id="gitea-actions">Gitea Actions<a class="headerlink" href="#gitea-actions" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: CI/CD workflow system (GitHub Actions compatible) running on our self-hosted Gitea.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Gitea is our primary repository host (self-hosted at sdp.ms.wits.ac.za for the course)</li>
+<li>Gitea Actions uses the same YAML workflow syntax as GitHub Actions — no new syntax to learn</li>
+<li>Triggers on every push to <code>main</code> and <code>hlulani</code> branches</li>
+<li>Runs tests with coverage reporting across all services</li>
+<li>Coverage badges generated via <code>scripts/generate-badges.js</code> (manual or CI-triggered)</li>
+</ul>
+<h3 id="render">Render<a class="headerlink" href="#render" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Cloud platform for deploying web applications and services.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li><strong>Free tier</strong>: Each microservice deploys for free — critical for a student project with zero budget</li>
+<li><strong>Native Node.js support</strong>: Auto-detects <code>package.json</code>, runs <code>npm install</code> and <code>npm start</code> — no Dockerfile needed</li>
+<li><strong>Independent deployments</strong>: Each of the 4 services has its own Render instance with its own deploy hook</li>
+<li><strong>Environment variables</strong>: Managed through Render dashboard — API keys never live in the repository</li>
+<li><strong>Automatic HTTPS</strong>: SSL certificates are provisioned automatically for all <code>.onrender.com</code> domains</li>
+<li><strong>Deploy from Git</strong>: Connects directly to our Gitea repo — push to <code>main</code> triggers a deploy</li>
+<li><strong>render.yaml blueprint</strong>: Infrastructure as code — all 4 services, environment variables, and build commands defined in one file</li>
+</ul>
+<hr />
+<h2 id="testing">Testing<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+<h3 id="jest">Jest<a class="headerlink" href="#jest" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: JavaScript testing framework for unit and integration tests.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Zero-config setup for Node.js projects — works out of the box with ESM via Babel</li>
+<li>Built-in mocking (<code>jest.mock()</code>) lets us isolate Supabase calls from business logic</li>
+<li>Snapshot testing available for regression detection</li>
+<li>Coverage reporting built in — we use it for the coverage badges</li>
+<li>Same framework across all 4 backend services — consistent testing patterns</li>
+</ul>
+<h3 id="supabase-mock-client">Supabase Mock Client<a class="headerlink" href="#supabase-mock-client" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Custom mock that mimics Supabase's chainable query builder pattern.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Supabase uses <code>.from().select().eq().then()</code> chains — standard mocks don't handle this</li>
+<li>Our mock returns a chainable object where every method returns <code>this</code>, and <code>await</code> resolves to <code>{ data, error }</code></li>
+<li>Tests can control exact responses per table (e.g., <code>projects</code> returns data, <code>entries</code> returns an error)</li>
+<li>No real database connection needed — tests run in milliseconds</li>
+</ul>
+<h3 id="coverage-badges">Coverage Badges<a class="headerlink" href="#coverage-badges" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Visual indicators showing test coverage percentage.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li><code>scripts/generate-badges.js</code> reads Jest's <code>coverage-summary.json</code> and generates SVG badges</li>
+<li>Badges are committed manually after generation</li>
+<li>Visible in the README — motivates the team to maintain coverage above thresholds</li>
+</ul>
+<hr />
+<h2 id="authentication">Authentication<a class="headerlink" href="#authentication" title="Permanent link">&para;</a></h2>
+<h3 id="supabase-auth">Supabase Auth<a class="headerlink" href="#supabase-auth" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Complete authentication system with JWT tokens.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Handles password hashing (bcrypt), token issuance (JWT), and token refresh automatically</li>
+<li>Supports email/password, Google OAuth, and GitHub OAuth — all configured through the Supabase dashboard</li>
+<li>Cloudflare Turnstile CAPTCHA integration prevents bot sign-ups</li>
+<li>Brevo SMTP for transactional emails (password reset, email verification)</li>
+<li>The <code>requireAuth</code> middleware in each service verifies JWTs independently — services don't need to call auth-service on every request</li>
+</ul>
+<hr />
+<h2 id="version-control">Version Control<a class="headerlink" href="#version-control" title="Permanent link">&para;</a></h2>
+<h3 id="gitea-self-hosted">Gitea (Self-Hosted)<a class="headerlink" href="#gitea-self-hosted" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Lightweight, self-hosted Git service.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Course requirement — hosted at sdp.ms.wits.ac.za for the SDP module</li>
+<li>Full GitHub-like experience (pull requests, issues, actions) but on our own infrastructure</li>
+<li>No dependency on external services for the primary repository</li>
+<li>Gitea Actions provides CI/CD without needing a separate CI server</li>
+</ul>
+<h3 id="github-mirror-only">GitHub (Mirror Only)<a class="headerlink" href="#github-mirror-only" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: GitHub repository used exclusively as a read-only mirror for deployment.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Render's free tier deploys directly from the repository — it needs a public Git URL to clone from</li>
+<li>GitHub was initially added as a second remote so Render could deploy, but it is NOT used for development</li>
+<li>GitHub has since been removed as a local remote — all pushes go to Gitea only</li>
+<li>Render is configured to mirror from Gitea directly, eliminating the need for a dual-push workflow</li>
+<li>This avoids the risk of GitHub and Gitea falling out of sync (which caused stale builds when GitHub lagged behind)</li>
+</ul>
+<h3 id="git-branching-strategy">Git Branching Strategy<a class="headerlink" href="#git-branching-strategy" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: <code>main</code> (production) + <code>hlulani</code> (development) + feature branches.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li><code>hlulani</code> is the integration branch — all work merges here first</li>
+<li><code>main</code> is the production branch — only merged from <code>hlulani</code> when stable</li>
+<li>Feature branches (e.g., <code>feature/activity-log</code>) isolate large features before merging</li>
+<li>This mirrors GitFlow lite — simple enough for a 1-person team but structured enough for documentation</li>
+</ul>
+<hr />
+<h2 id="documentation">Documentation<a class="headerlink" href="#documentation" title="Permanent link">&para;</a></h2>
+<h3 id="mkdocs-with-material-theme">MkDocs with Material Theme<a class="headerlink" href="#mkdocs-with-material-theme" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Static site generator for project documentation.</p>
+<p><strong>Why</strong>:</p>
+<ul>
+<li>Write docs in Markdown — no special syntax or build tools beyond Python</li>
+<li>Material theme provides search, navigation, and responsive layout out of the box</li>
+<li>Lives alongside the code in <code>docs-site/</code> — docs are versioned with the project</li>
+<li>Can be deployed as a static site on Render or GitHub Pages</li>
+</ul>
+<hr />
+<h2 id="external-services">External Services<a class="headerlink" href="#external-services" title="Permanent link">&para;</a></h2>
+<h3 id="cloudflare-turnstile">Cloudflare Turnstile<a class="headerlink" href="#cloudflare-turnstile" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Privacy-friendly CAPTCHA alternative.</p>
+<p><strong>Why</strong>: Replaces Google reCAPTCHA — no tracking, faster verification, free for our usage level.</p>
+<h3 id="brevo-formerly-sendinblue">Brevo (formerly Sendinblue)<a class="headerlink" href="#brevo-formerly-sendinblue" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: Transactional email service.</p>
+<p><strong>Why</strong>: Supabase uses it as the SMTP provider for password reset and email verification emails. Free tier allows 300 emails/day.</p>
+<h3 id="google-cloud-console">Google Cloud Console<a class="headerlink" href="#google-cloud-console" title="Permanent link">&para;</a></h3>
+<p><strong>What</strong>: OAuth 2.0 credential management.</p>
+<p><strong>Why</strong>: Provides the Client ID and Secret for "Sign in with Google" through Supabase Auth.</p>
+<hr />
+<h2 id="summary-table">Summary Table<a class="headerlink" href="#summary-table" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Technology</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontend Framework</td>
+<td>React 18</td>
+<td>Component-based UI</td>
+</tr>
+<tr>
+<td>Language</td>
+<td>TypeScript</td>
+<td>Type safety</td>
+</tr>
+<tr>
+<td>Build Tool</td>
+<td>Vite</td>
+<td>Fast dev server + bundling</td>
+</tr>
+<tr>
+<td>Styling</td>
+<td>CSS Custom Properties</td>
+<td>Runtime theming</td>
+</tr>
+<tr>
+<td>Routing</td>
+<td>React Router v6</td>
+<td>Client-side navigation</td>
+</tr>
+<tr>
+<td>Backend Runtime</td>
+<td>Node.js 20</td>
+<td>Server-side JavaScript</td>
+</tr>
+<tr>
+<td>Backend Framework</td>
+<td>Express.js</td>
+<td>REST API</td>
+</tr>
+<tr>
+<td>Architecture</td>
+<td>Microservices (4)</td>
+<td>Service isolation</td>
+</tr>
+<tr>
+<td>Database</td>
+<td>Supabase (PostgreSQL)</td>
+<td>Data storage + auth</td>
+</tr>
+<tr>
+<td>AI</td>
+<td>Multi-provider chain</td>
+<td>Natural language parsing</td>
+</tr>
+<tr>
+<td>CI/CD</td>
+<td>Gitea Actions</td>
+<td>Automated testing</td>
+</tr>
+<tr>
+<td>Hosting</td>
+<td>Render</td>
+<td>Free-tier deployment</td>
+</tr>
+<tr>
+<td>Testing</td>
+<td>Jest + custom mocks</td>
+<td>Unit + integration tests</td>
+</tr>
+<tr>
+<td>Auth</td>
+<td>Supabase Auth</td>
+<td>JWT + OAuth</td>
+</tr>
+<tr>
+<td>Version Control</td>
+<td>Gitea (self-hosted)</td>
+<td>Git hosting + CI</td>
+</tr>
+<tr>
+<td>Docs</td>
+<td>MkDocs Material</td>
+<td>Project documentation</td>
+</tr>
+<tr>
+<td>CAPTCHA</td>
+<td>Cloudflare Turnstile</td>
+<td>Bot prevention</td>
+</tr>
+<tr>
+<td>Email</td>
+<td>Brevo SMTP</td>
+<td>Transactional emails</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mermaid.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3196 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the COMS3011A Digital Logbook project">
+      
+      
+      
+      
+        <link rel="prev" href="../voice-feature/">
+      
+      
+        <link rel="next" href="../sse/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>IndexedDB Caching - Digital Logbook Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lora";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#local-first-architecture-indexeddb" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Logbook Docs" class="md-header__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Logbook Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              IndexedDB Caching
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Logbook Docs" class="md-nav__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Digital Logbook Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cicd-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD & Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teck-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice-feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexedDB Caching
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexedDB Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-the-previous-approach-failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Previous Approach Failed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why the Previous Approach Failed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-no-centralized-cache-warm-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. No Centralized Cache Warm-Up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-inconsistent-cache-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Inconsistent Cache Stores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hascache-checks-were-incomplete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. hasCache Checks Were Incomplete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-duesoon-always-hit-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. dueSoon() Always Hit the Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-setpriority-had-no-indexeddb-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. setPriority() Had No IndexedDB Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pages-still-depended-on-server-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Pages Still Depended on Server Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-no-single-source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. No Single Source of Truth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-pages-no-longer-call-syncalldata-in-the-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Pages No Longer Call syncAllData in the Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-flow-pages-indexeddb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read Flow (Pages → IndexedDB)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-flow-mutations-indexeddb-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Write Flow (Mutations → IndexedDB → Server)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offline-sync-queue-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offline Sync Queue ("The Queue")
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Offline Sync Queue (&#34;The Queue&#34;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue-store-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue Store Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registered-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registered Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toast-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toast Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cachefunctions-module-srccachefunctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CacheFunctions Module (src/CacheFunctions/)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CacheFunctions Module (src/CacheFunctions/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syncalldataemail-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        syncAllData(email, options)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syncprojectentriesemail-projectname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        syncProjectEntries(email, projectName)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computeduesoonentries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        computeDueSoon(entries)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexeddb-schema-mirrors-database-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IndexedDB Schema (mirrors database tables)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-implementation-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Page Implementation Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutation-functions-optimistic-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mutation Functions (Optimistic Updates)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutation Functions (Optimistic Updates)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-setpriority-indexeddb-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: setPriority (IndexedDB-first)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duesoon-computed-from-cache-no-server-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dueSoon — Computed from Cache (No Server Call)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Initialization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache-invalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cache Invalidation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Impact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSE Real-Time Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../daemon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keep-Alive Daemons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entry-summaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entry Summaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uml-diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UML Architecture Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../third-party/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-one-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-two-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stakeholder Interactions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stakeholder Interactions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Stories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Management
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Management
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology & Git Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/work-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions & Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issues & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/ai-attribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Attribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/code-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & User Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-the-previous-approach-failed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why the Previous Approach Failed
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Why the Previous Approach Failed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-no-centralized-cache-warm-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. No Centralized Cache Warm-Up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-inconsistent-cache-stores" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Inconsistent Cache Stores
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-hascache-checks-were-incomplete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. hasCache Checks Were Incomplete
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-duesoon-always-hit-the-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. dueSoon() Always Hit the Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-setpriority-had-no-indexeddb-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. setPriority() Had No IndexedDB Integration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pages-still-depended-on-server-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Pages Still Depended on Server Responses
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-no-single-source-of-truth" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. No Single Source of Truth
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-fix" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The Fix
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-pages-no-longer-call-syncalldata-in-the-background" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Pages No Longer Call syncAllData in the Background
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Flow
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture Flow">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-flow-pages-indexeddb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read Flow (Pages → IndexedDB)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#write-flow-mutations-indexeddb-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Write Flow (Mutations → IndexedDB → Server)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offline-sync-queue-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offline Sync Queue ("The Queue")
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Offline Sync Queue (&#34;The Queue&#34;)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How It Works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue-store-schema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue Store Schema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#registered-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Registered Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#toast-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Toast Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queue-processing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Queue Processing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cachefunctions-module-srccachefunctions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CacheFunctions Module (src/CacheFunctions/)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CacheFunctions Module (src/CacheFunctions/)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syncalldataemail-options" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        syncAllData(email, options)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#syncprojectentriesemail-projectname" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        syncProjectEntries(email, projectName)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#computeduesoonentries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        computeDueSoon(entries)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#indexeddb-schema-mirrors-database-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        IndexedDB Schema (mirrors database tables)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#page-implementation-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Page Implementation Pattern
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mutation-functions-optimistic-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mutation Functions (Optimistic Updates)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Mutation Functions (Optimistic Updates)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-setpriority-indexeddb-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: setPriority (IndexedDB-first)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#duesoon-computed-from-cache-no-server-call" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dueSoon — Computed from Cache (No Server Call)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-initialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App Initialization
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cache-invalidation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cache Invalidation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#performance-impact" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Impact
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        File Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="local-first-architecture-indexeddb">Local-First Architecture (IndexedDB)<a class="headerlink" href="#local-first-architecture-indexeddb" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>The Digital Logbook frontend implements a <strong>local-first architecture</strong> using IndexedDB as the primary data source for all pages. The app reads from and writes to IndexedDB first — the server is only used to keep IndexedDB in sync.</p>
+<p><strong>Core principle:</strong> Pages never call server APIs directly. They read from IndexedDB via <code>useEffect</code> and display data instantly. A centralized sync service (<code>CacheFunctions/syncService.js</code>) handles all server communication.</p>
+<h2 id="why-the-previous-approach-failed">Why the Previous Approach Failed<a class="headerlink" href="#why-the-previous-approach-failed" title="Permanent link">&para;</a></h2>
+<p>Before the local-first architecture, the app had a <strong>scattered cache-first pattern</strong> that looked like caching but didn't actually work reliably. Here's what was wrong:</p>
+<h3 id="1-no-centralized-cache-warm-up">1. No Centralized Cache Warm-Up<a class="headerlink" href="#1-no-centralized-cache-warm-up" title="Permanent link">&para;</a></h3>
+<p>Each page had its own <code>loadData</code> function that independently fetched from the server and wrote to IndexedDB. There was no global "warm-up" on app load. If you visited Dashboard first, only Dashboard's data was cached — AllEntries, Stats, Today, Calendar all had to fetch from scratch. Pages never benefited from each other's cache.</p>
+<h3 id="2-inconsistent-cache-stores">2. Inconsistent Cache Stores<a class="headerlink" href="#2-inconsistent-cache-stores" title="Permanent link">&para;</a></h3>
+<p>Different pages used different IndexedDB stores for the same data. For example, Dashboard stored entries in <code>CACHE_STORES.ALL_ENTRIES</code> while AllEntries stored them in <code>CACHE_STORES.ENTRIES</code>. They never shared cached data — visiting one page didn't help the other.</p>
+<h3 id="3-hascache-checks-were-incomplete">3. <code>hasCache</code> Checks Were Incomplete<a class="headerlink" href="#3-hascache-checks-were-incomplete" title="Permanent link">&para;</a></h3>
+<p>Dashboard's <code>hasCache</code> check only looked at <code>cachedEntries?.data || cachedProjects?.data</code> — it ignored <code>cachedDueSoon?.data</code>. So even if due-soon data was cached, the page would still show a spinner if entries/projects weren't cached yet.</p>
+<h3 id="4-duesoon-always-hit-the-server">4. <code>dueSoon()</code> Always Hit the Server<a class="headerlink" href="#4-duesoon-always-hit-the-server" title="Permanent link">&para;</a></h3>
+<p>The <code>dueSoon()</code> function called <code>getUnarchived()</code> which made a server API call every single time. Even though all entries were already in IndexedDB, <code>dueSoon</code> ignored the cache and fetched from the network. This defeated the entire purpose of caching.</p>
+<h3 id="5-setpriority-had-no-indexeddb-integration">5. <code>setPriority()</code> Had No IndexedDB Integration<a class="headerlink" href="#5-setpriority-had-no-indexeddb-integration" title="Permanent link">&para;</a></h3>
+<p>The <code>setPriority()</code> function called the server directly without writing to IndexedDB first. The UI wouldn't update until the next full page reload or <code>loadData()</code> call. Users would change a priority and see no change — then wonder if it worked.</p>
+<h3 id="6-pages-still-depended-on-server-responses">6. Pages Still Depended on Server Responses<a class="headerlink" href="#6-pages-still-depended-on-server-responses" title="Permanent link">&para;</a></h3>
+<p>Even with cache-first reads, every page's <code>loadData</code> still called individual server fetch functions (<code>getProjectsByEmail</code>, <code>sortUnarchivedEntries</code>, <code>dueSoon</code>, etc.) in the background. These functions each made their own network requests, so a single page load could trigger 3-5 parallel server calls. If the server was slow, the "fresh data" phase would stall and the UI would flicker between cached and fresh data.</p>
+<h3 id="7-no-single-source-of-truth">7. No Single Source of Truth<a class="headerlink" href="#7-no-single-source-of-truth" title="Permanent link">&para;</a></h3>
+<p>Without a centralized sync service, there was no guarantee that IndexedDB had complete, consistent data. Each page wrote to cache independently, sometimes with different key formats or store names. The result: cached data was often incomplete, stale, or missing entirely for pages the user hadn't visited yet.</p>
+<h3 id="the-fix">The Fix<a class="headerlink" href="#the-fix" title="Permanent link">&para;</a></h3>
+<p>The local-first architecture solves all of these by:</p>
+<ul>
+<li><strong>One sync service</strong> (<code>syncAllData</code>) that fetches ALL data in one call and populates all IndexedDB stores</li>
+<li><strong>One trigger point</strong> (<code>DataSyncInitializer</code> in App.tsx) that warms up cache on login</li>
+<li><strong>Pages read only from IndexedDB</strong> — no direct server calls from pages</li>
+<li><strong><code>dueSoon</code> computes from cache</strong> — no server call needed</li>
+<li><strong>All mutations write IndexedDB first</strong> — instant UI, then server sync</li>
+</ul>
+<h3 id="why-pages-no-longer-call-syncalldata-in-the-background">Why Pages No Longer Call <code>syncAllData</code> in the Background<a class="headerlink" href="#why-pages-no-longer-call-syncalldata-in-the-background" title="Permanent link">&para;</a></h3>
+<p>An intermediate approach had pages call <code>syncAllData</code> in the background after reading from IndexedDB. This caused a <strong>race condition</strong>:</p>
+<ol>
+<li>User adds an entry → mutation writes to IndexedDB (instant UI) ✓</li>
+<li>Page's <code>loadData</code> calls <code>syncAllData</code> → fetches from server</li>
+<li>Server doesn't have the new entry yet (network latency)</li>
+<li><code>syncAllData</code> overwrites IndexedDB with stale server data</li>
+<li>The optimistic entry disappears or gets duplicated</li>
+</ol>
+<p><strong>The fix:</strong> Pages now read ONLY from IndexedDB. The initial sync on login populates everything. After that, mutations handle their own server sync (write IndexedDB first, then server). SSE pushes handle real-time updates from the backend. Pages never make server calls.</p>
+<h2 id="architecture-flow">Architecture Flow<a class="headerlink" href="#architecture-flow" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌─────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                        App Load                              │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│  DataSyncInitializer (App.tsx) → syncAllData(email)          │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│  Fetches ALL data from server → populates IndexedDB          │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>└──────────────────────────┬──────────────────────────────────┘
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>                           │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>                           ▼
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>┌─────────────────────────────────────────────────────────────┐
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│                     IndexedDB (local)                        │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>│                                                              │
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│  ┌──────────┐ ┌───────────┐ ┌──────────┐ ┌──────────┐      │
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│  │ projects │ │all-entries│ │ entries  │ │ profile  │      │
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│  │          │ │           │ │(per-proj)│ │          │      │
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│  └──────────┘ └───────────┘ └──────────┘ └──────────┘      │
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│  ┌──────────┐ ┌───────────┐ ┌──────────┐                   │
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│  │ archives │ │  fields   │ │ due-soon │                   │
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│  └──────────┘ └───────────┘ └──────────┘                   │
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>└──────────────────────────┬──────────────────────────────────┘
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>                           │
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>              ┌────────────┼────────────┐
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>              ▼            ▼            ▼
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>         Dashboard    AllEntries     StatsView
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>         (reads       (reads        (reads
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>          from IDB)    from IDB)     from IDB)
+</code></pre></div>
+<h3 id="read-flow-pages-indexeddb">Read Flow (Pages → IndexedDB)<a class="headerlink" href="#read-flow-pages-indexeddb" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>1. User navigates to a page
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>2. Page reads from IndexedDB via cacheGet() in useEffect
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>3. If cache exists → display immediately (no spinner, no network)
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>4. If no cache → show loading spinner (first visit only)
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>   → Trigger syncAllData() to populate IndexedDB
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>   → Re-read from IndexedDB → display data
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>5. After initial sync, pages NEVER call syncAllData again
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>6. All subsequent reads are 100% from IndexedDB (zero network)
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>7. SSE pushes trigger IndexedDB invalidation → page re-reads
+</code></pre></div>
+<h3 id="write-flow-mutations-indexeddb-server">Write Flow (Mutations → IndexedDB → Server)<a class="headerlink" href="#write-flow-mutations-indexeddb-server" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>1. User triggers action (e.g., add entry, change priority)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>2. Function writes to IndexedDB immediately (optimistic update)
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>3. UI updates instantly from IndexedDB
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>4. Function checks navigator.onLine:
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>   - Online: syncs to server in background
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>   - Offline: queues action in IndexedDB offline-queue store
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>5. On success: IndexedDB already has the data (or refreshes)
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>6. On failure: queue action for retry (no rollback)
+</code></pre></div>
+<h2 id="offline-sync-queue-the-queue">Offline Sync Queue ("The Queue")<a class="headerlink" href="#offline-sync-queue-the-queue" title="Permanent link">&para;</a></h2>
+<p>When the app is offline, mutations are queued in IndexedDB and synced when connectivity returns.</p>
+<h3 id="how-it-works">How It Works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>┌─────────────────────────────────────────────────────────────┐
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>│                    Offline Flow                               │
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>│                                                              │
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│  1. User triggers action while offline                       │
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>│  2. IndexedDB updated optimistically (instant UI)            │
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│  3. Action queued in offline-queue store                     │
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│     { action: 'addEntry', module: 'entries',                 │
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│       payload: {...}, timestamp, attempts: 0 }               │
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│  4. When online: processQueue() processes FIFO               │
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│  5. Each action dispatched via actionDispatcher              │
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>│  6. On success: removed from queue, toast shown              │
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>│  7. On failure: retry up to 3 attempts                       │
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>└─────────────────────────────────────────────────────────────┘
+</code></pre></div>
+<h3 id="queue-store-schema">Queue Store Schema<a class="headerlink" href="#queue-store-schema" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>auto-increment</td>
+<td>Unique identifier</td>
+</tr>
+<tr>
+<td><code>action</code></td>
+<td>string</td>
+<td>Action name (e.g., 'addEntry')</td>
+</tr>
+<tr>
+<td><code>module</code></td>
+<td>string</td>
+<td>Module name (e.g., 'entries', 'project')</td>
+</tr>
+<tr>
+<td><code>payload</code></td>
+<td>object</td>
+<td>Serialized action data</td>
+</tr>
+<tr>
+<td><code>timestamp</code></td>
+<td>number</td>
+<td>When the action was queued</td>
+</tr>
+<tr>
+<td><code>attempts</code></td>
+<td>number</td>
+<td>Number of sync attempts (max 3)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="registered-actions">Registered Actions<a class="headerlink" href="#registered-actions" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Action</th>
+<th>Module</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>addEntry</code></td>
+<td>entries</td>
+<td>Add a new entry</td>
+</tr>
+<tr>
+<td><code>updateEntry</code></td>
+<td>entries</td>
+<td>Update an existing entry</td>
+</tr>
+<tr>
+<td><code>deleteEntry</code></td>
+<td>entries</td>
+<td>Delete an entry</td>
+</tr>
+<tr>
+<td><code>deleteEntryById</code></td>
+<td>entries</td>
+<td>Delete entry by ID</td>
+</tr>
+<tr>
+<td><code>addProject</code></td>
+<td>project</td>
+<td>Create a new project</td>
+</tr>
+<tr>
+<td><code>editProjectName</code></td>
+<td>project</td>
+<td>Rename a project</td>
+</tr>
+<tr>
+<td><code>deleteProject</code></td>
+<td>project</td>
+<td>Delete a project</td>
+</tr>
+<tr>
+<td><code>archiveProject</code></td>
+<td>archives</td>
+<td>Archive a project</td>
+</tr>
+<tr>
+<td><code>unarchiveProject</code></td>
+<td>archives</td>
+<td>Unarchive a project</td>
+</tr>
+<tr>
+<td><code>archiveEntry</code></td>
+<td>archives</td>
+<td>Archive an entry</td>
+</tr>
+<tr>
+<td><code>unarchiveEntry</code></td>
+<td>archives</td>
+<td>Unarchive an entry</td>
+</tr>
+<tr>
+<td><code>setPriority</code></td>
+<td>priority</td>
+<td>Set entry priority</td>
+</tr>
+<tr>
+<td><code>updateUsername</code></td>
+<td>profile</td>
+<td>Update username</td>
+</tr>
+<tr>
+<td><code>updateName</code></td>
+<td>profile</td>
+<td>Update display name</td>
+</tr>
+<tr>
+<td><code>updateAvatar</code></td>
+<td>profile</td>
+<td>Update avatar</td>
+</tr>
+</tbody>
+</table>
+<h3 id="toast-notifications">Toast Notifications<a class="headerlink" href="#toast-notifications" title="Permanent link">&para;</a></h3>
+<p>When the app comes back online, <code>OfflineSyncToasts</code> displays progress:</p>
+<ul>
+<li>"Back online! Syncing X pending actions..."</li>
+<li>"Saved entry to projectName" (per action)</li>
+<li>"All X actions synced successfully!"</li>
+</ul>
+<h3 id="queue-processing">Queue Processing<a class="headerlink" href="#queue-processing" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Automatic processing when connectivity returns</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">processQueue</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@/CacheFunctions'</span><span class="p">;</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">// processQueue processes all queued actions in FIFO order</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="c1">// Max 3 attempts per action before marking as failed</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="k">await</span><span class="w"> </span><span class="nx">processQueue</span><span class="p">((</span><span class="nx">progress</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="w">  </span><span class="c1">// progress: { type: 'success' | 'failed' | 'retry' | 'complete', ... }</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="p">});</span>
+</code></pre></div>
+<h2 id="cachefunctions-module-srccachefunctions">CacheFunctions Module (<code>src/CacheFunctions/</code>)<a class="headerlink" href="#cachefunctions-module-srccachefunctions" title="Permanent link">&para;</a></h2>
+<p>The centralized sync service that populates IndexedDB from the server.</p>
+<h3 id="syncalldataemail-options"><code>syncAllData(email, options)</code><a class="headerlink" href="#syncalldataemail-options" title="Permanent link">&para;</a></h3>
+<p>Fetches ALL user data from the server and writes to IndexedDB. Called on app load and when pages need a refresh.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">syncAllData</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@/CacheFunctions'</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">// On app load or page refresh</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="k">await</span><span class="w"> </span><span class="nx">syncAllData</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">force</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span>
+</code></pre></div>
+<p><strong>What it syncs:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Store</th>
+<th>Source Function</th>
+<th>Cache Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>projects</code></td>
+<td><code>getProjectsByEmail()</code></td>
+<td><code>email</code></td>
+</tr>
+<tr>
+<td><code>all-entries</code></td>
+<td><code>getAllEntries()</code></td>
+<td><code>email</code></td>
+</tr>
+<tr>
+<td><code>entries</code> (per-project)</td>
+<td>Derived from all-entries</td>
+<td><code>email:projectName</code></td>
+</tr>
+<tr>
+<td><code>profile</code></td>
+<td><code>getProfile()</code></td>
+<td><code>email</code></td>
+</tr>
+<tr>
+<td><code>archives</code></td>
+<td><code>getArchives()</code>, <code>getArchivedProjects()</code>, <code>getUnarchivedProjects()</code></td>
+<td>Various</td>
+</tr>
+<tr>
+<td><code>due-soon</code></td>
+<td>Computed from cached entries (no server call)</td>
+<td><code>email:due-soon</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Prevents duplicate concurrent syncs</li>
+<li>Throttles to one sync per 10 seconds (unless forced)</li>
+<li>Populates per-project entry caches from the all-entries data</li>
+<li>Computes <code>due-soon</code> from cached entries (no extra server call)</li>
+</ul>
+<h3 id="syncprojectentriesemail-projectname"><code>syncProjectEntries(email, projectName)</code><a class="headerlink" href="#syncprojectentriesemail-projectname" title="Permanent link">&para;</a></h3>
+<p>Syncs entries for a single project. Used when navigating to a project detail page.</p>
+<h3 id="computeduesoonentries"><code>computeDueSoon(entries)</code><a class="headerlink" href="#computeduesoonentries" title="Permanent link">&para;</a></h3>
+<p>Pure function that filters entries to find those due within 3 days. Used by both the sync service and the <code>dueSoon()</code> function.</p>
+<h2 id="indexeddb-schema-mirrors-database-tables">IndexedDB Schema (mirrors database tables)<a class="headerlink" href="#indexeddb-schema-mirrors-database-tables" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Store</th>
+<th>Key Format</th>
+<th>Data</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>projects</code></td>
+<td><code>user@email.com</code></td>
+<td>All user projects</td>
+</tr>
+<tr>
+<td><code>all-entries</code></td>
+<td><code>user@email.com</code></td>
+<td>All entries across all projects</td>
+</tr>
+<tr>
+<td><code>entries</code></td>
+<td><code>user@email.com:project_name</code></td>
+<td>Entries for a specific project</td>
+</tr>
+<tr>
+<td><code>profile</code></td>
+<td><code>user@email.com</code></td>
+<td>User profile (name, avatar, username)</td>
+</tr>
+<tr>
+<td><code>archives</code></td>
+<td>Various</td>
+<td>Archived projects/entries</td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td><code>user@email.com:table_name</code></td>
+<td>Custom field definitions</td>
+</tr>
+<tr>
+<td><code>due-soon</code> (entries store)</td>
+<td><code>user@email.com:due-soon</code></td>
+<td>Entries due within 3 days (computed)</td>
+</tr>
+<tr>
+<td><code>offline-queue</code></td>
+<td>auto-increment</td>
+<td>Queued offline actions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="page-implementation-pattern">Page Implementation Pattern<a class="headerlink" href="#page-implementation-pattern" title="Permanent link">&para;</a></h2>
+<p>Every page follows the same local-first pattern:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">loadData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useCallback</span><span class="p">(</span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">email</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="c1">// 1. Read from IndexedDB first — show cached data immediately</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">cached</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cacheGet</span><span class="p">(</span><span class="nx">CACHE_STORES</span><span class="p">.</span><span class="nx">ALL_ENTRIES</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="p">);</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">cached</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">      </span><span class="nx">setEntries</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">cached</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">cached</span><span class="p">.</span><span class="nx">data</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">[]);</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">      </span><span class="c1">// No spinner — data is already displayed</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a><span class="w">      </span><span class="nx">setLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span><span class="w"> </span><span class="c1">// First visit — show spinner</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a><span class="w">    </span><span class="nx">setLoading</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a><span class="w">  </span><span class="c1">// 2. Sync from server → IndexedDB (background)</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a><span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">syncAllData</span><span class="p">(</span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">force</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a><span class="w">    </span><span class="c1">// 3. Re-read from IndexedDB (syncAllData has updated it)</span>
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">fresh</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cacheGet</span><span class="p">(</span><span class="nx">CACHE_STORES</span><span class="p">.</span><span class="nx">ALL_ENTRIES</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="p">);</span>
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">fresh</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="nx">setEntries</span><span class="p">(</span><span class="nb">Array</span><span class="p">.</span><span class="nx">isArray</span><span class="p">(</span><span class="nx">fresh</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">fresh</span><span class="p">.</span><span class="nx">data</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">[]);</span>
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a><span class="w">    </span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'Load failed:'</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
+<a id="__codelineno-6-26" name="__codelineno-6-26" href="#__codelineno-6-26"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">finally</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-27" name="__codelineno-6-27" href="#__codelineno-6-27"></a><span class="w">    </span><span class="nx">setLoading</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+<a id="__codelineno-6-28" name="__codelineno-6-28" href="#__codelineno-6-28"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-29" name="__codelineno-6-29" href="#__codelineno-6-29"></a><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">email</span><span class="p">]);</span>
+<a id="__codelineno-6-30" name="__codelineno-6-30" href="#__codelineno-6-30"></a>
+<a id="__codelineno-6-31" name="__codelineno-6-31" href="#__codelineno-6-31"></a><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-32" name="__codelineno-6-32" href="#__codelineno-6-32"></a><span class="w">  </span><span class="nx">loadData</span><span class="p">();</span>
+<a id="__codelineno-6-33" name="__codelineno-6-33" href="#__codelineno-6-33"></a><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">loadData</span><span class="p">]);</span>
+</code></pre></div>
+<h2 id="mutation-functions-optimistic-updates">Mutation Functions (Optimistic Updates)<a class="headerlink" href="#mutation-functions-optimistic-updates" title="Permanent link">&para;</a></h2>
+<p>All mutation functions write to IndexedDB first, then sync to the server. If offline or server sync fails, the action is queued for retry:</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>IndexedDB Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>addEntry()</code></td>
+<td>Optimistic write → server sync → queue on failure</td>
+</tr>
+<tr>
+<td><code>updateEntry()</code></td>
+<td>Optimistic patch → server sync → queue on failure</td>
+</tr>
+<tr>
+<td><code>deleteEntry()</code></td>
+<td>Optimistic remove → server sync → queue on failure</td>
+</tr>
+<tr>
+<td><code>addProject()</code></td>
+<td>Optimistic write → server sync → queue on failure</td>
+</tr>
+<tr>
+<td><code>editProjectName()</code></td>
+<td>Optimistic rename → server sync → queue on failure</td>
+</tr>
+<tr>
+<td><code>deleteProject()</code></td>
+<td>Optimistic remove → server sync → queue on failure</td>
+</tr>
+<tr>
+<td><code>setPriority()</code></td>
+<td>Optimistic patch → server sync → queue on failure</td>
+</tr>
+<tr>
+<td><code>updateUsername()</code></td>
+<td>Optimistic update → server sync → queue on failure</td>
+</tr>
+<tr>
+<td><code>updateName()</code></td>
+<td>Optimistic update → server sync → queue on failure</td>
+</tr>
+<tr>
+<td><code>updateAvatar()</code></td>
+<td>Optimistic update → server sync → queue on failure</td>
+</tr>
+</tbody>
+</table>
+<h3 id="example-setpriority-indexeddb-first">Example: setPriority (IndexedDB-first)<a class="headerlink" href="#example-setpriority-indexeddb-first" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">setPriority</span><span class="p">(</span><span class="nx">user_email</span><span class="p">,</span><span class="w"> </span><span class="nx">priorityValue</span><span class="p">,</span><span class="w"> </span><span class="nx">project_name</span><span class="p">,</span><span class="w"> </span><span class="nx">entry_id</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">  </span><span class="c1">// 1. Save current cache for rollback</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cachedBefore</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cacheGet</span><span class="p">(</span><span class="nx">CACHE_STORES</span><span class="p">.</span><span class="nx">ENTRIES</span><span class="p">,</span><span class="w"> </span><span class="nx">cacheKey</span><span class="p">);</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="c1">// 2. Update IndexedDB immediately (instant UI)</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">cacheSet</span><span class="p">(</span><span class="nx">CACHE_STORES</span><span class="p">.</span><span class="nx">ENTRIES</span><span class="p">,</span><span class="w"> </span><span class="nx">cacheKey</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">patchedData</span><span class="w"> </span><span class="p">});</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">  </span><span class="c1">// 3. Sync to server</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">request</span><span class="p">(...);</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">result</span><span class="p">;</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="w">    </span><span class="c1">// 4. Rollback on failure</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">    </span><span class="k">await</span><span class="w"> </span><span class="nx">cacheSet</span><span class="p">(</span><span class="nx">CACHE_STORES</span><span class="p">.</span><span class="nx">ENTRIES</span><span class="p">,</span><span class="w"> </span><span class="nx">cacheKey</span><span class="p">,</span><span class="w"> </span><span class="nx">cachedBefore</span><span class="p">);</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span><span class="w"> </span><span class="nx">message</span><span class="o">:</span><span class="w"> </span><span class="nx">err</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="duesoon-computed-from-cache-no-server-call">dueSoon — Computed from Cache (No Server Call)<a class="headerlink" href="#duesoon-computed-from-cache-no-server-call" title="Permanent link">&para;</a></h2>
+<p>The <code>dueSoon()</code> function reads from IndexedDB instead of calling the server:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">dueSoon</span><span class="p">(</span><span class="nx">user_email</span><span class="p">,</span><span class="w"> </span><span class="nx">project_name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="c1">// 1. Read from IndexedDB (instant, no network)</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">cached</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">cacheGet</span><span class="p">(</span><span class="nx">store</span><span class="p">,</span><span class="w"> </span><span class="nx">cacheKey</span><span class="p">);</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">cached</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">computeDueSoon</span><span class="p">(</span><span class="nx">cached</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">  </span><span class="c1">// 2. Fallback: fetch from server only if no cache</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">getUnarchived</span><span class="p">(</span><span class="nx">user_email</span><span class="p">,</span><span class="w"> </span><span class="nx">project_name</span><span class="p">);</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">computeDueSoon</span><span class="p">(</span><span class="nx">result</span><span class="o">?</span><span class="p">.</span><span class="nx">data</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">[])</span><span class="w"> </span><span class="p">};</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="app-initialization">App Initialization<a class="headerlink" href="#app-initialization" title="Permanent link">&para;</a></h2>
+<p>The <code>DataSyncInitializer</code> component in <code>App.tsx</code> triggers the initial sync when the user logs in:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="kd">function</span><span class="w"> </span><span class="nx">DataSyncInitializer</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">user</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useAuth</span><span class="p">();</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">email</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">user</span><span class="o">?</span><span class="p">.</span><span class="nx">email</span><span class="p">;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">email</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">      </span><span class="nx">syncAllData</span><span class="p">(</span><span class="nx">email</span><span class="p">).</span><span class="k">catch</span><span class="p">((</span><span class="nx">err</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">warn</span><span class="p">(</span><span class="s1">'[App] Initial data sync failed:'</span><span class="p">,</span><span class="w"> </span><span class="nx">err</span><span class="p">);</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">      </span><span class="p">});</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[</span><span class="nx">email</span><span class="p">]);</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="o">&lt;&gt;</span><span class="p">{</span><span class="nx">children</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/&gt;;</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="p">}</span>
+</code></pre></div>
+<h2 id="cache-invalidation">Cache Invalidation<a class="headerlink" href="#cache-invalidation" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Write operation</td>
+<td>Optimistic IndexedDB update → server sync → queue on failure</td>
+</tr>
+<tr>
+<td>Sign out</td>
+<td><code>clearUserCache(email)</code> wipes all IndexedDB data</td>
+</tr>
+<tr>
+<td>Delete account</td>
+<td><code>clearUserCache(email)</code> wipes all IndexedDB data</td>
+</tr>
+<tr>
+<td>SSE push</td>
+<td>Invalidate cache → call <code>loadData()</code> to re-read from IndexedDB</td>
+</tr>
+<tr>
+<td>Back online</td>
+<td><code>processQueue()</code> syncs all queued offline actions</td>
+</tr>
+</tbody>
+</table>
+<h2 id="performance-impact">Performance Impact<a class="headerlink" href="#performance-impact" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Before (server-first)</th>
+<th>After (local-first)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First page load</td>
+<td>500-1000ms (network)</td>
+<td>500-1000ms (first visit only)</td>
+</tr>
+<tr>
+<td>Subsequent loads</td>
+<td>500-1000ms (network)</td>
+<td>&lt;10ms (IndexedDB read)</td>
+</tr>
+<tr>
+<td>Navigation</td>
+<td>Full network fetch</td>
+<td>Instant from cache</td>
+</tr>
+<tr>
+<td>Offline/poor connectivity</td>
+<td>App breaks</td>
+<td>Shows cached data</td>
+</tr>
+<tr>
+<td>Mutations</td>
+<td>Wait for server</td>
+<td>Instant UI, background sync</td>
+</tr>
+</tbody>
+</table>
+<h2 id="dependencies">Dependencies<a class="headerlink" href="#dependencies" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/idb"><code>idb</code></a> — Lightweight IndexedDB wrapper (Promise-based API)</li>
+</ul>
+<h2 id="file-reference">File Reference<a class="headerlink" href="#file-reference" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/CacheFunctions/syncService.js</code></td>
+<td>Central sync — fetches all data → IndexedDB</td>
+</tr>
+<tr>
+<td><code>src/CacheFunctions/offlineQueue.js</code></td>
+<td>Offline queue CRUD operations</td>
+</tr>
+<tr>
+<td><code>src/CacheFunctions/queueProcessor.js</code></td>
+<td>Queue processing with retry logic</td>
+</tr>
+<tr>
+<td><code>src/CacheFunctions/actionDispatcher.js</code></td>
+<td>Maps action strings to function calls</td>
+</tr>
+<tr>
+<td><code>src/CacheFunctions/index.js</code></td>
+<td>Barrel export</td>
+</tr>
+<tr>
+<td><code>src/lib/cache.js</code></td>
+<td>IndexedDB CRUD + event subscriptions</td>
+</tr>
+<tr>
+<td><code>src/hooks/useCachedData.js</code></td>
+<td>React hook for IndexedDB-first loading</td>
+</tr>
+<tr>
+<td><code>src/hooks/useNetworkStatus.js</code></td>
+<td>React hook for online/offline detection</td>
+</tr>
+<tr>
+<td><code>src/components/OfflineSyncToasts.tsx</code></td>
+<td>Toast notifications for queue sync</td>
+</tr>
+<tr>
+<td><code>src/functions/project/project.js</code></td>
+<td>Project mutations (optimistic + queue)</td>
+</tr>
+<tr>
+<td><code>src/functions/project/entries.js</code></td>
+<td>Entry mutations (optimistic + queue)</td>
+</tr>
+<tr>
+<td><code>src/functions/project/priority.js</code></td>
+<td>Priority mutation (optimistic + queue)</td>
+</tr>
+<tr>
+<td><code>src/functions/project/archives.js</code></td>
+<td>Archive mutations (optimistic + queue)</td>
+</tr>
+<tr>
+<td><code>src/functions/profile/profile.js</code></td>
+<td>Profile mutations (optimistic + queue)</td>
+</tr>
+<tr>
+<td><code>src/functions/dashboard.js</code></td>
+<td><code>dueSoon()</code> — reads from cache</td>
+</tr>
+<tr>
+<td><code>src/App.tsx</code></td>
+<td><code>DataSyncInitializer</code> + <code>OfflineSyncToasts</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mermaid.js"></script>
+      
+    
+  </body>
+</html>

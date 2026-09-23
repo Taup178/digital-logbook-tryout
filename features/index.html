@@ -1,0 +1,3560 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the COMS3011A Digital Logbook project">
+      
+      
+      
+      
+        <link rel="prev" href="../getting-started/">
+      
+      
+        <link rel="next" href="../Architecture/overview/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Features - Digital Logbook Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lora";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#features" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Digital Logbook Docs" class="md-header__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Logbook Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Features
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Digital Logbook Docs" class="md-nav__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Digital Logbook Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication &amp; User Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication &amp; User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signing-up-and-signing-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signing Up and Signing In
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-same-email-with-google-and-email-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Same Email with Google and Email-Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-sign-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Sign-Out
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-deletion-and-restoration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Deletion and Restoration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-user-profile-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. User Profile Customization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-settings-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Settings Panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#due-date-notifications-email-in-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Due-Date Notifications (Email + In-App)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard &amp; Navigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dashboard &amp; Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7-smart-dashboard-greeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Smart Dashboard Greeting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-dashboard-stats-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Dashboard Stats Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-quick-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Quick Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-profile-menu-avatar-dropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Profile Menu (Avatar Dropdown)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-calendar-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Calendar View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-kanban-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Kanban Board
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-retired-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Retired Views
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-import-export-data-portability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Import &amp; Export (Data Portability)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-backup-restore-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Backup, Restore &amp; Migrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-openapi-3-swagger-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. OpenAPI 3 &amp; Swagger UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-entry-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project &amp; Entry Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project &amp; Entry Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#18-project-creation-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Project Creation &amp; Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-custom-fields-per-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Custom Fields per Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20-quick-add-natural-language-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Quick Add (Natural Language Entry)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-manual-entry-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. Manual Entry Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-entry-timeline-all-entries-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22. Entry Timeline &amp; All Entries View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-priority-status-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23. Priority &amp; Status Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-soft-delete-archives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24. Soft Delete &amp; Archives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytics-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytics &amp; Insights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analytics &amp; Insights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#25-project-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25. Project Statistics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-streak-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26. Streak Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-dashboard-stats-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        27. Dashboard Stats Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#28-voice-recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        28. Voice Recording
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-data-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29. Data Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30-responsive-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30. Responsive Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security &amp; Privacy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security &amp; Privacy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-row-level-security-rls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        31. Row-Level Security (RLS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-environment-variable-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        32. Environment Variable Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer Experience
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Developer Experience">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#33-hot-module-replacement-hmr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33. Hot Module Replacement (HMR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-comprehensive-test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34. Comprehensive Test Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-cicd-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35. CI/CD Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onboarding &amp; Guidance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Onboarding &amp; Guidance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#36-guided-tour-with-live-navigation-voice-narration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        36. Guided Tour with Live Navigation &amp; Voice Narration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-sign-in-landing-sections-themed-page-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37. Sign-In Landing Sections &amp; Themed Page Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notifications-alerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications &amp; Alerts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notifications &amp; Alerts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#38-notification-enhancements-snooze-dismiss-filters-lead-time-rich-emails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        38. Notification Enhancements — Snooze, Dismiss, Filters, Lead Time &amp; Rich Emails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/cicd-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD & Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/api-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/teck-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/ui-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/voice-feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexedDB Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/sse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSE Real-Time Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/daemon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keep-Alive Daemons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/entry-summaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entry Summaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/uml-diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UML Architecture Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Architecture/third-party/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Meetings/sprint-one-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Meetings/sprint-two-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stakeholder Interactions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stakeholder Interactions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Stakeholder_Interactions/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Stakeholder_Interactions/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Stories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User_Stories/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../User_Stories/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Management
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Management
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology & Git Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/work-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions & Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issues & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Project_Management/ai-attribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Attribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing/code-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Testing/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & User Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-user-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication &amp; User Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication &amp; User Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#signing-up-and-signing-in" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Signing Up and Signing In
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-the-same-email-with-google-and-email-password" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using the Same Email with Google and Email-Password
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#password-reset" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password Reset
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manual-sign-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Manual Sign-Out
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#account-deletion-and-restoration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Account Deletion and Restoration
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#5-user-profile-customization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. User Profile Customization
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-settings-panel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Settings Panel
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#due-date-notifications-email-in-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Due-Date Notifications (Email + In-App)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dashboard-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Dashboard &amp; Navigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dashboard &amp; Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#7-smart-dashboard-greeting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Smart Dashboard Greeting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#8-dashboard-stats-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Dashboard Stats Overview
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9-quick-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Quick Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#10-profile-menu-avatar-dropdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Profile Menu (Avatar Dropdown)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#11-calendar-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        11. Calendar View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#12-kanban-board" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        12. Kanban Board
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#13-retired-views" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        13. Retired Views
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#14-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        14. Timeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#15-import-export-data-portability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        15. Import &amp; Export (Data Portability)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#16-backup-restore-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        16. Backup, Restore &amp; Migrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#17-openapi-3-swagger-ui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        17. OpenAPI 3 &amp; Swagger UI
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-entry-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project &amp; Entry Management
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project &amp; Entry Management">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#18-project-creation-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        18. Project Creation &amp; Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#19-custom-fields-per-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        19. Custom Fields per Project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#20-quick-add-natural-language-entry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        20. Quick Add (Natural Language Entry)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#21-manual-entry-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        21. Manual Entry Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-entry-timeline-all-entries-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        22. Entry Timeline &amp; All Entries View
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-priority-status-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        23. Priority &amp; Status Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-soft-delete-archives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        24. Soft Delete &amp; Archives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analytics-insights" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytics &amp; Insights
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Analytics &amp; Insights">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#25-project-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        25. Project Statistics
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#26-streak-tracking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        26. Streak Tracking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#27-dashboard-stats-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        27. Dashboard Stats Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#28-voice-recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        28. Voice Recording
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#29-data-export" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        29. Data Export
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#30-responsive-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        30. Responsive Design
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security &amp; Privacy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Security &amp; Privacy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-row-level-security-rls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        31. Row-Level Security (RLS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-environment-variable-management" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        32. Environment Variable Management
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#developer-experience" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer Experience
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Developer Experience">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#33-hot-module-replacement-hmr" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        33. Hot Module Replacement (HMR)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#34-comprehensive-test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        34. Comprehensive Test Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#35-cicd-pipeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        35. CI/CD Pipeline
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onboarding-guidance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Onboarding &amp; Guidance
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Onboarding &amp; Guidance">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#36-guided-tour-with-live-navigation-voice-narration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        36. Guided Tour with Live Navigation &amp; Voice Narration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#37-sign-in-landing-sections-themed-page-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        37. Sign-In Landing Sections &amp; Themed Page Identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notifications-alerts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications &amp; Alerts
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notifications &amp; Alerts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#38-notification-enhancements-snooze-dismiss-filters-lead-time-rich-emails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        38. Notification Enhancements — Snooze, Dismiss, Filters, Lead Time &amp; Rich Emails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="features">Features<a class="headerlink" href="#features" title="Permanent link">&para;</a></h1>
+<p>A comprehensive overview of all features implemented in the Digital Logbook, why they were implemented, and how they work.</p>
+<hr />
+<h2 id="authentication-user-management">Authentication &amp; User Management<a class="headerlink" href="#authentication-user-management" title="Permanent link">&para;</a></h2>
+<p>The Digital Logbook uses Supabase Auth as its identity provider. Users can authenticate with existing Google or GitHub accounts, or create a dedicated email and password account. Sessions are managed globally so protected pages automatically redirect unauthenticated visitors to the sign-in screen.</p>
+<p><img alt="Sign-in page showing the email and password form and Google and GitHub OAuth buttons" src="../assets/ui-images/Screenshot_19-8-2026_123315_digital-logbook-bxgv.onrender.com.jpeg" /></p>
+<h3 id="signing-up-and-signing-in">Signing Up and Signing In<a class="headerlink" href="#signing-up-and-signing-in" title="Permanent link">&para;</a></h3>
+<p>Users reach the sign-in page automatically when they are not authenticated. The page presents three ways to authenticate: Google, GitHub, and email with password.</p>
+<p>When a user chooses Google or GitHub, they are redirected to the provider to confirm consent, then returned to the application. On first visit, a profile record is created automatically so the user can immediately start using the logbook.</p>
+<p>When a user chooses email and password, the form validates the address before sending anything to Supabase:</p>
+<ul>
+<li>The email must look like a real address (for example, name@example.com).</li>
+<li>Disposable or temporary email domains, such as tempmail.com or mailinator.com, are rejected.</li>
+<li>Common typos are caught and suggested. Typing user@gmail.comm displays a clickable "Did you mean user@gmail.com?" hint.</li>
+</ul>
+<p>On sign-up, a confirmation email is sent. The user must open the link before signing in. On sign-in, the application checks whether the account is active or scheduled for deletion. If the account was soft-deleted, the user is offered a one-click restore link instead of being logged in.</p>
+<p><img alt="Profile setup page where a new user enters their email, full name, and username" src="../assets/ui-images/Screenshot_19-8-2026_123344_digital-logbook-bxgv.onrender.com.jpeg" /></p>
+<h3 id="using-the-same-email-with-google-and-email-password">Using the Same Email with Google and Email-Password<a class="headerlink" href="#using-the-same-email-with-google-and-email-password" title="Permanent link">&para;</a></h3>
+<p>Supabase Auth can automatically link identities that share the same confirmed email address. This means a user who first signed up with Google can later sign in with the same email and a password, and vice versa, as long as the email addresses match and the email provider identity is verified.</p>
+<p>If automatic linking is disabled in the Supabase project, the second sign-in method may create a separate account or be rejected. The application does not manually merge accounts, so the project relies on Supabase Auth's default linking behavior to keep a single user record per email.</p>
+<h3 id="password-reset">Password Reset<a class="headerlink" href="#password-reset" title="Permanent link">&para;</a></h3>
+<p>Users who forget their password can request a reset link from the sign-in page or from the Account tab in settings.</p>
+<p>The flow works as follows:</p>
+<ul>
+<li>The user enters their email to request a reset link.</li>
+<li>Supabase sends a password reset link to the registered email address.</li>
+<li>The link opens a secure page where the user enters a new password.</li>
+<li>A strength meter gives immediate feedback on password quality.</li>
+<li>After the password is updated, the user is signed in and redirected to the dashboard.</li>
+</ul>
+<p>Reset links expire after one hour for security.</p>
+<h3 id="manual-sign-out">Manual Sign-Out<a class="headerlink" href="#manual-sign-out" title="Permanent link">&para;</a></h3>
+<p>Users remain signed in until they explicitly click <strong>Sign Out</strong>. The application does not automatically end sessions after a period of inactivity, so users stay authenticated across tab switches and short absences.</p>
+<h3 id="account-deletion-and-restoration">Account Deletion and Restoration<a class="headerlink" href="#account-deletion-and-restoration" title="Permanent link">&para;</a></h3>
+<p>Users can delete their account from the Account tab in the settings panel. Because deletion is destructive, the user must confirm the action in a dialog that explains the consequences.</p>
+<p>When deletion is confirmed, the account is soft-deleted first. The user has 30 days to change their mind. During this window:</p>
+<ul>
+<li>The account cannot be used normally.</li>
+<li>If the user tries to sign in, they see a restore prompt instead of the dashboard.</li>
+<li>Clicking the restore link sends a secure one-time login email. Opening it reactivates the account and signs the user back in.</li>
+<li>The restore prompt and email suggest opening the link on the device where the user wants to sign in, which gives the fastest experience.</li>
+<li>If the restore link is opened on another device (for example, a phone), the restore prompt on the original device automatically detects the restoration within a few seconds and switches to a "Continue to sign in" state, so the user does not have to refresh the page manually.</li>
+</ul>
+<p>After the 30-day grace period, a background process permanently removes the account and all related data. Until then, no data is lost.</p>
+<hr />
+<h2 id="profile-management">Profile Management<a class="headerlink" href="#profile-management" title="Permanent link">&para;</a></h2>
+<h3 id="5-user-profile-customization">5. User Profile Customization<a class="headerlink" href="#5-user-profile-customization" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Users can customize their profile with a preferred name, role, student number, bio, and avatar.</p>
+<p><strong>Why it was implemented:</strong> Personalizes the user experience and provides context for logbook entries (e.g., student number for academic tracking).</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Profile data stored in <code>users</code> table via profile-service</li>
+<li>Preferred name overrides the OAuth name on the dashboard greeting</li>
+<li>Role selection (Student, Lecturer, Tutor, Professional) for future personalization</li>
+<li>Avatar selection from 18 DiceBear preset avatars (no photo uploads to keep storage simple)</li>
+<li>Auto-save on avatar selection for seamless UX</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/CreateProfile.tsx</code> — Profile creation/editing</li>
+<li><code>frontend/src/pages/Avatar.tsx</code> — Avatar picker</li>
+<li><code>services/profile-service/</code> — Backend profile endpoints</li>
+</ul>
+<h3 id="6-settings-panel">6. Settings Panel<a class="headerlink" href="#6-settings-panel" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Slide-out panel with three tabs for managing profile, preferences, and account settings.</p>
+<p><strong>Why it was implemented:</strong> Provides quick access to all user settings without leaving the current page, improving usability.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><strong>Profile Tab:</strong> Edit name, role, student number, bio</li>
+<li><strong>Preferences Tab:</strong> Default view, week start day, time format, auto-save, compact mode, email notifications, weekly reminders</li>
+<li><strong>Account Tab:</strong> View account info, change password, delete account</li>
+<li>Panel slides in from the right with smooth animation</li>
+<li>Closes on outside click or Escape key</li>
+<li>Changes save immediately with visual feedback</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/components/SettingsPanel.tsx</code> — Settings UI</li>
+</ul>
+<h3 id="due-date-notifications-email-in-app">Due-Date Notifications (Email + In-App)<a class="headerlink" href="#due-date-notifications-email-in-app" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Alerts you before an entry's due date passes and again if it becomes overdue — both as an email and as an in-app bell icon with an unread badge.</p>
+<p><strong>Why it was implemented:</strong> Users were missing deadlines because due dates were only visible by opening the Calendar or Today page. Proactive reminders close that gap without requiring the user to check the app.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>An hourly <code>pg_cron</code> job (migration 011) scans <code>entries</code> and inserts a <code>due_soon</code> notification when a deadline is within 24 hours and an <code>overdue</code> notification when it has passed — one per entry per type, enforced by a unique constraint so you are never spammed</li>
+<li>Emails are sent through the Brevo HTTP API from project-service; pending rows are marked <code>emailed = true</code> only after Brevo accepts, so a failed send retries on the next cycle</li>
+<li>Render free-tier services sleep, so the cron pokes the service over HTTP (<code>pg_net</code>) and any active app session also flushes pending emails opportunistically</li>
+<li>The SettingsPanel <strong>Email notifications</strong> toggle is persisted to <code>users.email_notifications</code> and honoured by the sender; the in-app bell works regardless</li>
+<li>The bell polls every 60 seconds (and on window focus), shows an unread-count badge, and opens a dropdown with Mark-all-read; clicking a notification navigates to its project</li>
+<li>Notifications for completed, archived, or deleted entries are cleared automatically; read notifications are pruned after 30 days</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>supabase/migrations/011_create_notifications.sql</code> — table, preference column, generator RPC, cron schedule</li>
+<li><code>services/project-service/src/functions/notifications/notifications.js</code> — feed queries + Brevo sender</li>
+<li><code>services/project-service/src/Routes/notifications.js</code> — RPC endpoints</li>
+<li><code>frontend/src/components/NotificationsBell.tsx</code> — bell UI</li>
+</ul>
+<hr />
+<h2 id="dashboard-navigation">Dashboard &amp; Navigation<a class="headerlink" href="#dashboard-navigation" title="Permanent link">&para;</a></h2>
+<h3 id="7-smart-dashboard-greeting">7. Smart Dashboard Greeting<a class="headerlink" href="#7-smart-dashboard-greeting" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Displays "Welcome" for first-time users and "Welcome back" for returning users.</p>
+<p><strong>Why it was implemented:</strong> Creates a personalized, welcoming experience that acknowledges user engagement.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Tracks first visit per user in <code>localStorage</code></li>
+<li>Shows "Welcome" on first visit, "Welcome back" on subsequent visits</li>
+<li>Includes user's preferred name from profile</li>
+</ul>
+<h3 id="8-dashboard-stats-overview">8. Dashboard Stats Overview<a class="headerlink" href="#8-dashboard-stats-overview" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Shows Total Entries, This Week, and Projects stats with animated entrance.</p>
+<p><strong>Why it was implemented:</strong> Provides users with an immediate overview of their logbook activity, encouraging regular use.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Fetches real data from dashboard-service on mount</li>
+<li><code>getProjectsByEmail()</code> counts user's projects</li>
+<li><code>getAllEntries()</code> counts total entries and filters for this week</li>
+<li>Stats cards have staggered fade-in-up animations</li>
+<li>Loading states while data fetches</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/Dashboard.tsx</code> — Dashboard UI</li>
+<li><code>services/dashboard-service/</code> — Backend stats endpoints</li>
+</ul>
+<h3 id="9-quick-actions">9. Quick Actions<a class="headerlink" href="#9-quick-actions" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Provides fast access to common actions: New Entry, View All Entries, Export Data.</p>
+<p><strong>Why it was implemented:</strong> Reduces friction for frequent actions, improving workflow efficiency.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Buttons navigate to respective pages or trigger data export</li>
+<li>Export downloads entries as JSON file</li>
+</ul>
+<h3 id="10-profile-menu-avatar-dropdown">10. Profile Menu (Avatar Dropdown)<a class="headerlink" href="#10-profile-menu-avatar-dropdown" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Clicking the user's avatar/name in the navbar opens a dropdown with quick access to profile, settings, and sign-out.</p>
+<p><strong>Why it was implemented:</strong> Keeps the navbar clean while providing instant access to account management.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Dropdown appears on click</li>
+<li>Shows user's name and email at the top</li>
+<li>Menu items: Manage Profile, Settings, Sign Out</li>
+<li>Closes on outside click or Escape key</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/components/ProfileMenu.tsx</code> — Dropdown menu</li>
+</ul>
+<h3 id="11-calendar-view">11. Calendar View<a class="headerlink" href="#11-calendar-view" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Shows entries on a month or week calendar, placed on their due dates. Entries can be dragged to a different day to reschedule them.</p>
+<p><strong>Why it was implemented:</strong> Gives users a visual, time-based view of their workload and makes it easy to move deadlines without opening each entry.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Fetches all unarchived entries with a due date using <code>getAllEntries()</code></li>
+<li>Month view shows a full 7-column grid; week view shows seven vertical day columns</li>
+<li>Days are navigated with Previous, Next, and Today controls</li>
+<li>Overdue entries are highlighted in red and completed entries are shown in green with a strikethrough</li>
+<li>Dragging an entry onto another day calls <code>updateEntry()</code> with the new due date and updates the local list immediately</li>
+<li>Days with many items show the first few entries plus a "+N more" indicator and remain scrollable</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/Calendar.tsx</code> — Calendar page</li>
+<li><code>frontend/src/lib/calendar.ts</code> — Date utilities and entry grouping</li>
+<li><code>frontend/src/pages/Calendar.css</code> — Calendar styles</li>
+</ul>
+<h3 id="12-kanban-board">12. Kanban Board<a class="headerlink" href="#12-kanban-board" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Shows entries as cards in three columns based on their status: Up Next, In Motion, and Done &amp; Dusted. Cards can be dragged between columns to change status, and the change is saved immediately.</p>
+<p><strong>Why it was implemented:</strong> Provides an item-board view of work in progress and makes it easy to advance or complete entries without opening each one.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Fetches all unarchived entries using <code>getAllEntries()</code></li>
+<li>Columns are rendered for each status and display matching entries</li>
+<li>Cards show the entry title, project, due date, and priority</li>
+<li>Overdue entries are highlighted in red; completed entries appear in the Done &amp; Dusted column</li>
+<li>Project and search filters narrow the cards on the board</li>
+<li>Dragging a card onto a different column optimistically updates the local state, calls <code>updateEntry()</code> with the new status, and reverts the card if the write fails</li>
+<li>Moving a card to In Motion automatically sets <code>started_at</code>; moving it to Done &amp; Dusted automatically sets <code>ended_at</code></li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/Kanban.tsx</code> — Kanban board page</li>
+<li><code>frontend/src/lib/kanban.ts</code> — Status grouping, filtering, and update helpers</li>
+<li><code>frontend/src/pages/Kanban.css</code> — Kanban styles</li>
+</ul>
+<h3 id="13-retired-views">13. Retired Views<a class="headerlink" href="#13-retired-views" title="Permanent link">&para;</a></h3>
+<p>The Today and Tracker views have been removed. Existing <code>/today</code> and <code>/tracker</code> bookmarks redirect to the dashboard. Calendar, Kanban, Timeline, and Statistics remain available; existing projects and entries are unchanged.</p>
+<h3 id="14-timeline">14. Timeline<a class="headerlink" href="#14-timeline" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Lays items out horizontally against time, with bars spanning start to due date and SVG arrows drawn between dependent items. The view is scrollable and zoomable across at least a month.</p>
+<p><strong>Why it was implemented:</strong> Gives a project-planning view of work over time and makes item chains visible.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Fetches all unarchived, incomplete entries using <code>getAllEntries()</code></li>
+<li>Resolves each entry's start date (<code>started_at</code>, then <code>created_at</code>, then one day before <code>due_date</code>) and end date (<code>due_date</code>, then one day after start)</li>
+<li>Reads dependency IDs from <code>entries.dependencies</code> or <code>entries.depends_on</code></li>
+<li>Assigns rows greedily to avoid overlapping bars, which keeps sequential chained items on separate rows</li>
+<li>Renders an SVG timeline with grid lines, a "today" marker, item bars, and curved arrows between dependencies</li>
+<li>Zoom buttons scale the day width from 50% to 400%</li>
+<li>Empty state is shown when no dated, incomplete items exist</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/Timeline.tsx</code> — Timeline page</li>
+<li><code>frontend/src/lib/timeline.ts</code> — Date resolution, row layout, and arrow geometry</li>
+<li><code>frontend/src/pages/Timeline.css</code> — Timeline styles</li>
+</ul>
+<h3 id="15-import-export-data-portability">15. Import &amp; Export (Data Portability)<a class="headerlink" href="#15-import-export-data-portability" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Exports all projects and entries (including archived) to JSON, CSV, Markdown, or iCalendar (.ics), and imports them back in. Round-trip safe: an export-then-import cycle reproduces the original row count exactly. Malformed rows are reported by line number rather than failing halfway. iCalendar export produces RFC 5545 compliant .ics files that open in Google Calendar, Outlook, and Apple Calendar.</p>
+<p><strong>Why it was implemented:</strong> Users need to back up their data, migrate between accounts, move data in and out of the logbook without vendor lock-in, and integrate items with external calendar applications.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Export fetches all projects and entries via <code>getProjectsByEmail()</code>, <code>getArchivedProjects()</code>, <code>getAllEntries()</code>, and <code>getArchives()</code></li>
+<li>Serialises to the chosen format using <code>exportToJSON()</code>, <code>exportToCSV()</code>, <code>exportToMarkdown()</code>, or <code>exportToICS()</code></li>
+<li>iCalendar export maps title to <code>SUMMARY</code>, project to <code>CATEGORIES</code>, status to <code>STATUS</code> (TENTATIVE/CONFIRMED/COMPLETED), and priority to the 1–9 scale; all-day events use <code>VALUE=DATE</code>, timed events use ISO timestamps, and special characters are escaped per RFC 5545</li>
+<li>Import parses the uploaded file with <code>parseImport()</code>, validates each row, and reports rejections with line numbers</li>
+<li>Projects are created first (via <code>addProject()</code>), then entries (via <code>addEntry()</code>), then archived entries are re-archived (via <code>archiveEntry()</code>)</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/DataPortability.tsx</code> — Import &amp; Export page</li>
+<li><code>frontend/src/lib/export.ts</code> — Serialisation helpers</li>
+<li><code>frontend/src/lib/import.ts</code> — Parsing and validation helpers</li>
+<li><code>frontend/src/lib/__tests__/import-export.test.ts</code> — Round-trip, malformed-row, and iCalendar tests</li>
+</ul>
+<h3 id="16-backup-restore-migrations">16. Backup, Restore &amp; Migrations<a class="headerlink" href="#16-backup-restore-migrations" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> One-command database backup (<code>npm run db:backup</code>) and restore (<code>npm run db:restore</code>) using <code>pg_dump</code>/<code>pg_restore</code>. Versioned schema migrations (<code>npm run db:migrate</code>) upgrade an existing database without dropping and recreating tables. A bootstrap command (<code>npm run db:bootstrap</code>) marks pre-existing migrations as already applied.</p>
+<p><strong>Why it was implemented:</strong> The schema evolved through 8 manually-applied SQL files with no tracking mechanism. New developers or fresh Supabase projects had no way to set up the schema automatically, and there was no backup strategy for production data.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><strong>Backup:</strong> <code>pg_dump --format=custom --schema=public</code> produces a compressed, portable dump.</li>
+<li><strong>Restore:</strong> <code>pg_restore --clean --if-exists --schema=public</code> restores with a 3-second safety delay.</li>
+<li><strong>Migrations:</strong> A <code>schema_migrations</code> table tracks applied versions with SHA-256 checksums. Each migration runs in a transaction. The baseline migration <code>000_baseline_full_schema.sql</code> captures the entire current schema idempotently.</li>
+<li><strong>Bootstrap:</strong> For databases where migrations 001–007 were already run manually, <code>npm run db:bootstrap</code> marks them as applied without re-executing.</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>scripts/migrate.js</code> — Migration runner (migrate, status, bootstrap commands)</li>
+<li><code>scripts/backup.js</code> — One-command backup</li>
+<li><code>scripts/restore.js</code> — One-command restore</li>
+<li><code>supabase/migrations/000_baseline_full_schema.sql</code> — Complete idempotent schema DDL</li>
+<li><code>frontend/src/lib/__tests__/migrations.test.ts</code> — Migration file and runner tests</li>
+</ul>
+<h3 id="17-openapi-3-swagger-ui">17. OpenAPI 3 &amp; Swagger UI<a class="headerlink" href="#17-openapi-3-swagger-ui" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Documents the complete REST API across all four microservices with an OpenAPI 3.0 specification, served as an interactive Swagger UI page at <code>/api-docs</code> on the project service. Developers can browse endpoints, view request/response schemas, and execute API calls directly from the browser.</p>
+<p><strong>Why it was implemented:</strong> The API uses an RPC-style dispatch pattern (POST with <code>{ function, values }</code>) that is not immediately obvious from route definitions alone. A browsable spec with examples makes the API self-documenting and allows developers (and external consumers) to understand and test endpoints without reading source code.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>A single YAML spec (<code>docs/openapi.yaml</code>) covers all 15 endpoint paths across project-service, dashboard-service, profile-service, and auth-service</li>
+<li><code>swagger-ui-express</code> serves the spec as a browsable page with collapsible sections, schema viewers, and request examples</li>
+<li>JWT authentication is supported via the Swagger UI "Authorize" button</li>
+<li>CORS on all services allows localhost origins so "Try it out" works across services in development</li>
+<li>12 automated tests verify the spec structure, paths, and schema definitions</li>
+<li>The spec has no route the code lacks, and the code has no route the spec does not document</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>services/project-service/docs/openapi.yaml</code> — OpenAPI 3.0 specification (985 lines)</li>
+<li><code>services/project-service/src/index.js</code> — Swagger UI mount at <code>/api-docs</code></li>
+<li><code>services/project-service/src/__tests__/openapi.test.js</code> — Spec validation tests</li>
+<li><code>frontend/src/pages/Dashboard.tsx</code> — "API Docs" drawer link</li>
+</ul>
+<hr />
+<h2 id="project-entry-management">Project &amp; Entry Management<a class="headerlink" href="#project-entry-management" title="Permanent link">&para;</a></h2>
+<h3 id="18-project-creation-management">18. Project Creation &amp; Management<a class="headerlink" href="#18-project-creation-management" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Users can create projects, add entries to them, and manage project lifecycle.</p>
+<p><strong>Why it was implemented:</strong> Core feature of the digital logbook. Organizes entries by project for better tracking and analysis.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Create project with name and optional description</li>
+<li>Projects listed on Projects page with stats (entry count, last updated)</li>
+<li>Archive projects to hide them from active list (soft delete)</li>
+<li>Each project can have custom fields defined by the user</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/Project.tsx</code> — Project detail page</li>
+<li><code>frontend/src/pages/ProjectsPage.tsx</code> — Projects list</li>
+<li><code>services/project-service/src/functions/project.js</code> — Backend project functions</li>
+</ul>
+<h3 id="19-custom-fields-per-project">19. Custom Fields per Project<a class="headerlink" href="#19-custom-fields-per-project" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Each project can have its own set of custom fields (text, number, date, etc.) beyond the built-in fields.</p>
+<p><strong>Why it was implemented:</strong> Different projects have different tracking needs. Custom fields provide flexibility without bloating the core schema.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>When creating a project, define 1-3 custom fields with name, data type, and required flag</li>
+<li>Fields stored in <code>fields</code> table linked to project</li>
+<li>Entries store custom field values in a JSONB column</li>
+<li>Field definitions retrieved when viewing project or adding entry</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>services/project-service/src/functions/field.js</code> — Backend field functions</li>
+</ul>
+<h3 id="20-quick-add-natural-language-entry">20. Quick Add (Natural Language Entry)<a class="headerlink" href="#20-quick-add-natural-language-entry" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Add entries using natural language. The AI parses the text, matches it to an existing project or creates a new one, and extracts field values.</p>
+<p><strong>Why it was implemented:</strong> Speeds up data entry. Users can type naturally instead of filling out forms.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>User types text like "worked on login feature for 2 hours"</li>
+<li>AI prompt includes list of user's projects with their fields</li>
+<li>AI matches text to existing project or proposes new project</li>
+<li>AI extracts field values from text</li>
+<li>Server-side <code>getDate()</code> function resolves dates from keywords (today, tomorrow, monday, etc.) before AI involvement</li>
+<li>Fuzzy matching corrects misspelled date keywords (e.g., "tommorow" → "tomorrow")</li>
+<li>AI instructed NOT to output due_date — date is handled entirely server-side</li>
+<li>Entry created with matched project, extracted fields, and calculated due date</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/components/QuickAdd.tsx</code> — Quick Add UI</li>
+<li><code>services/project-service/src/functions/entries.js</code> — <code>Natural_language.entry()</code> and <code>getDate()</code></li>
+</ul>
+<h3 id="21-manual-entry-creation">21. Manual Entry Creation<a class="headerlink" href="#21-manual-entry-creation" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Traditional form-based entry creation with project selection and field inputs.</p>
+<p><strong>Why it was implemented:</strong> Provides precise control for users who prefer structured data entry.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Select project from dropdown</li>
+<li>Form dynamically generates fields based on project's custom fields</li>
+<li>Set due date, priority, status, duration</li>
+<li>Validate required fields before submission</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/NewEntry.tsx</code> — Manual entry form</li>
+</ul>
+<h3 id="22-entry-timeline-all-entries-view">22. Entry Timeline &amp; All Entries View<a class="headerlink" href="#22-entry-timeline-all-entries-view" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> View all entries in a timeline or list format, with filtering and search.</p>
+<p><strong>Why it was implemented:</strong> Provides overview of all logged work, making it easy to review past entries.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Fetches all entries for user via <code>getAllEntries()</code></li>
+<li>Timeline view groups entries by date</li>
+<li>List view shows entries in chronological order</li>
+<li>Filter by project, date range, priority</li>
+<li>Search by entry content</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/AllEntries.tsx</code> — All entries view</li>
+<li><code>frontend/src/pages/Activity.tsx</code> — Timeline view</li>
+</ul>
+<h3 id="23-priority-status-tracking">23. Priority &amp; Status Tracking<a class="headerlink" href="#23-priority-status-tracking" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Each entry has a priority (0=urgent+important, 1=urgent, 2=not urgent, null=none) and status.</p>
+<p><strong>Why it was implemented:</strong> Helps users prioritize items and track completion.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Priority set during entry creation</li>
+<li>Status can be updated as work progresses</li>
+<li>Filter entries by priority or status</li>
+<li>Visual indicators (colors, icons) for quick identification</li>
+</ul>
+<h3 id="24-soft-delete-archives">24. Soft Delete &amp; Archives<a class="headerlink" href="#24-soft-delete-archives" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Entries and projects can be soft-deleted and moved to archives instead of permanent deletion.</p>
+<p><strong>Why it was implemented:</strong> Prevents accidental data loss. Allows users to hide completed work without deleting it.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><code>deleted</code> column in database (boolean or timestamp)</li>
+<li>Soft-deleted items excluded from normal queries</li>
+<li>Archives page shows soft-deleted items</li>
+<li>Option to restore or permanently delete</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/Archives.tsx</code> — Archives view</li>
+<li><code>services/project-service/src/functions/entries.js</code> — <code>deleteEntryById()</code></li>
+</ul>
+<hr />
+<h2 id="analytics-insights">Analytics &amp; Insights<a class="headerlink" href="#analytics-insights" title="Permanent link">&para;</a></h2>
+<h3 id="25-project-statistics">25. Project Statistics<a class="headerlink" href="#25-project-statistics" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Shows stats for each project: total entries, time spent, completion rate.</p>
+<p><strong>Why it was implemented:</strong> Provides insights into project progress and time allocation.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><code>getProjectStats()</code> aggregates entry data</li>
+<li>Calculates total entries, sum of durations, average priority</li>
+<li>Displayed on project detail page and projects list</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>services/project-service/src/functions/stats.js</code> — Backend stats functions</li>
+</ul>
+<h3 id="26-streak-tracking">26. Streak Tracking<a class="headerlink" href="#26-streak-tracking" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Tracks consecutive days of logging activity.</p>
+<p><strong>Why it was implemented:</strong> Gamification encourages regular use and habit formation.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Query entries grouped by date</li>
+<li>Count consecutive days with at least one entry</li>
+<li>Display current streak and best streak on dashboard</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/StreakView.tsx</code> — Streak visualization</li>
+</ul>
+<h3 id="27-dashboard-stats-service">27. Dashboard Stats Service<a class="headerlink" href="#27-dashboard-stats-service" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Cross-project summaries for the dashboard.</p>
+<p><strong>Why it was implemented:</strong> Dashboard needs aggregated data from all projects, not just one.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><code>dashboard-service</code> queries across all user's projects</li>
+<li>Returns total entries, this week count, project count</li>
+<li>Separate from <code>project-service</code> to maintain architecture boundary (dashboard doesn't read entry tables directly)</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>services/dashboard-service/</code> — Dashboard-specific endpoints</li>
+</ul>
+<hr />
+<h2 id="advanced-features">Advanced Features<a class="headerlink" href="#advanced-features" title="Permanent link">&para;</a></h2>
+<h3 id="28-voice-recording">28. Voice Recording<a class="headerlink" href="#28-voice-recording" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Record audio notes and attach them to entries.</p>
+<p><strong>Why it was implemented:</strong> Provides an alternative input method for users who prefer speaking over typing. Useful for capturing thoughts on the go.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Browser MediaRecorder API captures audio</li>
+<li>Audio stored as base64 or uploaded to Supabase storage</li>
+<li>Playback controls on entry detail page</li>
+<li>Optional transcription (future enhancement)</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/VoiceFeature.jsx</code> — Voice recording UI</li>
+<li><code>docs-site/docs/Architecture/voice-feature.md</code> — Voice feature documentation</li>
+</ul>
+<h3 id="29-data-export">29. Data Export<a class="headerlink" href="#29-data-export" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Export all entries as JSON for backup or external analysis.</p>
+<p><strong>Why it was implemented:</strong> Gives users ownership of their data. Enables external analysis or migration.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Fetches all entries for user</li>
+<li>Formats as JSON</li>
+<li>Triggers browser download</li>
+</ul>
+<h3 id="30-responsive-design">30. Responsive Design<a class="headerlink" href="#30-responsive-design" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> UI works seamlessly on mobile, tablet, and desktop.</p>
+<p><strong>Why it was implemented:</strong> Users access the logbook from various devices. Mobile support is essential for on-the-go logging.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>CSS media queries and flexible layouts</li>
+<li>Touch-friendly buttons and controls</li>
+<li>Collapsible navigation on mobile</li>
+<li>Settings panel adapts to screen size</li>
+</ul>
+<hr />
+<h2 id="security-privacy">Security &amp; Privacy<a class="headerlink" href="#security-privacy" title="Permanent link">&para;</a></h2>
+<h3 id="31-row-level-security-rls">31. Row-Level Security (RLS)<a class="headerlink" href="#31-row-level-security-rls" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Ensures users can only access their own data.</p>
+<p><strong>Why it was implemented:</strong> Multi-tenant application requires strict data isolation.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Supabase RLS policies on all tables</li>
+<li>Policies check <code>user_email</code> against authenticated user</li>
+<li>Applied to SELECT, INSERT, UPDATE, DELETE operations</li>
+<li>Backend services use service role key for admin access</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>supabase/setup.sql</code> — RLS policy definitions</li>
+</ul>
+<h3 id="32-environment-variable-management">32. Environment Variable Management<a class="headerlink" href="#32-environment-variable-management" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Secrets (API keys, database credentials) stored in environment variables, never committed to repo.</p>
+<p><strong>Why it was implemented:</strong> Security best practice. Prevents credential leakage.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><code>.env</code> files listed in <code>.gitignore</code></li>
+<li>Each service has its own <code>.env</code> file</li>
+<li><code>dotenv</code> package loads variables at runtime</li>
+<li>Render dashboard manages production environment variables</li>
+</ul>
+<hr />
+<h2 id="developer-experience">Developer Experience<a class="headerlink" href="#developer-experience" title="Permanent link">&para;</a></h2>
+<h3 id="33-hot-module-replacement-hmr">33. Hot Module Replacement (HMR)<a class="headerlink" href="#33-hot-module-replacement-hmr" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Frontend updates instantly without full page reload during development.</p>
+<p><strong>Why it was implemented:</strong> Speeds up development iteration.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Vite's built-in HMR</li>
+<li>React Fast Refresh preserves component state</li>
+</ul>
+<h3 id="34-comprehensive-test-coverage">34. Comprehensive Test Coverage<a class="headerlink" href="#34-comprehensive-test-coverage" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Unit tests for backend functions, integration tests for API endpoints.</p>
+<p><strong>Why it was implemented:</strong> Ensures code quality and prevents regressions.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Jest test framework with Babel for ESM support</li>
+<li>Coverage reports generated on every CI run</li>
+<li>Coverage badges generated by <code>scripts/generate-badges.js</code> (run manually from repo root)</li>
+<li>33 tests for <code>getDate()</code> alone, plus tests for all other backend functions</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>services/project-service/src/__tests__/</code> — Test files</li>
+<li><code>.gitea/workflows/backend-unit-tests.yml</code> — Backend unit test workflow</li>
+</ul>
+<h3 id="35-cicd-pipeline">35. CI/CD Pipeline<a class="headerlink" href="#35-cicd-pipeline" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Automated testing, coverage reporting, and deployment on every push.</p>
+<p><strong>Why it was implemented:</strong> Ensures code quality and automates deployment.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Gitea Actions workflow runs on push to main</li>
+<li>Tests run for all services in parallel</li>
+<li>Coverage badges generated and committed</li>
+<li>Render auto-deploys from main branch</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>.gitea/workflows/ci.yml</code> — CI workflow</li>
+<li><code>.gitea/workflows/backend-unit-tests.yml</code> — Backend unit test workflow</li>
+<li><code>.gitea/workflows/backend-integration-tests.yml</code> — Backend integration test workflow</li>
+<li><code>render.yaml</code> — Render deployment manifest</li>
+</ul>
+<hr />
+<h2 id="onboarding-guidance">Onboarding &amp; Guidance<a class="headerlink" href="#onboarding-guidance" title="Permanent link">&para;</a></h2>
+<h3 id="36-guided-tour-with-live-navigation-voice-narration">36. Guided Tour with Live Navigation &amp; Voice Narration<a class="headerlink" href="#36-guided-tour-with-live-navigation-voice-narration" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> An interactive walkthrough that shows new users around the real app. The tour opens the navigation drawer, visits every view (Home, Kanban, Timeline, Calendar, My Stats, Import &amp; Export), walks through creating a project, and points out the notification bell, profile menu, and quick-entry bar — with the spotlight following real UI elements. It really navigates: routes change and the drawer opens and closes as the tour describes them. A friendly voice narrates each stop aloud using the browser's built-in speech synthesis, and hands-free auto-advance moves the tour on when the narration finishes (or after a paced reading delay when muted), shown with a draining progress bar. A speaker toggle in the popover mutes or unmutes narration and the preference persists, hovering the popover pauses the countdown, and clicking Back hands control back to the user.</p>
+<p><strong>Why it was implemented:</strong> Sprint 2 user feedback (survey problem 2, <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/119">issue #119</a>) found first-time users had no onboarding or in-app guidance. The setup pages and tooltips were only a partial mitigation; the tour closes the remaining gap with a guided, narrated walkthrough of the real UI. The intro <em>video</em> request from testers remains tracked separately in <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/126">issue #126</a>.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Built on <a href="https://driverjs.com/">driver.js</a> (lightweight, zero-dependency) with a themed glassmorphism popover</li>
+<li>Steps anchor to real elements via <code>data-tour</code> hooks in each view; navigation steps call the router and toggle the drawer so users see genuine transitions</li>
+<li>Narration uses the Web Speech API (<code>speechSynthesis</code>) — the best available English voice is picked at runtime, nothing leaves the browser, and no API keys are needed</li>
+<li>Auto-advance is paced by the utterance's <code>onend</code> event rather than a duration estimate, so narration is never cut off; a generous hard cap guards against a stuck speech engine</li>
+<li>Step copy is de-duplicated so the voice never repeats the step title inside the description</li>
+<li>The tour is offered automatically on first dashboard visit, replayable any time from the dashboard banner or the navbar, and completion plus the voice preference persist in <code>localStorage</code></li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/lib/tour.ts</code> — Tour engine: step definitions, live navigation, speech-synthesis narration, and auto-advance pacing</li>
+<li><code>frontend/src/pages/Dashboard.tsx</code> — First-visit offer and "Take the tour" entry point</li>
+<li><code>frontend/src/components/NavBar.tsx</code> — Replay entry point</li>
+<li><code>frontend/src/index.css</code> — Tour popover, progress-bar, and voice-toggle styles</li>
+</ul>
+<h3 id="37-sign-in-landing-sections-themed-page-identity">37. Sign-In Landing Sections &amp; Themed Page Identity<a class="headerlink" href="#37-sign-in-landing-sections-themed-page-identity" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> The public sign-in page extends beyond the authentication form with three scrollable content sections — <strong>About</strong> (three feature cards), <strong>About Us</strong> (team member profiles), and <strong>Features</strong> (eight feature highlights with a "NEW" badge on the latest additions) — plus a footer. A fixed top navigation bar provides anchor links to each section. The entire page is wrapped in a scoped theme override that renders in a warm beige palette (<code>#f5f1e6</code>, <code>#ece4d1</code>, <code>#fffdf6</code>) with dark-brown text, independently of the user's app-side theme setting.</p>
+<p><strong>Why it was implemented:</strong> Sprint 2 user feedback (survey) requested a more informative and visually distinctive public landing page. The previous sign-in was functional but bare — no context about the product for first-time visitors.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li><code>LandingSections</code> component renders three <code>&lt;section&gt;</code> blocks with scroll-reveal animations powered by <code>IntersectionObserver</code></li>
+<li>Fixed <code>.signin-topnav</code> with <code>backdrop-filter: blur(14px)</code> stays visible while scrolling</li>
+<li><code>.signin-page</code> wrapper overrides 30+ CSS custom properties locally, so the page renders consistently regardless of the active app theme</li>
+<li><code>.signin-page .split-right { padding-top: 4.5rem }</code> keeps the vertically-centred auth form clear of the fixed nav</li>
+<li>Sign-up password checklist uses dark-readable colours (<code>#16a34a</code> / <code>#dc2626</code>) suitable for the light palette</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>frontend/src/pages/SignIn.tsx</code> — LandingSections component, top nav markup, page wrapper</li>
+<li><code>frontend/src/pages/signin-sections.css</code> — All <code>.ss-*</code> section styles, beige theme variable overrides, top nav styles</li>
+</ul>
+<hr />
+<h2 id="notifications-alerts">Notifications &amp; Alerts<a class="headerlink" href="#notifications-alerts" title="Permanent link">&para;</a></h2>
+<h3 id="38-notification-enhancements-snooze-dismiss-filters-lead-time-rich-emails">38. Notification Enhancements — Snooze, Dismiss, Filters, Lead Time &amp; Rich Emails<a class="headerlink" href="#38-notification-enhancements-snooze-dismiss-filters-lead-time-rich-emails" title="Permanent link">&para;</a></h3>
+<p><strong>What it does:</strong> Extends the notification system with five user-facing improvements: (1) <strong>Snooze</strong> — hide a notification for 1 hour, 4 hours, or until tomorrow 8 am, after which it re-surfaces as unread; (2) <strong>Dismiss</strong> — soft-delete a notification without marking the underlying entry done; (3) <strong>Filter tabs</strong> on the /notifications history page — All, Unread, Due soon, Overdue — with server-side filtering; (4) <strong>Configurable lead time</strong> — users choose when to be notified before a deadline (1 h, 24 h, 48 h, 1 week) via a Settings dropdown; (5) <strong>Rich HTML emails</strong> with a colored status banner, entry card, project badge, and deep-link button; (6) <strong>Browser toast notifications</strong> via the Notification API when new unread items arrive during an active session.</p>
+<p><strong>Why it was implemented:</strong> Sprint 2 feedback indicated the notification system was useful but too rigid — users wanted control over timing, the ability to defer or dismiss alerts without completing tasks, and better visual filtering on the history page. The plain-text emails also lacked actionable context.</p>
+<p><strong>How it works:</strong></p>
+<ul>
+<li>Migration <code>013_notification_enhancements.sql</code> adds <code>snoozed_until</code> (TIMESTAMPTZ) and <code>dismissed</code> (BOOLEAN) columns to <code>notifications</code>, plus <code>notification_lead_time</code> (INTERVAL, default 24 h) to <code>users</code></li>
+<li>The <code>generate_due_notifications()</code> RPC is replaced with a version that reads each user's lead time and auto-unsnoozes expired snoozes (re-marking them unread)</li>
+<li>Backend <code>snooze()</code> and <code>dismiss()</code> RPCs update the new columns; <code>getHistory()</code> accepts <code>{ unreadOnly, type }</code> filter params with dynamic WHERE clause construction</li>
+<li><code>NotificationsBell</code> shows snooze/dismiss action buttons on each item; snooze opens a popover with three duration options; browser <code>Notification.requestPermission()</code> is called on first mount</li>
+<li><code>NotificationsPage</code> renders filter tabs and the same snooze/dismiss actions; filter changes reset pagination and re-fetch</li>
+<li>Settings panel gains a "Notify me before" dropdown that persists to the profile-service via <code>setNotificationLeadTime()</code></li>
+<li><code>_sendBrevoEmail()</code> builds a card-style HTML email with accent color (red for overdue, amber for due-soon), entry title, project name, formatted due date, and a deep-link button</li>
+</ul>
+<p><strong>Key files:</strong></p>
+<ul>
+<li><code>supabase/migrations/013_notification_enhancements.sql</code> — Schema changes, updated generator with per-user lead time</li>
+<li><code>services/project-service/src/functions/notifications/notifications.js</code> — <code>snooze()</code>, <code>dismiss()</code>, filtered <code>getHistory()</code>, rich email template</li>
+<li><code>services/project-service/src/Routes/notifications.js</code> — New <code>snooze</code> and <code>dismiss</code> route cases</li>
+<li><code>services/profile-service/src/functions/profile.js</code> — <code>NotificationLeadTime</code> class (set/get)</li>
+<li><code>frontend/src/components/NotificationsBell.tsx</code> — Snooze menu, dismiss button, browser toasts</li>
+<li><code>frontend/src/pages/NotificationsPage.tsx</code> — Filter tabs, snooze/dismiss actions</li>
+<li><code>frontend/src/components/SettingsPanel.tsx</code> — "Notify me before" dropdown</li>
+<li><code>frontend/src/functions/project/notifications.js</code> — Client wrappers for snooze, dismiss, filtered history</li>
+<li><code>frontend/src/functions/profile/profile.js</code> — <code>setNotificationLeadTime()</code>, <code>getNotificationLeadTime()</code></li>
+</ul>
+<hr />
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>The Digital Logbook implements 38 features across authentication, profile management, dashboard navigation (calendar, kanban, today, timeline views), project tracking, natural language entry, data portability (JSON/CSV/Markdown/iCalendar export), analytics, security, developer experience (OpenAPI 3 spec, CI/CD pipeline), onboarding (guided tour with voice narration, themed sign-in landing), and notifications (snooze/dismiss, configurable lead time, rich emails, browser toasts). Each feature was designed with user experience, security, and maintainability in mind, following microservices architecture principles and modern web development best practices.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../javascripts/mermaid.js"></script>
+      
+    
+  </body>
+</html>

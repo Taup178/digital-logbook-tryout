@@ -1,0 +1,4262 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the COMS3011A Digital Logbook project">
+      
+      
+      
+      
+        <link rel="prev" href="../decisions/">
+      
+      
+        <link rel="next" href="../ai-attribution/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Issues & Troubleshooting - Digital Logbook Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lora";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#issues-trouleshooting" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Logbook Docs" class="md-header__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Logbook Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Issues & Troubleshooting
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Logbook Docs" class="md-nav__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Digital Logbook Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/cicd-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD & Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/api-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/teck-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/ui-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/voice-feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexedDB Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/sse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSE Real-Time Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/daemon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keep-Alive Daemons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/entry-summaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entry Summaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/uml-diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UML Architecture Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/third-party/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-one-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-two-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stakeholder Interactions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stakeholder Interactions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Stories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Management
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Management
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology & Git Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../work-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions & Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issues & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issues & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment &amp; Routing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment &amp; Routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-1-oauth-redirect-pointing-to-localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 1: OAuth Redirect Pointing to localhost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-2-404-on-client-side-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 2: 404 on Client-Side Routes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-3-background-video-assets-exceeded-deployment-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 3: Background Video Assets Exceeded Deployment Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-express-5-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CORS &amp; Express 5 Compatibility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CORS &amp; Express 5 Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-4-cors-policy-blocking-frontend-to-backend-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 4: CORS Policy Blocking Frontend-to-Backend Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile &amp; Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile &amp; Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-5-not-null-constraint-blocking-profile-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 5: NOT NULL Constraint Blocking Profile Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-6-frontend-reading-email-from-localstorage-instead-of-auth-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 6: Frontend Reading Email from localStorage Instead of Auth Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-7-getprofile-response-structure-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 7: getProfile Response Structure Mismatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-8-profile-auto-creation-for-existing-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 8: Profile Auto-Creation for Existing Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-9-dashboard-stats-hardcoded-to-zero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 9: Dashboard Stats Hardcoded to Zero
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-10-projectspage-never-routed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 10: ProjectsPage Never Routed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-11-avatar-not-syncing-to-navbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 11: Avatar Not Syncing to Navbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-12-profile-data-not-refreshing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 12: Profile Data Not Refreshing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-13-avatarpicker-had-file-upload-instead-of-preset-avatars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 13: AvatarPicker Had File Upload Instead of Preset Avatars
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-theming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI &amp; Theming
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI &amp; Theming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-14-dark-theme-had-warmcoloured-tones-instead-of-neutral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 14: Dark Theme Had Warm/Coloured Tones Instead of Neutral
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-15-sign-in-page-right-panel-had-dark-theme-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 15: Sign-In Page Right Panel Had Dark Theme Override
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-deployment-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build &amp; Deployment Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build &amp; Deployment Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-16-duplicated-trailing-code-in-dashboardtsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 16: Duplicated Trailing Code in Dashboard.tsx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-17-unused-import-causing-build-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 17: Unused Import Causing Build Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-provider-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Provider Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Provider Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-18-all-ai-providers-failing-on-render" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 18: All AI Providers Failing on Render
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-19-wrong-supabase-import-in-aijs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 19: Wrong Supabase Import in ai.js
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-20-natural-language-entry-always-showing-success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 20: Natural Language Entry Always Showing Success
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-21-ai-hallucinating-due-dates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 21: AI Hallucinating Due Dates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-22-didyoumean-too-strict-for-real-world-misspellings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 22: didyoumean Too Strict for Real-World Misspellings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unused-backend-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unused Backend Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unused Backend Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-23-backend-functions-never-wired-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 23: Backend Functions Never Wired Up
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-entry-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Natural Language Entry Parsing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Natural Language Entry Parsing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-24-ai-returning-old-entries-in-wrong-format-for-matched3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 24: AI Returning old Entries in Wrong Format for matched=3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-25-project-already-exists-error-when-ai-places-existing-project-in-new-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 25: "Project Already Exists" Error When AI Places Existing Project in new Array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-26-ai-extracting-raw-words-instead-of-paraphrasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 26: AI Extracting Raw Words Instead of Paraphrasing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voice-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voice Feature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voice Feature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-27-voice-feature-using-unnecessary-ai-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 27: Voice Feature Using Unnecessary AI Calls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI &amp; Layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI &amp; Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-28-entry-cards-overflowing-grid-cards-cut-off-at-viewport-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 28: Entry Cards Overflowing Grid — Cards Cut Off at Viewport Edge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-29-hamburger-menu-on-project-page-navigating-to-dashboard-instead-of-opening-drawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 29: Hamburger Menu on Project Page Navigating to Dashboard Instead of Opening Drawer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-30-activity-log-truncating-entry-text-at-60-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 30: Activity Log Truncating Entry Text at 60 Characters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-side-persistent-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client-Side Persistent Caching
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Client-Side Persistent Caching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-31-slow-page-loads-due-to-repeated-supabase-fetches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 31: Slow Page Loads Due to Repeated Supabase Fetches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-32-indexeddb-cache-not-cleared-on-sign-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 32: IndexedDB Cache Not Cleared on Sign-Out
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sse-real-time-entry-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSE Real-Time Entry Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSE Real-Time Entry Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-33-slow-ui-update-after-natural-language-entry-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 33: Slow UI Update After Natural Language Entry Submission
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keep-alive-free-tier-inactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keep-Alive &amp; Free-Tier Inactivity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keep-Alive &amp; Free-Tier Inactivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-34-render-free-tier-sleeps-after-15-minutes-in-process-daemon-never-fires" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 34: Render Free Tier Sleeps After 15 Minutes — In-Process Daemon Never Fires
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-35-eventsource-api-cannot-send-custom-headers-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 35: EventSource API Cannot Send Custom Headers (JWT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-36-jest-module-caching-causes-test-state-to-leak-between-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 36: Jest Module Caching Causes Test State to Leak Between Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-37-vitest-fake-timers-dont-flush-async-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 37: Vitest Fake Timers Don't Flush Async Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-messages-user-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Messages &amp; User Preferences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Messages &amp; User Preferences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-38-no-option-to-disable-ai-toasts-and-popup-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 38: No Option to Disable AI Toasts and Popup Messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entry-summaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entry Summaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entry Summaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-39-no-one-sentence-summary-stored-for-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 39: No One-Sentence Summary Stored for Entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guided-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guided Tour
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guided Tour">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-40-tour-narration-cut-off-mid-sentence-and-repeated-step-titles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 40: Tour Narration Cut Off Mid-Sentence and Repeated Step Titles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-in-page-visual-polish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-In Page Visual Polish
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sign-In Page Visual Polish">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-41-sign-in-page-renders-as-a-blank-white-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 41: Sign-In Page Renders as a Blank White Screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-42-all-signin-tests-fail-intersectionobserver-not-defined-in-jsdom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 42: All SignIn Tests Fail — IntersectionObserver Not Defined in jsdom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-43-stale-test-assertion-after-password-hint-text-removal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 43: Stale Test Assertion After Password Hint Text Removal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notification-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notification Enhancements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notification Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-44-notification-snooze-dismiss-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 44: Notification Snooze &amp; Dismiss Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-45-configurable-notification-lead-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 45: Configurable Notification Lead Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-46-notification-history-page-lacked-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 46: Notification History Page Lacked Filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-47-plain-text-emails-lacked-actionable-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 47: Plain-Text Emails Lacked Actionable Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-migration-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment &amp; Migration Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment &amp; Migration Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-48-relation-publicnotifications-does-not-exist-at-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 48: "relation 'public.notifications' does not exist" at Runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-49-pg_cron-extension-not-available-schema-cron-does-not-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 49: pg_cron Extension Not Available — "schema 'cron' does not exist"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-50-new-project-modal-too-narrow-for-project-columns-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 50: New Project Modal Too Narrow for Project Columns Grid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-51-notifications-deleted-when-entries-marked-done-dusted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 51: Notifications Deleted When Entries Marked Done &amp; Dusted
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-52-customizable-logbook-dynamic-field-types-templates-and-entity-linking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 52: Customizable Logbook — Dynamic Field Types, Templates, and Entity Linking
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ai-attribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Attribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/code-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & User Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-routing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment &amp; Routing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment &amp; Routing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-1-oauth-redirect-pointing-to-localhost" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 1: OAuth Redirect Pointing to localhost
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-2-404-on-client-side-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 2: 404 on Client-Side Routes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-3-background-video-assets-exceeded-deployment-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 3: Background Video Assets Exceeded Deployment Limits
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cors-express-5-compatibility" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CORS &amp; Express 5 Compatibility
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="CORS &amp; Express 5 Compatibility">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-4-cors-policy-blocking-frontend-to-backend-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 4: CORS Policy Blocking Frontend-to-Backend Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile-authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile &amp; Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Profile &amp; Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-5-not-null-constraint-blocking-profile-creation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 5: NOT NULL Constraint Blocking Profile Creation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-6-frontend-reading-email-from-localstorage-instead-of-auth-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 6: Frontend Reading Email from localStorage Instead of Auth Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-7-getprofile-response-structure-mismatch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 7: getProfile Response Structure Mismatch
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-8-profile-auto-creation-for-existing-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 8: Profile Auto-Creation for Existing Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-9-dashboard-stats-hardcoded-to-zero" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 9: Dashboard Stats Hardcoded to Zero
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-10-projectspage-never-routed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 10: ProjectsPage Never Routed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-11-avatar-not-syncing-to-navbar" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 11: Avatar Not Syncing to Navbar
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-12-profile-data-not-refreshing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 12: Profile Data Not Refreshing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-13-avatarpicker-had-file-upload-instead-of-preset-avatars" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 13: AvatarPicker Had File Upload Instead of Preset Avatars
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-theming" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI &amp; Theming
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI &amp; Theming">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-14-dark-theme-had-warmcoloured-tones-instead-of-neutral" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 14: Dark Theme Had Warm/Coloured Tones Instead of Neutral
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-15-sign-in-page-right-panel-had-dark-theme-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 15: Sign-In Page Right Panel Had Dark Theme Override
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#build-deployment-errors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Build &amp; Deployment Errors
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Build &amp; Deployment Errors">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-16-duplicated-trailing-code-in-dashboardtsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 16: Duplicated Trailing Code in Dashboard.tsx
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-17-unused-import-causing-build-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 17: Unused Import Causing Build Failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-provider-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Provider Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Provider Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-18-all-ai-providers-failing-on-render" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 18: All AI Providers Failing on Render
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-19-wrong-supabase-import-in-aijs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 19: Wrong Supabase Import in ai.js
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-20-natural-language-entry-always-showing-success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 20: Natural Language Entry Always Showing Success
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-21-ai-hallucinating-due-dates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 21: AI Hallucinating Due Dates
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-22-didyoumean-too-strict-for-real-world-misspellings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 22: didyoumean Too Strict for Real-World Misspellings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unused-backend-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unused Backend Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Unused Backend Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-23-backend-functions-never-wired-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 23: Backend Functions Never Wired Up
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#natural-language-entry-parsing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Natural Language Entry Parsing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Natural Language Entry Parsing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-24-ai-returning-old-entries-in-wrong-format-for-matched3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 24: AI Returning old Entries in Wrong Format for matched=3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-25-project-already-exists-error-when-ai-places-existing-project-in-new-array" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 25: "Project Already Exists" Error When AI Places Existing Project in new Array
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-26-ai-extracting-raw-words-instead-of-paraphrasing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 26: AI Extracting Raw Words Instead of Paraphrasing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#voice-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Voice Feature
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Voice Feature">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-27-voice-feature-using-unnecessary-ai-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 27: Voice Feature Using Unnecessary AI Calls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-layout" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI &amp; Layout
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="UI &amp; Layout">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-28-entry-cards-overflowing-grid-cards-cut-off-at-viewport-edge" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 28: Entry Cards Overflowing Grid — Cards Cut Off at Viewport Edge
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-29-hamburger-menu-on-project-page-navigating-to-dashboard-instead-of-opening-drawer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 29: Hamburger Menu on Project Page Navigating to Dashboard Instead of Opening Drawer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-30-activity-log-truncating-entry-text-at-60-characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 30: Activity Log Truncating Entry Text at 60 Characters
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#client-side-persistent-caching" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Client-Side Persistent Caching
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Client-Side Persistent Caching">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-31-slow-page-loads-due-to-repeated-supabase-fetches" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 31: Slow Page Loads Due to Repeated Supabase Fetches
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-32-indexeddb-cache-not-cleared-on-sign-out" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 32: IndexedDB Cache Not Cleared on Sign-Out
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sse-real-time-entry-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SSE Real-Time Entry Updates
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SSE Real-Time Entry Updates">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-33-slow-ui-update-after-natural-language-entry-submission" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 33: Slow UI Update After Natural Language Entry Submission
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keep-alive-free-tier-inactivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Keep-Alive &amp; Free-Tier Inactivity
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Keep-Alive &amp; Free-Tier Inactivity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-34-render-free-tier-sleeps-after-15-minutes-in-process-daemon-never-fires" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 34: Render Free Tier Sleeps After 15 Minutes — In-Process Daemon Never Fires
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-35-eventsource-api-cannot-send-custom-headers-jwt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 35: EventSource API Cannot Send Custom Headers (JWT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-36-jest-module-caching-causes-test-state-to-leak-between-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 36: Jest Module Caching Causes Test State to Leak Between Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-37-vitest-fake-timers-dont-flush-async-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 37: Vitest Fake Timers Don't Flush Async Operations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai-messages-user-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        AI Messages &amp; User Preferences
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="AI Messages &amp; User Preferences">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-38-no-option-to-disable-ai-toasts-and-popup-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 38: No Option to Disable AI Toasts and Popup Messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entry-summaries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entry Summaries
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Entry Summaries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-39-no-one-sentence-summary-stored-for-entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 39: No One-Sentence Summary Stored for Entries
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#guided-tour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Guided Tour
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Guided Tour">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-40-tour-narration-cut-off-mid-sentence-and-repeated-step-titles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 40: Tour Narration Cut Off Mid-Sentence and Repeated Step Titles
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sign-in-page-visual-polish" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sign-In Page Visual Polish
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sign-In Page Visual Polish">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-41-sign-in-page-renders-as-a-blank-white-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 41: Sign-In Page Renders as a Blank White Screen
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-42-all-signin-tests-fail-intersectionobserver-not-defined-in-jsdom" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 42: All SignIn Tests Fail — IntersectionObserver Not Defined in jsdom
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-43-stale-test-assertion-after-password-hint-text-removal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 43: Stale Test Assertion After Password Hint Text Removal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notification-enhancements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notification Enhancements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Notification Enhancements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-44-notification-snooze-dismiss-actions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 44: Notification Snooze &amp; Dismiss Actions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-45-configurable-notification-lead-time" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 45: Configurable Notification Lead Time
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-46-notification-history-page-lacked-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 46: Notification History Page Lacked Filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-47-plain-text-emails-lacked-actionable-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 47: Plain-Text Emails Lacked Actionable Context
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-migration-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment &amp; Migration Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment &amp; Migration Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#issue-48-relation-publicnotifications-does-not-exist-at-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 48: "relation 'public.notifications' does not exist" at Runtime
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-49-pg_cron-extension-not-available-schema-cron-does-not-exist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 49: pg_cron Extension Not Available — "schema 'cron' does not exist"
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-50-new-project-modal-too-narrow-for-project-columns-grid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 50: New Project Modal Too Narrow for Project Columns Grid
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-51-notifications-deleted-when-entries-marked-done-dusted" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 51: Notifications Deleted When Entries Marked Done &amp; Dusted
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-52-customizable-logbook-dynamic-field-types-templates-and-entity-linking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue 52: Customizable Logbook — Dynamic Field Types, Templates, and Entity Linking
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="issues-trouleshooting">Issues &amp; Trouleshooting<a class="headerlink" href="#issues-trouleshooting" title="Permanent link">&para;</a></h1>
+<p>A record of the issues encountered during development and deployment, how they were diagnosed, and how they were resolved.</p>
+<hr />
+<h2 id="deployment-routing">Deployment &amp; Routing<a class="headerlink" href="#deployment-routing" title="Permanent link">&para;</a></h2>
+<h3 id="issue-1-oauth-redirect-pointing-to-localhost">Issue 1: OAuth Redirect Pointing to localhost<a class="headerlink" href="#issue-1-oauth-redirect-pointing-to-localhost" title="Permanent link">&para;</a></h3>
+<p>After deploying to Render, signing in via OAuth redirected users to <code>localhost:3000</code> instead of the live site.</p>
+<p><strong>Root cause:</strong> Supabase Authentication was configured with <code>http://localhost:3000</code> as both the Site URL and the only Redirect URL. When a redirect URL doesn't match the allow list, Supabase silently falls back to the Site URL.</p>
+<p><strong>Fix:</strong> Updated Supabase Authentication → URL Configuration:</p>
+<ul>
+<li>Changed Site URL to <code>https://digital-logbook-bxgv.onrender.com</code></li>
+<li>Added <code>https://digital-logbook-bxgv.onrender.com/**</code> to the Redirect URLs allow list</li>
+<li>Retained the localhost entry for local development</li>
+</ul>
+<h3 id="issue-2-404-on-client-side-routes">Issue 2: 404 on Client-Side Routes<a class="headerlink" href="#issue-2-404-on-client-side-routes" title="Permanent link">&para;</a></h3>
+<p>Direct navigation to <code>/signin</code> on the deployed site returned "Not Found" from Render, despite the route existing locally.</p>
+<p><strong>Root cause:</strong> The SPA uses client-side routing. Render's static host was serving requests literally, looking for a file matching <code>/signin</code> on disk. Since all content is rendered client-side after <code>index.html</code> loads, the request failed before React Router could handle it.</p>
+<p><strong>Fix:</strong> Added a rewrite rule in Render's Redirects/Rewrites settings so all paths (<code>/*</code>) serve <code>/index.html</code>.</p>
+<h3 id="issue-3-background-video-assets-exceeded-deployment-limits">Issue 3: Background Video Assets Exceeded Deployment Limits<a class="headerlink" href="#issue-3-background-video-assets-exceeded-deployment-limits" title="Permanent link">&para;</a></h3>
+<p>Background videos on the sign-in pages were too large to push to the repository and deploy on Render.</p>
+<p><strong>Fix:</strong> Removed background videos from the production build. Lighter alternatives (compressed video, GIF, static imagery) or external CDN hosting would be needed if this feature is revisited.</p>
+<p><strong>Takeaway:</strong> Enhancements beyond the core rubric (such as background video assets) need to be evaluated against deployment constraints like repository size and hosting limits before being finalised.</p>
+<hr />
+<h2 id="cors-express-5-compatibility">CORS &amp; Express 5 Compatibility<a class="headerlink" href="#cors-express-5-compatibility" title="Permanent link">&para;</a></h2>
+<h3 id="issue-4-cors-policy-blocking-frontend-to-backend-requests">Issue 4: CORS Policy Blocking Frontend-to-Backend Requests<a class="headerlink" href="#issue-4-cors-policy-blocking-frontend-to-backend-requests" title="Permanent link">&para;</a></h3>
+<p>The frontend at <code>digital-logbook-bxgv.onrender.com</code> was unable to make requests to backend services due to CORS policy violations.</p>
+<p><strong>Affected endpoints:</strong></p>
+<ul>
+<li><code>POST /service/profile</code> — profile creation/updates</li>
+<li><code>POST /service/login</code> — user existence checks (<code>checkUser</code>)</li>
+</ul>
+<p><strong>Root causes identified:</strong></p>
+<ol>
+<li>
+<p><strong>Express 5 incompatibility with <code>cors</code> package</strong> — Express 5.2.1 has breaking changes in <code>path-to-regexp</code> v8+. <code>app.options('*', cors())</code> crashes with <code>PathError: Missing parameter name at index 1: *</code>. Safe Express 5 preflight handling requires regex matching: <code>app.options(/(.*)/, cors(...))</code>.</p>
+</li>
+<li>
+<p><strong>Render free tier cold starts</strong> — Services sleep after 15 minutes of inactivity. First request after sleep takes 30–50 seconds. Preflight <code>OPTIONS</code> requests may time out before the service wakes up.</p>
+</li>
+<li>
+<p><strong>Unhandled route crashes bypassing CORS middleware</strong> — Route handlers lacked <code>try/catch</code> wrappers. Internal DB query failures produced uncaught promise rejections. Default Express 5 error responses returned plain HTML without CORS headers.</p>
+</li>
+<li>
+<p><strong>Frontend hitting wrong service URL</strong> — The frontend was hitting <code>profile-service.onrender.com</code> (doesn't exist) instead of <code>profile-service-0zk7.onrender.com</code>. A wrong domain fails at DNS level, which the browser reports as a CORS error.</p>
+</li>
+<li>
+<p><strong><code>supabase.js</code> crashing at module load</strong> — The <code>supabase.js</code> file threw at module load time if env vars were missing, crashing the entire service before Express/CORS middleware could register. Render returned a 502 without CORS headers.</p>
+</li>
+</ol>
+<p><strong>Fix:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="c1">// Dynamic origin checking &amp; Express 5 compliant config</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">corsOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nx">origin</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">origin</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">allowedOrigins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="s1">'https://digital-logbook-bxgv.onrender.com'</span><span class="p">];</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">origin</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">allowedOrigins</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">origin</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">      </span><span class="nx">callback</span><span class="p">(</span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="s1">'Not allowed by CORS'</span><span class="p">));</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">  </span><span class="nx">credentials</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">  </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'GET'</span><span class="p">,</span><span class="w"> </span><span class="s1">'POST'</span><span class="p">,</span><span class="w"> </span><span class="s1">'PUT'</span><span class="p">,</span><span class="w"> </span><span class="s1">'DELETE'</span><span class="p">,</span><span class="w"> </span><span class="s1">'OPTIONS'</span><span class="p">],</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">  </span><span class="nx">allowedHeaders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'Content-Type'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Authorization'</span><span class="p">],</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="p">};</span>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">(</span><span class="nx">corsOptions</span><span class="p">));</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="nx">app</span><span class="p">.</span><span class="nx">options</span><span class="p">(</span><span class="sr">/(.*)/</span><span class="p">,</span><span class="w"> </span><span class="nx">cors</span><span class="p">(</span><span class="nx">corsOptions</span><span class="p">));</span>
+</code></pre></div>
+<p>All route handlers were wrapped in <code>try/catch</code> blocks with default parameter fallbacks (<code>values = {}</code>).</p>
+<p><strong>Takeaway:</strong> Unhandled errors inside async route handlers cause Express to return default HTML error responses that bypass CORS middleware. Explicitly catching route-level exceptions ensures error responses remain within the JSON response lifecycle, preserving required CORS headers.</p>
+<hr />
+<h2 id="profile-authentication">Profile &amp; Authentication<a class="headerlink" href="#profile-authentication" title="Permanent link">&para;</a></h2>
+<h3 id="issue-5-not-null-constraint-blocking-profile-creation">Issue 5: NOT NULL Constraint Blocking Profile Creation<a class="headerlink" href="#issue-5-not-null-constraint-blocking-profile-creation" title="Permanent link">&para;</a></h3>
+<p>The <code>users</code> table has a NOT NULL constraint on <code>username</code>. The <code>addEmail()</code> function only inserted <code>{ email }</code>, which always failed.</p>
+<p><strong>Fix:</strong> Modified the backend <code>Email.email()</code> to generate a default <code>username</code> and <code>name</code> from the email prefix (e.g., <code>john.doe@gmail.com</code> → <code>john_doe</code>).</p>
+<h3 id="issue-6-frontend-reading-email-from-localstorage-instead-of-auth-context">Issue 6: Frontend Reading Email from localStorage Instead of Auth Context<a class="headerlink" href="#issue-6-frontend-reading-email-from-localstorage-instead-of-auth-context" title="Permanent link">&para;</a></h3>
+<p>Both <code>CreateProfile</code> and <code>Avatar</code> pages read email via <code>localStorage.getItem("email")</code>. If the user refreshed or navigated directly, the email was missing and the page redirected to sign-in.</p>
+<p><strong>Fix:</strong> Replaced <code>localStorage</code> reads with <code>useAuth()</code> context which always has the current Supabase session user.</p>
+<h3 id="issue-7-getprofile-response-structure-mismatch">Issue 7: <code>getProfile</code> Response Structure Mismatch<a class="headerlink" href="#issue-7-getprofile-response-structure-mismatch" title="Permanent link">&para;</a></h3>
+<p>The backend returns <code>{ success: true, data: { email, name, username, avatar } }</code> but the frontend was reading <code>result?.name</code> instead of <code>result?.data?.name</code>.</p>
+<p><strong>Fix:</strong> Added <code>const profileData = result?.data || result</code> to correctly unwrap the response.</p>
+<h3 id="issue-8-profile-auto-creation-for-existing-users">Issue 8: Profile Auto-Creation for Existing Users<a class="headerlink" href="#issue-8-profile-auto-creation-for-existing-users" title="Permanent link">&para;</a></h3>
+<p>Users who signed up before the <code>addEmail</code> fix had no row in the <code>users</code> table.</p>
+<p><strong>Fix:</strong> Added fallback in <code>SettingsPanel</code> — if <code>getProfile</code> fails, it calls <code>addEmail</code> to create the row, then re-fetches.</p>
+<hr />
+<h2 id="frontend-integration">Frontend Integration<a class="headerlink" href="#frontend-integration" title="Permanent link">&para;</a></h2>
+<h3 id="issue-9-dashboard-stats-hardcoded-to-zero">Issue 9: Dashboard Stats Hardcoded to Zero<a class="headerlink" href="#issue-9-dashboard-stats-hardcoded-to-zero" title="Permanent link">&para;</a></h3>
+<p>The Dashboard component had all stats hardcoded to <code>0</code>. Backend functions existed but were never called.</p>
+<p><strong>Fix:</strong> Wired up <code>getProjectsByEmail()</code> and <code>getAllEntries()</code> to fetch real data on mount, with loading states.</p>
+<h3 id="issue-10-projectspage-never-routed">Issue 10: <code>ProjectsPage</code> Never Routed<a class="headerlink" href="#issue-10-projectspage-never-routed" title="Permanent link">&para;</a></h3>
+<p>The <code>ProjectsPage</code> component existed with full backend integration but was never imported or added to the App router.</p>
+<p><strong>Fix:</strong> Added <code>/projects</code> route in <code>App.tsx</code>, modified <code>ProjectsPage</code> to use <code>useAuth()</code> for the email.</p>
+<h3 id="issue-11-avatar-not-syncing-to-navbar">Issue 11: Avatar Not Syncing to Navbar<a class="headerlink" href="#issue-11-avatar-not-syncing-to-navbar" title="Permanent link">&para;</a></h3>
+<p>AvatarPicker saved to profile-service, but the navbar read from Supabase auth metadata. Two separate stores were never connected.</p>
+<p><strong>Fix:</strong> Connected the navbar avatar to profile-service data instead of Supabase auth metadata.</p>
+<h3 id="issue-12-profile-data-not-refreshing">Issue 12: Profile Data Not Refreshing<a class="headerlink" href="#issue-12-profile-data-not-refreshing" title="Permanent link">&para;</a></h3>
+<p>Dashboard's profile fetch ran once on mount. Closing settings didn't trigger a re-fetch.</p>
+<p><strong>Fix:</strong> Added a refresh trigger when the settings panel closes.</p>
+<h3 id="issue-13-avatarpicker-had-file-upload-instead-of-preset-avatars">Issue 13: AvatarPicker Had File Upload Instead of Preset Avatars<a class="headerlink" href="#issue-13-avatarpicker-had-file-upload-instead-of-preset-avatars" title="Permanent link">&para;</a></h3>
+<p>The <code>AvatarPicker</code> allowed photo uploads, but the project only supports DiceBear preset avatars.</p>
+<p><strong>Fix:</strong> Rewrote <code>AvatarPicker</code> to show a grid of 18 DiceBear avatars with auto-save on selection.</p>
+<hr />
+<h2 id="ui-theming">UI &amp; Theming<a class="headerlink" href="#ui-theming" title="Permanent link">&para;</a></h2>
+<h3 id="issue-14-dark-theme-had-warmcoloured-tones-instead-of-neutral">Issue 14: Dark Theme Had Warm/Coloured Tones Instead of Neutral<a class="headerlink" href="#issue-14-dark-theme-had-warmcoloured-tones-instead-of-neutral" title="Permanent link">&para;</a></h3>
+<p>The dark theme used olive/sage greens and warm charcoals instead of pure black/white/grey.</p>
+<p><strong>Fix:</strong> Replaced all dark theme variables with neutral values: <code>#0a0a0a</code> background, <code>#ffffff</code> text, <code>#e0e0e0</code> accent.</p>
+<h3 id="issue-15-sign-in-page-right-panel-had-dark-theme-override">Issue 15: Sign-In Page Right Panel Had Dark Theme Override<a class="headerlink" href="#issue-15-sign-in-page-right-panel-had-dark-theme-override" title="Permanent link">&para;</a></h3>
+<p>The <code>.split-right</code> panel had its own dark theme with gold accents, overriding the vintage light theme.</p>
+<p><strong>Fix:</strong> Removed all <code>.split-right</code> dark overrides (~130 lines), restored it to use root CSS variables.</p>
+<hr />
+<h2 id="build-deployment-errors">Build &amp; Deployment Errors<a class="headerlink" href="#build-deployment-errors" title="Permanent link">&para;</a></h2>
+<h3 id="issue-16-duplicated-trailing-code-in-dashboardtsx">Issue 16: Duplicated Trailing Code in Dashboard.tsx<a class="headerlink" href="#issue-16-duplicated-trailing-code-in-dashboardtsx" title="Permanent link">&para;</a></h3>
+<p>A bad merge left 30 lines of duplicated code at the end of the file, causing TypeScript build failures.</p>
+<p><strong>Fix:</strong> Removed the duplicated trailing code.</p>
+<h3 id="issue-17-unused-import-causing-build-failure">Issue 17: Unused Import Causing Build Failure<a class="headerlink" href="#issue-17-unused-import-causing-build-failure" title="Permanent link">&para;</a></h3>
+<p><code>sortArchivedEntries</code> was still imported after being replaced, triggering TypeScript's <code>noUnusedLocals</code> error.</p>
+<p><strong>Fix:</strong> Removed the unused import.</p>
+<hr />
+<h2 id="ai-provider-integration">AI Provider Integration<a class="headerlink" href="#ai-provider-integration" title="Permanent link">&para;</a></h2>
+<h3 id="issue-18-all-ai-providers-failing-on-render">Issue 18: All AI Providers Failing on Render<a class="headerlink" href="#issue-18-all-ai-providers-failing-on-render" title="Permanent link">&para;</a></h3>
+<p>Logs showed <code>HF_API_KEY</code>, <code>OPENROUTER_API_KEY</code>, and <code>GEMINI_API_KEY</code> were <code>NOT SET</code> on Render despite being declared in <code>render.yaml</code>.</p>
+<p><strong>Root cause:</strong> Keys were declared in <code>render.yaml</code> with <code>sync: false</code>, which requires manual value entry in the Render dashboard. The values were never actually pasted in.</p>
+<p><strong>Fix:</strong> Added the actual API key values in Render Dashboard → project-service → Environment.</p>
+<h3 id="issue-19-wrong-supabase-import-in-aijs">Issue 19: Wrong Supabase Import in <code>ai.js</code><a class="headerlink" href="#issue-19-wrong-supabase-import-in-aijs" title="Permanent link">&para;</a></h3>
+<p><code>ai.js</code> used <code>import supabase from "./supabase.js"</code> (default import) but <code>supabase.js</code> exports as named: <code>export const supabase</code>. The import path was also wrong (<code>./supabase.js</code> vs <code>../supabase.js</code>).</p>
+<p><strong>Fix:</strong> Changed to <code>import { supabase } from '../supabase.js'</code>.</p>
+<h3 id="issue-20-natural-language-entry-always-showing-success">Issue 20: Natural Language Entry Always Showing Success<a class="headerlink" href="#issue-20-natural-language-entry-always-showing-success" title="Permanent link">&para;</a></h3>
+<p><code>natural_language.js</code> wrapped the backend response as <code>{ success: true, data }</code> regardless of what the backend actually returned.</p>
+<p><strong>Fix:</strong> Now checks <code>data?.success === false</code> before returning success.</p>
+<h3 id="issue-21-ai-hallucinating-due-dates">Issue 21: AI Hallucinating Due Dates<a class="headerlink" href="#issue-21-ai-hallucinating-due-dates" title="Permanent link">&para;</a></h3>
+<p>Entries created from phrases like "i want to wash my clothes today" were getting wrong or hallucinated due dates. Date keywords like "today" were leaking into custom fields.</p>
+<p><strong>Root cause:</strong> The AI model was asked to both parse the entry text and do date math in a single pass. Asking an LLM to compute calendar arithmetic inside a JSON-extraction prompt is unreliable.</p>
+<p><strong>Fix:</strong> Added a <code>getDate(text)</code> helper in <code>entries.js</code> that resolves dates server-side before the AI is called, using keyword matching:</p>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"today"</code></td>
+<td>Today's date</td>
+</tr>
+<tr>
+<td><code>"tomorrow"</code></td>
+<td>Today + 1</td>
+</tr>
+<tr>
+<td><code>"yesterday"</code></td>
+<td>Today − 1</td>
+</tr>
+<tr>
+<td><code>"next week"</code></td>
+<td>Today + 7</td>
+</tr>
+<tr>
+<td><code>"in 3 days"</code> / <code>"in 2 weeks"</code></td>
+<td>Today + 3 / Today + 14</td>
+</tr>
+<tr>
+<td><code>"next wednesday"</code></td>
+<td>Next Wednesday</td>
+</tr>
+<tr>
+<td><code>"monday"</code> / <code>"friday"</code></td>
+<td>Next occurrence of that day</td>
+</tr>
+<tr>
+<td><code>"end of month"</code></td>
+<td>Last day of current month</td>
+</tr>
+<tr>
+<td><code>"august 25"</code> / <code>"25 dec"</code></td>
+<td>Explicit month + day dates</td>
+</tr>
+<tr>
+<td>No date keyword found</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<p><code>getDate()</code> also returns the input text with date keywords stripped out, so the AI never sees "today"/"tomorrow" and can't copy them into unrelated fields. Fuzzy matching corrects common misspellings (e.g., "tommorow" → "tomorrow", "wendsday" → "wednesday") before keyword matching runs.</p>
+<p>The prompt changed from asking the AI to compute the date to handing it the already-resolved value:</p>
+<blockquote>
+<p>"The due date has already been calculated: 2026-08-22. You MUST use this exact value. Do NOT change it."</p>
+</blockquote>
+<p>As a second layer of defence, all call sites in <code>entries.js</code> that previously inserted <code>parsed.due_date</code> (the AI's output) into the database were changed to insert <code>calculatedDate</code> (the server-computed value) instead.</p>
+<p><strong>Takeaway:</strong> When an LLM prompt combines free-form extraction with a task that has a deterministic, rule-based answer (like calendar math), split them — compute the deterministic part in code first, and only ask the model to consume the pre-computed value, not derive it.</p>
+<h3 id="issue-22-didyoumean-too-strict-for-real-world-misspellings">Issue 22: <code>didyoumean</code> Too Strict for Real-World Misspellings<a class="headerlink" href="#issue-22-didyoumean-too-strict-for-real-world-misspellings" title="Permanent link">&para;</a></h3>
+<p>The <code>didyoumean</code> library (v1.2.2) was initially used for fuzzy matching of misspelled date keywords in <code>getDate()</code>. It failed to correct common misspellings like "todya" → "today" and "wendsday" → "wednesday", even with the threshold set to its maximum.</p>
+<p><strong>Root cause:</strong> <code>didyoumean</code> uses an internal Levenshtein distance check but only reliably handles single-character edits. Two-character transpositions or substitutions (e.g., "todya" has both y↔d and a↔y swapped) exceed its effective matching capability regardless of the threshold parameter. Additionally, it caused false positives on short words — "day" (3 chars) was being corrected to "may", turning "in 1 day" into "in 1 may" → May 1st.</p>
+<p><strong>Fix:</strong> Replaced <code>didyoumean</code> with <code>leven</code> (Levenshtein distance library) which provides direct access to the raw edit distance. The <code>correctDateKeywords()</code> function now:</p>
+<ol>
+<li>Skips words shorter than 4 characters (avoids false positives like "day" → "may")</li>
+<li>Computes <code>leven(input, keyword)</code> against all known date keywords</li>
+<li>Accepts a match only if the distance is ≤ 40% of the input word's length</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Distance</th>
+<th>Target</th>
+<th>Threshold (40%)</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>"todya"</code> (5)</td>
+<td>2</td>
+<td><code>"today"</code></td>
+<td>2</td>
+<td>Match</td>
+</tr>
+<tr>
+<td><code>"wendsday"</code> (8)</td>
+<td>2</td>
+<td><code>"wednesday"</code></td>
+<td>3</td>
+<td>Match</td>
+</tr>
+<tr>
+<td><code>"weak"</code> (4)</td>
+<td>1</td>
+<td><code>"week"</code></td>
+<td>1</td>
+<td>Match</td>
+</tr>
+<tr>
+<td><code>"days"</code> (4)</td>
+<td>2</td>
+<td><code>"may"</code></td>
+<td>1</td>
+<td>No match (correct)</td>
+</tr>
+<tr>
+<td><code>"want"</code> (4)</td>
+<td>2</td>
+<td><code>"jan"</code></td>
+<td>1</td>
+<td>No match (correct)</td>
+</tr>
+</tbody>
+</table>
+<p>All 33 unit tests pass, including 8 misspelling test cases and edge cases like "in 1 day" and "i want to wash my clothes today".</p>
+<hr />
+<h2 id="unused-backend-functions">Unused Backend Functions<a class="headerlink" href="#unused-backend-functions" title="Permanent link">&para;</a></h2>
+<h3 id="issue-23-backend-functions-never-wired-up">Issue 23: Backend Functions Never Wired Up<a class="headerlink" href="#issue-23-backend-functions-never-wired-up" title="Permanent link">&para;</a></h3>
+<p>4 backend functions (<code>setPriority</code>, <code>deleteProfile</code>, <code>searchProjects</code>, <code>getArchives</code>) were never connected to the frontend.</p>
+<p><strong>Fix:</strong> Wired up the functions to their respective frontend pages and components.</p>
+<hr />
+<h2 id="natural-language-entry-parsing">Natural Language Entry Parsing<a class="headerlink" href="#natural-language-entry-parsing" title="Permanent link">&para;</a></h2>
+<h3 id="issue-24-ai-returning-old-entries-in-wrong-format-for-matched3">Issue 24: AI Returning <code>old</code> Entries in Wrong Format for matched=3<a class="headerlink" href="#issue-24-ai-returning-old-entries-in-wrong-format-for-matched3" title="Permanent link">&para;</a></h3>
+<p>The backend expected <code>old</code> entries as <code>[{"ProjectName": {field: value}}]</code> (key = project name), but the AI returned <code>[{"project_name": "...", "fields": {...}}]</code>. This caused errors like <code>Project "project_name" not found, skipping.</code> and <code>Project "fields" not found, skipping.</code>.</p>
+<p><strong>Fix:</strong> Updated the backend to detect and handle both formats. If the item has a <code>project_name</code> key with a <code>fields</code> property, it uses that format. Otherwise, it falls back to the original key-as-project-name format.</p>
+<h3 id="issue-25-project-already-exists-error-when-ai-places-existing-project-in-new-array">Issue 25: "Project Already Exists" Error When AI Places Existing Project in <code>new</code> Array<a class="headerlink" href="#issue-25-project-already-exists-error-when-ai-places-existing-project-in-new-array" title="Permanent link">&para;</a></h3>
+<p>When the AI put an existing project in the <code>new</code> array (instead of <code>old</code>), the backend tried to create it and failed with: <code>Failed to create project "Social Activities": A project with this name already exists for your account.</code></p>
+<p><strong>Fix:</strong> Before creating a new project, the backend now checks if the project already exists. If it does, it adds the entry to the existing project instead of failing.</p>
+<h3 id="issue-26-ai-extracting-raw-words-instead-of-paraphrasing">Issue 26: AI Extracting Raw Words Instead of Paraphrasing<a class="headerlink" href="#issue-26-ai-extracting-raw-words-instead-of-paraphrasing" title="Permanent link">&para;</a></h3>
+<p>The AI was copying the user's raw speech verbatim (e.g., "gonna grab some food") or extracting just keywords (e.g., "food") instead of writing clean, well-phrased descriptions.</p>
+<p><strong>Fix:</strong> Updated the AI prompt (Steps 0 and 5) to enforce strict paraphrasing:</p>
+<ul>
+<li>Step 0: "PARAPHRASE neatly into clear, well-written task descriptions" with explicit correct/wrong examples</li>
+<li>Step 5: Renamed from "PRESERVE FULL TEXT" to "PARAPHRASE NEATLY (STRICT)" — the AI must rewrite casual speech into clean descriptions, not copy raw text or extract keywords</li>
+</ul>
+<hr />
+<h2 id="voice-feature">Voice Feature<a class="headerlink" href="#voice-feature" title="Permanent link">&para;</a></h2>
+<h3 id="issue-27-voice-feature-using-unnecessary-ai-calls">Issue 27: Voice Feature Using Unnecessary AI Calls<a class="headerlink" href="#issue-27-voice-feature-using-unnecessary-ai-calls" title="Permanent link">&para;</a></h3>
+<p>The voice feature was making extra AI calls for spoken prompts, confirmation messages, and error messages. These calls were slow, unnecessary, and could fail if AI providers were unavailable.</p>
+<p><strong>Fix:</strong> Stripped the voice feature down to the essentials — record audio, get transcript, send to <code>addNaturalLanguageEntry()</code> (same function as quick add). Removed all <code>askAI</code> calls. Confirmation messages are now built directly from the response data.</p>
+<hr />
+<h2 id="ui-layout">UI &amp; Layout<a class="headerlink" href="#ui-layout" title="Permanent link">&para;</a></h2>
+<h3 id="issue-28-entry-cards-overflowing-grid-cards-cut-off-at-viewport-edge">Issue 28: Entry Cards Overflowing Grid — Cards Cut Off at Viewport Edge<a class="headerlink" href="#issue-28-entry-cards-overflowing-grid-cards-cut-off-at-viewport-edge" title="Permanent link">&para;</a></h3>
+<p>Entry cards in the Dashboard feed were overflowing the grid, causing the "Miscellaneous Tasks" card and others to be cut off at the viewport edge instead of wrapping or shrinking.</p>
+<p><strong>Root cause:</strong> Multiple CSS issues:</p>
+<ol>
+<li><code>.entries-feed</code> grid used <code>1fr</code> instead of <code>minmax(0, 1fr)</code> — <code>1fr</code> allows grid blowout where content wider than the column forces it open</li>
+<li><code>&lt;table&gt;</code> elements inside cards have intrinsic minimum width that resists shrinking</li>
+<li><code>.entry-box__field-key</code> had <code>white-space: nowrap</code> forcing field labels to never wrap</li>
+<li><code>.entry-box__header-right</code> had <code>flex-shrink: 0</code> preventing the project name area from shrinking</li>
+<li><code>.entry-box__project</code> had no overflow handling — long project names forced the card wider</li>
+</ol>
+<p><strong>Fix:</strong></p>
+<ul>
+<li><code>.entries-feed</code>: Changed all <code>1fr</code> to <code>minmax(0, 1fr)</code> across all breakpoints</li>
+<li><code>.entry-box</code>: Added <code>overflow: hidden</code> + <code>max-width: 100%</code></li>
+<li><code>.entry-box__table</code>: Added <code>table-layout: fixed</code></li>
+<li><code>.entry-box__field-key</code>: Removed <code>white-space: nowrap</code>, replaced with <code>overflow-wrap: break-word</code></li>
+<li><code>.entry-box__header-right</code>: Changed <code>flex-shrink: 0</code> to <code>flex-shrink: 1</code> + <code>min-width: 0</code></li>
+<li><code>.entry-box__project</code>: Added <code>text-overflow: ellipsis</code> + <code>overflow: hidden</code> — long names truncate with "..."</li>
+<li><code>.entry-box__meta</code>: Added <code>min-width: 0</code> + <code>overflow: hidden</code></li>
+</ul>
+<h3 id="issue-29-hamburger-menu-on-project-page-navigating-to-dashboard-instead-of-opening-drawer">Issue 29: Hamburger Menu on Project Page Navigating to Dashboard Instead of Opening Drawer<a class="headerlink" href="#issue-29-hamburger-menu-on-project-page-navigating-to-dashboard-instead-of-opening-drawer" title="Permanent link">&para;</a></h3>
+<p>The hamburger icon on the project detail page navigated to the dashboard/home instead of opening the navigation drawer.</p>
+<p><strong>Fix:</strong> Added a full navigation drawer to <code>ProjectDetailPage</code> (matching the Dashboard drawer) with projects list, views, entry count badges, archive buttons per project, and a "Manage Projects" button. Fixed the hamburger to toggle (<code>!drawerOpen</code>) instead of always opening.</p>
+<h3 id="issue-30-activity-log-truncating-entry-text-at-60-characters">Issue 30: Activity Log Truncating Entry Text at 60 Characters<a class="headerlink" href="#issue-30-activity-log-truncating-entry-text-at-60-characters" title="Permanent link">&para;</a></h3>
+<p>Entries in the Activity Log were cut off with "..." at 60 characters, so the full text of what was actually typed was never visible.</p>
+<p><strong>Fix:</strong> Increased the <code>truncateName</code> limit from 60 to 120 characters in <code>ActivityFeed.tsx</code>. Added <code>overflow-wrap: break-word</code> to <code>.activity-text</code> and <code>.activity-entity-name</code> CSS classes.</p>
+<hr />
+<h2 id="client-side-persistent-caching">Client-Side Persistent Caching<a class="headerlink" href="#client-side-persistent-caching" title="Permanent link">&para;</a></h2>
+<h3 id="issue-31-slow-page-loads-due-to-repeated-supabase-fetches">Issue 31: Slow Page Loads Due to Repeated Supabase Fetches<a class="headerlink" href="#issue-31-slow-page-loads-due-to-repeated-supabase-fetches" title="Permanent link">&para;</a></h3>
+<p>Every page load required a full network round-trip to Supabase before the UI could render, resulting in 500–1000ms delays even for data the user had already seen. Navigation between pages (Dashboard → Project → Dashboard) re-fetched the same data every time.</p>
+<p><strong>Root cause:</strong> No client-side caching layer existed. All read operations went directly to the backend API, and all responses were discarded after rendering.</p>
+<p><strong>Fix:</strong> Implemented a <strong>client-side persistent caching</strong> layer using IndexedDB, following a <strong>stale-while-revalidate</strong> pattern. This is a specific type of web caching where data is stored in the browser's IndexedDB (a local mini-database) so it survives page refreshes and can serve instant reads on subsequent visits.</p>
+<p>The implementation uses the <code>idb</code> library (lightweight Promise-based IndexedDB wrapper) and provides:</p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>src/lib/cache.js</code></td>
+<td>Core caching module with <code>cacheGet</code>, <code>cacheSet</code>, <code>cacheDelete</code>, <code>staleWhileRevalidate</code></td>
+</tr>
+<tr>
+<td>Cache stores</td>
+<td><code>projects</code>, <code>entries</code>, <code>all-entries</code>, <code>profile</code>, <code>search</code> — one per data type</td>
+</tr>
+<tr>
+<td>Read functions</td>
+<td><code>getEntries</code>, <code>getAllEntries</code>, <code>getProjectsByEmail</code>, <code>getProfile</code> — cache-first reads</td>
+</tr>
+<tr>
+<td>Write functions</td>
+<td>All add/update/delete operations — invalidate cache on success</td>
+</tr>
+</tbody>
+</table>
+<p><strong>How it works:</strong></p>
+<ol>
+<li><strong>Read (cache-first):</strong> Check IndexedDB → if cached data exists, return it immediately → fetch fresh data from Supabase in background → update cache when fresh data arrives</li>
+<li><strong>Write (invalidate-on-success):</strong> Write to Supabase → on success, delete relevant cache entries so next read fetches fresh data</li>
+<li><strong>Sign out:</strong> Clear all cached data for the user via <code>clearUserCache(email)</code></li>
+</ol>
+<p><strong>Web caching context:</strong> "Web caching" is the umbrella term for storing data closer to where it's used instead of fetching it fresh every time. IndexedDB caching is one legitimate branch:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Persists across reloads?</th>
+<th>Handles structured data?</th>
+<th>Use case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>In-memory (React Query)</td>
+<td>No</td>
+<td>Limited</td>
+<td>Fast but ephemeral</td>
+</tr>
+<tr>
+<td>LocalStorage</td>
+<td>Yes</td>
+<td>No (key-value only)</td>
+<td>Simple flags/tokens</td>
+</tr>
+<tr>
+<td><strong>IndexedDB</strong></td>
+<td><strong>Yes</strong></td>
+<td><strong>Yes (mini local database)</strong></td>
+<td><strong>Structured/relational data</strong></td>
+</tr>
+<tr>
+<td>Server-side (Express)</td>
+<td>N/A</td>
+<td>N/A</td>
+<td>Backend API responses</td>
+</tr>
+<tr>
+<td>HTTP/browser (cache headers)</td>
+<td>Varies</td>
+<td>N/A</td>
+<td>Low-level resource caching</td>
+</tr>
+</tbody>
+</table>
+<p>IndexedDB caching is arguably stronger than in-memory caching because it survives refreshes and can support offline behaviour.</p>
+<p><strong>Performance impact:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Before</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>First page load</td>
+<td>~500–1000ms</td>
+<td>~500–1000ms (first visit only)</td>
+</tr>
+<tr>
+<td>Subsequent loads</td>
+<td>~500–1000ms</td>
+<td>&lt;10ms (IndexedDB read)</td>
+</tr>
+<tr>
+<td>Navigation between pages</td>
+<td>Full network fetch each time</td>
+<td>Instant from cache</td>
+</tr>
+</tbody>
+</table>
+<h3 id="issue-32-indexeddb-cache-not-cleared-on-sign-out">Issue 32: IndexedDB Cache Not Cleared on Sign-Out<a class="headerlink" href="#issue-32-indexeddb-cache-not-cleared-on-sign-out" title="Permanent link">&para;</a></h3>
+<p>After implementing IndexedDB caching, a user's cached data (projects, entries, profile) remained in the browser after signing out. If another user signed in on the same browser, they could potentially see the previous user's cached data briefly before fresh data arrived.</p>
+<p><strong>Root cause:</strong> The <code>signOut</code> and <code>deleteAccount</code> functions in <code>AuthContext.tsx</code> did not clear the IndexedDB cache.</p>
+<p><strong>Fix:</strong> Added <code>clearUserCache(email)</code> calls to both <code>signOut</code> and <code>deleteAccount</code> in <code>AuthContext.tsx</code>. The cache is now wiped for the current user before the Supabase sign-out completes, ensuring no stale data leaks between sessions.</p>
+<hr />
+<h2 id="sse-real-time-entry-updates">SSE Real-Time Entry Updates<a class="headerlink" href="#sse-real-time-entry-updates" title="Permanent link">&para;</a></h2>
+<h3 id="issue-33-slow-ui-update-after-natural-language-entry-submission">Issue 33: Slow UI Update After Natural Language Entry Submission<a class="headerlink" href="#issue-33-slow-ui-update-after-natural-language-entry-submission" title="Permanent link">&para;</a></h3>
+<p>After submitting a natural language entry, the user had to wait for the full round-trip (AI parsing + DB writes + activity logging + POST response) before the UI updated. This took 3–5 seconds, even though the AI parsing itself only took 1–2 seconds.</p>
+<p><strong>Root cause:</strong> The frontend only updated the UI when the POST response arrived. The POST response was delayed by database writes and activity logging that happened after AI parsing.</p>
+<p><strong>Fix:</strong> Implemented <strong>Server-Sent Events (SSE)</strong> to push parsed data to the frontend the moment AI parsing completes, before DB writes finish.</p>
+<p><strong>Implementation:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SSE Registry</td>
+<td><code>services/project-service/src/functions/sseRegistry.js</code></td>
+<td>Manages per-user SSE connections</td>
+</tr>
+<tr>
+<td>SSE Endpoint</td>
+<td><code>GET /service/nl-stream</code></td>
+<td>Persistent SSE stream for each user</td>
+</tr>
+<tr>
+<td>SSE Push</td>
+<td><code>POST /service/natural-language-entry</code></td>
+<td>Pushes parsed data via SSE after AI returns</td>
+</tr>
+<tr>
+<td>Auth Middleware</td>
+<td><code>services/project-service/src/middleware/auth.js</code></td>
+<td>Accepts JWT via query param for SSE</td>
+</tr>
+<tr>
+<td>SSE Manager</td>
+<td><code>frontend/src/lib/sse.js</code></td>
+<td>Frontend SSE connection with auto-reconnect</td>
+</tr>
+<tr>
+<td>React Hook</td>
+<td><code>frontend/src/hooks/useSSEEntries.ts</code></td>
+<td>Connects SSE events to IndexedDB + UI</td>
+</tr>
+<tr>
+<td>AuthContext</td>
+<td><code>frontend/src/context/AuthContext.tsx</code></td>
+<td>Disconnects SSE on sign-out</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Flow:</strong></p>
+<ol>
+<li>User submits natural language text</li>
+<li>Frontend sends POST + listens on SSE stream</li>
+<li>Backend AI parses text → pushes structured data via SSE immediately</li>
+<li>Frontend receives SSE event → invalidates IndexedDB cache → reloads UI</li>
+<li>Backend continues with DB writes and activity logging (POST response arrives later)</li>
+</ol>
+<p><strong>Result:</strong> UI updates in 1–2s (after AI parsing) instead of 3–5s (full round-trip).</p>
+<hr />
+<h2 id="keep-alive-free-tier-inactivity">Keep-Alive &amp; Free-Tier Inactivity<a class="headerlink" href="#keep-alive-free-tier-inactivity" title="Permanent link">&para;</a></h2>
+<h3 id="issue-34-render-free-tier-sleeps-after-15-minutes-in-process-daemon-never-fires">Issue 34: Render Free Tier Sleeps After 15 Minutes — In-Process Daemon Never Fires<a class="headerlink" href="#issue-34-render-free-tier-sleeps-after-15-minutes-in-process-daemon-never-fires" title="Permanent link">&para;</a></h3>
+<p>The <code>dashboard-service</code> had a <code>setInterval</code> daemon that was supposed to ping Supabase every 12 hours to prevent database pausing. However, Render's free tier sleeps the entire service container after 15 minutes of inactivity. When the container is asleep, <code>setInterval</code> is suspended — the daemon never fires, and Supabase still gets paused.</p>
+<p><strong>Root cause:</strong> Render free tier does not support long-running background processes. The container is put to sleep when no HTTP traffic arrives. Node.js <code>setInterval</code> is paused along with everything else.</p>
+<p><strong>Fix:</strong> Replaced the passive daemon with an active external trigger. A GitHub Actions workflow (<code>.github/workflows/keep-alive.yml</code>) sends <code>curl</code> to <code>GET /service/health-ping</code> every 10 minutes. This endpoint:</p>
+<ol>
+<li>Wakes the Render container (prevents Render sleep)</li>
+<li>Calls <code>ping()</code> which writes "hello hlulani" to Supabase (prevents Supabase pause)</li>
+</ol>
+<p>The internal <code>setInterval</code> daemon is kept as a fallback in case GitHub Actions has an outage.</p>
+<p><strong>Takeaway:</strong> Free-tier PaaS platforms (Render, Railway, Fly.io) do not guarantee persistent process execution. Background daemons that rely on <code>setInterval</code> or <code>cron</code> within the process are unreliable. Use an external trigger (GitHub Actions, cron-job.org, UptimeRobot) to periodically hit an HTTP endpoint instead.</p>
+<h3 id="issue-35-eventsource-api-cannot-send-custom-headers-jwt">Issue 35: EventSource API Cannot Send Custom Headers (JWT)<a class="headerlink" href="#issue-35-eventsource-api-cannot-send-custom-headers-jwt" title="Permanent link">&para;</a></h3>
+<p>The SSE implementation used the browser's <code>EventSource</code> API to listen for real-time entry updates. However, <code>EventSource</code> does not support setting custom HTTP headers — meaning the JWT token could not be sent via the standard <code>Authorization: Bearer &lt;token&gt;</code> header.</p>
+<p><strong>Root cause:</strong> The <code>EventSource</code> constructor only accepts a URL string. There is no way to pass a <code>headers</code> option. This is a known limitation of the EventSource API specification.</p>
+<p><strong>Fix:</strong> Added query parameter support to the auth middleware (<code>services/project-service/src/middleware/auth.js</code>). The middleware now checks for the token in two places:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">let</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">authHeader</span><span class="p">.</span><span class="nx">startsWith</span><span class="p">(</span><span class="s1">'Bearer '</span><span class="p">)</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">authHeader</span><span class="p">.</span><span class="nx">slice</span><span class="p">(</span><span class="mf">7</span><span class="p">)</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">token</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="o">?</span><span class="p">.</span><span class="nx">token</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nx">token</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">req</span><span class="p">.</span><span class="nx">query</span><span class="p">.</span><span class="nx">token</span><span class="p">;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="p">}</span>
+</code></pre></div>
+<p>The frontend SSE manager constructs the URL as:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">PROJECT_URL</span><span class="si">}</span><span class="sb">/service/nl-stream?token=</span><span class="si">${</span><span class="nb">encodeURIComponent</span><span class="p">(</span><span class="nx">token</span><span class="p">)</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
+</code></pre></div>
+<p><strong>Takeaway:</strong> When using SSE with authenticated endpoints, either use cookies (which EventSource sends automatically) or pass the token as a URL query parameter. The query param approach requires the auth middleware to check both the <code>Authorization</code> header and <code>req.query.token</code>.</p>
+<h3 id="issue-36-jest-module-caching-causes-test-state-to-leak-between-tests">Issue 36: Jest Module Caching Causes Test State to Leak Between Tests<a class="headerlink" href="#issue-36-jest-module-caching-causes-test-state-to-leak-between-tests" title="Permanent link">&para;</a></h3>
+<p>The SSE registry tests (14 tests) failed because the module-level <code>Map</code> that stores connections accumulated state across tests. Jest does not reset modules between tests by default, so connections registered in test 1 were still present in test 2.</p>
+<p><strong>Root cause:</strong> <code>sseRegistry.js</code> uses a module-level <code>const connections = new Map()</code>. When Jest imports the module once and runs all tests against it, the Map persists across the entire test suite.</p>
+<p><strong>Fix:</strong> Added a <code>_resetRegistry()</code> export to <code>sseRegistry.js</code> that clears the Map. Tests call this in <code>beforeEach()</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// sseRegistry.js</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">export</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">_resetRegistry</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="nx">connections</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">}</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1">// sseRegistry.test.js</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="nx">beforeEach</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="nx">_resetRegistry</span><span class="p">();</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">});</span>
+</code></pre></div>
+<p>The underscore prefix signals this is test-only and should not be used in production code.</p>
+<p><strong>Takeaway:</strong> Any module that uses module-level mutable state (Maps, Sets, arrays) needs a reset mechanism for test isolation. Without it, tests become order-dependent and flaky.</p>
+<h3 id="issue-37-vitest-fake-timers-dont-flush-async-operations">Issue 37: Vitest Fake Timers Don't Flush Async Operations<a class="headerlink" href="#issue-37-vitest-fake-timers-dont-flush-async-operations" title="Permanent link">&para;</a></h3>
+<p>The frontend SSE reconnection tests used <code>vi.advanceTimersByTime()</code> to simulate the passage of time for exponential backoff. However, <code>connectSSE()</code> is an async function (it uses <code>await import()</code> for the Supabase module), and <code>advanceTimersByTime()</code> only advances synchronous timers — it does not flush pending microtasks/promises.</p>
+<p><strong>Root cause:</strong> <code>vi.advanceTimersByTime()</code> is synchronous. It advances the clock but does not await any pending promises. If the code under test has <code>await</code> expressions, the microtask queue is not drained.</p>
+<p><strong>Fix:</strong> Replaced <code>vi.advanceTimersByTime()</code> with <code>vi.advanceTimersByTimeAsync()</code> which both advances the clock AND flushes the microtask queue:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1">// Before (fails — async operations not flushed)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">vi</span><span class="p">.</span><span class="nx">advanceTimersByTime</span><span class="p">(</span><span class="mf">1000</span><span class="p">);</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1">// After (works — async operations complete)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="k">await</span><span class="w"> </span><span class="nx">vi</span><span class="p">.</span><span class="nx">advanceTimersByTimeAsync</span><span class="p">(</span><span class="mf">1000</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>Takeaway:</strong> When testing async code with fake timers in Vitest, always use <code>vi.advanceTimersByTimeAsync()</code> instead of <code>vi.advanceTimersByTime()</code>. The synchronous version is only safe for purely synchronous code.</p>
+<hr />
+<h2 id="ai-messages-user-preferences">AI Messages &amp; User Preferences<a class="headerlink" href="#ai-messages-user-preferences" title="Permanent link">&para;</a></h2>
+<h3 id="issue-38-no-option-to-disable-ai-toasts-and-popup-messages">Issue 38: No Option to Disable AI Toasts and Popup Messages<a class="headerlink" href="#issue-38-no-option-to-disable-ai-toasts-and-popup-messages" title="Permanent link">&para;</a></h3>
+<p>The application showed AI-generated toasts (greeting on dashboard load, entry comments after quick-add) with no way to disable them. Users who did not want AI-generated messages had no opt-out mechanism.</p>
+<p><strong>Root cause:</strong> The AI greeting toast in <code>Dashboard.tsx</code> and the AI comment toast in <code>QuickEntryBar.tsx</code> fired unconditionally. No preference flag existed in localStorage or the settings panel.</p>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Created <code>frontend/src/functions/aiMessages.ts</code> — a <code>getAiMessagesEnabled()</code> / <code>setAiMessagesEnabled()</code> pair backed by <code>localStorage</code> key <code>dl_ai_messages</code> (default: <code>true</code>).</li>
+<li>Added an <strong>AI messages</strong> toggle to <code>SettingsPanel.tsx</code> under Notifications section.</li>
+<li>Added an <strong>AI messages</strong> toggle to <code>FrequencySetup.tsx</code> onboarding page so new users can opt out during signup.</li>
+<li>Guarded the Dashboard greeting <code>useEffect</code> with <code>if (!getAiMessagesEnabled()) return;</code>.</li>
+<li>Guarded the QuickEntryBar AI comment toast with <code>if (comment &amp;&amp; getAiMessagesEnabled())</code>.</li>
+</ol>
+<p>The preference persists across sessions via localStorage and takes effect immediately on all AI-generated messages.</p>
+<hr />
+<h2 id="entry-summaries">Entry Summaries<a class="headerlink" href="#entry-summaries" title="Permanent link">&para;</a></h2>
+<h3 id="issue-39-no-one-sentence-summary-stored-for-entries">Issue 39: No One-Sentence Summary Stored for Entries<a class="headerlink" href="#issue-39-no-one-sentence-summary-stored-for-entries" title="Permanent link">&para;</a></h3>
+<p>Entries stored full structured field data (JSON objects) but no human-readable summary. Calendar views, activity feeds, and quick-scan overviews had to parse raw field objects to display anything meaningful.</p>
+<p><strong>Root cause:</strong> The <code>entries</code> table had no <code>summary</code> column. The AI parsing flow generated structured fields but never produced a concise one-sentence summary.</p>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Created migration <code>007_add_summary_column.sql</code> — adds <code>summary TEXT</code> column to <code>entries</code> table.</li>
+<li>Added <code>generateSummary()</code> method to <code>Natural_language</code> class in <code>entries.js</code> — makes a separate lightweight AI call with the project name + entry object to produce a ≤20-word summary.</li>
+<li>Modified all 5 <code>addEntry()</code> call sites in the natural language flow (matched=0, 1, 3-old, 3-new-existing, 3-new-new) to generate and store summaries.</li>
+<li>Modified <code>addEntry()</code> method signature to accept optional <code>summary</code> parameter.</li>
+<li>Added <code>summary</code> to the SSE <code>entry_parsed</code> push so the frontend receives it immediately.</li>
+<li>Created <code>scripts/backfill-summaries.js</code> — iterates all existing entries with <code>summary IS NULL</code>, calls AI for each, and updates the column.</li>
+</ol>
+<p>The retrieval queries (<code>getEntries</code>, <code>getAllEntries</code>, <code>sortUnarchivedEntries</code>) already use <code>SELECT *</code>, so they automatically include the new column with zero changes.</p>
+<hr />
+<h2 id="guided-tour">Guided Tour<a class="headerlink" href="#guided-tour" title="Permanent link">&para;</a></h2>
+<h3 id="issue-40-tour-narration-cut-off-mid-sentence-and-repeated-step-titles">Issue 40: Tour Narration Cut Off Mid-Sentence and Repeated Step Titles<a class="headerlink" href="#issue-40-tour-narration-cut-off-mid-sentence-and-repeated-step-titles" title="Permanent link">&para;</a></h3>
+<p>After the guided tour voice feature shipped, two narration problems were reported:</p>
+<ol>
+<li>The voice read the step title and then a description that restated it ("My Stats. This is My Stats — …"), which sounded redundant and irritating.</li>
+<li>Auto-advance used a word-count estimate of how long the speech would take, so on longer stops the tour moved on and cut the voice off before it finished reading.</li>
+</ol>
+<p><strong>Root cause:</strong></p>
+<ol>
+<li>Step descriptions were written as standalone sentences that repeated the title for context; when the spoken text is <code>title + description</code>, the title is heard twice.</li>
+<li>A heuristic timer (<code>words / 2.5 + 1500 ms</code>, clamped to 6.5–18 s) is shorter than real neural-voice utterances at the chosen rate, so the timer fired first.</li>
+</ol>
+<p><strong>Fix:</strong></p>
+<ol>
+<li>Rewrote the six view-step descriptions so they add information instead of restating the title — the voice now says "My Stats. Progress charts, streaks, and how you spend your time."</li>
+<li>Replaced the timer with utterance-end-driven pacing: the tour only advances after the <code>speechSynthesis</code> utterance fires <code>onend</code>, with per-step token guards so stale callbacks from a cancelled utterance are ignored, and handlers detached before <code>cancel()</code> because cancelling fires a spurious <code>end</code> event. The progress bar now only visualises pacing, and a generous hard cap guards against a stuck speech engine.</li>
+</ol>
+<p><strong>Takeaway:</strong> Pace text-to-speech off the speech engine's completion events, never a duration estimate; and when composing spoken text from multiple fields, make the fields non-overlapping so nothing is repeated aloud.</p>
+<p><strong>Pull requests:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/pulls/164">#164</a> (voice + auto-advance), <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/pulls/165">#165</a> (pacing + narration copy fix)</p>
+<hr />
+<h2 id="sign-in-page-visual-polish">Sign-In Page Visual Polish<a class="headerlink" href="#sign-in-page-visual-polish" title="Permanent link">&para;</a></h2>
+<h3 id="issue-41-sign-in-page-renders-as-a-blank-white-screen">Issue 41: Sign-In Page Renders as a Blank White Screen<a class="headerlink" href="#issue-41-sign-in-page-renders-as-a-blank-white-screen" title="Permanent link">&para;</a></h3>
+<p>After the landing-sections work (PRs #177–#179) added a themed wrapper and navigation links, the sign-in page showed nothing — just the browser's default white body.</p>
+<p><strong>Root cause:</strong> The JSX return statement in <code>SignIn.tsx</code> opened with <code>&lt;div className="signin-page"&gt;</code> but closed with <code>&lt;/&gt;</code> (a fragment close) instead of <code>&lt;/div&gt;</code>. React treats mismatched tags as a compile error, Vite could not build the bundle, and the browser fell back to an empty page. The nav, auth form, and landing sections all failed to render.</p>
+<p><strong>Fix:</strong> Changed the closing tag from <code>&lt;/&gt;</code> to <code>&lt;/div&gt;</code> so the wrapper correctly contains all children.</p>
+<p><strong>Takeaway:</strong> When wrapping a page in a new outer <code>&lt;div&gt;</code>, always verify that the matching close tag is also updated. A fragment close <code>&lt;/&gt;</code> is syntactically valid JSX but semantically wrong when paired with a <code>&lt;div&gt;</code>, and the error is silent until the build runs.</p>
+<p><strong>Gitea issue:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/190">#190</a></p>
+<h3 id="issue-42-all-signin-tests-fail-intersectionobserver-not-defined-in-jsdom">Issue 42: All SignIn Tests Fail — IntersectionObserver Not Defined in jsdom<a class="headerlink" href="#issue-42-all-signin-tests-fail-intersectionobserver-not-defined-in-jsdom" title="Permanent link">&para;</a></h3>
+<p>After the <code>LandingSections</code> component (which uses <code>IntersectionObserver</code> for scroll-reveal animations) was added to the sign-in page, all 15 tests in <code>SignIn.test.tsx</code> began failing with <code>IntersectionObserver is not defined</code>.</p>
+<p><strong>Root cause:</strong> jsdom does not implement <code>IntersectionObserver</code>. The component tried to create one at mount time and crashed before any assertions could run. This was a pre-existing gap in the test environment — the failures reproduced against committed code, not just the working tree.</p>
+<p><strong>Fix:</strong> Added a no-op <code>IntersectionObserver</code> class stub to <code>frontend/src/test/setup.ts</code>, matching the existing <code>matchMedia</code> stub pattern:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">Object</span><span class="p">.</span><span class="nx">defineProperty</span><span class="p">(</span><span class="nb">window</span><span class="p">,</span><span class="w"> </span><span class="s1">'IntersectionObserver'</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nx">writable</span><span class="o">:</span><span class="w"> </span><span class="kt">true</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="w">  </span><span class="nx">value</span><span class="o">:</span><span class="w"> </span><span class="kt">class</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="w">    </span><span class="nx">observe</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">    </span><span class="nx">unobserve</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="nx">disconnect</span><span class="p">()</span><span class="w"> </span><span class="p">{}</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="p">});</span>
+</code></pre></div>
+<p>Tests now pass 15/15. The observer never fires in tests (content is asserted, not reveal animations), so a no-op class is sufficient.</p>
+<p><strong>Takeaway:</strong> When a component uses a browser API that jsdom does not provide, add a global stub to the shared test setup file rather than per-test <code>beforeEach</code> blocks — it keeps individual tests clean and prevents the same stub from being duplicated across files.</p>
+<p><strong>Gitea issue:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/192">#192</a></p>
+<h3 id="issue-43-stale-test-assertion-after-password-hint-text-removal">Issue 43: Stale Test Assertion After Password Hint Text Removal<a class="headerlink" href="#issue-43-stale-test-assertion-after-password-hint-text-removal" title="Permanent link">&para;</a></h3>
+<p>The test "shows password hint in sign-up mode" asserted <code>Password must be at least 6 characters.</code> — text that no longer exists in <code>SignIn.tsx</code>. It was removed in commit <code>886f73c</code> when the live password-requirements checklist replaced the static hint, but the test was never updated.</p>
+<p><strong>Root cause:</strong> The live checklist introduced in that commit renders per-requirement items (e.g. "At least 8 characters") only after the user starts typing a password. The old static hint text was removed intentionally, but its test was overlooked.</p>
+<p><strong>Fix:</strong> Renamed the test to "shows live password requirements in sign-up mode". It now types <code>a</code> into the Password field (to trigger the checklist) and asserts <code>At least 8 characters</code>.</p>
+<p><strong>Takeaway:</strong> When replacing static text with dynamic content in a component, audit every test that asserted the old text — the test breakage is non-obvious if the suite is not run before committing.</p>
+<p><strong>Gitea issue:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/193">#193</a></p>
+<hr />
+<h2 id="notification-enhancements">Notification Enhancements<a class="headerlink" href="#notification-enhancements" title="Permanent link">&para;</a></h2>
+<h3 id="issue-44-notification-snooze-dismiss-actions">Issue 44: Notification Snooze &amp; Dismiss Actions<a class="headerlink" href="#issue-44-notification-snooze-dismiss-actions" title="Permanent link">&para;</a></h3>
+<p>Users had no way to defer or hide a notification without completing the underlying entry. The bell dropdown showed items as read-only — once a due-soon alert appeared, it stayed until the entry was marked done or the 30-day prune window elapsed.</p>
+<p><strong>Root cause:</strong> The notifications table had no column for snooze or soft-delete state. The backend <code>Notifications</code> class exposed only <code>get</code>, <code>getHistory</code>, <code>markRead</code>, and <code>markAllRead</code> — no way to suppress individual rows.</p>
+<p><strong>Fix:</strong> Added <code>snoozed_until</code> (TIMESTAMPTZ) and <code>dismissed</code> (BOOLEAN) columns to <code>notifications</code> via migration 013 (originally numbered 012, renumbered to resolve a collision with <code>012_add_timer_pause_fields.sql</code>). Backend gained <code>snooze(email, id, duration)</code> and <code>dismiss(email, id)</code> RPCs. The bell feed and history page queries filter out <code>dismissed = true</code> and snoozed rows where <code>snoozed_until &gt; now()</code>. The cron generator auto-unsnoozes expired snoozes by clearing <code>snoozed_until</code> and re-marking as unread. Frontend action buttons (clock icon for snooze with 1 h / 4 h / tomorrow popover; ✕ icon for dismiss) were added to both <code>NotificationsBell</code> and <code>NotificationsPage</code>.</p>
+<p><strong>Takeaway:</strong> When adding a new column that affects multiple queries, update both the read-time queries (bell feed, history) and the write-time generator (cron unsnooze) in the same migration to avoid a window where snoozed items leak back into the feed.</p>
+<p><strong>Gitea issue:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/197">#197</a></p>
+<h3 id="issue-45-configurable-notification-lead-time">Issue 45: Configurable Notification Lead Time<a class="headerlink" href="#issue-45-configurable-notification-lead-time" title="Permanent link">&para;</a></h3>
+<p>The due-soon notification generator used a hardcoded 24-hour window — every user was notified exactly one day before a deadline. Users with longer planning horizons wanted earlier alerts; others wanted last-minute nudges.</p>
+<p><strong>Root cause:</strong> <code>generate_due_notifications()</code> in migration 011 used <code>now() + INTERVAL '24 hours'</code> as a constant in the due-soon CTE.</p>
+<p><strong>Fix:</strong> Added <code>notification_lead_time</code> (INTERVAL, default <code>'24 hours'</code>) column to <code>users</code>. Replaced the generator to read <code>COALESCE(u.notification_lead_time, INTERVAL '24 hours')</code> per user via a JOIN on the users table. A Settings panel dropdown ("Notify me before: 1 hour / 24 hours / 48 hours / 1 week") persists the choice via <code>setNotificationLeadTime()</code> through the profile-service.</p>
+<p><strong>Takeaway:</strong> When replacing a hardcoded value with a per-user preference, always <code>COALESCE</code> to the original default so users who never change the setting get the same behaviour as before.</p>
+<p><strong>Gitea issue:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/198">#198</a></p>
+<h3 id="issue-46-notification-history-page-lacked-filtering">Issue 46: Notification History Page Lacked Filtering<a class="headerlink" href="#issue-46-notification-history-page-lacked-filtering" title="Permanent link">&para;</a></h3>
+<p>The /notifications page showed every stored notification in chronological order — read and unread, due-soon and overdue mixed together. Users with many entries had to scroll to find actionable items.</p>
+<p><strong>Root cause:</strong> The <code>getHistory()</code> method accepted only <code>limit</code> and <code>offset</code> parameters with a fixed <code>WHERE user_email = $1</code> clause.</p>
+<p><strong>Fix:</strong> Added a <code>filters</code> object parameter to <code>getHistory()</code> supporting <code>{ unreadOnly: boolean, type: 'due_soon' | 'overdue' }</code>. The method builds a dynamic WHERE clause with parameterised conditions. The frontend renders four filter tabs (All, Unread, Due soon, Overdue); switching tabs resets pagination and re-fetches.</p>
+<p><strong>Takeaway:</strong> When adding dynamic WHERE clauses, use parameterised queries (<code>$N</code> placeholders) rather than string interpolation to prevent SQL injection, even for known-safe filter values.</p>
+<p><strong>Gitea issue:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/199">#199</a></p>
+<h3 id="issue-47-plain-text-emails-lacked-actionable-context">Issue 47: Plain-Text Emails Lacked Actionable Context<a class="headerlink" href="#issue-47-plain-text-emails-lacked-actionable-context" title="Permanent link">&para;</a></h3>
+<p>Notification emails were plain text — just the entry title and due date. Users had to manually navigate to the app and find the project. Browser toasts were not available, so users only learned about notifications when they next opened the app.</p>
+<p><strong>Root cause:</strong> <code>_sendBrevoEmail()</code> built a simple text body string rather than <code>htmlContent</code>, and the bell component did not integrate with the browser Notification API.</p>
+<p><strong>Fix:</strong> Replaced the email body with a rich HTML template — colored status banner (red for overdue, amber for due-soon), card layout with entry title, project name, formatted due date, and a deep-link button that opens the project directly. Added <code>Notification.requestPermission()</code> on bell mount and native <code>new Notification()</code> toasts for each newly-arrived unread item (detected by diffing unread IDs between polls). HTML escaping via <code>escapeHtml()</code> prevents XSS from user-controlled content.</p>
+<p><strong>Takeaway:</strong> When building HTML emails with user-controlled content, always escape HTML entities — email clients render HTML and an unescaped title like <code>&lt;script&gt;alert(1)&lt;/script&gt;</code> would execute in the inbox.</p>
+<p><strong>Gitea issue:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/200">#200</a></p>
+<hr />
+<h2 id="deployment-migration-troubleshooting">Deployment &amp; Migration Troubleshooting<a class="headerlink" href="#deployment-migration-troubleshooting" title="Permanent link">&para;</a></h2>
+<h3 id="issue-48-relation-publicnotifications-does-not-exist-at-runtime">Issue 48: "relation 'public.notifications' does not exist" at Runtime<a class="headerlink" href="#issue-48-relation-publicnotifications-does-not-exist-at-runtime" title="Permanent link">&para;</a></h3>
+<p>After merging the notification system (PR #147) and enhancements (PR #201), the app throws a database error when the bell polls or the history page loads. The in-app bell shows an error state or an empty feed.</p>
+<p><strong>Root cause:</strong> Migrations 011 (<code>011_create_notifications.sql</code>) and 013 (<code>013_notification_enhancements.sql</code>) were never applied to the live Supabase database. The repo contains the SQL files, but the project has no automated migration runner in CI — <code>scripts/migrate.js</code> requires a <code>DATABASE_URL</code> that is not set locally, and there is no Supabase Edge Function or Render post-deploy hook that applies pending migrations. The error surfaces only on first use, not at build time.</p>
+<p><strong>Fix:</strong> Paste each migration's SQL into the <strong>Supabase SQL Editor</strong> in order (011 first, then 013). Both files are fully idempotent (<code>CREATE TABLE IF NOT EXISTS</code>, <code>ADD COLUMN IF NOT EXISTS</code>, <code>CREATE OR REPLACE FUNCTION</code>), so re-running is harmless. Skip the <code>cron.schedule</code> / <code>cron.unschedule</code> lines if pg_cron is not enabled (see Issue 49). After applying, verify with <code>SELECT generate_due_notifications();</code>.</p>
+<p><strong>Takeaway:</strong> A repo migration file being present does not mean it has been applied to the live database. Always verify by checking the <code>schema_migrations</code> table or running a representative query before concluding the error is environmental.</p>
+<h3 id="issue-49-pg_cron-extension-not-available-schema-cron-does-not-exist">Issue 49: pg_cron Extension Not Available — "schema 'cron' does not exist"<a class="headerlink" href="#issue-49-pg_cron-extension-not-available-schema-cron-does-not-exist" title="Permanent link">&para;</a></h3>
+<p>When applying migration 011, the <code>SELECT cron.schedule(...)</code> and <code>SELECT cron.unschedule(...)</code> lines fail with <code>ERROR: 3F000: schema "cron" does not exist</code>.</p>
+<p><strong>Root cause:</strong> The <code>pg_cron</code> extension is not enabled in the Supabase project. The migration file attempts to schedule an hourly cron job without guarding the <code>cron.*</code> calls in an extension-existence check (the <code>pg_net</code> activation is guarded, but the <code>cron.schedule</code> lines are not).</p>
+<p><strong>Fix:</strong> Skip the two <code>cron.*</code> lines when applying the migration. Notifications still work — the bell's <code>getNotifications()</code> call triggers an opportunistic email flush via <code>sendPendingEmails()</code>, so emails go out within a poll interval of any active session. To enable the hourly backup trigger later, go to <strong>Supabase Dashboard → Database → Extensions</strong>, enable <code>pg_cron</code>, then run <code>SELECT cron.schedule('due-notification-cycle', '7 * * * *', 'SELECT public.run_due_notification_cycle();');</code>.</p>
+<p><strong>Takeaway:</strong> When a migration uses multiple optional extensions (pg_net, pg_cron), guard each one independently — a <code>DO</code> block or <code>IF EXISTS</code> check per extension — so the migration succeeds even when some extensions are unavailable. The core functionality should degrade gracefully rather than failing the entire migration.</p>
+<h3 id="issue-50-new-project-modal-too-narrow-for-project-columns-grid">Issue 50: New Project Modal Too Narrow for Project Columns Grid<a class="headerlink" href="#issue-50-new-project-modal-too-narrow-for-project-columns-grid" title="Permanent link">&para;</a></h3>
+<p>The "New Project" modal squeezes the project columns row so the column name input is truncated to show only "Cc".</p>
+<p><strong>Root cause:</strong> The New Project modal used <code>modal-card</code> (max-width: 400px) while the project fields row uses a 4-column CSS grid (<code>1fr auto auto auto</code> for name + type dropdown + required checkbox + remove button). At 400px, after accounting for modal padding (3rem), gaps (1.5rem), and the three fixed-width controls (~192px), the name input gets only ~136px — far too narrow for a text input.</p>
+<p><strong>Fix:</strong> Added <code>modal-card-wide</code> class (max-width: 560px) to the New Project modal, matching the width already used by the New Entry modal. This gives the name input ~296px of space.</p>
+<p><strong>Takeaway:</strong> When a modal contains a multi-column grid of form controls, use <code>modal-card-wide</code> (560px) rather than the default <code>modal-card</code> (400px). The 400px width is suitable for simple two-field forms but not for rows with 3+ inline controls.</p>
+<h3 id="issue-51-notifications-deleted-when-entries-marked-done-dusted">Issue 51: Notifications Deleted When Entries Marked Done &amp; Dusted<a class="headerlink" href="#issue-51-notifications-deleted-when-entries-marked-done-dusted" title="Permanent link">&para;</a></h3>
+<p>When a user marks an entry as "Done &amp; Dusted", the <code>generate_due_notifications()</code> function deleted the associated notification rows. For a logbook, users want to keep the history of overdue notifications as a record of what was late.</p>
+<p><strong>Root cause:</strong> Migration 013's generator included <code>e.status = 'done_and_dusted'</code> in the cleanup DELETE condition, removing notifications whenever an entry was completed.</p>
+<p><strong>Fix:</strong> Migration 014 removes the <code>done_and_dusted</code> condition from the cleanup. Notifications now persist for completed entries. The cleanup still removes notifications for archived, deleted, or no-due-date entries. The overdue INSERT also no longer filters by status, so completed past-due entries continue to appear as overdue.</p>
+<p><strong>Takeaway:</strong> In a logbook or audit-trail context, notifications serve as a historical record. Don't delete them when the underlying work item is completed — only clean up when the entry itself is removed (archived/deleted).</p>
+<h3 id="issue-52-customizable-logbook-dynamic-field-types-templates-and-entity-linking">Issue 52: Customizable Logbook — Dynamic Field Types, Templates, and Entity Linking<a class="headerlink" href="#issue-52-customizable-logbook-dynamic-field-types-templates-and-entity-linking" title="Permanent link">&para;</a></h3>
+<p>The project needed a customizable logbook system to support diverse use cases (lab notebooks, field logs, project trackers, inspection reports) with typed fields, reusable templates, and relational linking between entries.</p>
+<p><strong>Scope implemented:</strong></p>
+<ol>
+<li>
+<p><strong>Dynamic Field Types</strong> — 15 canonical types: text, markdown, integer, float, date, timestamp, boolean, select, multiselect, geolocation, currency, file, image, entity_link. Each type has authoritative validation in both backend (fieldSchema.js) and frontend (fieldValidation.ts) using RE2JS for regex patterns.</p>
+</li>
+<li>
+<p><strong>Property Overrides</strong> — Fields support is_required, is_unique, rules (min/max, minLength/maxLength, pattern), has_default/default_value, and display_order. Uniqueness is enforced for scalar types and currency. Defaults are validated against the field's type and rules.</p>
+</li>
+<li>
+<p><strong>Schema Templates</strong> — Three scopes: built-in (4 presets: Lab Notebook, Field Log, Project Tracker, Inspection Report), personal (user-created), and global (admin-created). Templates are deep-copied into projects on creation; no live inheritance. Templates support versioning (incremented on field updates) and forking (tracking provenance).</p>
+</li>
+<li>
+<p><strong>Entity Linking</strong> — Fields of type <code>entity_link</code> store arrays of entry UUIDs, enabling relational tagging between entries within or across projects. Validation ensures all IDs are valid UUIDs.</p>
+</li>
+<li>
+<p><strong>Private Attachments</strong> — File and image fields use a lease-based upload flow: create a lease (30-min TTL), upload to Supabase storage, then finalize with entry binding. Stale leases are cleaned up automatically. Storage bucket is private; only server-side reads are permitted.</p>
+</li>
+</ol>
+<p><strong>Database migrations:</strong></p>
+<ul>
+<li>015: schema_revision, provenance, field rules (is_unique, rules, has_default, default_value, options, display_order)</li>
+<li>016: schema_templates table with scope, version, fork tracking</li>
+<li>017: field_attachments table with lease lifecycle</li>
+<li>018: entity_link support (link_target_project, link_target_table, link_allow_multiple)</li>
+</ul>
+<p><strong>Backend:</strong></p>
+<ul>
+<li><code>domain/fieldSchema.js</code> — canonical type validation, normalization, unique value canonicalization</li>
+<li><code>functions/templates.js</code> — CRUD operations, built-in template registry</li>
+<li><code>functions/attachments.js</code> — lease creation, finalization, cleanup</li>
+<li><code>routes/templates.js</code>, <code>routes/attachments.js</code> — REST endpoints</li>
+</ul>
+<p><strong>Frontend:</strong></p>
+<ul>
+<li><code>lib/fieldSchema.ts</code>, <code>lib/fieldValidation.ts</code> — type definitions and validation</li>
+<li><code>lib/templateApi.ts</code>, <code>lib/attachmentApi.ts</code> — API clients</li>
+<li><code>components/fields/FieldEditors.tsx</code> — typed editors for all 15 types</li>
+<li><code>components/fields/FieldDisplay.tsx</code> — read-only display with SafeMarkdown</li>
+<li><code>components/fields/TemplatePicker.tsx</code> — template selection UI</li>
+</ul>
+<p><strong>Takeaway:</strong> A customizable logbook requires a clear separation between schema metadata (field definitions) and entry payloads (values). Canonical types with authoritative validation on both client and server prevent type drift. Templates should be deep-copied (not live-linked) to allow projects to evolve independently. Attachment uploads need a lease-based flow to prevent orphaned storage objects.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mermaid.js"></script>
+      
+    
+  </body>
+</html>

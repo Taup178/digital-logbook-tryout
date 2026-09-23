@@ -1,0 +1,664 @@
+{
+  "info": {
+    "name": "Digital Logbook API",
+    "description": "Complete API collection for the Digital Logbook microservices",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwt_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "jwt_token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "auth_service_url",
+      "value": "https://auth-service-hl52.onrender.com",
+      "type": "string"
+    },
+    {
+      "key": "project_service_url",
+      "value": "https://project-service-96ml.onrender.com",
+      "type": "string"
+    },
+    {
+      "key": "dashboard_service_url",
+      "value": "https://dashboard-service-bpc5.onrender.com",
+      "type": "string"
+    },
+    {
+      "key": "profile_service_url",
+      "value": "https://profile-service-0zk7.onrender.com",
+      "type": "string"
+    },
+    {
+      "key": "user_email",
+      "value": "your@email.com",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth Service",
+      "item": [
+        {
+          "name": "Sign Up",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"newuser@example.com\",\n  \"password\": \"SecurePass123!\"\n}"
+            },
+            "url": {
+              "raw": "{{auth_service_url}}/auth/signup",
+              "host": ["{{auth_service_url}}"],
+              "path": ["auth", "signup"]
+            }
+          }
+        },
+        {
+          "name": "Reset Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{user_email}}\"\n}"
+            },
+            "url": {
+              "raw": "{{auth_service_url}}/auth/reset-password",
+              "host": ["{{auth_service_url}}"],
+              "path": ["auth", "reset-password"]
+            }
+          }
+        },
+        {
+          "name": "Delete Account",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{auth_service_url}}/auth/delete-account",
+              "host": ["{{auth_service_url}}"],
+              "path": ["auth", "delete-account"]
+            }
+          }
+        },
+        {
+          "name": "Check User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"{{user_email}}\"\n}"
+            },
+            "url": {
+              "raw": "{{auth_service_url}}/auth/checkuser",
+              "host": ["{{auth_service_url}}"],
+              "path": ["auth", "checkuser"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Profile Service",
+      "item": [
+        {
+          "name": "Get Profile",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"function\": \"getProfile\",\n  \"values\": {\n    \"email\": \"{{user_email}}\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{profile_service_url}}/service/profile",
+              "host": ["{{profile_service_url}}"],
+              "path": ["service", "profile"]
+            }
+          }
+        },
+        {
+          "name": "Update Profile",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"function\": \"updateProfile\",\n  \"values\": {\n    \"email\": \"{{user_email}}\",\n    \"updates\": {\n      \"name\": \"John Updated\",\n      \"username\": \"johnupdated\"\n    }\n  }\n}"
+            },
+            "url": {
+              "raw": "{{profile_service_url}}/service/profile",
+              "host": ["{{profile_service_url}}"],
+              "path": ["service", "profile"]
+            }
+          }
+        },
+        {
+          "name": "Create Profile",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"function\": \"createProfile\",\n  \"values\": {\n    \"email\": \"{{user_email}}\",\n    \"name\": \"John Doe\",\n    \"username\": \"johndoe\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{profile_service_url}}/service/profile",
+              "host": ["{{profile_service_url}}"],
+              "path": ["service", "profile"]
+            }
+          }
+        },
+        {
+          "name": "Restore Account",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"function\": \"restoreAccount\",\n  \"values\": {\n    \"email\": \"{{user_email}}\"\n  }\n}"
+            },
+            "url": {
+              "raw": "{{profile_service_url}}/service/profile",
+              "host": ["{{profile_service_url}}"],
+              "path": ["service", "profile"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Project Service",
+      "item": [
+        {
+          "name": "Projects",
+          "item": [
+            {
+              "name": "Create Project",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"add\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"project_name\": \"Test Project\",\n    \"description\": \"A test project\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/project",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "project"]
+                }
+              }
+            },
+            {
+              "name": "Get All Projects",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"getByEmail\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/project",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "project"]
+                }
+              }
+            },
+            {
+              "name": "Rename Project",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"rename\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"old_name\": \"Test Project\",\n    \"new_name\": \"Renamed Project\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/project",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "project"]
+                }
+              }
+            },
+            {
+              "name": "Delete Project",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"delete\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"project_name\": \"Test Project\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/project",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "project"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Entries",
+          "item": [
+            {
+              "name": "Add Entry",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"add\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"project_name\": \"Test Project\",\n    \"entry_object\": {\n      \"title\": \"Test Entry\",\n      \"description\": \"This is a test entry\"\n    },\n    \"due_date\": \"2026-09-20\",\n    \"priority\": \"Urgent and important\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/entry",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "entry"]
+                }
+              }
+            },
+            {
+              "name": "Get Entries",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"get\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"project_name\": \"Test Project\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/entry",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "entry"]
+                }
+              }
+            },
+            {
+              "name": "Get All Entries",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"getAll\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/entry",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "entry"]
+                }
+              }
+            },
+            {
+              "name": "Update Entry",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"update\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"project_name\": \"Test Project\",\n    \"entry_id\": \"1\",\n    \"new_entry\": {\n      \"title\": \"Updated Entry\"\n    },\n    \"due_date\": \"2026-09-21\",\n    \"priority\": \"Important but not urgent\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/entry",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "entry"]
+                }
+              }
+            },
+            {
+              "name": "Delete Entry",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"delete\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"project_name\": \"Test Project\",\n    \"entry\": {\n      \"id\": \"1\"\n    }\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/entry",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "entry"]
+                }
+              }
+            },
+            {
+              "name": "Natural Language Entry",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"text\": \"Fix login bug in the auth service by tomorrow\"\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/natural-language-entry",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "natural-language-entry"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Fields",
+          "item": [
+            {
+              "name": "Add Field",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"add\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"project_name\": \"Test Project\",\n    \"field_name\": \"status\",\n    \"data_type\": \"text\",\n    \"is_required\": false\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/field",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "field"]
+                }
+              }
+            },
+            {
+              "name": "Get Fields",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"get\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"project_name\": \"Test Project\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/field",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "field"]
+                }
+              }
+            },
+            {
+              "name": "Delete Field",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"delete\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"project_name\": \"Test Project\",\n    \"field_name\": \"status\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/field",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "field"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Priority",
+          "item": [
+            {
+              "name": "Set Priority",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"set\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"project_name\": \"Test Project\",\n    \"entry_id\": \"1\",\n    \"priority\": \"Urgent and important\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/priority",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "priority"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Activity Log",
+          "item": [
+            {
+              "name": "Log Activity",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"log\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"action\": \"created\",\n    \"entity_type\": \"entry\",\n    \"entity_name\": \"Test Entry\",\n    \"details\": \"Created a new test entry\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/activity",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "activity"]
+                }
+              }
+            },
+            {
+              "name": "Get Activity",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"get\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"limit\": 10\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{project_service_url}}/service/activity",
+                  "host": ["{{project_service_url}}"],
+                  "path": ["service", "activity"]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dashboard Service",
+      "item": [
+        {
+          "name": "Search",
+          "item": [
+            {
+              "name": "Search All Projects",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"searchAll\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"query\": \"login bug\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{dashboard_service_url}}/service/search",
+                  "host": ["{{dashboard_service_url}}"],
+                  "path": ["service", "search"]
+                }
+              }
+            },
+            {
+              "name": "Search Specific Project",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"searchProject\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\",\n    \"project_name\": \"Test Project\",\n    \"query\": \"login\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{dashboard_service_url}}/service/search",
+                  "host": ["{{dashboard_service_url}}"],
+                  "path": ["service", "search"]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "name": "Stats",
+          "item": [
+            {
+              "name": "Get Dashboard Stats",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"function\": \"getStats\",\n  \"values\": {\n    \"user_email\": \"{{user_email}}\"\n  }\n}"
+                },
+                "url": {
+                  "raw": "{{dashboard_service_url}}/service/stats",
+                  "host": ["{{dashboard_service_url}}"],
+                  "path": ["service", "stats"]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

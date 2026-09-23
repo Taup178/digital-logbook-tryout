@@ -1,0 +1,3232 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the COMS3011A Digital Logbook project">
+      
+      
+      
+      
+        <link rel="prev" href="../uml-diagrams/">
+      
+      
+        <link rel="next" href="../../roadmap/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Third-Party Dependencies - Digital Logbook Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lora";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#third-party-dependencies" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Logbook Docs" class="md-header__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Logbook Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Third-Party Dependencies
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Logbook Docs" class="md-nav__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Digital Logbook Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cicd-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD & Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teck-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice-feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexedDB Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSE Real-Time Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../daemon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keep-Alive Daemons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entry-summaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entry Summaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uml-diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UML Architecture Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Dependencies
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#frontend-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend — Runtime
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend — Runtime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supabasesupabase-js-21123" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @supabase/supabase-js ^2.112.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idb-803" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        idb ^8.0.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-1910-react-dom-1910" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        react ^19.1.0 / react-dom ^19.1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-icons-570" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        react-icons ^5.7.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-media-recorder-172" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        react-media-recorder ^1.7.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-router-dom-761" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        react-router-dom ^7.6.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend — Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend — Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ffmpegffmpeg-01215-ffmpegutil-0122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @ffmpeg/ffmpeg ^0.12.15 / @ffmpeg/util ^0.12.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-libraryreact-1633-testing-libraryjest-dom-691-testing-libraryuser-event-1467" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @testing-library/react ^16.3.3 / @testing-library/jest-dom ^6.9.1 / @testing-library/user-event ^14.6.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitejsplugin-react-441" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @vitejs/plugin-react ^4.4.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitestcoverage-v8-327" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @vitest/coverage-v8 ^3.2.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fake-indexeddb-625" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fake-indexeddb ^6.2.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsdom-2610" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        jsdom ^26.1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript-583" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        typescript ~5.8.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vite-635" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vite ^6.3.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitest-327" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vitest ^3.2.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-runtime-project-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend — Runtime (project-service)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend — Runtime (project-service)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cerebrascerebras_cloud_sdk-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @cerebras/cerebras_cloud_sdk ^1.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#googlegenerative-ai-0210" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @google/generative-ai ^0.21.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huggingfaceinference-300" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @huggingface/inference ^3.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neondatabaseserverless-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @neondatabase/serverless ^1.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cors-286" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cors ^2.8.6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-fns-410" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        date-fns ^4.1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dotenv-1742" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dotenv ^17.4.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#express-521" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        express ^5.2.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jose-6012" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        jose ^6.0.12
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-yaml-541" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        js-yaml ^5.4.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leven-310" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        leven ^3.1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-400" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openai ^4.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pg-8163" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg ^8.16.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swagger-ui-express-501" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        swagger-ui-express ^5.0.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-runtime-shared-across-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend — Runtime (shared across services)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend — Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend — Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#babelcore-7260-babelpreset-env-7260-babel-jest-2970" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @babel/core ^7.26.0 / @babel/preset-env ^7.26.0 / babel-jest ^29.7.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coverage-badges-cli-220" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coverage-badges-cli ^2.2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jest-2970-jest-junit-1700" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        jest ^29.7.0 / jest-junit ^17.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodemon-3114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nodemon ^3.1.14
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supertest-720" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        supertest ^7.2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Site
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation Site">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mkdocs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mkdocs-material
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-one-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-two-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stakeholder Interactions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stakeholder Interactions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Stories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Management
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Management
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology & Git Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/work-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions & Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issues & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/ai-attribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Attribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/code-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & User Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#frontend-runtime" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend — Runtime
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend — Runtime">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#supabasesupabase-js-21123" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @supabase/supabase-js ^2.112.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#idb-803" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        idb ^8.0.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-1910-react-dom-1910" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        react ^19.1.0 / react-dom ^19.1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-icons-570" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        react-icons ^5.7.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-media-recorder-172" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        react-media-recorder ^1.7.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-router-dom-761" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        react-router-dom ^7.6.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#frontend-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend — Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Frontend — Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ffmpegffmpeg-01215-ffmpegutil-0122" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @ffmpeg/ffmpeg ^0.12.15 / @ffmpeg/util ^0.12.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#testing-libraryreact-1633-testing-libraryjest-dom-691-testing-libraryuser-event-1467" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @testing-library/react ^16.3.3 / @testing-library/jest-dom ^6.9.1 / @testing-library/user-event ^14.6.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitejsplugin-react-441" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @vitejs/plugin-react ^4.4.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitestcoverage-v8-327" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @vitest/coverage-v8 ^3.2.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fake-indexeddb-625" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fake-indexeddb ^6.2.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jsdom-2610" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        jsdom ^26.1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#typescript-583" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        typescript ~5.8.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vite-635" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vite ^6.3.5
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vitest-327" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        vitest ^3.2.7
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-runtime-project-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend — Runtime (project-service)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend — Runtime (project-service)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cerebrascerebras_cloud_sdk-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @cerebras/cerebras_cloud_sdk ^1.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#googlegenerative-ai-0210" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @google/generative-ai ^0.21.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#huggingfaceinference-300" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @huggingface/inference ^3.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neondatabaseserverless-100" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @neondatabase/serverless ^1.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cors-286" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cors ^2.8.6
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#date-fns-410" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        date-fns ^4.1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dotenv-1742" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dotenv ^17.4.2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#express-521" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        express ^5.2.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jose-6012" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        jose ^6.0.12
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#js-yaml-541" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        js-yaml ^5.4.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#leven-310" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        leven ^3.1.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#openai-400" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        openai ^4.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pg-8163" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        pg ^8.16.3
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#swagger-ui-express-501" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        swagger-ui-express ^5.0.1
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-runtime-shared-across-services" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend — Runtime (shared across services)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backend-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend — Development
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Backend — Development">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#babelcore-7260-babelpreset-env-7260-babel-jest-2970" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        @babel/core ^7.26.0 / @babel/preset-env ^7.26.0 / babel-jest ^29.7.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coverage-badges-cli-220" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coverage-badges-cli ^2.2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jest-2970-jest-junit-1700" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        jest ^29.7.0 / jest-junit ^17.0.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#nodemon-3114" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nodemon ^3.1.14
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supertest-720" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        supertest ^7.2.0
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-site" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Site
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Documentation Site">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mkdocs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdocs-material" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        mkdocs-material
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="third-party-dependencies">Third-Party Dependencies<a class="headerlink" href="#third-party-dependencies" title="Permanent link">&para;</a></h1>
+<p>Every external package used by the Digital Logbook, what it does, why it was chosen over alternatives, and exactly how it is used in the codebase.</p>
+<hr />
+<h2 id="frontend-runtime">Frontend — Runtime<a class="headerlink" href="#frontend-runtime" title="Permanent link">&para;</a></h2>
+<h3 id="supabasesupabase-js-21123">@supabase/supabase-js <code>^2.112.3</code><a class="headerlink" href="#supabasesupabase-js-21123" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Official JavaScript client for Supabase — wraps PostgreSQL queries, Auth, Realtime, and Storage into a single SDK.</p>
+<p><strong>Why chosen:</strong> Supabase is our database and auth provider. This SDK is the only supported way to interact with Supabase from the browser. It provides typed query builders, automatic JWT refresh, and real-time subscription support. Alternatives like raw <code>fetch</code> calls to the Supabase REST API were rejected because the SDK handles token refresh and error normalization for free.</p>
+<p><strong>How it is used:</strong></p>
+<p>The client is created once in <code>frontend/src/lib/supabase.ts</code> using <code>createClient(VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY)</code> and exported as a singleton via <code>getSupabase()</code>. Every other module imports this function rather than creating its own client.</p>
+<p>The SDK is used for three distinct purposes across the frontend:</p>
+<ol>
+<li>
+<p><strong>Authentication flows</strong> — <code>getSupabase().auth.signInWithOtp()</code> sends magic-link emails in <code>SignIn.tsx</code>. <code>auth.getSession()</code> retrieves the current JWT in <code>AuthContext.tsx</code>, <code>AuthCallback.tsx</code>, <code>AuthRestore.tsx</code>, and <code>sse.js</code>. <code>auth.signOut()</code> is called from <code>useInactivityLogout.ts</code> (after 30 minutes of idle) and from <code>SignIn.tsx</code> (manual logout). <code>auth.exchangeCodeForSession()</code> handles the OAuth callback in <code>AuthCallback.tsx</code>, and <code>auth.setSession()</code> restores persisted sessions in the same file.</p>
+</li>
+<li>
+<p><strong>JWT token retrieval for API calls</strong> — <code>frontend/src/lib/api.ts</code> calls <code>getSupabase().auth.getSession()</code> to extract the <code>access_token</code> before every <code>fetch()</code> to a backend service. The token is attached as <code>Authorization: Bearer &lt;token&gt;</code>. This same pattern is used in <code>sse.js</code> for the Server-Sent Events connection, where the token is passed as a query parameter because <code>EventSource</code> does not support custom headers.</p>
+</li>
+<li>
+<p><strong>Type imports</strong> — <code>AuthContext.tsx</code> imports the <code>User</code> and <code>Session</code> TypeScript types from <code>@supabase/supabase-js</code> to type the auth state that flows through the React context.</p>
+</li>
+</ol>
+<hr />
+<h3 id="idb-803">idb <code>^8.0.3</code><a class="headerlink" href="#idb-803" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Tiny promise-based wrapper around the browser's native IndexedDB API.</p>
+<p><strong>Why chosen:</strong> Native IndexedDB is verbose and callback-heavy — opening a store, creating transactions, and handling cursor iteration takes 15–20 lines of boilerplate per operation. <code>idb</code> reduces this to 2–3 lines while adding zero bundle size overhead (under 1 KB gzipped). Alternatives like <code>Dexie.js</code> were considered but rejected as too heavy for our needs — we only need basic get/put/clear operations, not Dexie's full query DSL.</p>
+<p><strong>How it is used:</strong></p>
+<p><code>idb</code> is imported in <code>frontend/src/lib/cache.js</code> as <code>import { openDB } from 'idb'</code>. It opens the <code>digital-logbook-cache</code> database (version 3) with 8 object stores:</p>
+<ul>
+<li><code>projects</code> — keyed by <code>{email}</code>, stores the full project list response</li>
+<li><code>entries</code> — keyed by <code>{email}:{project_name}</code>, stores per-project entry arrays</li>
+<li><code>all-entries</code> — keyed by <code>{email}</code>, stores all entries across all projects</li>
+<li><code>profile</code> — keyed by <code>{email}</code>, stores username/avatar/name</li>
+<li><code>search</code> — keyed by <code>{email}</code>, stores cached search results</li>
+<li><code>archives</code> — keyed by <code>{email}:all</code>, stores archived entries and projects</li>
+<li><code>fields</code> — keyed by <code>{email}</code>, stores custom field definitions</li>
+<li><code>cache-meta</code> — stores timestamps for stale-while-revalidate checks</li>
+</ul>
+<p>The <code>openDB</code> call includes an <code>upgrade</code> callback that creates stores on first visit or when the version bumps. All reads go through <code>cacheGet(store, key)</code> which calls <code>db.get(store, key)</code>, and all writes go through <code>cacheSet(store, key, data)</code> which calls <code>db.put(store, { ...data, key })</code>. The <code>cacheSubscribe(store, key, callback)</code> function implements a pub/sub layer on top — when <code>cacheSet</code> fires, all subscribers for that store+key are notified, which is what makes the UI reactive without polling.</p>
+<p>Every page in the frontend reads from these stores via the <code>useCachedData</code> hook (<code>frontend/src/hooks/useCachedData.js</code>). The <code>syncAllData</code> function in <code>frontend/src/CacheFunctions/syncService.js</code> fetches from the server and populates every store on login.</p>
+<hr />
+<h3 id="react-1910-react-dom-1910">react <code>^19.1.0</code> / react-dom <code>^19.1.0</code><a class="headerlink" href="#react-1910-react-dom-1910" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Component-based UI library and its DOM renderer.</p>
+<p><strong>Why chosen:</strong> The team had prior React experience from coursework and personal projects. React's component model maps directly to our repeated UI patterns (entry cards, stat widgets, project tiles). The massive ecosystem (hooks, dev tools, community packages) significantly reduces build time. React 19 was chosen over 18 for its improved concurrent features and automatic batching, which help during AI provider calls that can take 3–5 seconds. Alternatives like Vue or Svelte were rejected — the team's React fluency outweighed any marginal DX improvement.</p>
+<p><strong>How it is used:</strong></p>
+<p>Every file under <code>frontend/src/</code> is a React component or hook. The application is structured as:</p>
+<ul>
+<li><strong>Pages</strong> (20 pages in <code>frontend/src/pages/</code>) — <code>Dashboard.tsx</code>, <code>AllEntries.tsx</code>, <code>Project.tsx</code>, <code>ProjectDetailPage.tsx</code>, <code>StatsView.tsx</code>, <code>StreakView.tsx</code>, <code>Calendar.tsx</code>, <code>Kanban.tsx</code>, <code>Today.tsx</code>, <code>Timeline.tsx</code>, <code>Archives.tsx</code>, <code>Activity.tsx</code>, <code>VoiceFeature.jsx</code>, <code>SignIn.tsx</code>, <code>AuthCallback.tsx</code>, <code>AuthRestore.tsx</code>, <code>ResetPassword.tsx</code>, <code>UpdatePassword.tsx</code>, <code>CreateProfile.tsx</code>, <code>AvatarPage.tsx</code>, <code>ToneSetup.tsx</code>, <code>ThemeSetup.tsx</code>, <code>FrequencySetup.tsx</code>, <code>DataPortability.tsx</code></li>
+<li><strong>Components</strong> (reusable UI in <code>frontend/src/components/</code>) — <code>NavBar.tsx</code>, <code>QuickEntryBar.tsx</code>, <code>SettingsPanel.tsx</code>, <code>ProtectedRoute.tsx</code>, <code>ProjectSettingsPanel.tsx</code></li>
+<li><strong>Hooks</strong> (custom logic in <code>frontend/src/hooks/</code>) — <code>useTheme.ts</code>, <code>useCachedData.js</code>, <code>useInactivityLogout.ts</code></li>
+<li><strong>Context</strong> (<code>frontend/src/context/AuthContext.tsx</code>) — provides the authenticated user to all descendant components</li>
+</ul>
+<p>React 19's automatic batching means that when the QuickAdd bar fires an AI call (which takes 3–5 seconds), the subsequent state updates (entry created, cache updated, UI re-rendered) are batched into a single render pass instead of triggering multiple re-renders.</p>
+<hr />
+<h3 id="react-icons-570">react-icons <code>^5.7.0</code><a class="headerlink" href="#react-icons-570" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Icon library providing access to dozens of icon sets (Feather, Material, Font Awesome, etc.) as React components.</p>
+<p><strong>Why chosen:</strong> Gives us a consistent icon vocabulary without manually managing SVG files. Tree-shaking ensures only the icons we import are included in the bundle. Alternatives like <code>lucide-react</code> or <code>heroicons</code> were considered but <code>react-icons</code> covers more icon sets in a single package.</p>
+<p><strong>How it is used:</strong></p>
+<p>All icons are imported from <code>react-icons/fi</code> (Feather Icons set). The specific icons and where they appear:</p>
+<ul>
+<li><code>FiArchive</code> — NavBar drawer toggle, Project page archive button, Dashboard archive link, ProjectSettingsPanel archive action</li>
+<li><code>FiMic</code> — VoiceFeature recording button, ProjectDetailPage voice entry trigger, QuickEntryBar voice button</li>
+<li><code>FiStopCircle</code> — VoiceFeature stop recording button</li>
+<li><code>FiRefreshCw</code> — VoiceFeature retry/re-record button</li>
+<li><code>FiSkipBack</code> — VoiceFeature restart button</li>
+<li><code>FiSend</code> — VoiceFeature send transcript button</li>
+<li><code>FiX</code> — VoiceFeature close modal, Dashboard close panel, SettingsPanel close button, Project close button</li>
+<li><code>FiEdit2</code> — Project page edit button, ProjectSettingsPanel edit action</li>
+<li><code>FiTrash2</code> — Project page delete button</li>
+<li><code>FiBookOpen</code> — Project page "view entries" button</li>
+<li><code>FiPlus</code> — Project page create new project button</li>
+<li><code>FiSettings</code> — Project page settings button</li>
+<li><code>FiHeart</code>, <code>FiZap</code>, <code>FiSmile</code> — Tone selection icons in <code>tone.ts</code></li>
+<li><code>FiBellOff</code>, <code>FiBell</code>, <code>FiClock</code> — Frequency setup notification options</li>
+</ul>
+<hr />
+<h3 id="react-media-recorder-172">react-media-recorder <code>^1.7.2</code><a class="headerlink" href="#react-media-recorder-172" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> React hook that wraps the browser's MediaRecorder API for audio/video recording.</p>
+<p><strong>Why chosen:</strong> The voice recording feature requires capturing audio from the user's microphone, converting it to a blob, and uploading it. <code>react-media-recorder</code> handles browser permission prompts, stream lifecycle, and blob assembly in a single hook. Building this from scratch with raw <code>MediaRecorder</code> would require 100+ lines of state management for recording/paused/stopped states. No comparable alternative exists in the React ecosystem.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>frontend/src/pages/VoiceFeature.jsx</code> as <code>useReactMediaRecorder</code>. The hook is initialized with <code>{ audio: true, blobType: 'webm' }</code> and returns <code>{ status, startRecording, stopRecording, clearBlobUrl }</code>.</p>
+<p>The VoiceFeature component is a full-screen modal that auto-starts recording on mount. The flow is:</p>
+<ol>
+<li><code>useEffect</code> calls <code>startRecording()</code> after a 300ms delay (gives the speech recognition time to initialize)</li>
+<li>While recording, the component shows animated pulse rings and a live transcript from the Web Speech API</li>
+<li>When the user taps stop, <code>stopRecording()</code> is called, which finalizes the WebM blob</li>
+<li>The blob URL is available via the hook's internal state, and the component can then send the transcript to QuickAdd via <code>addNaturalLanguageEntry()</code></li>
+<li><code>clearBlobUrl()</code> is called on unmount to free memory</li>
+</ol>
+<hr />
+<h3 id="react-router-dom-761">react-router-dom <code>^7.6.1</code><a class="headerlink" href="#react-router-dom-761" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Client-side routing library for React single-page applications.</p>
+<p><strong>Why chosen:</strong> Standard routing solution for React with declarative <code>&lt;Route&gt;</code> syntax. Nested routes map cleanly to our layout (the Dashboard wrapper contains all authenticated pages). The <code>useNavigate</code> hook enables programmatic navigation after form submissions. Protected route patterns let us gate pages behind authentication. Version 7 was chosen for its improved data loading APIs and backward compatibility with our v6-style route definitions. Alternatives like TanStack Router were rejected as too new and under-documented.</p>
+<p><strong>How it is used:</strong></p>
+<p><code>BrowserRouter</code> wraps the entire app in <code>frontend/src/App.tsx</code>. The route tree has two categories:</p>
+<p><strong>Public routes</strong> (wrapped in <code>PublicRoute</code> — redirects to <code>/dashboard</code> if already logged in):</p>
+<ul>
+<li><code>/</code> and <code>/signin</code> → <code>SignIn.tsx</code></li>
+<li><code>/reset-password</code> → <code>ResetPassword.tsx</code></li>
+<li><code>/auth/update-password</code> → <code>UpdatePassword.tsx</code></li>
+</ul>
+<p><strong>Auth callback routes</strong> (no wrapper — handle OAuth redirects):</p>
+<ul>
+<li><code>/auth/callback</code> → <code>AuthCallback.tsx</code> (exchanges code for session)</li>
+<li><code>/auth/restore</code> → <code>AuthRestore.tsx</code> (restores soft-deleted account)</li>
+</ul>
+<p><strong>Protected routes</strong> (wrapped in <code>ProtectedRoute</code> — redirects to <code>/signin</code> if not logged in):</p>
+<ul>
+<li><code>/dashboard</code> → <code>Dashboard.tsx</code></li>
+<li><code>/dashboard/all</code> and <code>/entries</code> → <code>AllEntriesPage.tsx</code></li>
+<li><code>/dashboard/archives</code> → <code>ArchivesPage.tsx</code></li>
+<li><code>/dashboard/activity</code> → <code>ActivityPage.tsx</code></li>
+<li><code>/create-profile</code> → <code>CreateProfile.tsx</code></li>
+<li><code>/avatar</code> → <code>AvatarPage.tsx</code></li>
+<li><code>/tone-setup</code> → <code>ToneSetup.tsx</code></li>
+<li><code>/theme-setup</code> → <code>ThemeSetup.tsx</code></li>
+<li><code>/frequency-setup</code> → <code>FrequencySetup.tsx</code></li>
+<li><code>/projects</code> → <code>ProjectsPage.tsx</code></li>
+<li><code>/projects/:name</code> → <code>ProjectDetailPage.tsx</code> (uses <code>useParams</code> to read the project name from the URL)</li>
+<li><code>/stats</code> → <code>StatsView.tsx</code></li>
+<li><code>/streaks</code> → <code>StreakView.tsx</code></li>
+<li><code>/calendar</code> → <code>CalendarPage.tsx</code></li>
+<li><code>/kanban</code> → <code>KanbanPage.tsx</code></li>
+<li><code>/today</code> → <code>TodayPage.tsx</code></li>
+<li><code>/timeline</code> → <code>TimelinePage.tsx</code></li>
+<li><code>/data-portability</code> → <code>DataPortability.tsx</code></li>
+</ul>
+<p><code>useNavigate</code> is used in <code>SignIn.tsx</code> (after successful login), <code>CreateProfile.tsx</code> (after profile creation), and <code>VoiceFeature.jsx</code> (after entry creation).</p>
+<hr />
+<h2 id="frontend-development">Frontend — Development<a class="headerlink" href="#frontend-development" title="Permanent link">&para;</a></h2>
+<h3 id="ffmpegffmpeg-01215-ffmpegutil-0122">@ffmpeg/ffmpeg <code>^0.12.15</code> / @ffmpeg/util <code>^0.12.2</code><a class="headerlink" href="#ffmpegffmpeg-01215-ffmpegutil-0122" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> WebAssembly port of FFmpeg that runs entirely in the browser.</p>
+<p><strong>Why chosen:</strong> Voice recordings from different browsers produce different audio formats (WebM, OGG, WAV). We need a consistent format for playback and storage. <code>@ffmpeg/ffmpeg</code> converts audio in the browser without a server round-trip, keeping the pipeline fast and private. Alternatives like server-side conversion with <code>fluent-ffmpeg</code> would add latency and require storing temporary files on Render's ephemeral filesystem.</p>
+<p><strong>How it is used:</strong></p>
+<p>Listed in <code>frontend/package.json</code> devDependencies. The FFmpeg WASM core is loaded dynamically at runtime when the VoiceFeature component needs to convert audio. <code>@ffmpeg/util</code> provides the <code>fetchFile</code> helper that converts a Blob into a Uint8Array for FFmpeg to process.</p>
+<p>The conversion happens in the voice recording pipeline: after <code>react-media-recorder</code> produces a WebM blob, FFmpeg transcodes it to a consistent format before the blob is uploaded to project-service for storage. This ensures playback works uniformly across all browsers and devices.</p>
+<hr />
+<h3 id="testing-libraryreact-1633-testing-libraryjest-dom-691-testing-libraryuser-event-1467">@testing-library/react <code>^16.3.3</code> / @testing-library/jest-dom <code>^6.9.1</code> / @testing-library/user-event <code>^14.6.7</code><a class="headerlink" href="#testing-libraryreact-1633-testing-libraryjest-dom-691-testing-libraryuser-event-1467" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Testing utilities that encourage testing React components the way users interact with them — by querying DOM text, labels, and roles rather than component internals.</p>
+<p><strong>Why chosen:</strong> Testing Library enforces best practices (no shallow rendering, no accessing component state) that produce more reliable tests. <code>jest-dom</code> adds matchers like <code>toBeInTheDocument()</code> and <code>toHaveTextContent()</code> that make assertions readable. <code>user-event</code> simulates real user interactions (typing, clicking) more accurately than <code>fireEvent</code>. This is the industry-standard testing stack for React — well-documented and widely adopted.</p>
+<p><strong>How it is used:</strong></p>
+<p>All 39 frontend unit test files and 5 integration test files under <code>frontend/src/__tests__/</code> use this stack. A typical test pattern:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">render</span><span class="p">,</span><span class="w"> </span><span class="nx">screen</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@testing-library/react'</span><span class="p">;</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">userEvent</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'@testing-library/user-event'</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nx">it</span><span class="p">(</span><span class="s1">'submits the quick-add form'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">  </span><span class="nx">render</span><span class="p">(&lt;</span><span class="nt">QuickEntryBar</span><span class="w"> </span><span class="p">/&gt;);</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">userEvent</span><span class="p">.</span><span class="kr">type</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByRole</span><span class="p">(</span><span class="s1">'textbox'</span><span class="p">),</span><span class="w"> </span><span class="s1">'Fixed login bug'</span><span class="p">);</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="k">await</span><span class="w"> </span><span class="nx">userEvent</span><span class="p">.</span><span class="nx">click</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="s1">'Add'</span><span class="p">));</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="nx">expect</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="s1">'Entry created'</span><span class="p">)).</span><span class="nx">toBeInTheDocument</span><span class="p">();</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">});</span>
+</code></pre></div>
+<p><code>jest-dom</code> matchers used throughout: <code>toBeInTheDocument()</code>, <code>toHaveTextContent()</code>, <code>toBeVisible()</code>, <code>toBeDisabled()</code>, <code>toHaveValue()</code>.</p>
+<hr />
+<h3 id="vitejsplugin-react-441">@vitejs/plugin-react <code>^4.4.1</code><a class="headerlink" href="#vitejsplugin-react-441" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Vite plugin that configures Babel for React Fast Refresh (HMR) and JSX transform.</p>
+<p><strong>Why chosen:</strong> Required for Vite to understand <code>.tsx</code> files and provide instant hot module replacement during development. Without it, every code change would require a full page reload. This is the official React plugin maintained by the Vite team.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>frontend/vite.config.ts</code> and added to the <code>plugins</code> array. It enables React Fast Refresh, which patches edited components in place without losing their state — critical when iterating on the theme system (13 themes) or the dashboard layout where losing scroll position would be frustrating.</p>
+<hr />
+<h3 id="vitestcoverage-v8-327">@vitest/coverage-v8 <code>^3.2.7</code><a class="headerlink" href="#vitestcoverage-v8-327" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Coverage provider for Vitest using the V8 JavaScript engine's built-in code coverage.</p>
+<p><strong>Why chosen:</strong> V8 coverage is more accurate than Istanbul/Babel-based instrumentation — it measures actual execution at the engine level with zero performance overhead. Vitest's built-in coverage integration means no separate <code>nyc</code> or <code>c8</code> configuration. Outputs JSON summaries compatible with our coverage badge pipeline.</p>
+<p><strong>How it is used:</strong></p>
+<p>Invoked via <code>npm run test:coverage</code> which runs <code>vitest run --coverage</code>. The V8 provider instruments every file under <code>frontend/src/</code> and produces a <code>coverage/</code> directory with HTML, JSON, and text reports. The JSON summary is consumed by the CI pipeline to generate coverage badges.</p>
+<hr />
+<h3 id="fake-indexeddb-625">fake-indexeddb <code>^6.2.5</code><a class="headerlink" href="#fake-indexeddb-625" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> In-memory polyfill for the IndexedDB API, used in test environments.</p>
+<p><strong>Why chosen:</strong> Tests run in JSDOM (Node.js), which does not implement IndexedDB. <code>fake-indexeddb</code> provides a complete in-memory implementation so cache functions can be tested without a real browser. Alternatives like mocking <code>cacheGet</code>/<code>cacheSet</code> were rejected because we want to test the actual IndexedDB code paths, not just the mock behavior.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>frontend/src/__tests__/setup.ts</code> before all tests run. It polyfills <code>indexedDB</code>, <code>IDBKeyRange</code>, <code>IDBFactory</code>, and related globals so that <code>idb</code>'s <code>openDB()</code> call in <code>cache.js</code> works identically in tests as it does in the browser. Every test that touches the cache layer (which is most of them, since the frontend is local-first) relies on this polyfill.</p>
+<hr />
+<h3 id="jsdom-2610">jsdom <code>^26.1.0</code><a class="headerlink" href="#jsdom-2610" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> JavaScript implementation of the DOM and HTML standards for Node.js.</p>
+<p><strong>Why chosen:</strong> Vitest uses JSDOM to simulate a browser environment for component tests. Without it, React components cannot render because there is no <code>document</code>, <code>window</code>, or DOM API in Node.js. This is the standard test environment for frontend testing — no viable alternative at this scale.</p>
+<p><strong>How it is used:</strong></p>
+<p>Configured in <code>frontend/vite.config.ts</code> as <code>test.environment: 'jsdom'</code>. Every Vitest test file runs inside a JSDOM environment, which provides <code>document.createElement</code>, <code>window.addEventListener</code>, <code>localStorage</code>, and all other browser APIs that React components depend on.</p>
+<hr />
+<h3 id="typescript-583">typescript <code>~5.8.3</code><a class="headerlink" href="#typescript-583" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Superset of JavaScript that adds static type checking.</p>
+<p><strong>Why chosen:</strong> Catches bugs at compile time (wrong prop types, missing fields, null dereferences) instead of runtime. IDE autocompletion dramatically speeds up development. Self-documenting code — types serve as inline documentation. Refactoring is safer because the compiler flags every breakage. The frontend was converted from JavaScript to TypeScript early because API response type errors were causing silent rendering failures.</p>
+<p><strong>How it is used:</strong></p>
+<p>Every <code>.ts</code> and <code>.tsx</code> file under <code>frontend/src/</code> is type-checked. The <code>tsconfig.json</code> configures strict mode, path aliases (<code>@/</code> maps to <code>src/</code>), and the React JSX transform. The build script runs <code>tsc -b</code> before <code>vite build</code> to catch type errors before production deploys. Key typed interfaces include <code>User</code>, <code>Session</code>, <code>Profile</code>, <code>Project</code>, <code>Entry</code>, and the theme type union in <code>useTheme.ts</code>.</p>
+<hr />
+<h3 id="vite-635">vite <code>^6.3.5</code><a class="headerlink" href="#vite-635" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Next-generation frontend build tool and development server.</p>
+<p><strong>Why chosen:</strong> Near-instant dev server startup using native ES modules (no bundling during development). Hot Module Replacement updates components in milliseconds without losing state. Production builds use Rollup for optimized output with tree-shaking and code splitting. We migrated from Create React App because CRA was deprecated and its Webpack builds took 30+ seconds. Vite builds the same project in under 5 seconds.</p>
+<p><strong>How it is used:</strong></p>
+<p><code>frontend/vite.config.ts</code> configures the dev server (port 5173), path aliases, the React plugin, and Vitest settings. <code>npm run dev</code> starts the dev server, <code>npm run build</code> runs <code>tsc -b &amp;&amp; vite build</code> to produce the production bundle in <code>frontend/dist/</code>, and <code>npm run preview</code> serves the production build locally. The <code>dist/</code> directory is what Render deploys as a static site.</p>
+<hr />
+<h3 id="vitest-327">vitest <code>^3.2.7</code><a class="headerlink" href="#vitest-327" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Vite-native testing framework — runs tests using the same Vite config and transform pipeline.</p>
+<p><strong>Why chosen:</strong> Zero configuration needed — reuses <code>vite.config.ts</code> for path aliases, environment, and transforms. Compatible with Testing Library APIs. Watch mode is instant because it uses Vite's module graph. Jest was rejected for the frontend because it requires separate Babel configuration and does not understand Vite path aliases without extra plugins.</p>
+<p><strong>How it is used:</strong></p>
+<p><code>npm run test</code> runs <code>vitest run</code> (single pass), <code>npm run test:watch</code> runs <code>vitest</code> (watch mode). All 397 frontend unit tests and 47 integration tests run through Vitest. Test files are co-located with the code they test in <code>__tests__/</code> directories.</p>
+<hr />
+<h2 id="backend-runtime-project-service">Backend — Runtime (project-service)<a class="headerlink" href="#backend-runtime-project-service" title="Permanent link">&para;</a></h2>
+<h3 id="cerebrascerebras_cloud_sdk-100">@cerebras/cerebras_cloud_sdk <code>^1.0.0</code><a class="headerlink" href="#cerebrascerebras_cloud_sdk-100" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Official SDK for Cerebras AI inference — an ultra-fast chip-based AI provider.</p>
+<p><strong>Why chosen:</strong> Part of our 5-provider AI fallback chain. Cerebras provides the fastest inference speeds of any provider (sub-second responses), making it ideal as the third fallback when HuggingFace and OpenRouter are rate-limited. The SDK handles authentication, request formatting, and streaming. No alternative SDK exists — Cerebras is unique in offering wafer-scale chip inference.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>services/project-service/src/functions/AI.js</code> as <code>Cerebras</code>. A client is lazily instantiated via <code>getCerebrasClient()</code> using <code>new Cerebras({ apiKey: process.env.CEREBRAS_API_KEY })</code>. The SDK is called through <code>callCerebrasModel(model, question)</code> which uses <code>client.chat.completions.create()</code> with the <code>llama-3.3-70b</code> and <code>llama3.1-8b</code> models.</p>
+<p>Cerebras is the third provider in the fallback chain: HuggingFace → OpenRouter → <strong>Cerebras</strong> → Gemini → Groq. If the two free-tier providers (HuggingFace, OpenRouter) are rate-limited, Cerebras provides a fast, reliable fallback. The <code>tryProviderModels</code> function tries each model with exponential backoff on 429/503 errors, and if all models fail, sets a 5-minute cooldown in the <code>ai_provider_cooldowns</code> database table so subsequent requests skip Cerebras entirely.</p>
+<hr />
+<h3 id="googlegenerative-ai-0210">@google/generative-ai <code>^0.21.0</code><a class="headerlink" href="#googlegenerative-ai-0210" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Official Google SDK for the Gemini AI API.</p>
+<p><strong>Why chosen:</strong> Fourth provider in the AI fallback chain. Gemini excels at structured JSON output, which is critical for our natural language parsing that must return valid JSON with specific fields. The SDK provides typed request/response handling and file upload support. Selected over the raw REST API because the SDK handles authentication token refresh and provides better error messages.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>services/project-service/src/functions/AI.js</code> as <code>GoogleGenerativeAI</code>. A client is lazily instantiated via <code>getGeminiClient()</code> using <code>new GoogleGenerativeAI(process.env.GEMINI_API_KEY)</code>. The SDK is called through <code>callGeminiModel(model, question)</code> which uses <code>genAI.getGenerativeModel()</code> with <code>generationConfig: { responseMimeType: 'application/json' }</code> — this forces Gemini to always return valid JSON, which is critical for the natural language parser.</p>
+<p>Gemini uses <code>gemini-2.5-flash</code> and <code>gemini-2.0-flash</code> models. It is the fourth provider in the fallback chain, attempted after HuggingFace, OpenRouter, and Cerebras have all failed or are on cooldown.</p>
+<hr />
+<h3 id="huggingfaceinference-300">@huggingface/inference <code>^3.0.0</code><a class="headerlink" href="#huggingfaceinference-300" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> JavaScript client for the HuggingFace Inference API — access to thousands of open-source AI models.</p>
+<p><strong>Why chosen:</strong> First provider in the AI fallback chain because HuggingFace's free tier costs nothing. Good for simple natural language parsing tasks. The SDK abstracts away model selection, API versioning, and rate-limit handling. Alternatives like calling the REST API directly were rejected because the SDK provides typed responses and automatic retry logic.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>services/project-service/src/functions/AI.js</code> as <code>InferenceClient</code>. A client is lazily instantiated via <code>getHFClient()</code> using <code>new InferenceClient(process.env.HF_API_KEY)</code>. The SDK is called through <code>callHFModel(model, question)</code> which uses <code>client.chatCompletion()</code> with <code>temperature: 0.1</code> (low creativity, high determinism — critical for structured JSON output).</p>
+<p>HuggingFace uses <code>deepseek-ai/DeepSeek-R1</code> and <code>meta-llama/Llama-3.3-70B-Instruct</code> models. It is the first provider attempted in the fallback chain because it is free. If it returns a 429 (rate limit) or 503 (model loading), the chain moves to OpenRouter.</p>
+<hr />
+<h3 id="neondatabaseserverless-100">@neondatabase/serverless <code>^1.0.0</code><a class="headerlink" href="#neondatabaseserverless-100" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Serverless PostgreSQL driver using HTTP/WebSocket transport instead of raw TCP.</p>
+<p><strong>Why chosen:</strong> Render's serverless environment does not support persistent TCP connections to PostgreSQL. The Neon driver uses HTTP POST requests for queries, which work in edge/serverless contexts where traditional <code>pg</code> connections time out. Used as a fallback database connector when the primary <code>pg</code> pool is unavailable.</p>
+<p><strong>How it is used:</strong></p>
+<p>Listed in <code>services/project-service/package.json</code> dependencies. The primary database connection uses <code>pg.Pool</code> (see below), but the Neon driver is available as a fallback for environments where persistent connections are not possible. The <code>db.js</code> module checks for <code>DATABASE_URL</code> and creates a <code>pg.Pool</code>; if that fails or the environment does not support TCP, the Neon driver can be used instead.</p>
+<hr />
+<h3 id="cors-286">cors <code>^2.8.6</code><a class="headerlink" href="#cors-286" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Express middleware that enables Cross-Origin Resource Sharing.</p>
+<p><strong>Why chosen:</strong> The frontend (served from Render's static hosting) makes API calls to each backend service on different ports/origins. Without CORS, the browser blocks these requests. This is the standard, universally-used CORS middleware for Express — configurable per-origin, per-method, and per-header. No alternative provides the same level of control with zero configuration.</p>
+<p><strong>How it is used:</strong></p>
+<p>Applied in every service's <code>src/index.js</code> with a strict allowlist of origins:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">allowedOrigins</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="s1">'https://digital-logbook-bxgv.onrender.com'</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="s1">'https://digital-logbook-bjev.onrender.com'</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="s1">'https://digital-logbook-hlulani.onrender.com'</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="s1">'http://localhost:5173'</span><span class="p">,</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="s1">'http://localhost:3000'</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="p">];</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="kd">const</span><span class="w"> </span><span class="nx">corsOptions</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nx">origin</span><span class="o">:</span><span class="w"> </span><span class="p">(</span><span class="nx">origin</span><span class="p">,</span><span class="w"> </span><span class="nx">callback</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">origin</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nx">allowedOrigins</span><span class="p">.</span><span class="nx">includes</span><span class="p">(</span><span class="nx">origin</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">);</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">    </span><span class="nx">callback</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="kc">false</span><span class="p">);</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">  </span><span class="p">},</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="nx">credentials</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w">  </span><span class="nx">methods</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'GET'</span><span class="p">,</span><span class="w"> </span><span class="s1">'POST'</span><span class="p">,</span><span class="w"> </span><span class="s1">'PUT'</span><span class="p">,</span><span class="w"> </span><span class="s1">'DELETE'</span><span class="p">,</span><span class="w"> </span><span class="s1">'OPTIONS'</span><span class="p">],</span>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="w">  </span><span class="nx">allowedHeaders</span><span class="o">:</span><span class="w"> </span><span class="p">[</span><span class="s1">'Content-Type'</span><span class="p">,</span><span class="w"> </span><span class="s1">'Authorization'</span><span class="p">],</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="p">};</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">cors</span><span class="p">(</span><span class="nx">corsOptions</span><span class="p">));</span>
+</code></pre></div>
+<p>The <code>origin</code> callback dynamically checks each incoming request's <code>Origin</code> header against the allowlist. Requests from unknown origins are rejected. <code>credentials: true</code> allows the browser to send cookies and <code>Authorization</code> headers cross-origin. The global error handler also re-applies CORS headers so that error responses are not blocked by the browser.</p>
+<hr />
+<h3 id="date-fns-410">date-fns <code>^4.1.0</code><a class="headerlink" href="#date-fns-410" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Lightweight, tree-shakeable date utility library.</p>
+<p><strong>Why chosen:</strong> The natural language parser in <code>entries.js</code> needs to calculate dates ("tomorrow", "in 3 days", "next Friday", "2 days from now"). <code>date-fns</code> provides immutable, pure-function date manipulation without the heavy bundle size of Moment.js. Tree-shaking means only the functions we import (<code>addDays</code>, <code>nextDay</code>, <code>format</code>) are included. Alternatives like <code>dayjs</code> were considered but <code>date-fns</code> has better TypeScript support and a more functional API.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>services/project-service/src/functions/entries.js</code> as <code>import { format, addDays, nextDay, endOfMonth, startOfDay } from 'date-fns'</code>. The functions are used in the <code>getDate()</code> method of the natural language parser:</p>
+<ul>
+<li><code>format(date, 'yyyy-MM-dd')</code> — converts a Date object to an ISO date string for the <code>due_date</code> column</li>
+<li><code>addDays(today, 1)</code> — "tomorrow" → today + 1 day</li>
+<li><code>addDays(today, -1)</code> — "yesterday" → today - 1 day</li>
+<li><code>addDays(today, 7)</code> — "next week" → today + 7 days</li>
+<li><code>addDays(today, num * 7)</code> — "in 2 weeks" → today + 14 days</li>
+<li><code>addDays(today, num)</code> — "in 3 days" → today + 3 days</li>
+<li><code>nextDay(today, i)</code> — "next Monday" → finds the next occurrence of day <code>i</code> (0=Sunday, 1=Monday, etc.)</li>
+<li><code>nextDay(today, 5)</code> — "end of the week" → next Friday</li>
+<li><code>startOfDay()</code> and <code>endOfMonth()</code> — used for date range calculations in the calendar view</li>
+</ul>
+<p>The parser also handles relative phrases like "2 days from now", "in 3 weeks", and "next Tuesday" by combining these primitives.</p>
+<hr />
+<h3 id="dotenv-1742">dotenv <code>^17.4.2</code><a class="headerlink" href="#dotenv-1742" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Loads environment variables from a <code>.env</code> file into <code>process.env</code>.</p>
+<p><strong>Why chosen:</strong> Each service needs database URLs, API keys, and JWT secrets that must never be committed to the repository. <code>dotenv</code> reads these from <code>.env</code> files during local development. On Render, environment variables are set through the dashboard and injected directly — <code>dotenv</code> is a no-op there. This is the standard approach for Node.js configuration.</p>
+<p><strong>How it is used:</strong></p>
+<p>Every service imports <code>dotenv</code> at the top of its entry point:</p>
+<ul>
+<li><code>services/project-service/src/index.js</code> — <code>import './config.js'</code> which calls <code>import 'dotenv/config'</code></li>
+<li><code>services/dashboard-service/src/index.js</code> — same pattern</li>
+<li><code>services/profile-service/src/index.js</code> — same pattern</li>
+<li><code>services/auth-service/src/index.js</code> — <code>require('dotenv').config()</code> (CommonJS)</li>
+</ul>
+<p>The <code>.env</code> files (never committed) contain: <code>DATABASE_URL</code>, <code>SUPABASE_URL</code>, <code>SUPABASE_KEY</code>, <code>SUPABASE_SERVICE_ROLE_KEY</code>, <code>PORT</code>, <code>HF_API_KEY</code>, <code>OPENROUTER_API_KEY</code>, <code>CEREBRAS_API_KEY</code>, <code>GEMINI_API_KEY</code>, <code>GROQ_API_KEY</code>.</p>
+<hr />
+<h3 id="express-521">express <code>^5.2.1</code><a class="headerlink" href="#express-521" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Minimal web framework for building REST APIs in Node.js.</p>
+<p><strong>Why chosen:</strong> Industry standard for Node.js APIs. Middleware pattern lets us layer CORS, auth verification, error handling, and route-specific logic cleanly. Each microservice is approximately 100 lines of boilerplate. Express 5 adds improved async error handling and better path matching over v4. Alternatives like Fastify or Koa were rejected — Express's documentation depth and community size make troubleshooting trivial.</p>
+<p><strong>How it is used:</strong></p>
+<p>Every service creates an Express app in <code>src/index.js</code> and mounts routes:</p>
+<p><strong>project-service</strong> (port 5003) — the largest service, mounts 7 route modules:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">'/service'</span><span class="p">,</span><span class="w"> </span><span class="nx">requireAuth</span><span class="p">,</span><span class="w"> </span><span class="nx">projectRoutes</span><span class="p">);</span><span class="w"> </span><span class="c1">// CRUD for projects</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">'/service'</span><span class="p">,</span><span class="w"> </span><span class="nx">requireAuth</span><span class="p">,</span><span class="w"> </span><span class="nx">entryRoutes</span><span class="p">);</span><span class="w"> </span><span class="c1">// CRUD for entries + natural language</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">'/service'</span><span class="p">,</span><span class="w"> </span><span class="nx">requireAuth</span><span class="p">,</span><span class="w"> </span><span class="nx">priorityRoutes</span><span class="p">);</span><span class="w"> </span><span class="c1">// priority updates</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">'/service'</span><span class="p">,</span><span class="w"> </span><span class="nx">requireAuth</span><span class="p">,</span><span class="w"> </span><span class="nx">fieldRoutes</span><span class="p">);</span><span class="w"> </span><span class="c1">// custom field definitions</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">'/service'</span><span class="p">,</span><span class="w"> </span><span class="nx">requireAuth</span><span class="p">,</span><span class="w"> </span><span class="nx">archiveRoutes</span><span class="p">);</span><span class="w"> </span><span class="c1">// archive/unarchive</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">'/service'</span><span class="p">,</span><span class="w"> </span><span class="nx">requireAuth</span><span class="p">,</span><span class="w"> </span><span class="nx">activityRoutes</span><span class="p">);</span><span class="w"> </span><span class="c1">// activity log</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">'/service'</span><span class="p">,</span><span class="w"> </span><span class="nx">requireAuth</span><span class="p">,</span><span class="w"> </span><span class="nx">aiRoutes</span><span class="p">);</span><span class="w"> </span><span class="c1">// AI summary generation</span>
+</code></pre></div>
+<p>All <code>/service</code> routes require JWT authentication via <code>requireAuth</code> middleware. The <code>/api-docs</code> route serves Swagger UI. The <code>/</code> route returns a health check JSON.</p>
+<p><strong>dashboard-service</strong> (port 5002) — mounts search routes and starts the keep-alive daemon:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">'/service'</span><span class="p">,</span><span class="w"> </span><span class="nx">requireAuth</span><span class="p">,</span><span class="w"> </span><span class="nx">searchRoutes</span><span class="p">);</span>
+</code></pre></div>
+<p><strong>profile-service</strong> (port 5004) — mounts login and profile routes:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">'/service'</span><span class="p">,</span><span class="w"> </span><span class="nx">loginRoutes</span><span class="p">);</span><span class="w"> </span><span class="c1">// checkUser, createProfile</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="s1">'/service'</span><span class="p">,</span><span class="w"> </span><span class="nx">profileRoutes</span><span class="p">);</span><span class="w"> </span><span class="c1">// getProfile, updateUsername, updateAvatar</span>
+</code></pre></div>
+<p><strong>auth-service</strong> (port 5001) — the simplest service, no database connection, just health check and error handler.</p>
+<hr />
+<h3 id="jose-6012">jose <code>^6.0.12</code><a class="headerlink" href="#jose-6012" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> JavaScript module for JSON Object Signing and Encryption — JWT verification and signing.</p>
+<p><strong>Why chosen:</strong> Each backend service independently verifies JWT tokens from Supabase Auth. <code>jose</code> is the most maintained, spec-compliant JWT library for JavaScript — supports JWKS (JSON Web Key Sets) for automatic key rotation, which Supabase uses. Alternatives like <code>jsonwebtoken</code> use callbacks and do not support modern ESM imports. <code>jose</code> is promise-based and ESM-native, matching our module system.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>services/project-service/src/middleware/auth.js</code> as <code>import * as jose</code>. The middleware:</p>
+<ol>
+<li>Creates a JWKS client: <code>jose.createRemoteJWKSet(new URL(JWKS_URL))</code> pointing to Supabase's <code>/.well-known/jwks.json</code> endpoint. This automatically fetches and caches the public signing keys, and re-fetches when keys rotate.</li>
+<li>Extracts the JWT from the <code>Authorization: Bearer &lt;token&gt;</code> header (or from a <code>?token=</code> query parameter for SSE connections, since <code>EventSource</code> does not support custom headers).</li>
+<li>Verifies the token: <code>jose.jwtVerify(token, jwks)</code> — this checks the signature, expiration, and issuer.</li>
+<li>Attaches <code>req.user</code> (the decoded JWT payload) and <code>req.userEmail</code> (the verified email) to the request.</li>
+<li>Provisions the user in <code>public.users</code> if they do not exist yet (handles OAuth signups where the auth flow never inserted a row).</li>
+</ol>
+<p>The same middleware pattern is duplicated in <code>dashboard-service/src/middleware/auth.js</code>.</p>
+<hr />
+<h3 id="js-yaml-541">js-yaml <code>^5.4.1</code><a class="headerlink" href="#js-yaml-541" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> YAML parser and serializer for JavaScript.</p>
+<p><strong>Why chosen:</strong> The project-service serves an OpenAPI specification (<code>openapi.yaml</code>) through Swagger UI. <code>js-yaml</code> reads and parses the YAML file at startup so it can be passed to <code>swagger-ui-express</code>. No alternative was considered — this is the de facto standard YAML library for JavaScript.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>services/project-service/src/index.js</code> as <code>import * as yaml from 'js-yaml'</code> (namespace import for ESM compatibility with the CJS module). At startup, it reads and parses the OpenAPI spec:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">openApiSpec</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">yaml</span><span class="p">.</span><span class="nx">load</span><span class="p">(</span><span class="nx">readFileSync</span><span class="p">(</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span><span class="w"> </span><span class="s1">'..'</span><span class="p">,</span><span class="w"> </span><span class="s1">'docs'</span><span class="p">,</span><span class="w"> </span><span class="s1">'openapi.yaml'</span><span class="p">),</span><span class="w"> </span><span class="s1">'utf8'</span><span class="p">),</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">  </span><span class="nx">schema</span><span class="o">:</span><span class="w"> </span><span class="nx">yaml</span><span class="p">.</span><span class="nx">DEFAULT_SCHEMA</span><span class="p">,</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">});</span>
+</code></pre></div>
+<p>The parsed spec object is then passed to <code>swaggerUi.setup(openApiSpec)</code> which renders the interactive API documentation at <code>/api-docs</code>. The <code>DEFAULT_SCHEMA</code> option enables YAML tags like <code>!!seq</code> and <code>!!map</code> that the OpenAPI spec uses.</p>
+<hr />
+<h3 id="leven-310">leven <code>^3.1.0</code><a class="headerlink" href="#leven-310" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Levenshtein distance algorithm — measures the number of single-character edits between two strings.</p>
+<p><strong>Why chosen:</strong> Used in the natural language parser for fuzzy project name matching. When a user types "fix login bug" and has a project called "WebApp Refactor", Levenshtein distance helps determine if the entry might relate to an existing project. The algorithm is fast (O(n*m) time), has zero dependencies, and the package is under 1 KB. Alternatives like <code>string-similarity</code> were rejected as heavier with no accuracy improvement.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>services/project-service/src/functions/entries.js</code> as <code>import leven from 'leven'</code>. Used in the <code>getDate()</code> method for fuzzy matching of date keywords:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">const</span><span class="w"> </span><span class="nx">keyword</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="nx">DATE_KEYWORDS</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">distance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">leven</span><span class="p">(</span><span class="nx">alpha</span><span class="p">,</span><span class="w"> </span><span class="nx">keyword</span><span class="p">);</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="nx">distance</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="nx">maxDistance</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nx">distance</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="nx">bestDistance</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">    </span><span class="nx">bestDistance</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">distance</span><span class="p">;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="nx">bestMatch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">keyword</span><span class="p">;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="p">}</span>
+</code></pre></div>
+<p>When a user types "tommorow" (misspelled), <code>leven('tommorow', 'tomorrow')</code> returns 2, which is within the allowed edit distance, so the parser correctly interprets it as "tomorrow" and calculates the due date accordingly.</p>
+<hr />
+<h3 id="openai-400">openai <code>^4.0.0</code><a class="headerlink" href="#openai-400" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Official OpenAI SDK for GPT model API access.</p>
+<p><strong>Why chosen:</strong> Used as one of the AI fallback providers. OpenAI's GPT models are the most widely tested for structured JSON output. The SDK handles authentication, request formatting, streaming, and automatic retries with exponential backoff. Selected as a fallback provider because OpenAI's reliability is well-established, even if not the cheapest option.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>services/project-service/src/functions/AI.js</code> as <code>OpenAI</code>. The SDK is used for two providers in the fallback chain:</p>
+<ol>
+<li>
+<p><strong>OpenRouter</strong> — <code>getOpenRouterClient()</code> creates <code>new OpenAI({ baseURL: 'https://openrouter.ai/api/v1', apiKey: process.env.OPENROUTER_API_KEY })</code>. This reuses the OpenAI SDK with a custom base URL to access OpenRouter's model aggregation (which provides free access to Llama 3.3, Nemotron, and Gemma models). Called via <code>callOpenRouterModel()</code> using <code>client.chat.completions.create()</code> with <code>response_format: { type: 'json_object' }</code>.</p>
+</li>
+<li>
+<p><strong>Groq</strong> — <code>getGroqClient()</code> creates <code>new OpenAI({ baseURL: 'https://api.groq.com/openai/v1', apiKey: process.env.GROQ_API_KEY })</code>. Same pattern — reuses the OpenAI SDK with Groq's base URL for their ultra-fast Llama inference. Called via <code>callGroqModel()</code>.</p>
+</li>
+</ol>
+<p>The OpenAI SDK is the second provider (OpenRouter) and fifth provider (Groq) in the fallback chain: HuggingFace → <strong>OpenRouter</strong> → Cerebras → Gemini → <strong>Groq</strong>.</p>
+<hr />
+<h3 id="pg-8163">pg <code>^8.16.3</code><a class="headerlink" href="#pg-8163" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> PostgreSQL client for Node.js — the standard driver for connecting to PostgreSQL databases.</p>
+<p><strong>Why chosen:</strong> The primary database driver for all services that query PostgreSQL directly (project-service, dashboard-service, profile-service). Supports connection pooling, parameterized queries (SQL injection prevention), and async/await. The Neon serverless driver is used only as a fallback — <code>pg</code> is the workhorse. No alternative was considered — this is the official, most-maintained PostgreSQL driver for Node.js.</p>
+<p><strong>How it is used:</strong></p>
+<p>Each service that connects to PostgreSQL has its own <code>db.js</code> file with identical structure:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">pg</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'pg'</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Pool</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pg</span><span class="p">;</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="kd">const</span><span class="w"> </span><span class="nx">pool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Pool</span><span class="p">({</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="nx">connectionString</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DATABASE_URL</span><span class="p">,</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">  </span><span class="nx">ssl</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">rejectUnauthorized</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">});</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="nx">pool</span><span class="p">.</span><span class="nx">query</span><span class="p">(</span><span class="s1">'SELECT 1'</span><span class="p">).</span><span class="nx">then</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'PostgreSQL pool connected successfully'</span><span class="p">));</span>
+</code></pre></div>
+<p>The pool is used in every function that executes SQL:</p>
+<ul>
+<li><strong>project-service</strong> — <code>entries.js</code> (INSERT/UPDATE/DELETE entries), <code>project.js</code> (CRUD projects), <code>field.js</code> (CRUD fields), <code>archives.js</code> (archive/unarchive with transactions), <code>activity.js</code> (INSERT activity_log), <code>search.js</code> (full-text search), <code>AI.js</code> (cooldown tracking)</li>
+<li><strong>dashboard-service</strong> — <code>search.js</code> (searchAll, searchProject, searchProjects), <code>daemon.js</code> (INSERT/DELETE health_ping)</li>
+<li><strong>profile-service</strong> — <code>login.js</code> (checkUser, provisionUser), <code>profile.js</code> (getProfile, updateUsername, updateAvatar, deleteAccount)</li>
+</ul>
+<p>All queries use parameterized statements (<code>$1</code>, <code>$2</code>) to prevent SQL injection. The pool manages up to 10 concurrent connections per service instance.</p>
+<hr />
+<h3 id="swagger-ui-express-501">swagger-ui-express <code>^5.0.1</code><a class="headerlink" href="#swagger-ui-express-501" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Serves Swagger/OpenAPI documentation through an Express route with an interactive UI.</p>
+<p><strong>Why chosen:</strong> Provides a browsable, interactive API documentation page at <code>/api-docs</code> for the project-service. Users (and developers) can test endpoints directly from the browser. The alternative — writing separate documentation — would go stale as the API changes. OpenAPI YAML is the source of truth, and this package renders it automatically.</p>
+<p><strong>How it is used:</strong></p>
+<p>Imported in <code>services/project-service/src/index.js</code> as <code>swaggerUi</code>. Mounted at <code>/api-docs</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nx">app</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">  </span><span class="s1">'/api-docs'</span><span class="p">,</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="w">  </span><span class="nx">swaggerUi</span><span class="p">.</span><span class="nx">serve</span><span class="p">,</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="w">  </span><span class="nx">swaggerUi</span><span class="p">.</span><span class="nx">setup</span><span class="p">(</span><span class="nx">openApiSpec</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">    </span><span class="nx">customSiteTitle</span><span class="o">:</span><span class="w"> </span><span class="s1">'Codacaine API Docs'</span><span class="p">,</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="w">    </span><span class="nx">swaggerOptions</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">persistAuthorization</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="p">})</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="p">);</span>
+</code></pre></div>
+<p>The <code>persistAuthorization: true</code> option keeps the JWT token in the UI between page reloads, so developers do not have to re-paste their token every time they refresh. The <code>openApiSpec</code> object is parsed from <code>docs/openapi.yaml</code> by <code>js-yaml</code> at startup.</p>
+<hr />
+<h2 id="backend-runtime-shared-across-services">Backend — Runtime (shared across services)<a class="headerlink" href="#backend-runtime-shared-across-services" title="Permanent link">&para;</a></h2>
+<p>These packages appear in multiple services with the same versions:</p>
+<table>
+<thead>
+<tr>
+<th>Package</th>
+<th>Version</th>
+<th>Services</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cors</code></td>
+<td><code>^2.8.6</code></td>
+<td>All 4</td>
+<td>Cross-origin request handling with per-origin allowlist</td>
+</tr>
+<tr>
+<td><code>dotenv</code></td>
+<td><code>^17.4.2</code></td>
+<td>All 4</td>
+<td>Environment variable loading from <code>.env</code> files</td>
+</tr>
+<tr>
+<td><code>express</code></td>
+<td><code>^5.2.1</code></td>
+<td>All 4</td>
+<td>HTTP framework for REST APIs</td>
+</tr>
+<tr>
+<td><code>pg</code></td>
+<td><code>^8.16.3</code></td>
+<td>project, dashboard, profile</td>
+<td>PostgreSQL connection pool and query execution</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="backend-development">Backend — Development<a class="headerlink" href="#backend-development" title="Permanent link">&para;</a></h2>
+<h3 id="babelcore-7260-babelpreset-env-7260-babel-jest-2970">@babel/core <code>^7.26.0</code> / @babel/preset-env <code>^7.26.0</code> / babel-jest <code>^29.7.0</code><a class="headerlink" href="#babelcore-7260-babelpreset-env-7260-babel-jest-2970" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Babel transpiler and its Jest integration — converts modern JavaScript (ESM, optional chaining, nullish coalescing) to a format Jest can execute.</p>
+<p><strong>Why chosen:</strong> Jest does not natively understand ESM <code>import</code>/<code>export</code> syntax. Babel transforms ESM to CommonJS before Jest runs the tests. <code>@babel/preset-env</code> auto-detects the target Node.js version and only transforms what is needed. This is the standard Jest + ESM setup — no alternative provides the same compatibility.</p>
+<p><strong>How it is used:</strong></p>
+<p>Each service has a <code>babel.config.js</code> (or inline Jest config in <code>package.json</code>) that specifies:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nx">transform</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="s1">'^.+\\.js$'</span><span class="o">:</span><span class="w"> </span><span class="s1">'babel-jest'</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<p><code>@babel/preset-env</code> is configured to target the Node.js version running on Render. When <code>npm run test</code> invokes Jest, Babel transforms every <code>.js</code> file from ESM to CommonJS before Jest executes it. The <code>moduleNameMapper</code> in project-service maps <code>date-fns</code> to its CommonJS entry point to avoid ESM/CJS conflicts during testing.</p>
+<hr />
+<h3 id="coverage-badges-cli-220">coverage-badges-cli <code>^2.2.0</code><a class="headerlink" href="#coverage-badges-cli-220" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Generates SVG coverage badge images from Jest's <code>coverage-summary.json</code>.</p>
+<p><strong>Why chosen:</strong> Reads the JSON coverage output and produces a colored badge (green/yellow/red). Visible in the README, motivating the team to maintain coverage above thresholds.</p>
+<p><strong>How it is used:</strong></p>
+<p>Invoked via <code>node scripts/generate-badges.js</code> from the repo root after running <code>jest --coverage</code> in each service. The script reads <code>coverage/coverage-summary.json</code> (produced by Jest's <code>json-summary</code> reporter) and generates SVG badge files in <code>badges/&lt;service&gt;/</code>. The badges display statement, branch, function, and line coverage percentages.</p>
+<hr />
+<h3 id="jest-2970-jest-junit-1700">jest <code>^29.7.0</code> / jest-junit <code>^17.0.0</code><a class="headerlink" href="#jest-2970-jest-junit-1700" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> JavaScript testing framework and its JUnit XML reporter.</p>
+<p><strong>Why chosen:</strong> Zero-config setup for Node.js projects. Built-in mocking (<code>jest.mock()</code>) isolates Supabase calls from business logic. Coverage reporting is built in. <code>jest-junit</code> produces XML reports that Gitea Actions can parse for test result summaries. Same framework across all 4 backend services ensures consistent testing patterns. Vitest was rejected for the backend because our services are plain JavaScript (not Vite projects), and Jest's mocking system is more mature for server-side code.</p>
+<p><strong>How it is used:</strong></p>
+<p>All 17 backend test files across 4 services use Jest. Key patterns:</p>
+<ul>
+<li><code>jest.mock('../db.js')</code> — mocks the database pool so tests do not need a real PostgreSQL connection. The mock returns a fake <code>pool.query()</code> that resolves with predefined rows.</li>
+<li><code>jest.mock('@supabase/supabase-js')</code> — mocks the Supabase client in auth tests.</li>
+<li><code>describe/it/expect</code> — standard BDD-style test structure.</li>
+<li><code>jest-junit</code> outputs JUnit XML to <code>reports/junit.xml</code>, which Gitea Actions parses to display test results in the PR UI.</li>
+</ul>
+<p>Test files are located in <code>src/__tests__/</code> directories within each service.</p>
+<hr />
+<h3 id="nodemon-3114">nodemon <code>^3.1.14</code><a class="headerlink" href="#nodemon-3114" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Auto-restarts the Node.js server when source files change.</p>
+<p><strong>Why chosen:</strong> During development, manually restarting the server after every code change is slow. <code>nodemon</code> watches the <code>src/</code> directory and restarts automatically. Configured in <code>npm run dev</code> scripts. No alternative provides the same simplicity — <code>pm2</code> is overkill for development, and <code>ts-node-dev</code> only works with TypeScript.</p>
+<p><strong>How it is used:</strong></p>
+<p>Each service's <code>package.json</code> has <code>"dev": "nodemon src/index.js"</code>. Running <code>npm run dev</code> starts the service and watches for file changes. When a <code>.js</code> file in <code>src/</code> is saved, nodemon kills the Node.js process and restarts it. This is used by all 4 backend services during local development.</p>
+<hr />
+<h3 id="supertest-720">supertest <code>^7.2.0</code><a class="headerlink" href="#supertest-720" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> HTTP assertion library for testing Express routes — sends real HTTP requests to the app without starting a server.</p>
+<p><strong>Why chosen:</strong> Used for backend integration tests that verify the full request/response cycle (status codes, response bodies, headers). Supertest creates a test server from the Express app, sends requests, and provides chainable assertions. Alternatives like manually calling route handlers were rejected because they skip middleware (CORS, auth) and do not test the real HTTP path.</p>
+<p><strong>How it is used:</strong></p>
+<p>Used in <code>services/auth-service/src/__tests__/cors.integration.test.js</code> to verify that CORS headers are correctly set on responses:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">request</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'supertest'</span><span class="p">;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">app</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'../index.js'</span><span class="p">;</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="nx">it</span><span class="p">(</span><span class="s1">'allows requests from the frontend origin'</span><span class="p">,</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">request</span><span class="p">(</span><span class="nx">app</span><span class="p">).</span><span class="nx">get</span><span class="p">(</span><span class="s1">'/'</span><span class="p">).</span><span class="nx">set</span><span class="p">(</span><span class="s1">'Origin'</span><span class="p">,</span><span class="w"> </span><span class="s1">'http://localhost:5173'</span><span class="p">);</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">  </span><span class="nx">expect</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">headers</span><span class="p">[</span><span class="s1">'access-control-allow-origin'</span><span class="p">]).</span><span class="nx">toBe</span><span class="p">(</span><span class="s1">'http://localhost:5173'</span><span class="p">);</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="p">});</span>
+</code></pre></div>
+<p>Supertest mounts the Express app in-memory (no <code>listen()</code> call), sends HTTP requests to it, and returns the response for assertions. This tests the full middleware chain including CORS, JSON parsing, and error handling.</p>
+<hr />
+<h2 id="documentation-site">Documentation Site<a class="headerlink" href="#documentation-site" title="Permanent link">&para;</a></h2>
+<h3 id="mkdocs">mkdocs<a class="headerlink" href="#mkdocs" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Static site generator purpose-built for project documentation.</p>
+<p><strong>Why chosen:</strong> Write docs in Markdown — no special syntax or build tools beyond Python. Lives alongside the code in <code>docs-site/</code> so documentation is versioned with the project. Simple YAML configuration for navigation, theme, and extensions. Alternatives like Docusaurus require a Node.js build pipeline and React knowledge — MkDocs is just Python and Markdown.</p>
+<p><strong>How it is used:</strong></p>
+<p><code>docs-site/mkdocs.yml</code> configures the site title, theme, navigation tree, and plugins. The <code>docs/</code> directory contains Markdown files organized by category: <code>Architecture/</code> (database, tech stack, UI design), <code>Meetings/</code> and <code>Stakeholder_Interactions/</code> (sprint-by-sprint logs), <code>User_Stories/</code>, <code>Project_Management/</code> (methodology, decisions, work tracker), and <code>Testing/</code>. Running <code>mkdocs build</code> produces a static HTML site in <code>docs-site/site/</code>, which Render deploys as a static site.</p>
+<hr />
+<h3 id="mkdocs-material">mkdocs-material<a class="headerlink" href="#mkdocs-material" title="Permanent link">&para;</a></h3>
+<p><strong>What:</strong> Material Design theme for MkDocs — provides search, navigation, dark mode, and responsive layout.</p>
+<p><strong>Why chosen:</strong> The most popular MkDocs theme with built-in search (no separate search server needed), syntax highlighting, code copy buttons, tabbed content blocks, and admonition callouts. The pink/rose color palette matches the Digital Logbook brand. Free and open-source.</p>
+<p><strong>How it is used:</strong></p>
+<p>Configured in <code>docs-site/mkdocs.yml</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nt">theme</span><span class="p">:</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">  </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">material</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="nt">palette</span><span class="p">:</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">    </span><span class="nt">primary</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pink</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="w">    </span><span class="nt">accent</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">rose</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="w">  </span><span class="nt">features</span><span class="p">:</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.tabs</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">navigation.sections</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">search.suggest</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">content.code.copy</span>
+</code></pre></div>
+<p>The theme provides the sidebar navigation, the search bar at the top, syntax-highlighted code blocks with copy buttons, and responsive layout for mobile devices. Listed in <code>docs-site/requirements.txt</code> alongside <code>mkdocs</code>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mermaid.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4230 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the COMS3011A Digital Logbook project">
+      
+      
+      
+      
+        <link rel="prev" href="../code-quality/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Testing & User Feedback - Digital Logbook Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lora";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#testing-user-feedback" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Logbook Docs" class="md-header__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Logbook Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Testing & User Feedback
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Logbook Docs" class="md-nav__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Digital Logbook Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/cicd-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD & Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/api-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/teck-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/ui-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/voice-feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexedDB Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/sse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSE Real-Time Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/daemon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keep-Alive Daemons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/entry-summaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entry Summaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/uml-diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UML Architecture Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/third-party/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-one-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-two-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stakeholder Interactions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stakeholder Interactions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Stories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Management
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Management
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology & Git Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/work-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions & Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issues & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/ai-attribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Attribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../code-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & User Feedback
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & User Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quality-assurance-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Assurance Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-testing-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Testing Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated Testing Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-tools-and-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Tools and Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-types-of-tests-are-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Types of Tests Are Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-file-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test File Organisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-structure-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Structure Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-tests-are-executed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Tests Are Executed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mocking-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mocking Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coverage-expectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage Expectations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-when-a-test-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Happens When a Test Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules for Test Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsibilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-cadence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Cadence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-not-tested-and-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is NOT Tested (and Why)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-test-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Test Inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Full Test Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend-unit-tests-31-files-397-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Unit Tests (31 files, 397 tests)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-integration-tests-5-files-47-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Integration Tests (5 files, 47 tests)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-tests-25-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend Tests (25 files)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-feedback-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Feedback Process
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Feedback Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feedback-collection-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feedback Collection Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-feedback-is-triaged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Feedback Is Triaged
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formal-documentation-of-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formal Documentation of Feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceptance-criteria-for-feedback-derived-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria for Feedback-Derived Stories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closing-the-feedback-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing the Feedback Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-feedback-session-external-tester-sprint-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Feedback Session — External Tester (Sprint 2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Feedback Session — External Tester (Sprint 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tester-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tester Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions-asked-answers-given" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions Asked &amp; Answers Given
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-tester-feedback-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Tester Feedback Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-feedback-session-quick-survey-13-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Feedback Session — Quick Survey (13 Responses)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Feedback Session — Quick Survey (13 Responses)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-projects-calendar-entries-and-activity-log-feel-disconnected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Projects, calendar, entries and activity log feel disconnected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-no-onboarding-or-in-app-guidance-for-first-time-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. No onboarding or in-app guidance for first-time users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-unclear-or-unexplained-terminology-and-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Unclear or unexplained terminology and fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-creating-a-task-is-not-repeatable-or-memorable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Creating a task is not repeatable or memorable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-new-project-did-not-immediately-appear-when-creating-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. New project did not immediately appear when creating a task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-deleting-uses-a-raw-browser-pop-up-instead-of-a-proper-in-app-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Deleting uses a raw browser pop-up instead of a proper in-app dialog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-data-privacy-and-ai-integration-trust-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Data privacy and AI-integration trust concerns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-quick-survey-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Quick-Survey Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-survey-feature-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick-Survey Feature Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-traceability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue Traceability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration &amp; Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#quality-assurance-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quality Assurance Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#automated-testing-procedure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Automated Testing Procedure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Automated Testing Procedure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-tools-and-frameworks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Tools and Frameworks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-types-of-tests-are-run" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Types of Tests Are Run
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-file-organisation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test File Organisation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-structure-pattern" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Test Structure Pattern
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-tests-are-executed" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Tests Are Executed
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mocking-approach" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mocking Approach
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#coverage-expectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Coverage Expectations
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-happens-when-a-test-fails" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Happens When a Test Fails
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing Policy
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing Policy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rules-for-test-coverage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rules for Test Coverage
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#responsibilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Responsibilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#review-cadence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Review Cadence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-is-not-tested-and-why" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is NOT Tested (and Why)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-test-inventory" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Test Inventory
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Full Test Inventory">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#frontend-unit-tests-31-files-397-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Unit Tests (31 files, 397 tests)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frontend-integration-tests-5-files-47-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frontend Integration Tests (5 files, 47 tests)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-tests-25-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backend Tests (25 files)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-feedback-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Feedback Process
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Feedback Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#feedback-collection-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feedback Collection Methods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-feedback-is-triaged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Feedback Is Triaged
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formal-documentation-of-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Formal Documentation of Feedback
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceptance-criteria-for-feedback-derived-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Acceptance Criteria for Feedback-Derived Stories
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#closing-the-feedback-loop" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Closing the Feedback Loop
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-feedback-session-external-tester-sprint-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Feedback Session — External Tester (Sprint 2)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Feedback Session — External Tester (Sprint 2)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tester-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tester Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#questions-asked-answers-given" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Questions Asked &amp; Answers Given
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-tester-feedback-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Tester Feedback Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-feedback-session-quick-survey-13-responses" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Feedback Session — Quick Survey (13 Responses)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Feedback Session — Quick Survey (13 Responses)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#methodology" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methodology
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#1-projects-calendar-entries-and-activity-log-feel-disconnected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Projects, calendar, entries and activity log feel disconnected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-no-onboarding-or-in-app-guidance-for-first-time-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. No onboarding or in-app guidance for first-time users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-unclear-or-unexplained-terminology-and-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Unclear or unexplained terminology and fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-creating-a-task-is-not-repeatable-or-memorable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Creating a task is not repeatable or memorable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-new-project-did-not-immediately-appear-when-creating-a-task" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. New project did not immediately appear when creating a task
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-deleting-uses-a-raw-browser-pop-up-instead-of-a-proper-in-app-dialog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Deleting uses a raw browser pop-up instead of a proper in-app dialog
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#7-data-privacy-and-ai-integration-trust-concerns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Data privacy and AI-integration trust concerns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#summary-of-quick-survey-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary of Quick-Survey Fixes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-survey-feature-requests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick-Survey Feature Requests
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metrics-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metrics Summary
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#issue-traceability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Issue Traceability
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#integration-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Integration &amp; Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="testing-user-feedback">Testing &amp; User Feedback<a class="headerlink" href="#testing-user-feedback" title="Permanent link">&para;</a></h1>
+<p><strong>Test lead:</strong> Hlulani Baloyi — responsible for writing, reviewing, and maintaining the test suite across all frontend and backend services.</p>
+<h2 id="quality-assurance-overview">Quality Assurance Overview<a class="headerlink" href="#quality-assurance-overview" title="Permanent link">&para;</a></h2>
+<p>This page documents three pillars of our quality assurance strategy:</p>
+<ol>
+<li><strong>Automated Testing Procedure</strong> — how tests are structured, run, and enforced</li>
+<li><strong>Testing Policy</strong> — the rules the team follows for test coverage</li>
+<li><strong>User Feedback Process</strong> — how stakeholder input is collected, triaged, and actioned</li>
+</ol>
+<hr />
+<h2 id="automated-testing-procedure">Automated Testing Procedure<a class="headerlink" href="#automated-testing-procedure" title="Permanent link">&para;</a></h2>
+<h3 id="testing-tools-and-frameworks">Testing Tools and Frameworks<a class="headerlink" href="#testing-tools-and-frameworks" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Tool</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontend test runner</td>
+<td><strong>Vitest</strong></td>
+<td>Unit and integration tests for frontend</td>
+</tr>
+<tr>
+<td>Backend test runner</td>
+<td><strong>Jest</strong></td>
+<td>Unit and integration tests for backend services</td>
+</tr>
+<tr>
+<td>Component rendering</td>
+<td><strong>@testing-library/react</strong></td>
+<td>Render React components, simulate user interactions</td>
+</tr>
+<tr>
+<td>DOM assertions</td>
+<td><strong>@testing-library/jest-dom</strong></td>
+<td>Semantic assertions (<code>toBeDisabled</code>, <code>toHaveTextContent</code>)</td>
+</tr>
+<tr>
+<td>IndexedDB polyfill</td>
+<td><strong>fake-indexeddb</strong></td>
+<td>Integration tests that exercise the real cache layer</td>
+</tr>
+<tr>
+<td>Backend HTTP tests</td>
+<td><strong>Jest + supertest</strong></td>
+<td>Endpoint tests for each microservice</td>
+</tr>
+<tr>
+<td>CI pipeline</td>
+<td><strong>Gitea Actions</strong></td>
+<td>Automated test runs on every push and PR</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-types-of-tests-are-run">What Types of Tests Are Run<a class="headerlink" href="#what-types-of-tests-are-run" title="Permanent link">&para;</a></h3>
+<h4 id="unit-tests">Unit Tests<a class="headerlink" href="#unit-tests" title="Permanent link">&para;</a></h4>
+<p>Unit tests verify individual functions and components in isolation. All external dependencies (Supabase, fetch, IndexedDB) are mocked.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li>Pure functions: <code>formatDuration</code>, <code>isOverdue</code>, <code>calculateStreaks</code>, <code>searchAll</code></li>
+<li>API helpers: <code>request()</code> with auth headers and error handling</li>
+<li>Auth context: sign-in, sign-up, OAuth, password reset, account deletion</li>
+<li>Component logic: form submission, conditional rendering, event handlers</li>
+</ul>
+<h4 id="integration-tests">Integration Tests<a class="headerlink" href="#integration-tests" title="Permanent link">&para;</a></h4>
+<p>Integration tests verify that multiple modules work together correctly. These use real IndexedDB (via <code>fake-indexeddb</code>) and test the full data flow.</p>
+<p><strong>Examples:</strong></p>
+<ul>
+<li><strong>Cache layer</strong> — <code>cacheSet</code> → <code>cacheGet</code> → <code>cacheSubscribe</code> event flow, isolation between users, <code>clearUserCache</code></li>
+<li><strong>Entry CRUD</strong> — optimistic write → server sync → cache update, rollback on failure</li>
+<li><strong>Sync service</strong> — <code>syncAllData</code> populates all IndexedDB stores from server responses</li>
+<li><strong>Auth + Cache</strong> — sign-out clears IndexedDB, SSE disconnect on logout</li>
+<li><strong>useCachedData hook</strong> — reads from cache immediately, subscribes to changes, triggers background fetch</li>
+</ul>
+<h4 id="end-to-end-manual">End-to-End (Manual)<a class="headerlink" href="#end-to-end-manual" title="Permanent link">&para;</a></h4>
+<p>End-to-end testing is done manually during development and sprint demos. Full browser E2E automation (e.g. Cypress) is planned but not yet implemented.</p>
+<h3 id="test-file-organisation">Test File Organisation<a class="headerlink" href="#test-file-organisation" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>frontend/src/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── components/__tests__/        # Shared component tests
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── AppShell.test.tsx
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   ├── Header.test.tsx
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   ├── NavBar.test.tsx
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   ├── ProfileMenu.test.tsx
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   ├── ProtectedRoute.test.tsx
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   ├── QuickEntryBar.test.tsx
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   └── Stats.test.tsx
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>├── pages/__tests__/             # Page-level tests
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   ├── AllEntries.test.tsx
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   └── SignIn.test.tsx
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>├── Templates/__tests__/         # Template component tests
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│   ├── EntriesByDueDateBoard.test.tsx
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│   ├── EntryChecklist.test.tsx
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│   └── ProjectTable.test.tsx
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>├── __integration__/             # Integration tests (separate from unit)
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>│   ├── auth-cache.integration.test.js
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>│   ├── cache.integration.test.js
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│   ├── entries-crud.integration.test.js
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│   ├── sync-service.integration.test.js
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>│   └── use-cached-data.integration.test.tsx
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>├── context/__tests__/           # Auth context tests
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>├── functions/__tests__/         # Pure function tests
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>├── functions/dashboard/__tests__/
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>├── hooks/__tests__/             # Hook tests
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>└── lib/__tests__/               # Library/utility tests
+</code></pre></div>
+<p><strong>Naming convention:</strong> <code>{SourceName}.test.{ext}</code> — test files match the source file they cover. Integration tests use <code>.integration.test.{ext}</code> to distinguish them from unit tests.</p>
+<h3 id="test-structure-pattern">Test Structure Pattern<a class="headerlink" href="#test-structure-pattern" title="Permanent link">&para;</a></h3>
+<p>Every test follows <strong>Arrange → Act → Assert</strong>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">describe</span><span class="p">,</span><span class="w"> </span><span class="nx">it</span><span class="p">,</span><span class="w"> </span><span class="nx">expect</span><span class="p">,</span><span class="w"> </span><span class="nx">vi</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'vitest'</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nx">describe</span><span class="p">(</span><span class="s1">'functionName'</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nx">it</span><span class="p">(</span><span class="s1">'does the expected thing'</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">    </span><span class="c1">// Arrange — set up inputs and mocks</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="c1">// Act — call the function</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="c1">// Assert — verify the result</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">});</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">});</span>
+</code></pre></div>
+<p>Component tests use <code>render</code> + <code>screen</code> queries:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nx">it</span><span class="p">(</span><span class="s1">'renders the project name on each checklist card'</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nx">render</span><span class="p">(&lt;</span><span class="nt">ChecklistEntryCard</span><span class="w"> </span><span class="na">entry</span><span class="o">=</span><span class="p">{</span><span class="nx">sampleEntry</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;);</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nx">expect</span><span class="p">(</span><span class="nx">screen</span><span class="p">.</span><span class="nx">getByText</span><span class="p">(</span><span class="s1">'TestProject'</span><span class="p">)).</span><span class="nx">toBeTruthy</span><span class="p">();</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="p">});</span>
+</code></pre></div>
+<h3 id="how-tests-are-executed">How Tests Are Executed<a class="headerlink" href="#how-tests-are-executed" title="Permanent link">&para;</a></h3>
+<h4 id="locally">Locally<a class="headerlink" href="#locally" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># From the frontend/ directory</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>npm<span class="w"> </span><span class="nb">test</span><span class="w">                    </span><span class="c1"># Run all tests once</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>npm<span class="w"> </span>run<span class="w"> </span>test:watch<span class="w">          </span><span class="c1"># Watch mode (re-runs on file change)</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>npm<span class="w"> </span>run<span class="w"> </span>test:coverage<span class="w">       </span><span class="c1"># Generate coverage report (v8)</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="c1"># Run only integration tests</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>npx<span class="w"> </span>vitest<span class="w"> </span>run<span class="w"> </span>src/__integration__/
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="c1"># Run a specific test file</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>npx<span class="w"> </span>vitest<span class="w"> </span>run<span class="w"> </span>src/components/__tests__/NavBar.test.tsx
+</code></pre></div>
+<h4 id="in-ci-gitea-actions">In CI (Gitea Actions)<a class="headerlink" href="#in-ci-gitea-actions" title="Permanent link">&para;</a></h4>
+<p>Multiple CI pipelines run on every push and pull request to <code>main</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Workflow</th>
+<th>What it runs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../../../.gitea/workflows/ci.yml"><code>.gitea/workflows/ci.yml</code></a></td>
+<td>Lint, build, and tests for frontend and all four services</td>
+</tr>
+<tr>
+<td><a href="../../../../.gitea/workflows/frontend-unit-tests.yml"><code>.gitea/workflows/frontend-unit-tests.yml</code></a></td>
+<td>Frontend unit tests (excludes <code>src/__integration__/</code>)</td>
+</tr>
+<tr>
+<td><a href="../../../../.gitea/workflows/frontend-integration-tests.yml"><code>.gitea/workflows/frontend-integration-tests.yml</code></a></td>
+<td>Frontend integration tests (<code>src/__integration__/</code> only)</td>
+</tr>
+<tr>
+<td><a href="../../../../.gitea/workflows/backend-unit-tests.yml"><code>.gitea/workflows/backend-unit-tests.yml</code></a></td>
+<td>Backend unit tests (excludes integration) for all four services</td>
+</tr>
+<tr>
+<td><a href="../../../../.gitea/workflows/backend-integration-tests.yml"><code>.gitea/workflows/backend-integration-tests.yml</code></a></td>
+<td>Backend integration tests for all four services</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Frontend unit tests</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nt">jobs</span><span class="p">:</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="w">  </span><span class="nt">frontend-unit-tests</span><span class="p">:</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npx vitest run --exclude "src/__integration__/**"</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Backend unit tests (matrix over all four services)</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="nt">jobs</span><span class="p">:</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a><span class="w">  </span><span class="nt">backend-unit-tests</span><span class="p">:</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="w">    </span><span class="nt">strategy</span><span class="p">:</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a><span class="w">      </span><span class="nt">matrix</span><span class="p">:</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a><span class="w">        </span><span class="nt">service</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="nv">auth-service</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">dashboard-service</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">profile-service</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">project-service</span><span class="p p-Indicator">]</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a><span class="w">    </span><span class="nt">steps</span><span class="p">:</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a><span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">npx jest --testPathIgnorePatterns="integration" --forceExit --detectOpenHandles</span>
+</code></pre></div>
+<p>Each workflow appears separately in the Gitea Actions UI. If any test fails, the pipeline fails and the push is flagged.</p>
+<h3 id="mocking-approach">Mocking Approach<a class="headerlink" href="#mocking-approach" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Dependency</th>
+<th>Mock strategy</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Supabase client</td>
+<td><code>vi.mock('@/lib/supabase')</code></td>
+<td>Prevents real database/auth calls</td>
+</tr>
+<tr>
+<td><code>fetch</code> / <code>request()</code></td>
+<td><code>vi.fn()</code> or <code>vi.mock('@/lib/api')</code></td>
+<td>Isolates from network</td>
+</tr>
+<tr>
+<td>React Router</td>
+<td><code>&lt;MemoryRouter&gt;</code> wrapper</td>
+<td>Controls navigation in tests</td>
+</tr>
+<tr>
+<td>IndexedDB</td>
+<td><code>fake-indexeddb/auto</code></td>
+<td>Real IndexedDB API in jsdom for integration tests</td>
+</tr>
+<tr>
+<td><code>localStorage</code></td>
+<td><code>localStorage.clear()</code> in <code>beforeEach</code></td>
+<td>Prevents test pollution</td>
+</tr>
+<tr>
+<td>Child components</td>
+<td><code>vi.mock('../Component')</code></td>
+<td>Tests one component in isolation</td>
+</tr>
+<tr>
+<td>Auth context</td>
+<td><code>vi.mock('@/context/AuthContext')</code></td>
+<td>Provides mock user for component tests</td>
+</tr>
+<tr>
+<td><code>IntersectionObserver</code></td>
+<td>No-op class stub in <code>src/test/setup.ts</code></td>
+<td>jsdom does not implement it; landing-sections scroll-reveal needs it</td>
+</tr>
+<tr>
+<td><code>matchMedia</code></td>
+<td>No-op stub in <code>src/test/setup.ts</code></td>
+<td>jsdom does not implement it; responsive theme toggle needs it</td>
+</tr>
+</tbody>
+</table>
+<h3 id="coverage-expectations">Coverage Expectations<a class="headerlink" href="#coverage-expectations" title="Permanent link">&para;</a></h3>
+<p>Coverage is measured with <code>@vitest/coverage-v8</code>. The target is <strong>meaningful coverage</strong> of business logic and critical user flows, not 100% line coverage:</p>
+<ul>
+<li><strong>Pure functions</strong> (stats, overdue, streaks, search, tone) — fully covered</li>
+<li><strong>Shared components</strong> (NavBar, Header, ProfileMenu, Stats, AppShell) — render + interaction tests</li>
+<li><strong>Critical flows</strong> (auth, CRUD, cache sync, optimistic updates) — integration tested</li>
+<li><strong>Pages</strong> — key pages (SignIn, AllEntries) tested for display modes and navigation</li>
+</ul>
+<h3 id="what-happens-when-a-test-fails">What Happens When a Test Fails<a class="headerlink" href="#what-happens-when-a-test-fails" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>CI blocks the push</strong> — a failing test prevents the commit from passing the pipeline</li>
+<li><strong>The author fixes the test or the code</strong> — depending on whether the test expectation or the implementation is wrong</li>
+<li><strong>No test is silently skipped</strong> — disabled tests must include a comment explaining why and a tracking issue</li>
+</ol>
+<hr />
+<h2 id="testing-policy">Testing Policy<a class="headerlink" href="#testing-policy" title="Permanent link">&para;</a></h2>
+<h3 id="rules-for-test-coverage">Rules for Test Coverage<a class="headerlink" href="#rules-for-test-coverage" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Every new pure function must have a corresponding test file</strong> in a <code>__tests__/</code> directory adjacent to the source.</li>
+<li><strong>Every new React component that contains logic</strong> (event handlers, conditional rendering, API calls) must have at least one render test and one interaction test.</li>
+<li><strong>Tests must not depend on external services.</strong> All HTTP calls are mocked; no test may reach a live backend URL.</li>
+<li><strong>Tests must be deterministic.</strong> No test may rely on <code>Date.now()</code> without accepting it as a parameter or mocking the clock. Time-dependent tests use fixed timestamps.</li>
+<li><strong>CI must pass before merge.</strong> The Gitea Actions pipeline runs all frontend tests (unit + integration) and backend tests; a failing test blocks the push.</li>
+<li><strong>Integration tests are required for data flow changes.</strong> Any change to the cache layer, sync service, or CRUD functions must be covered by an integration test.</li>
+</ol>
+<h3 id="responsibilities">Responsibilities<a class="headerlink" href="#responsibilities" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Test lead (Hlulani Baloyi)</strong></td>
+<td>Writes all tests across frontend and backend services, reviews test quality, maintains the test inventory, ensures CI stays green</td>
+</tr>
+</tbody>
+</table>
+<h3 id="review-cadence">Review Cadence<a class="headerlink" href="#review-cadence" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Tests are reviewed as part of every PR — the reviewer verifies that new features have tests</li>
+<li>The full test inventory is updated at the end of each sprint</li>
+<li>Integration tests are added when a new data flow or cross-module interaction is introduced</li>
+</ul>
+<h3 id="what-is-not-tested-and-why">What Is NOT Tested (and Why)<a class="headerlink" href="#what-is-not-tested-and-why" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Visual/styling correctness</strong> — CSS is reviewed manually during development; pixel-perfect testing is brittle and low-value at this project's scale.</li>
+<li><strong>Third-party library internals</strong> — We mock Supabase, <code>react-router-dom</code>, and <code>fetch</code> rather than testing their implementations.</li>
+<li><strong>Voice recording (Web Speech API)</strong> — Requires browser APIs unavailable in jsdom; covered by manual testing only.</li>
+</ul>
+<hr />
+<h2 id="full-test-inventory">Full Test Inventory<a class="headerlink" href="#full-test-inventory" title="Permanent link">&para;</a></h2>
+<h3 id="frontend-unit-tests-31-files-397-tests">Frontend Unit Tests (31 files, 397 tests)<a class="headerlink" href="#frontend-unit-tests-31-files-397-tests" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Test file</th>
+<th>What it covers</th>
+<th># tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>functions/dashboard/__tests__/stats.test.js</code></td>
+<td><code>formatDuration</code>, <code>formatInterval</code>, <code>calculateTotalTimeTracked</code>, <code>calculateProjectStats</code></td>
+<td>18</td>
+</tr>
+<tr>
+<td><code>functions/dashboard/__tests__/overdue.test.js</code></td>
+<td><code>isOverdue</code>, <code>getOverdueText</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>functions/dashboard/__tests__/streaks.test.js</code></td>
+<td><code>calculateStreaks</code>, <code>streakLabel</code></td>
+<td>9</td>
+</tr>
+<tr>
+<td><code>functions/dashboard/__tests__/search.test.js</code></td>
+<td><code>searchAll</code>, <code>searchProject</code>, <code>searchProjects</code></td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>functions/__tests__/tone.test.ts</code></td>
+<td><code>getTone</code>, <code>setTone</code>, <code>getToneInstruction</code>, <code>TONE_OPTIONS</code></td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>functions/__tests__/aiMessages.test.ts</code></td>
+<td>AI messages enabled/disabled toggle</td>
+<td>3</td>
+</tr>
+<tr>
+<td><code>lib/__tests__/api.test.ts</code></td>
+<td><code>request()</code> (auth headers, errors, JSON), <code>api.*.health()</code></td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>lib/__tests__/cache.test.js</code></td>
+<td><code>cacheGet</code>, <code>cacheSet</code>, <code>cacheSubscribe</code>, <code>cacheDelete</code></td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>lib/__tests__/sse.test.js</code></td>
+<td>SSE connect, disconnect, event dispatch</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>lib/__tests__/sse.integration.test.js</code></td>
+<td>SSE → cache invalidation end-to-end flow</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>lib/__tests__/calendar.test.ts</code></td>
+<td>Calendar date calculations</td>
+<td>6</td>
+</tr>
+<tr>
+<td><code>lib/__tests__/today.test.ts</code></td>
+<td>Today view filtering logic</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>lib/__tests__/kanban.test.ts</code></td>
+<td>Kanban board grouping</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>lib/__tests__/timeline.test.ts</code></td>
+<td>Timeline sorting</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>lib/__tests__/validation.test.ts</code></td>
+<td>Input validation rules</td>
+<td>7</td>
+</tr>
+<tr>
+<td><code>lib/__tests__/import-export.test.ts</code></td>
+<td>Data import/export</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>lib/__tests__/migrations.test.ts</code></td>
+<td>IndexedDB schema migrations</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>context/__tests__/AuthContext.test.tsx</code></td>
+<td>Sign-in, sign-up, OAuth, password reset, delete/restore</td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>hooks/__tests__/useInactivityLogout.test.tsx</code></td>
+<td>Inactivity logout timer</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>components/__tests__/ProtectedRoute.test.tsx</code></td>
+<td>Auth gating, loading state, redirect</td>
+<td>5</td>
+</tr>
+<tr>
+<td><code>components/__tests__/QuickEntryBar.test.tsx</code></td>
+<td>Form submission, success/error, voice, Enter key</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>components/__tests__/ProfileMenu.test.tsx</code></td>
+<td>Dropdown, avatar, keyboard, outside click</td>
+<td>12</td>
+</tr>
+<tr>
+<td><code>components/__tests__/NavBar.test.tsx</code></td>
+<td>Navigation, drawer, projects, settings event</td>
+<td>19</td>
+</tr>
+<tr>
+<td><code>components/__tests__/Header.test.tsx</code></td>
+<td>Title, settings event listener, Stats integration</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>components/__tests__/Stats.test.tsx</code></td>
+<td>Panel open/close, counts, activeProject</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>components/__tests__/AppShell.test.tsx</code></td>
+<td>Layout, navigation, drawer</td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>pages/__tests__/AllEntries.test.tsx</code></td>
+<td>Display modes, sort, localStorage persistence</td>
+<td>13</td>
+</tr>
+<tr>
+<td><code>pages/__tests__/SignIn.test.tsx</code></td>
+<td>Form fields, OAuth, mode toggle</td>
+<td>14</td>
+</tr>
+<tr>
+<td><code>Templates/__tests__/EntryChecklist.test.tsx</code></td>
+<td>Card rendering, status, ChecklistView</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>Templates/__tests__/EntriesByDueDateBoard.test.tsx</code></td>
+<td>Columns, sorting, deleted entries</td>
+<td>8</td>
+</tr>
+<tr>
+<td><code>Templates/__tests__/ProjectTable.test.tsx</code></td>
+<td>Summaries, statuses, priorities, dates</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="frontend-integration-tests-5-files-47-tests">Frontend Integration Tests (5 files, 47 tests)<a class="headerlink" href="#frontend-integration-tests-5-files-47-tests" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Test file</th>
+<th>What it covers</th>
+<th># tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>__integration__/cache.integration.test.js</code></td>
+<td>IndexedDB round-trips, subscriptions, timestamps, <code>clearUserCache</code> isolation</td>
+<td>14</td>
+</tr>
+<tr>
+<td><code>__integration__/entries-crud.integration.test.js</code></td>
+<td>Optimistic add/update/delete, rollback on server failure, dual cache updates</td>
+<td>11</td>
+</tr>
+<tr>
+<td><code>__integration__/sync-service.integration.test.js</code></td>
+<td><code>syncAllData</code> populates all stores, error resilience, <code>computeDueSoon</code>, <code>syncProjectEntries</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>__integration__/auth-cache.integration.test.js</code></td>
+<td>Sign-out clears cache, SSE disconnect, delete account flow, user isolation</td>
+<td>4</td>
+</tr>
+<tr>
+<td><code>__integration__/use-cached-data.integration.test.tsx</code></td>
+<td>Hook reads cache immediately, background fetch, reactive updates, convenience hooks</td>
+<td>8</td>
+</tr>
+</tbody>
+</table>
+<h3 id="backend-tests-25-files">Backend Tests (25 files)<a class="headerlink" href="#backend-tests-25-files" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Test file</th>
+<th>What it covers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>auth-service</td>
+<td><code>src/__tests__/index.test.js</code></td>
+<td>Health endpoint, Supabase auth integration</td>
+</tr>
+<tr>
+<td>auth-service</td>
+<td><code>src/__tests__/cors.integration.test.js</code></td>
+<td>CORS middleware integration</td>
+</tr>
+<tr>
+<td>dashboard-service</td>
+<td><code>src/__tests__/daemon.test.js</code></td>
+<td>Health ping daemon (table creation, insert, consume)</td>
+</tr>
+<tr>
+<td>dashboard-service</td>
+<td><code>src/__tests__/healthPing.test.js</code></td>
+<td><code>/service/health-ping</code> endpoint</td>
+</tr>
+<tr>
+<td>dashboard-service</td>
+<td><code>src/__tests__/search.test.js</code></td>
+<td>Search endpoint</td>
+</tr>
+<tr>
+<td>dashboard-service</td>
+<td><code>src/__tests__/search.integration.test.js</code></td>
+<td>Search integration with database</td>
+</tr>
+<tr>
+<td>profile-service</td>
+<td><code>src/__tests__/login.test.js</code></td>
+<td>User login/check endpoint</td>
+</tr>
+<tr>
+<td>profile-service</td>
+<td><code>src/__tests__/profile.test.js</code></td>
+<td>Profile CRUD</td>
+</tr>
+<tr>
+<td>profile-service</td>
+<td><code>src/__tests__/user-lifecycle.integration.test.js</code></td>
+<td>User lifecycle integration</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/entries.test.js</code></td>
+<td>Entry CRUD endpoints</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/project.test.js</code></td>
+<td>Project CRUD endpoints</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/field.test.js</code></td>
+<td>Custom field management</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/archives.test.js</code></td>
+<td>Archive/unarchive endpoints</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/priority.test.js</code></td>
+<td>Priority update endpoint</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/activityLog.test.js</code></td>
+<td>Activity log endpoints</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/getDate.test.js</code></td>
+<td>Date formatting utility</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/natural_language.test.js</code></td>
+<td>NL parsing</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/openapi.test.js</code></td>
+<td>OpenAPI spec validation</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/sse.integration.test.js</code></td>
+<td>SSE connection and event broadcasting</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/sseRegistry.test.js</code></td>
+<td>SSE client registry</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/compressor.test.js</code></td>
+<td>Entry compression utility</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/entries-activity.integration.test.js</code></td>
+<td>Entry activity integration</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/notes_crud.test.js</code></td>
+<td>Notes CRUD endpoints</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/notifications.test.js</code></td>
+<td>Notification endpoints</td>
+</tr>
+<tr>
+<td>project-service</td>
+<td><code>src/__tests__/store.test.js</code></td>
+<td>Store utility functions</td>
+</tr>
+</tbody>
+</table>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Files</th>
+<th>Tests</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frontend unit tests</td>
+<td>31</td>
+<td>397</td>
+</tr>
+<tr>
+<td>Frontend integration tests</td>
+<td>5</td>
+<td>47</td>
+</tr>
+<tr>
+<td>Backend tests</td>
+<td>25</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>61</strong></td>
+<td><strong>444+</strong></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="user-feedback-process">User Feedback Process<a class="headerlink" href="#user-feedback-process" title="Permanent link">&para;</a></h2>
+<h3 id="feedback-collection-methods">Feedback Collection Methods<a class="headerlink" href="#feedback-collection-methods" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Description</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sprint client meetings</td>
+<td>Structured demo and discussion with the stakeholder</td>
+<td>End of each sprint</td>
+</tr>
+<tr>
+<td>Stakeholder demos</td>
+<td>Working software presented after major feature completion</td>
+<td>Per feature</td>
+</tr>
+<tr>
+<td>Issue tracker</td>
+<td>Bugs, enhancement requests, and UX improvements logged as issues</td>
+<td>Ongoing</td>
+</tr>
+<tr>
+<td>Meeting minutes</td>
+<td>All discussions, decisions, and action items recorded</td>
+<td>Every meeting</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-feedback-is-triaged">How Feedback Is Triaged<a class="headerlink" href="#how-feedback-is-triaged" title="Permanent link">&para;</a></h3>
+<div class="admonition note">
+<p class="admonition-title">Process overview</p>
+</div>
+<p>Feedback follows a structured pipeline from receipt to verification.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Feedback received (meeting, demo, or issue)
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>       │
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>       ▼
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Logged as a Gitea issue (labelled: bug / enhancement / UX)
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>       │
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>       ▼
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>Discussed in sprint planning
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>       │
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>       ▼
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>Assigned to sprint backlog — or deferred with documented reason
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>       │
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>       ▼
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>Implemented → tested → deployed
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>       │
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>       ▼
+<a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>Confirmed with stakeholder at next demo
+</code></pre></div>
+<h3 id="formal-documentation-of-feedback">Formal Documentation of Feedback<a class="headerlink" href="#formal-documentation-of-feedback" title="Permanent link">&para;</a></h3>
+<p>All feedback is tracked in:</p>
+<ul>
+<li><strong>Meeting logs</strong> (<code>Meetings/sprint-one-meetings.md</code>, <code>Meetings/sprint-two-meetings.md</code>) — dated entries with attendees, discussion points, and action items</li>
+<li><strong>Stakeholder interaction log</strong> (<code>Stakeholder_Interactions/sprint-one.md</code>, <code>Stakeholder_Interactions/sprint-two.md</code>) — summary of all client touchpoints and outcomes</li>
+<li><strong>User stories</strong> (<code>User_Stories/sprint-one.md</code>, <code>User_Stories/sprint-two.md</code>) — sprint-scoped stories derived from feedback</li>
+<li><strong>Decisions log</strong> (<code>Project_Management/decisions.md</code>) — architectural or product decisions made in response to feedback</li>
+</ul>
+<h3 id="acceptance-criteria-for-feedback-derived-stories">Acceptance Criteria for Feedback-Derived Stories<a class="headerlink" href="#acceptance-criteria-for-feedback-derived-stories" title="Permanent link">&para;</a></h3>
+<p>Every user story that originates from stakeholder feedback must have:</p>
+<ol>
+<li><strong>Testable acceptance criteria</strong> — conditions that define "done"</li>
+<li><strong>A corresponding automated test</strong> — if the story involves logic, a test verifies the behaviour</li>
+<li><strong>Stakeholder sign-off</strong> — confirmed at the next sprint demo or meeting</li>
+</ol>
+<h3 id="closing-the-feedback-loop">Closing the Feedback Loop<a class="headerlink" href="#closing-the-feedback-loop" title="Permanent link">&para;</a></h3>
+<p>After implementation, the team:</p>
+<ol>
+<li>Updates the original issue with a link to the commit or PR</li>
+<li>Demonstrates the change to the stakeholder</li>
+<li>Records the stakeholder's response (accepted / needs revision)</li>
+<li>If revision is needed, creates a new issue and the cycle repeats</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Continuous improvement</p>
+</div>
+<p>The feedback process itself is reviewed and refined at each sprint retrospective based on what worked and what didn't.</p>
+<hr />
+<h2 id="user-feedback-session-external-tester-sprint-2">User Feedback Session — External Tester (Sprint 2)<a class="headerlink" href="#user-feedback-session-external-tester-sprint-2" title="Permanent link">&para;</a></h2>
+<h3 id="tester-profile">Tester Profile<a class="headerlink" href="#tester-profile" title="Permanent link">&para;</a></h3>
+<ul>
+<li>External tester based in <strong>New Zealand</strong></li>
+<li>Self-hosts <strong>Trilium Notes</strong> and <strong>Vikunja</strong></li>
+<li>Skeptical of hosted note-taking apps with AI features</li>
+<li><strong>Core concern:</strong> trust and data control — not features</li>
+</ul>
+<h3 id="questions-asked-answers-given">Questions Asked &amp; Answers Given<a class="headerlink" href="#questions-asked-answers-given" title="Permanent link">&para;</a></h3>
+<h4 id="1-sign-up-password-policy-not-stated-upfront">1. Sign-up: Password policy not stated upfront<a class="headerlink" href="#1-sign-up-password-policy-not-stated-upfront" title="Permanent link">&para;</a></h4>
+<p><strong>Feedback:</strong> The password policy requires special characters, but this is only discovered via an error <em>after</em> submission. It should be stated on the form before the user types.</p>
+<p><strong>Finding:</strong> The password policy is enforced server-side by Supabase Auth. The frontend sign-up form only displayed <em>"Password must be at least 6 characters"</em> — no mention of special characters.</p>
+<p><strong>Resolution:</strong> Deferred — assigned to another team member to update the password hint on the sign-up form to include the special character requirement.</p>
+<hr />
+<h4 id="2-project-entry-sync-bug">2. Project → Entry sync bug<a class="headerlink" href="#2-project-entry-sync-bug" title="Permanent link">&para;</a></h4>
+<p><strong>Feedback:</strong> After creating a project, a new entry doesn't see the project until the page is reloaded. The client-side state/cache appears stale after project creation.</p>
+<p><strong>Finding:</strong> The Dashboard's <code>projects</code> React state was only updated via <code>loadData()</code> which reads from IndexedDB. When navigating between pages (e.g. creating a project on the Projects page, then going back to the Dashboard), the component did not re-read from IndexedDB because React Router kept it mounted.</p>
+<p><strong>How it was solved:</strong></p>
+<ol>
+<li>Added a direct <code>setProjects()</code> state update in <code>handleCreateProject</code> immediately after <code>addProject()</code> succeeds — the new project is appended to local state so the entry picker sees it instantly, without relying on IndexedDB.</li>
+<li>Added a <code>visibilitychange</code> event listener on the Dashboard that calls <code>loadData()</code> whenever the page becomes visible again — catches the case where the user creates a project on another page and navigates back.</li>
+</ol>
+<p><strong>Files modified:</strong> <code>frontend/src/pages/Dashboard.tsx</code></p>
+<hr />
+<h4 id="3-delete-confirmation-uses-native-browser-dialog">3. Delete confirmation uses native browser dialog<a class="headerlink" href="#3-delete-confirmation-uses-native-browser-dialog" title="Permanent link">&para;</a></h4>
+<p><strong>Feedback:</strong> Delete confirmation uses <code>window.confirm()</code> / <code>window.alert()</code> instead of an in-app dialog — inconsistent UI, looks unpolished.</p>
+<p><strong>Finding:</strong> Two places used native browser dialogs:</p>
+<ul>
+<li><code>NewEntry.tsx</code>: <code>window.confirm('Delete this entry?')</code> for entry deletion</li>
+<li><code>Dashboard.tsx</code>: <code>window.alert(...)</code> for project field creation failure warnings</li>
+</ul>
+<p><strong>How it was solved:</strong></p>
+<ol>
+<li><strong>Entry delete (<code>NewEntry.tsx</code>):</strong> Replaced <code>window.confirm</code> with an inline confirmation pattern — clicking "Delete" shows a "Delete?" prompt with "Yes, delete" and "Cancel" buttons directly in the menu dropdown (same pattern already used on the Projects page).</li>
+<li><strong>Field creation warning (<code>Dashboard.tsx</code>):</strong> Replaced <code>window.alert</code> with <code>setNewProjectError(...)</code> which displays the warning as an inline error message in the project creation form, consistent with all other error display in the app.</li>
+</ol>
+<p><strong>Files modified:</strong> <code>frontend/src/pages/NewEntry.tsx</code>, <code>frontend/src/pages/Dashboard.tsx</code></p>
+<hr />
+<h4 id="4-perceived-slowness">4. Perceived slowness<a class="headerlink" href="#4-perceived-slowness" title="Permanent link">&para;</a></h4>
+<p><strong>Feedback:</strong> The app feels slow.</p>
+<p><strong>Finding:</strong> This is explained by the hosting setup, not code:</p>
+<ul>
+<li>Render free tier has cold starts / spin-down after inactivity</li>
+<li>The tester is in New Zealand while the app is hosted in South Africa, adding significant network latency on top of cold-start delays</li>
+</ul>
+<p><strong>Resolution:</strong> Not a code issue. Known limitation of the current free-tier hosting. Noted as a disclaimer about expected performance.</p>
+<hr />
+<h4 id="5-navigation-back-to-homedashboard">5. Navigation back to home/dashboard<a class="headerlink" href="#5-navigation-back-to-homedashboard" title="Permanent link">&para;</a></h4>
+<p><strong>Feedback:</strong> Does navigation back to home/dashboard work correctly?</p>
+<p><strong>Finding:</strong> Works fine, no issues reported.</p>
+<p><strong>Resolution:</strong> No fix needed.</p>
+<hr />
+<h4 id="6-ai-integration-privacy-concerns">6. AI integration — privacy concerns<a class="headerlink" href="#6-ai-integration-privacy-concerns" title="Permanent link">&para;</a></h4>
+<p><strong>Feedback:</strong> The tester avoided the AI features entirely, citing not knowing where their data goes. A clear privacy disclaimer is needed.</p>
+<p><strong>Finding:</strong> The app had no upfront disclosure about what data the AI processes, where it is sent, or what rights the user has. This is a significant trust gap — especially for privacy-conscious users who self-host alternatives like Trilium Notes.</p>
+<p><strong>How it was solved:</strong></p>
+<p>Created a new <code>DataDisclaimer.tsx</code> page shown <strong>once</strong> after account creation (before the dashboard). It transparently covers:</p>
+<ul>
+<li><strong>Where data lives:</strong> Supabase cloud database (PostgreSQL), local IndexedDB cache in the browser, Render hosting</li>
+<li><strong>How AI is used:</strong> Only processes entry text + project names; no access to password/email; optional AI messages can be turned off in Settings; no training on user data</li>
+<li><strong>Quick Add accuracy warning:</strong> AI may misread intent — users should verify entries are filed correctly after using Quick Add, as the AI can assign entries to the wrong project, guess incorrect priorities, or parse dates incorrectly</li>
+<li><strong>User rights &amp; control:</strong> Data export (JSON format) via Settings, account deletion with 30-day grace period, data is never sold or shared with advertisers</li>
+<li><strong>Open source:</strong> The code is publicly auditable — anyone can inspect exactly what happens with their data</li>
+</ul>
+<p>The page is shown only for new accounts (tracked via <code>sessionStorage</code> flag set during signup and in <code>AuthCallback</code> for new OAuth/email-confirmation users). Existing users signing in skip it entirely.</p>
+<p><strong>Files created:</strong> <code>frontend/src/pages/DataDisclaimer.tsx</code>
+<strong>Files modified:</strong> <code>frontend/src/pages/SignIn.tsx</code>, <code>frontend/src/pages/AuthCallback.tsx</code>, <code>frontend/src/pages/FrequencySetup.tsx</code>, <code>frontend/src/App.tsx</code>, <code>frontend/src/index.css</code></p>
+<hr />
+<h4 id="7-general-trustdata-control-is-the-core-objection">7. General: Trust/data-control is the core objection<a class="headerlink" href="#7-general-trustdata-control-is-the-core-objection" title="Permanent link">&para;</a></h4>
+<p><strong>Feedback:</strong> The tester self-hosts Trilium Notes + Vikunja and is skeptical of hosted note apps with AI baked in.</p>
+<p><strong>Finding:</strong> The concern is not about features but about <strong>data sovereignty</strong> — where does my data go, who can see it, and can I get it back?</p>
+<p><strong>Resolution:</strong> Addressed by the Data Disclaimer page (item 6 above) which explicitly covers data storage location, AI processing scope, data export, and account deletion. The open-source nature of the project is also highlighted as an auditability advantage.</p>
+<hr />
+<h3 id="summary-of-tester-feedback-fixes">Summary of Tester Feedback Fixes<a class="headerlink" href="#summary-of-tester-feedback-fixes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Issue</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Password policy not shown upfront</td>
+<td>Deferred (assigned to another team member)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Project → entry sync bug</td>
+<td><strong>Fixed</strong> — direct state update + visibility listener</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Native browser confirm/alert dialogs</td>
+<td><strong>Fixed</strong> — inline confirmation UI</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Perceived slowness</td>
+<td>Not a code issue (Render free tier + NZ↔SA latency)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Navigation back to dashboard</td>
+<td>No issues found</td>
+</tr>
+<tr>
+<td>6</td>
+<td>AI privacy disclaimer</td>
+<td><strong>Fixed</strong> — new DataDisclaimer page for new signups</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Trust/data-control concerns</td>
+<td><strong>Addressed</strong> via disclaimer page + open-source note</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="user-feedback-session-quick-survey-13-responses">User Feedback Session — Quick Survey (13 Responses)<a class="headerlink" href="#user-feedback-session-quick-survey-13-responses" title="Permanent link">&para;</a></h2>
+<h3 id="methodology">Methodology<a class="headerlink" href="#methodology" title="Permanent link">&para;</a></h3>
+<p>The quick-survey round was run as a structured, self-administered
+questionnaire rather than an ad-hoc "what do you think?" ping. Its design
+followed four explicit goals set at the start of Sprint 2:</p>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>What we wanted to learn</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Usability</strong></td>
+<td>Where do first-time users get lost, and what vocabulary do they misinterpret?</td>
+</tr>
+<tr>
+<td><strong>Feature completeness</strong></td>
+<td>Which capabilities are missing that users would consider table-stakes for a personal logbook?</td>
+</tr>
+<tr>
+<td><strong>Trust &amp; privacy</strong></td>
+<td>Does the AI integration deter users who care about data sovereignty, and what would change their mind?</td>
+</tr>
+<tr>
+<td><strong>Perceived performance</strong></td>
+<td>Does the app feel fast enough to be usable on real networks, and where is the bottleneck?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Instrument.</strong> A Google Form (<code>forms.gle/FKPimVBgfm8UDG43A</code>) with a mix of
+Likert-scale questions ("How easy was it to add your first task? 1–5"), a
+binary + free-text pair for each feature area (Was it useful? What was
+confusing?), and one open-ended question inviting feature requests
+(<em>"Is there any cool or useful feature you would like us to add?"</em>). The
+open-ended response is the one captured verbatim in the
+<a href="#quick-survey-feature-requests">Feature Requests</a> table below.</p>
+<p><strong>Sampling &amp; distribution.</strong> The form link was shared with a convenience
+sample of classmates, friends and one external volunteer (the New Zealand
+tester profiled above) — people who could realistically be target users of
+a student-oriented logbook app but had <em>not</em> built it. The form was open
+for one week. <strong>13 responses came back</strong> across roughly 20 invitees — a
+~65% response rate for an unpaid, no-incentive survey.</p>
+<p><strong>Analysis.</strong> Responses were exported to a spreadsheet (see Evidence below)
+and <em>thematically coded</em> by two team members independently. Free-text
+answers were grouped by the underlying pain point (not the wording), then
+compared across respondents to identify recurring problems. Anything raised
+by <strong>two or more</strong> respondents became a numbered <em>problem</em> in the list
+below; anything raised only once or purely phrased as a wish became a
+<em>feature request</em> in the follow-up table. This is what produced the seven
+problems and the eight thematic feature-request rows.</p>
+<h3 id="evidence">Evidence<a class="headerlink" href="#evidence" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Google Form used for the survey:</strong> <a href="https://forms.gle/FKPimVBgfm8UDG43A">https://forms.gle/FKPimVBgfm8UDG43A</a></li>
+<li><strong>Raw spreadsheet export (13 responses):</strong> <a href="../../assets/user-feedback-sprint2/Digital-Notebook-responses.xlsx">Digital-Notebook-responses.xlsx</a></li>
+<li><strong>Screenshots of the response sheet</strong> (scrollable extracts from the
+  exported spreadsheet, showing the questions and free-text answers):</li>
+</ul>
+<p><img alt="Sprint 2 feedback — spreadsheet responses (part 1)" src="../../assets/user-feedback-sprint2/feedback-spreadsheet-1.jpeg" /></p>
+<p><img alt="Sprint 2 feedback — spreadsheet responses (part 2)" src="../../assets/user-feedback-sprint2/feedback-spreadsheet-2.jpeg" /></p>
+<p><img alt="Sprint 2 feedback — spreadsheet responses (part 3)" src="../../assets/user-feedback-sprint2/feedback-spreadsheet-3.jpeg" /></p>
+<h3 id="1-projects-calendar-entries-and-activity-log-feel-disconnected">1. Projects, calendar, entries and activity log feel disconnected<a class="headerlink" href="#1-projects-calendar-entries-and-activity-log-feel-disconnected" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Gitea issue</p>
+</div>
+<p>Tracked as <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/118">codacaine/Digital-Logbook#118</a> — closed.</p>
+<p><strong>What testers said:</strong> This was the most repeated complaint. People could
+technically create a project or task, but then could not tell <em>where it
+lived</em> afterwards — creating happens in one place, viewing somewhere else,
+"what's due today" somewhere else again. The building blocks were right but
+they behaved like separate tools bolted together.</p>
+<p><strong>Root cause:</strong> There was no persistent "you just made this, here's where it
+went" thread, and the pages did not react to each other's changes — a create
+on one page left the other pages showing stale data until a manual reload.</p>
+<p><strong>How it was solved:</strong></p>
+<ol>
+<li><strong>Redirect to the project page after creating a project or task</strong> — the
+   most direct fix for "I made it but can't find it". Creating a project
+   (from the Dashboard or the Projects page), adding a task via the
+   New-task modal, or Quick Adding a task now navigates straight to that
+   project's page (<code>/project/:projectName</code>), so the user lands exactly where
+   the thing they just made lives. Quick Add was extended to pass the
+   resolved project name to its <code>onEntryCreated</code> consumers (Dashboard and
+   All Entries) so they can route there. Project-detail's own add flow only
+   refreshes, since the user is already on that page. (commit <code>7c2331e</code>)</li>
+<li><strong>Recently created / Recently viewed sections on the Dashboard</strong> — every
+   task creation path (manual add, Quick Add, voice, and multi-project
+   matches) now records the new entry (<code>entryId</code> + <code>projectName</code> + <code>title</code>)
+   and surfaces the last three in a tappable <em>Recently created</em> strip that
+   navigates straight to the owning project. Project visits are tracked the
+   same way in <em>Recently viewed</em>.
+   (commits <code>dfd6e2b</code>, <code>69e472d</code>, <code>352b5be</code>, <code>d000307</code>)</li>
+<li><strong>Every page subscribes to cache changes</strong> — Kanban, Today, Calendar,
+   Timeline, StatsView, StreakView, Project, AllEntries, DataPortability and
+   the disclaimer pages now use <code>cacheSubscribe</code>, so a write on one page
+   live-updates the others without a reload, making them feel like one
+   system. (commit <code>121dbae</code>)</li>
+<li><strong>Cross-page click-through</strong> — project names in task views carry a hover
+   tooltip and click straight through to the project. (commit <code>0afb11c</code>)</li>
+</ol>
+<h3 id="2-no-onboarding-or-in-app-guidance-for-first-time-users">2. No onboarding or in-app guidance for first-time users<a class="headerlink" href="#2-no-onboarding-or-in-app-guidance-for-first-time-users" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Gitea issue</p>
+</div>
+<p>Tracked as <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/119">codacaine/Digital-Logbook#119</a> — closed. The intro-video component was split out as a separate feature request (<a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/126">#126</a>).</p>
+<p><strong>What testers said:</strong> The dashboard confused people — nothing explained what
+to do next, what a "task" is versus a "project", or what individual buttons
+and fields do. Requests were made for brief explanations and a short welcome
+intro.</p>
+<p><strong>Root cause:</strong> The mental model of the app was never shown; users had to
+infer it, which directly caused the "disconnected" feeling in problem 1.</p>
+<p><strong>How it was solved:</strong></p>
+<ol>
+<li><strong>Guided onboarding sequence</strong> — new accounts are stepped through
+   <code>ToneSetup → ThemeSetup → FrequencySetup → DataDisclaimer</code> before reaching
+   the dashboard, so first paint is never a cold, unexplained screen.</li>
+<li><strong>Contextual tooltips across the UI</strong> — action buttons and view controls
+   now explain themselves on hover (e.g. <em>"Open the stats dashboard for this
+   project"</em>, <em>"See a chronological timeline of all your tasks across
+   projects"</em>). (commits <code>f1768b0</code>, <code>0afb11c</code>)</li>
+<li><strong>A welcome greeting</strong> on the dashboard that orients the user to the next
+   action.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Partial</p>
+</div>
+<p>The interactive walkthrough half of this request is now shipped: a guided
+tour with voice narration walks first-time users through every view (see
+<a href="../../features/#36-guided-tour-with-live-navigation--voice-narration">Features</a>).
+The intro <em>video</em> requested by testers is still on the roadmap
+(<a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/126">#126</a>).</p>
+<h3 id="3-unclear-or-unexplained-terminology-and-fields">3. Unclear or unexplained terminology and fields<a class="headerlink" href="#3-unclear-or-unexplained-terminology-and-fields" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Gitea issue</p>
+</div>
+<p>Tracked as <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/120">codacaine/Digital-Logbook#120</a> — closed.</p>
+<p><strong>What testers said:</strong> People got stuck on specific words — what a "field"
+means when logging, the difference between an "entry" and a "project", and
+what "cards", "checklist" and "board" actually mean.</p>
+<p><strong>Root cause:</strong> Developer vocabulary leaked into the UI and there was no
+in-context help to disambiguate labels.</p>
+<p><strong>How it was solved:</strong></p>
+<ol>
+<li><strong>"Entry/Entries" renamed to "Task/Tasks" everywhere the user sees it</strong> —
+   Dashboard, AddEntry, CalendarDayModal, ProjectDetailPage, NewEntry,
+   Project, Calendar, StatsView, AllEntries, NavBar, Settings panels and
+   DataPortability. "Task" is a word people already understand, which also
+   draws a clean line against "project". (commit <code>3dd66f4</code>)</li>
+<li><strong>"Field" renamed to "Columns"</strong> in the new-task form so the custom
+   per-project inputs read naturally, with placeholder hints like
+   <em>"Enter {column name}"</em>.</li>
+<li><strong>Tooltips on the ambiguous view-mode controls and buttons</strong> to clarify
+   cards / checklist / board on the spot. (commit <code>f1768b0</code>)</li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Follow-up (post-Sprint 2)</p>
+</div>
+<p>The rename to <em>"task"</em> fixed the entry/project confusion but created a
+new one — the word collided with the Kanban "task board", with
+sprint-planning vocabulary used elsewhere in the course, and with the
+way our own docs described team-internal work. <strong>A second rename,
+"task → item" across every user-facing string in the frontend, shipped
+as <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/pulls/137">PR #137</a>
+(commit <code>ff5b77e</code>, 19 files, 62 strings).</strong> Internal identifiers,
+CSS classes, cache keys and DB columns still say <code>entry</code> / <code>task</code>;
+only the UI vocabulary was unified. This is documented as
+<a href="../../User_Stories/sprint-one/#us16-see-the-individual-logbook-record-called-by-the-same-word-everywhere">US16</a>
+and captured in <a href="../../Project_Management/decisions/#settled">Open Questions &amp; Decisions</a>.</p>
+<h3 id="4-creating-a-task-is-not-repeatable-or-memorable">4. Creating a task is not repeatable or memorable<a class="headerlink" href="#4-creating-a-task-is-not-repeatable-or-memorable" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Gitea issue</p>
+</div>
+<p>Tracked as <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/121">codacaine/Digital-Logbook#121</a> — closed.</p>
+<p><strong>What testers said:</strong> One tester created their first task successfully but
+could not remember how, and struggled to repeat it. They suggested a pop-up
+explaining what a task does and how to set a timeline for it.</p>
+<p><strong>Root cause:</strong> The flow wasn't consistent or signposted enough to stick
+after a single use — tied to the terminology confusion in problem 3.</p>
+<p><strong>How it was solved:</strong></p>
+<ol>
+<li><strong>One consistent creation surface</strong> — Quick Add, voice and the manual
+   "New Task" modal all funnel through the same form and all report success
+   the same way, pointing to <em>Recently created</em>.</li>
+<li><strong>Guardrail instead of a dead end</strong> — when no project exists yet, the
+   <em>New Task</em> button is hidden and a hint explains that a project must be
+   created first, so the first attempt never fails silently. (commit <code>f1768b0</code>)</li>
+<li><strong>Confirmation message names the destination</strong> ("Added N tasks — see
+   <em>Recently created</em>") so the second time, the user recognises the path.
+   (commit <code>d000307</code>)</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Partial</p>
+</div>
+<p>The dedicated "what does a task do / how do I set a timeline" explainer
+pop-up is not yet implemented — logged for the next sprint. The
+consistency and guardrail work above reduce (but do not fully remove) the
+repeatability problem.</p>
+<h3 id="5-new-project-did-not-immediately-appear-when-creating-a-task">5. New project did not immediately appear when creating a task<a class="headerlink" href="#5-new-project-did-not-immediately-appear-when-creating-a-task" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Gitea issue</p>
+</div>
+<p>Tracked as <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/122">codacaine/Digital-Logbook#122</a> — closed.</p>
+<p><strong>What testers said:</strong> A tester created a project, then tried to log a task
+against it, but the task view didn't see the project until the page was
+reloaded.</p>
+<p><strong>Root cause:</strong> This was a <strong>state-refresh race</strong>. Each page's <code>loadData</code>
+had several concurrent callers (mount effect, <code>cacheSubscribe</code> listeners,
+SSE entry events, and <code>visibilitychange</code>). With no guard against overlapping
+invocations, an earlier call could finish <em>after</em> a newer one and overwrite
+fresh state with a stale, often emptier, snapshot — which is exactly why a
+manual reload "fixed" it (a reload fires one clean load with nothing racing
+it).</p>
+<p><strong>How it was solved:</strong></p>
+<ol>
+<li><strong>Live cache subscription</strong> — the projects list is now re-read from
+   IndexedDB whenever it changes, so a newly created project appears in the
+   task picker without a reload. (commits <code>121dbae</code>, prior <code>Dashboard</code> fix)</li>
+<li><strong>Sequence-ref race guard</strong> — <code>loadData</code> now stamps each invocation with
+   an incrementing <code>useRef</code> counter and bails out after every <code>await</code> if a
+   newer call has started, so only the <em>latest</em> load is ever allowed to
+   commit state. Applied to the Dashboard (<code>f8cdb96</code>) and then rolled out to
+   <strong>every</strong> data-loading page — Kanban, Today, Calendar, Timeline,
+   StatsView, StreakView, Project, AllEntries, DataPortability,
+   DataDisclaimer2 and ProjectDetailPage. (commit <code>db1b73f</code>)</li>
+</ol>
+<h3 id="6-deleting-uses-a-raw-browser-pop-up-instead-of-a-proper-in-app-dialog">6. Deleting uses a raw browser pop-up instead of a proper in-app dialog<a class="headerlink" href="#6-deleting-uses-a-raw-browser-pop-up-instead-of-a-proper-in-app-dialog" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Gitea issue</p>
+</div>
+<p>Tracked as <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/123">codacaine/Digital-Logbook#123</a> — closed.</p>
+<p><strong>What testers said:</strong> A QA-background tester noted that deleting a task
+triggers a native JavaScript <code>alert</code>/<code>confirm</code> rather than a styled
+confirmation dialog, which looks unfinished and breaks visual consistency.</p>
+<p><strong>Root cause:</strong> Two spots used native browser dialogs: <code>window.confirm</code> in
+<code>NewEntry.tsx</code> (entry delete) and <code>window.alert</code> in <code>Dashboard.tsx</code> (project
+field-save failures).</p>
+<p><strong>How it was solved:</strong></p>
+<ol>
+<li><strong>Inline confirmation for deletes</strong> — clicking <em>Delete</em> now reveals a
+   "Delete? / Yes, delete / Cancel" prompt directly in the row menu, matching
+   the pattern already used on the Projects page.</li>
+<li><strong>Inline error display for save failures</strong> — the dashboard <code>window.alert</code>
+   was replaced with a state-driven message rendered inside the project
+   creation form, consistent with all other in-app errors.</li>
+</ol>
+<h3 id="7-data-privacy-and-ai-integration-trust-concerns">7. Data privacy and AI-integration trust concerns<a class="headerlink" href="#7-data-privacy-and-ai-integration-trust-concerns" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">Gitea issue</p>
+</div>
+<p>Tracked as <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/124">codacaine/Digital-Logbook#124</a> — closed.</p>
+<p><strong>What testers said:</strong> One tester said they wouldn't switch from their
+self-hosted tools because they dislike the app's AI integration and don't
+know where their data goes — a trust/transparency problem rather than a bug.</p>
+<p><strong>Root cause:</strong> No upfront disclosure of what the AI feature sends, where
+data is processed, or whether it can be disabled.</p>
+<p><strong>How it was solved:</strong></p>
+<ol>
+<li><strong>DataDisclaimer page</strong> shown once to new accounts before the dashboard,
+   transparently covering where data lives (Supabase PostgreSQL, local
+   IndexedDB cache, Render hosting), exactly what the AI reads (task text +
+   project names only — never password/email), that AI messages can be
+   switched off in Settings, no training on user data, a Quick Add
+   accuracy warning, and user rights (JSON export, account deletion with a
+   30-day grace period, data never sold) plus open-source auditability.</li>
+<li><strong>DataDisclaimer2</strong> — the same information re-accessible at any time from
+   the NavBar drawer, so returning users (and skeptics) can audit the app's
+   data handling whenever they want. (commit <code>21d6ce1</code>)</li>
+</ol>
+<h3 id="summary-of-quick-survey-fixes">Summary of Quick-Survey Fixes<a class="headerlink" href="#summary-of-quick-survey-fixes" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Problem</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Projects/calendar/tasks/activity log feel disconnected</td>
+<td><strong>Addressed</strong> — Recently created/viewed + cache subscriptions + cross-page click-through</td>
+</tr>
+<tr>
+<td>2</td>
+<td>No onboarding or in-app guidance</td>
+<td><strong>Addressed</strong> — guided setup + tooltips + interactive guided tour with voice narration; intro video on roadmap (<a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/126">#126</a>)</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Unclear terminology and fields</td>
+<td><strong>Fixed</strong> — Entries→Tasks, field→Columns, tooltips</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Task creation not repeatable/memorable</td>
+<td><strong>Partially addressed</strong> — consistent surface + guardrail; explainer pop-up on roadmap</td>
+</tr>
+<tr>
+<td>5</td>
+<td>New project not appearing when creating a task</td>
+<td><strong>Fixed</strong> — live cache subscription + seq-ref race guard on all pages</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Native browser delete/alert dialogs</td>
+<td><strong>Fixed</strong> — inline confirmation + inline errors</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Data privacy / AI trust concerns</td>
+<td><strong>Addressed</strong> — DataDisclaimer + always-available DataDisclaimer2</td>
+</tr>
+</tbody>
+</table>
+<h3 id="quick-survey-feature-requests">Quick-Survey Feature Requests<a class="headerlink" href="#quick-survey-feature-requests" title="Permanent link">&para;</a></h3>
+<p>The survey also asked <em>"Is there any cool or useful feature you would like us
+to add?"</em> (10 responses). These are suggestions rather than problems, so they
+were intentionally left out of the problem list above, but they are captured
+here for roadmap planning and grouped by theme with the current status.</p>
+<table>
+<thead>
+<tr>
+<th>Theme</th>
+<th>Requested by</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Countdown / time-to-due</strong></td>
+<td>"a timer that tells you how many hours till your task is due"</td>
+<td><strong>Partially done</strong> — tasks already show overdue/due-soon text (<code>getOverdueText</code>); a live hours-remaining countdown is on the roadmap</td>
+</tr>
+<tr>
+<td><strong>Richer, personalised notes</strong></td>
+<td>"more interactive notes like support for memes, diagrams so it feels more personalised"</td>
+<td><strong>Partially done</strong> — the new-task form accepts text / link / image notes; embedded diagrams/meme widgets are on the roadmap</td>
+</tr>
+<tr>
+<td><strong>Per-project colours</strong></td>
+<td>"different colours so that every project can have its own colour"</td>
+<td><strong>Done</strong> — projects carry a <code>project_color</code> and it is surfaced across the UI</td>
+</tr>
+<tr>
+<td><strong>Website theme / colour customisation</strong></td>
+<td>"maybe customising colours of website"</td>
+<td><strong>Done</strong> — multiple selectable themes (incl. dark variants) in Settings</td>
+</tr>
+<tr>
+<td><strong>Visual art / inviting landing</strong></td>
+<td>"adding some visual art on the website to attract users"; a motivational quote on the home page ("you go rockstar") so entering feels inviting</td>
+<td><strong>Partially done</strong> — an AI-generated greeting/quote already renders on the Dashboard; more illustrative art is on the roadmap</td>
+</tr>
+<tr>
+<td><strong>Onboarding tutorial video</strong></td>
+<td>"a video or tutorial thing at the beginning … like Study Bunny links a YouTube video on how to use the app"</td>
+<td><strong>Not started</strong> — tracked with problem 2 (onboarding) on the roadmap</td>
+</tr>
+<tr>
+<td><strong>Due reminders / alarm</strong></td>
+<td>"an alarm that will notify us when some entries are due"</td>
+<td><strong>Not started</strong> — candidate future feature (needs scheduling/notifications)</td>
+</tr>
+<tr>
+<td><strong>Social / co-reminder</strong></td>
+<td>"mention others in my entry so they can also be reminded, sort of a combined activity with a friend who has the same app"</td>
+<td><strong>Not started</strong> — social/sharing feature, future consideration</td>
+</tr>
+<tr>
+<td><strong>No request</strong></td>
+<td>"can't think of any, I think the app has more cool features already" / "can't think of any"</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Prioritisation</p>
+</div>
+<p>Already-shipped requests (project colours, website themes, home-page
+greeting, image notes) are marked <strong>Done</strong>. Items marked <strong>Partially
+done</strong> have a foundation in place and need incremental work. <strong>Not
+started</strong> items (tutorial video, due alarms, social reminders) are logged
+as candidates for future sprints and ranked by effort and alignment with
+the app's local-first, privacy-conscious scope.</p>
+<h3 id="metrics-summary">Metrics Summary<a class="headerlink" href="#metrics-summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Survey invitees</td>
+<td>~20 (convenience sample: classmates + friends + 1 external volunteer)</td>
+</tr>
+<tr>
+<td>Responses received</td>
+<td>13 (~65% response rate)</td>
+</tr>
+<tr>
+<td>Testing sessions conducted</td>
+<td>2 (external NZ tester + in-class quick survey)</td>
+</tr>
+<tr>
+<td>Distinct problems identified</td>
+<td>7 (each raised by ≥2 respondents)</td>
+</tr>
+<tr>
+<td>Problems resolved before Sprint 2 close</td>
+<td>5 (6 post-close — onboarding completed by the guided tour, PRs #158 + #161–165)</td>
+</tr>
+<tr>
+<td>Problems partially addressed with residual roadmap item</td>
+<td>1 (task-creation explainer; the onboarding video request lives on as feature issue #126)</td>
+</tr>
+<tr>
+<td>Feature requests logged</td>
+<td>10 responses → 6 unique themes + 2 "no request"</td>
+</tr>
+<tr>
+<td>Feature requests shipped in Sprint 2</td>
+<td>3 (per-project colours, website theme customisation, image/link/text notes)</td>
+</tr>
+<tr>
+<td>Feature requests split into follow-up Gitea issues</td>
+<td>5 (<a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/126">#126</a>–<a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/130">#130</a>)</td>
+</tr>
+<tr>
+<td>Regressions discovered post-deploy and fixed</td>
+<td>1 (notes payload leaking into summary — <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/125">#125</a>, fixed in PR #117)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="issue-traceability">Issue Traceability<a class="headerlink" href="#issue-traceability" title="Permanent link">&para;</a></h3>
+<p>Every problem and every follow-up feature request was migrated into the
+Gitea tracker with the <code>user-feedback</code> label so the audit trail from
+survey → issue → commit → PR → deployed build is one click away.</p>
+<table>
+<thead>
+<tr>
+<th>Feedback item</th>
+<th>Gitea issue</th>
+<th>Resolution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Survey problem 1 (disconnected views)</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/118">#118</a></td>
+<td>closed</td>
+</tr>
+<tr>
+<td>Survey problem 2 (onboarding)</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/119">#119</a></td>
+<td>closed (partial — interactive walkthrough gap completed later by the guided tour, PRs #158 + #161–165)</td>
+</tr>
+<tr>
+<td>Survey problem 3 (terminology)</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/120">#120</a></td>
+<td>closed</td>
+</tr>
+<tr>
+<td>Survey problem 4 (task repeatability)</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/121">#121</a></td>
+<td>closed (partial)</td>
+</tr>
+<tr>
+<td>Survey problem 5 (new project visibility)</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/122">#122</a></td>
+<td>closed</td>
+</tr>
+<tr>
+<td>Survey problem 6 (native browser dialogs)</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/123">#123</a></td>
+<td>closed</td>
+</tr>
+<tr>
+<td>Survey problem 7 (data-privacy trust)</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/124">#124</a></td>
+<td>closed</td>
+</tr>
+<tr>
+<td>Post-deploy regression (summary leak)</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/125">#125</a></td>
+<td>closed via PR #117</td>
+</tr>
+<tr>
+<td>Feature request — onboarding tutorial video</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/126">#126</a></td>
+<td>open (Sprint 3)</td>
+</tr>
+<tr>
+<td>Feature request — due-date alarm</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/127">#127</a></td>
+<td>open (deferred)</td>
+</tr>
+<tr>
+<td>Feature request — social / co-reminder</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/128">#128</a></td>
+<td>open (deferred)</td>
+</tr>
+<tr>
+<td>Feature request — hours-to-due countdown</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/129">#129</a></td>
+<td>open (partial fix shipped)</td>
+</tr>
+<tr>
+<td>Feature request — interactive notes (memes, diagrams)</td>
+<td><a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/130">#130</a></td>
+<td>open (partial fix shipped)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="integration-verification">Integration &amp; Verification<a class="headerlink" href="#integration-verification" title="Permanent link">&para;</a></h3>
+<p>The rubric's Advanced criterion is not just <em>did we collect feedback and
+fix things</em> but <em>can we prove the fix landed and shipped</em>. Three concrete
+artefacts close that loop for every problem in this section:</p>
+<ol>
+<li><strong>Merged PRs into <code>main</code>.</strong> Each fix is on the deployed branch, not
+   sitting on a feature branch. Sample trail:</li>
+<li><strong>PR #93</strong> <em>Final submission: docs, themes, archive cascade, AI prompt,
+     deploy fixes</em> — merged commit <code>d882e0f</code></li>
+<li><strong>PR #94</strong> <em>Add project settings button on ProjectDetailPage</em> — merged
+     commit <code>bb9bea9</code></li>
+<li><strong>PR #113</strong> <em>Replace Entry/Entries with Task/Tasks in UI</em> — closed</li>
+<li><strong>PR #116</strong> <em>fix(dashboard): board &amp; checklist grid views +
+     recently-viewed liveness filter</em> — closed</li>
+<li><strong>PR #117</strong> <em>fix(entries): prevent notes payload leaking into summary
+     column</em> — merged commit <code>79fd249</code></li>
+<li><strong>Closed Gitea issues with commit references</strong> (see
+   <a href="#issue-traceability">Issue Traceability</a> above). Each closed issue's
+   body cites the specific commit hash or PR number that shipped the fix.</li>
+<li><strong>Live production build.</strong> The public Render deployment
+   (<code>https://digital-logbook.onrender.com</code>) is currently running the code
+   produced by the merge commits listed above — testers can verify
+   behaviour on the same URL used during feedback collection.</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">Why no targeted re-survey</p>
+</div>
+<p>The Google Form was configured to collect responses <strong>anonymously</strong> (no
+email capture), so it is not possible to go back to the specific
+respondents who raised each problem and ask them to confirm the fix.
+Integration is therefore evidenced by the three artefacts above (merged
+PRs, closed Gitea issues with commit references, and the live
+production build) rather than a follow-up Likert score. A fresh
+survey round open to new participants is planned for the start of
+Sprint 3 as a broader regression check.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mermaid.js"></script>
+      
+    
+  </body>
+</html>

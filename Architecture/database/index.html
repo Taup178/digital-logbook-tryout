@@ -1,0 +1,3791 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the COMS3011A Digital Logbook project">
+      
+      
+      
+      
+        <link rel="prev" href="../overview/">
+      
+      
+        <link rel="next" href="../cicd-deployment/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Database Schema - Digital Logbook Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lora";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#database-schema" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Logbook Docs" class="md-header__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Logbook Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Database Schema
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Logbook Docs" class="md-nav__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Digital Logbook Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Motivation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture Motivation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-supabase-postgresql-over-alternatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Supabase (PostgreSQL) over alternatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-a-local-first-sqlite-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why a local-first (SQLite) architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-sqlite-sqljs-over-indexeddb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why SQLite (sql.js) over IndexedDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-dynamic-fields-jsonb-instead-of-fixed-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why dynamic fields (JSONB) instead of fixed columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-soft-delete-instead-of-hard-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why soft-delete instead of hard-delete
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-a-dynamic-schema-instead-of-fixed-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why a dynamic schema instead of fixed columns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fields
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        entries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design rationale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activity_log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        activity_log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health_ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        health_ping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_provider_cooldowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ai_provider_cooldowns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rpc-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RPC Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RPC Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete_user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        delete_user()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore_user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        restore_user()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purge_deleted_users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        purge_deleted_users()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_project_stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_project_stats()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_field_stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_field_stats()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trade-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trade-off
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlite-client-side-local-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLite (Client-Side Local Store)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQLite (Client-Side Local Store)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-tables-map-to-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Tables Map to PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-subscription-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Subscription System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Migrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schema Migrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-files_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hosting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-services-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which Services Connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backups-and-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backups and Restore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#row-level-security-rls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Row Level Security (RLS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduled Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cicd-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD & Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../api-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../teck-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ui-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../voice-feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexedDB Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSE Real-Time Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../daemon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keep-Alive Daemons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entry-summaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entry Summaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../uml-diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UML Architecture Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../third-party/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-one-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-two-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stakeholder Interactions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stakeholder Interactions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Stories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../User_Stories/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Management
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Management
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology & Git Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/work-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions & Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issues & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/ai-attribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Attribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/code-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & User Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#architecture-motivation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Architecture Motivation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Architecture Motivation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-supabase-postgresql-over-alternatives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why Supabase (PostgreSQL) over alternatives
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-a-local-first-sqlite-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why a local-first (SQLite) architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-sqlite-sqljs-over-indexeddb" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why SQLite (sql.js) over IndexedDB
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-dynamic-fields-jsonb-instead-of-fixed-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why dynamic fields (JSONB) instead of fixed columns
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-soft-delete-instead-of-hard-delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why soft-delete instead of hard-delete
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-a-dynamic-schema-instead-of-fixed-columns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why a dynamic schema instead of fixed columns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        users
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#projects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        projects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fields
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entries" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        entries
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-rationale" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design rationale
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activity_log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        activity_log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#health_ping" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        health_ping
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        notes
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ai_provider_cooldowns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ai_provider_cooldowns
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rpc-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        RPC Functions
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RPC Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#delete_user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        delete_user()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restore_user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        restore_user()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#purge_deleted_users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        purge_deleted_users()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_project_stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_project_stats()
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_field_stats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        get_field_stats()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trade-off" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Trade-off
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sqlite-client-side-local-store" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SQLite (Client-Side Local Store)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SQLite (Client-Side Local Store)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-tables-map-to-postgresql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How Tables Map to PostgreSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#event-subscription-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event Subscription System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#schema-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Schema Migrations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Schema Migrations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#migration-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Migration Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cli-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CLI Commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#key-files_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Key Files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hosting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hosting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#connection-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection Architecture
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#which-services-connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Which Services Connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backups-and-restore" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Backups and Restore
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#health-monitoring" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Health Monitoring
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#row-level-security-rls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Row Level Security (RLS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scheduled-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Scheduled Jobs
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="database-schema">Database Schema<a class="headerlink" href="#database-schema" title="Permanent link">&para;</a></h1>
+<p><strong>Database:</strong> PostgreSQL, hosted via Supabase.
+<strong>Access pattern:</strong> the frontend never queries Supabase directly — every
+request goes through our own Express services first.</p>
+<h2 id="architecture-motivation">Architecture Motivation<a class="headerlink" href="#architecture-motivation" title="Permanent link">&para;</a></h2>
+<h3 id="why-supabase-postgresql-over-alternatives">Why Supabase (PostgreSQL) over alternatives<a class="headerlink" href="#why-supabase-postgresql-over-alternatives" title="Permanent link">&para;</a></h3>
+<p>The database layer needed to satisfy three constraints simultaneously: relational integrity, flexible per-user schemas, and zero-cost hosting for a student project.</p>
+<p><strong>PostgreSQL over MongoDB/NoSQL.</strong> A logbook is inherently relational — entries belong to projects, projects belong to users, fields define the shape of entries. Enforcing these relationships with foreign keys and cascade deletes prevents orphaned rows at the database level, something NoSQL stores leave to application code. PostgreSQL's JSONB support then gives us document-style flexibility for the entry payload itself — the best of both worlds.</p>
+<p><strong>Supabase over self-hosted PostgreSQL.</strong> Supabase provides a managed PostgreSQL instance with built-in authentication, Row Level Security, real-time subscriptions, and a web-based SQL editor — all on a free tier with 500 MB of storage and 50,000 monthly active auth users. Self-hosting PostgreSQL on Render would require a paid plan ($7/month minimum for a persistent disk) and manual setup of auth, SSL, backups, and connection pooling. Supabase eliminates all of that.</p>
+<p><strong>Supabase over Firebase.</strong> Firebase's Realtime Database and Firestore are NoSQL by design — they cannot enforce foreign keys, support joins, or run complex aggregation queries. Our stats page needs <code>SUM(duration)</code> across entries grouped by project, and our overdue check needs <code>WHERE due_date &lt; now()</code> across all rows. These are trivial in PostgreSQL and awkward or impossible in Firestore.</p>
+<h3 id="why-a-local-first-sqlite-architecture">Why a local-first (SQLite) architecture<a class="headerlink" href="#why-a-local-first-sqlite-architecture" title="Permanent link">&para;</a></h3>
+<p>The frontend uses SQLite (via sql.js) as the primary data source, not a cache. This design decision was driven by three factors:</p>
+<ol>
+<li><strong>Instant UI.</strong> Every page render reads from SQLite synchronously — no loading spinners, no waiting for network round-trips to Render's free-tier instances (which may be cold-starting). The user sees their data in under 16 ms.</li>
+<li><strong>Offline resilience.</strong> If the backend is down (Render free instances sleep after 15 minutes of inactivity), the user can still browse, search, and review their existing entries. Mutations queue for the next sync.</li>
+<li><strong>Reduced server load.</strong> Each page view generates zero API calls for data the user has already seen. Only mutations and initial sync hit the backend, keeping us within Render's free-tier bandwidth limits.</li>
+</ol>
+<h3 id="why-sqlite-sqljs-over-indexeddb">Why SQLite (sql.js) over IndexedDB<a class="headerlink" href="#why-sqlite-sqljs-over-indexeddb" title="Permanent link">&para;</a></h3>
+<p>The original implementation used IndexedDB via the <code>idb</code> library. This was replaced with SQLite (compiled to WebAssembly via sql.js) for the following reasons:</p>
+<ol>
+<li>
+<p><strong>Version conflicts between branches.</strong> When multiple branches of the app are deployed to the same origin (e.g., main at DB version 4, hlulani at version 5), IndexedDB's one-way versioning causes silent hangs. The browser refuses to downgrade, and <code>openDB()</code> blocks indefinitely waiting for old connections to close.</p>
+</li>
+<li>
+<p><strong>Complex upgrade logic.</strong> IndexedDB requires manual <code>onupgradeneeded</code> handlers with version checks and store creation/deletion logic. Every schema change requires careful migration code. SQLite uses standard <code>CREATE TABLE IF NOT EXISTS</code> — no version negotiation needed.</p>
+</li>
+<li>
+<p><strong>SQL query support.</strong> IndexedDB's key-value API requires loading entire stores into memory and filtering in JavaScript. SQLite supports indexed queries (<code>WHERE user_email = ?</code>, <code>ORDER BY created_at DESC</code>), making it easier to reason about data access and more efficient for large datasets.</p>
+</li>
+<li>
+<p><strong>Schema alignment with Supabase.</strong> SQLite tables can mirror the PostgreSQL schema 1:1 with proper columns and types. This makes the local-first layer a true offline replica rather than a transformed cache blob.</p>
+</li>
+<li>
+<p><strong>Familiar debugging.</strong> SQLite databases can be inspected with standard tools (DB Browser for SQLite, <code>sqlite3</code> CLI). IndexedDB's opaque object stores are harder to debug when data goes missing.</p>
+</li>
+</ol>
+<p><strong>sql.js</strong> is SQLite compiled to WebAssembly — the entire database engine runs in the browser. The WASM file (~1MB) loads once on first visit, then the app works 100% offline. Data persists to IndexedDB as a binary blob for durability across page refreshes.</p>
+<h3 id="why-dynamic-fields-jsonb-instead-of-fixed-columns">Why dynamic fields (JSONB) instead of fixed columns<a class="headerlink" href="#why-dynamic-fields-jsonb-instead-of-fixed-columns" title="Permanent link">&para;</a></h3>
+<p>The course brief requires that users "customise the format" of their logbook. Different projects track different information — a coding project might have fields for <code>language</code> and <code>pull_request_url</code>, while a cooking project needs <code>recipe_name</code> and <code>servings</code>. A fixed column schema would either force all projects into the same shape or require an <code>ALTER TABLE</code> every time a user adds a field. Storing custom field definitions as rows in the <code>fields</code> table and the actual values as a JSONB blob in <code>entries.entries</code> gives us unlimited per-project flexibility with zero migrations.</p>
+<h3 id="why-soft-delete-instead-of-hard-delete">Why soft-delete instead of hard-delete<a class="headerlink" href="#why-soft-delete-instead-of-hard-delete" title="Permanent link">&para;</a></h3>
+<p>Account deletion is a 30-day grace period, not an immediate action. Users who accidentally delete their account can sign back in and restore everything. This is implemented with a <code>deleted</code> boolean on every table and a nightly <code>pg_cron</code> job that permanently purges accounts past the grace period. Hard-deleting immediately would be irreversible and frustrating for users.</p>
+<h2 id="why-a-dynamic-schema-instead-of-fixed-columns">Why a dynamic schema instead of fixed columns<a class="headerlink" href="#why-a-dynamic-schema-instead-of-fixed-columns" title="Permanent link">&para;</a></h2>
+<p>A logbook's structure needs to be customisable per project — different
+projects track different kinds of information, and the brief requires that
+the owner, not the platform, decides the shape of an entry.</p>
+<p>A fixed set of columns (e.g. <code>hours</code>, <code>supervisor</code>, <code>notes</code>) would force every
+user into the same entry shape, which doesn't satisfy that requirement. Two
+tables solve this without needing a schema migration every time a user adds a
+field.</p>
+<h2 id="users">users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>VARCHAR(255)</td>
+<td>PK, NOT NULL, UNIQUE</td>
+</tr>
+<tr>
+<td>username</td>
+<td>VARCHAR(50)</td>
+<td>UNIQUE, nullable</td>
+</tr>
+<tr>
+<td>name</td>
+<td>VARCHAR(100)</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td>avatar</td>
+<td>TEXT</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMPTZ</td>
+<td>default now()</td>
+</tr>
+<tr>
+<td>deletion_scheduled_at</td>
+<td>TIMESTAMPTZ</td>
+<td>set when the user schedules account deletion</td>
+</tr>
+<tr>
+<td>deleted</td>
+<td>BOOLEAN</td>
+<td>NOT NULL default false — soft-delete flag</td>
+</tr>
+</tbody>
+</table>
+<h2 id="projects">projects<a class="headerlink" href="#projects" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>BIGSERIAL</td>
+<td>PK, auto-generated</td>
+</tr>
+<tr>
+<td>project_name</td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>user_email</td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL, FK → users(email)</td>
+</tr>
+<tr>
+<td>description</td>
+<td>TEXT</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td>archived</td>
+<td>BOOLEAN</td>
+<td>default false</td>
+</tr>
+<tr>
+<td>deleted</td>
+<td>BOOLEAN</td>
+<td>NOT NULL default false — soft-delete flag</td>
+</tr>
+<tr>
+<td>project_color</td>
+<td>VARCHAR(7)</td>
+<td>nullable hex string (e.g. <code>#ec4899</code>), NULL = fall back to hash</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMPTZ</td>
+<td>default now()</td>
+</tr>
+</tbody>
+</table>
+<p>The pair <code>(user_email, project_name)</code> is unique, so one user cannot have two
+projects with the same name. <code>description</code> was added after the initial schema
+to let users record a short project summary. <code>project_color</code> was added in
+Sprint 2 in response to user feedback asking for per-project personalisation
+(see <code>testing.md</code> — Quick-Survey feature request "different colours so that
+every project can have its own colour"). Chosen from an 18-swatch picker in
+the project settings panel; when NULL the frontend falls back to a
+name-derived colour.</p>
+<h2 id="fields">fields<a class="headerlink" href="#fields" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>PK, default gen_random_uuid()</td>
+</tr>
+<tr>
+<td>user_email</td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>table_name</td>
+<td>VARCHAR(100)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>field_name</td>
+<td>VARCHAR(100)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>data_type</td>
+<td>VARCHAR(50)</td>
+<td>e.g. text, number, boolean, date</td>
+</tr>
+<tr>
+<td>is_required</td>
+<td>BOOLEAN</td>
+<td>default false</td>
+</tr>
+<tr>
+<td>deleted</td>
+<td>BOOLEAN</td>
+<td>default false — soft-delete flag</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMPTZ</td>
+<td>default CURRENT_TIMESTAMP</td>
+</tr>
+</tbody>
+</table>
+<h2 id="entries">entries<a class="headerlink" href="#entries" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>PK, default gen_random_uuid()</td>
+</tr>
+<tr>
+<td>user_email</td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL, indexed</td>
+</tr>
+<tr>
+<td>project_name</td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL, indexed</td>
+</tr>
+<tr>
+<td>entries</td>
+<td>JSONB</td>
+<td>NOT NULL, dynamic field values</td>
+</tr>
+<tr>
+<td>due_date</td>
+<td>TIMESTAMPTZ</td>
+<td>nullable, indexed</td>
+</tr>
+<tr>
+<td>priority</td>
+<td>priority_level (ENUM)</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td>status</td>
+<td>entry_status (ENUM)</td>
+<td>NOT NULL, default <code>'up_next'</code> — see below</td>
+</tr>
+<tr>
+<td>archived</td>
+<td>BOOLEAN</td>
+<td>default false</td>
+</tr>
+<tr>
+<td>started_at</td>
+<td>TIMESTAMPTZ</td>
+<td>nullable, set when user starts a work session</td>
+</tr>
+<tr>
+<td>ended_at</td>
+<td>TIMESTAMPTZ</td>
+<td>nullable, set when user stops the session</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>INTERVAL</td>
+<td>generated, <code>ended_at - started_at</code></td>
+</tr>
+<tr>
+<td>summary</td>
+<td>TEXT</td>
+<td>nullable, AI-generated one-sentence summary</td>
+</tr>
+<tr>
+<td>deleted</td>
+<td>BOOLEAN</td>
+<td>default false — soft-delete flag</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMPTZ</td>
+<td>default CURRENT_TIMESTAMP</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Migration drift on <code>status</code></p>
+</div>
+<p>The baseline migration declares <code>status VARCHAR(30) DEFAULT 'up_next'</code>,
+but the production database has been updated out-of-band to use an
+<code>entry_status</code> ENUM. <code>000_baseline_full_schema.sql</code> should be re-aligned
+with production so a fresh <code>npm run db:migrate</code> on a new environment
+produces the same shape as the live DB.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">entries</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">due_date</span><span class="w"> </span><span class="k">TIMESTAMP</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="k">TIME</span><span class="w"> </span><span class="k">ZONE</span><span class="p">;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_entries_due_date</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">entries</span><span class="p">(</span><span class="n">due_date</span><span class="p">);</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TYPE</span><span class="w"> </span><span class="n">priority_level</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="n">ENUM</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">  </span><span class="s1">'Urgent and important'</span><span class="p">,</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="s1">'Urgent but not important'</span><span class="p">,</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">  </span><span class="s1">'Not urgent, not important'</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="p">);</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">entries</span>
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">priority</span><span class="w"> </span><span class="n">priority_level</span><span class="p">;</span>
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">projects</span>
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">archived</span><span class="w"> </span><span class="nb">BOOLEAN</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">entries</span>
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">archived</span><span class="w"> </span><span class="nb">BOOLEAN</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="k">false</span><span class="p">;</span>
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_projects_archived</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">projects</span><span class="p">(</span><span class="n">archived</span><span class="p">);</span>
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">INDEX</span><span class="w"> </span><span class="n">idx_entries_archived</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">entries</span><span class="p">(</span><span class="n">archived</span><span class="p">);</span>
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">entries</span>
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">started_at</span><span class="w"> </span><span class="n">TIMESTAMPTZ</span><span class="p">,</span>
+<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">ended_at</span><span class="w"> </span><span class="n">TIMESTAMPTZ</span><span class="p">,</span>
+<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="k">ADD</span><span class="w"> </span><span class="k">COLUMN</span><span class="w"> </span><span class="n">duration</span><span class="w"> </span><span class="nb">INTERVAL</span><span class="w"> </span><span class="k">GENERATED</span><span class="w"> </span><span class="n">ALWAYS</span><span class="w"> </span><span class="k">AS</span><span class="w"> </span><span class="p">(</span><span class="n">ended_at</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">started_at</span><span class="p">)</span><span class="w"> </span><span class="n">STORED</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="design-rationale">Design rationale<a class="headerlink" href="#design-rationale" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Decision</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code> as PK on <code>users</code></td>
+<td>Supabase Auth already identifies sessions by email rather than an internal id, so making it the PK removes a redundant surrogate key and matches how other tables already reference users</td>
+</tr>
+<tr>
+<td><code>id</code> as <code>UUID</code> on <code>fields</code>/<code>entries</code></td>
+<td>These rows get referenced from the frontend and possibly across services, so UUIDs avoid leaking a guessable sequential count and avoid collisions if entries are ever created offline before syncing</td>
+</tr>
+<tr>
+<td><code>projects</code> has a surrogate <code>id</code> plus a unique natural key</td>
+<td>A <code>BIGSERIAL</code> <code>id</code> keeps internal references simple, while the <code>(user_email, project_name)</code> unique constraint enforces the business rule that one user cannot have two projects with the same name</td>
+</tr>
+<tr>
+<td><code>(user_email, project_name)</code> unique on <code>projects</code></td>
+<td>Prevents duplicate project names per user and gives the frontend a stable, human-readable identifier</td>
+</tr>
+<tr>
+<td><code>description</code> on <code>projects</code></td>
+<td>Added to support a short project summary shown on the dashboard and project page</td>
+</tr>
+<tr>
+<td><code>user_email</code> FK with <code>ON DELETE CASCADE</code> on <code>projects</code></td>
+<td>If a user account is deleted, their projects have no owner and no reason to exist, so cascading avoids orphaned rows and manual cleanup</td>
+</tr>
+<tr>
+<td><code>user_email</code> directly on <code>fields</code>/<code>entries</code> (not a FK)</td>
+<td>Keeps lookups simple at this project's scale, rather than joining through <code>users</code> every time; also matches Supabase Auth, which identifies sessions by email</td>
+</tr>
+<tr>
+<td><code>table_name</code> on <code>fields</code></td>
+<td>Scopes multiple field-sets independently per user (e.g. <code>logbook</code> vs <code>profile</code>) without needing a separate physical table for each one</td>
+</tr>
+<tr>
+<td>Field definitions stored as <strong>rows</strong>, not columns</td>
+<td>Avoids <code>ALTER TABLE</code> migrations every time a user adds or changes a custom field — the database structure itself never has to change</td>
+</tr>
+<tr>
+<td><code>entries</code> stored as <code>JSONB</code></td>
+<td>The shape of an entry varies per user/project, so a fixed set of SQL columns can't represent it. JSONB stores the submitted values as one flexible object while staying natively indexable and queryable in Postgres</td>
+</tr>
+<tr>
+<td><code>due_date</code> as a real column, not inside <code>entries</code> JSONB</td>
+<td>Overdue checks need to run a fast, indexed comparison against <code>now()</code> across every row. A value buried in JSONB can't be indexed the same way, so pulling it out keeps "show me anything overdue" cheap even as entries grow</td>
+</tr>
+<tr>
+<td><code>priority</code> as a Postgres ENUM, not inside <code>entries</code> JSONB</td>
+<td>Priority is a fixed, small set of values shared by every project regardless of their custom fields, so it belongs alongside <code>due_date</code> as a real column rather than something the user defines per-project. An ENUM also stops bad values from ever being written, which JSONB can't guarantee</td>
+</tr>
+<tr>
+<td><code>priority</code> nullable</td>
+<td>Not every entry needs a priority assigned, so the column has no default and no <code>NOT NULL</code> — it's opt-in</td>
+</tr>
+<tr>
+<td><code>started_at</code> / <code>ended_at</code> as real columns, not inside <code>entries</code> JSONB</td>
+<td>Time tracking totals need fast, native date-math (<code>SUM(duration)</code> per project), which JSONB values can't do efficiently. Keeping them as real timestamp columns also lets <code>duration</code> be a generated column instead of something recalculated manually every time</td>
+</tr>
+<tr>
+<td><code>duration</code> as a <code>GENERATED ALWAYS AS ... STORED</code> column</td>
+<td>Postgres computes <code>ended_at - started_at</code> automatically whenever those two columns are set, so the app never risks the stored duration going stale or being calculated inconsistently across different code paths</td>
+</tr>
+<tr>
+<td><code>started_at</code> / <code>ended_at</code> both nullable</td>
+<td>Supports two logging styles: a live "start/stop" timer flow (set <code>started_at</code> immediately, <code>ended_at</code> on stop) and a manual after-the-fact entry (both set at once when saving) — neither is forced on the user</td>
+</tr>
+<tr>
+<td>Indexes on <code>user_email</code> and <code>project_name</code></td>
+<td>These are the two columns entries will constantly be filtered by (a user viewing their own logbook, scoped to one project), so indexing keeps those lookups fast as data grows</td>
+</tr>
+<tr>
+<td>Index on <code>due_date</code></td>
+<td>Lets the app flag overdue entries with a simple query like <code>WHERE due_date &lt; now()</code> without scanning the whole table</td>
+</tr>
+<tr>
+<td><code>archived</code> on <code>projects</code>/<code>entries</code></td>
+<td>Soft-archive support lets users hide projects/entries without deleting data. Both default <code>false</code> so existing rows remain visible</td>
+</tr>
+<tr>
+<td>Indexes on <code>archived</code></td>
+<td>Keeps "show only active" / "show only archived" filters fast as data grows</td>
+</tr>
+<tr>
+<td><code>deleted</code> on all tables</td>
+<td>Soft-delete support — users can delete their account and restore it within a grace period. All related rows (entries, fields, projects, activity_log) are marked <code>deleted = true</code> instead of being hard-deleted, so the data can be recovered if the user signs back in</td>
+</tr>
+<tr>
+<td><code>deletion_scheduled_at</code> on <code>users</code></td>
+<td>Records when the soft-delete happened, enabling future expiry logic (e.g. hard-delete after 30 days)</td>
+</tr>
+<tr>
+<td><code>description</code> on <code>projects</code></td>
+<td>Optional free-text description so users can note what a project is about</td>
+</tr>
+<tr>
+<td><code>unique_name</code> on <code>projects</code></td>
+<td>A per-user slug for URL-friendly project references</td>
+</tr>
+</tbody>
+</table>
+<h2 id="activity_log">activity_log<a class="headerlink" href="#activity_log" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>PK, default gen_random_uuid()</td>
+</tr>
+<tr>
+<td>user_email</td>
+<td>VARCHAR(255)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td>action</td>
+<td>VARCHAR(50)</td>
+<td>e.g. CREATE, UPDATE, DELETE</td>
+</tr>
+<tr>
+<td>entity_type</td>
+<td>VARCHAR(50)</td>
+<td>e.g. PROJECT, ENTRY</td>
+</tr>
+<tr>
+<td>entity_name</td>
+<td>VARCHAR(150)</td>
+<td>name of the affected entity</td>
+</tr>
+<tr>
+<td>details</td>
+<td>JSONB</td>
+<td>optional structured metadata</td>
+</tr>
+<tr>
+<td>deleted</td>
+<td>BOOLEAN</td>
+<td>default false — soft-delete flag</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMPTZ</td>
+<td>default CURRENT_TIMESTAMP</td>
+</tr>
+</tbody>
+</table>
+<p>Append-only table — rows are inserted on every create/update/delete action and never modified. Used by the Activity Feed page to show a chronological stream of user actions. Indexed on <code>(user_email, created_at DESC)</code> for fast per-user lookups.</p>
+<h2 id="health_ping">health_ping<a class="headerlink" href="#health_ping" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>BIGINT</td>
+<td>PK, auto-generated identity</td>
+</tr>
+<tr>
+<td>message</td>
+<td>TEXT</td>
+<td>NOT NULL, default <code>'hello hlulani'</code></td>
+</tr>
+<tr>
+<td>pinged_at</td>
+<td>TIMESTAMPTZ</td>
+<td>NOT NULL, default now()</td>
+</tr>
+</tbody>
+</table>
+<p>Internal keep-alive table. Supabase free-tier projects are paused after prolonged inactivity. The dashboard-service daemon periodically inserts and deletes a row in this table to prevent the database from sleeping. Row Level Security is enabled but no user-facing policies exist — only the service-role key (used by the backend daemon) can access it.</p>
+<h2 id="notes">notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>UUID</td>
+<td>PK, default gen_random_uuid()</td>
+</tr>
+<tr>
+<td>email</td>
+<td>TEXT</td>
+<td>NOT NULL, owner of the note</td>
+</tr>
+<tr>
+<td>entry_id</td>
+<td>UUID</td>
+<td>NOT NULL, FK → entries(id) ON DELETE CASCADE</td>
+</tr>
+<tr>
+<td>entry_type</td>
+<td>TEXT</td>
+<td>NOT NULL, CHECK (entry_type IN ('text','image','pdf','link'))</td>
+</tr>
+<tr>
+<td>value</td>
+<td>TEXT</td>
+<td>NOT NULL, the note content</td>
+</tr>
+<tr>
+<td>created_at</td>
+<td>TIMESTAMPTZ</td>
+<td>default now()</td>
+</tr>
+<tr>
+<td>deleted</td>
+<td>BOOLEAN</td>
+<td>default false — soft-delete flag</td>
+</tr>
+</tbody>
+</table>
+<p>Per-entry personalisation table. Lets users attach free-form notes (text snippets, image URLs, PDF references, or web links) to any entry. The <code>entry_type</code> check constraint keeps the type column to a known set of values, and the cascade delete ensures notes are cleaned up automatically when their parent entry is removed. Added based on user feedback requesting more personalisation options.</p>
+<h2 id="ai_provider_cooldowns">ai_provider_cooldowns<a class="headerlink" href="#ai_provider_cooldowns" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>provider</td>
+<td>VARCHAR(100)</td>
+<td>PK — the AI provider identifier (e.g. <code>groq</code>, <code>openrouter</code>)</td>
+</tr>
+<tr>
+<td>cooldown_until</td>
+<td>TIMESTAMPTZ</td>
+<td>NOT NULL, default <code>now()</code> — wall-clock time the provider is retryable again</td>
+</tr>
+<tr>
+<td>deleted</td>
+<td>BOOLEAN</td>
+<td>NOT NULL default false — soft-delete flag</td>
+</tr>
+</tbody>
+</table>
+<p>Small state table used by the project-service AI router to rate-limit calls
+across multiple upstream providers. When a provider returns HTTP 429 or
+throws a network error, the service stamps <code>cooldown_until</code> with a backoff
+deadline and skips that provider on subsequent requests until the deadline
+passes. This keeps the entry-summary and Quick-Add features working even
+when one provider is throttled, without needing to store cooldown state in
+process memory (which would be lost on cold start of a Render free instance).</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">notes</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="n">id</span><span class="w"> </span><span class="n">uuid</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">gen_random_uuid</span><span class="p">(),</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="n">email</span><span class="w"> </span><span class="nb">text</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="n">entry_id</span><span class="w"> </span><span class="n">uuid</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">REFERENCES</span><span class="w"> </span><span class="n">entries</span><span class="p">(</span><span class="n">id</span><span class="p">)</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">DELETE</span><span class="w"> </span><span class="k">CASCADE</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="n">entry_type</span><span class="w"> </span><span class="nb">text</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">CHECK</span><span class="w"> </span><span class="p">(</span><span class="n">entry_type</span><span class="w"> </span><span class="k">IN</span><span class="w"> </span><span class="p">(</span><span class="s1">'text'</span><span class="p">,</span><span class="w"> </span><span class="s1">'image'</span><span class="p">,</span><span class="w"> </span><span class="s1">'pdf'</span><span class="p">,</span><span class="w"> </span><span class="s1">'link'</span><span class="p">)),</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">  </span><span class="n">value</span><span class="w"> </span><span class="nb">text</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">  </span><span class="n">created_at</span><span class="w"> </span><span class="k">timestamp</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">time</span><span class="w"> </span><span class="k">zone</span><span class="w"> </span><span class="k">DEFAULT</span><span class="w"> </span><span class="n">now</span><span class="p">()</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="p">);</span>
+</code></pre></div>
+<h2 id="rpc-functions">RPC Functions<a class="headerlink" href="#rpc-functions" title="Permanent link">&para;</a></h2>
+<h3 id="delete_user">delete_user()<a class="headerlink" href="#delete_user" title="Permanent link">&para;</a></h3>
+<p>Soft-deletes the authenticated user's account. Marks all related rows (entries, fields, projects, activity_log) as <code>deleted = true</code> and inserts/updates the user row with <code>deleted = true</code> and <code>deletion_scheduled_at = now()</code>. Uses <code>v_email</code> variable to avoid PL/pgSQL ambiguity with the <code>user_email</code> column name.</p>
+<h3 id="restore_user">restore_user()<a class="headerlink" href="#restore_user" title="Permanent link">&para;</a></h3>
+<p>Reverses a soft-delete. Sets <code>deleted = false</code> and clears <code>deletion_scheduled_at</code> on the user row and all related rows. Called automatically when a soft-deleted user signs back in.</p>
+<h3 id="purge_deleted_users">purge_deleted_users()<a class="headerlink" href="#purge_deleted_users" title="Permanent link">&para;</a></h3>
+<p>Permanently removes accounts whose 30-day grace period has expired. Iterates over all users where <code>deleted = true</code> and <code>deletion_scheduled_at &lt; now() - INTERVAL '30 days'</code>, hard-deletes their rows from every table (<code>activity_log</code>, <code>entries</code>, <code>fields</code>, <code>projects</code>, <code>users</code>), and removes the corresponding <code>auth.users</code> row. Runs nightly via a <code>pg_cron</code> job scheduled at <code>0 0 * * *</code> (midnight UTC). Uses <code>SECURITY DEFINER</code> to bypass Row Level Security.</p>
+<h3 id="get_project_stats">get_project_stats()<a class="headerlink" href="#get_project_stats" title="Permanent link">&para;</a></h3>
+<p>Aggregates per-project statistics for the Stats page. Accepts a user email and returns <code>project_name</code>, <code>entry_count</code>, <code>total_duration</code> (sum of <code>ended_at - started_at</code> for completed entries, or <code>now() - started_at</code> for in-progress entries), and <code>in_progress</code> count. Only includes non-archived, non-deleted entries. Ordered by <code>total_duration DESC</code> so the most time-intensive projects appear first.</p>
+<h3 id="get_field_stats">get_field_stats()<a class="headerlink" href="#get_field_stats" title="Permanent link">&para;</a></h3>
+<p>Generic field-statistics RPC. Where <code>get_project_stats()</code> hard-codes one metric (time per project), <code>get_field_stats()</code> knows nothing about any field in advance. It takes a user email and an optional project name, flattens every entry's <code>entries</code> JSONB with <code>jsonb_each_text</code>, resolves each field's <code>data_type</code> from the <code>fields</code> table (inferring it from the values themselves when the owner never declared one), and returns one row per field in the standard statistics format:</p>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>field_name</code></td>
+<td>TEXT</td>
+<td>the owner-defined field name</td>
+</tr>
+<tr>
+<td><code>data_type</code></td>
+<td>TEXT</td>
+<td>declared or inferred type (<code>number</code>, <code>text</code>, <code>boolean</code>, <code>date</code>)</td>
+</tr>
+<tr>
+<td><code>entry_count</code></td>
+<td>BIGINT</td>
+<td>entries considered</td>
+</tr>
+<tr>
+<td><code>filled</code></td>
+<td>BIGINT</td>
+<td>entries where the field has a value</td>
+</tr>
+<tr>
+<td><code>total</code></td>
+<td>NUMERIC</td>
+<td>sum of values — <code>NULL</code> for types that cannot be totalled</td>
+</tr>
+<tr>
+<td><code>groups</code></td>
+<td>JSONB</td>
+<td><code>[{"value", "count"}]</code> — group by value</td>
+</tr>
+<tr>
+<td><code>series</code></td>
+<td>JSONB</td>
+<td><code>[{"bucket", "value"}]</code> — daily buckets for plotting over time (sums for numbers, counts otherwise)</td>
+</tr>
+<tr>
+<td><code>by_project</code></td>
+<td>JSONB</td>
+<td><code>[{"key", "count", "total"}]</code> — compare across projects</td>
+</tr>
+</tbody>
+</table>
+<h4 id="the-standard-statistics-format">The standard statistics format<a class="headerlink" href="#the-standard-statistics-format" title="Permanent link">&para;</a></h4>
+<p>Statistics follow one format wherever they go: the frontend engine (<code>computeFieldStats</code> in <code>frontend/src/functions/dashboard/stats.js</code>), the Quick Stats panel, the My Stats page, and this RPC all express a field's statistics the same way — a <strong>total</strong> where the type allows it, a <strong>group-by</strong> of value counts, a <strong>compare</strong> across projects, and a daily <strong>series</strong> for plotting over time. Capabilities come from the field's <code>data_type</code> (the owner's declaration), never from hard-coded knowledge of a particular field, so a field defined tomorrow works everywhere without further changes.</p>
+<h2 id="trade-off">Trade-off<a class="headerlink" href="#trade-off" title="Permanent link">&para;</a></h2>
+<p>This design trades some query complexity — values have to be interpreted
+using their corresponding <code>fields</code> definition — for schema flexibility that
+directly matches the brief's requirement to let users "customise the format"
+of their logbook.</p>
+<h2 id="sqlite-client-side-local-store">SQLite (Client-Side Local Store)<a class="headerlink" href="#sqlite-client-side-local-store" title="Permanent link">&para;</a></h2>
+<p>The frontend maintains a local SQLite database (via sql.js WebAssembly) that mirrors the
+PostgreSQL schema. This is the <strong>primary data source</strong> for all UI
+rendering — pages never query the server directly. The architecture is
+local-first: reads come from SQLite instantly, and mutations write to
+SQLite before syncing to the server.</p>
+<p><strong>Library:</strong> <a href="https://sql.js.org/">sql.js</a> (SQLite compiled to WebAssembly)
+<strong>WASM file:</strong> <code>frontend/public/sql-wasm.wasm</code> (~1MB, loaded once on first visit)
+<strong>Persistence:</strong> Binary blob stored in IndexedDB under key <code>sqlitedb</code>
+<strong>Source file:</strong> <code>frontend/src/lib/cache.js</code></p>
+<h3 id="tables">Tables<a class="headerlink" href="#tables" title="Permanent link">&para;</a></h3>
+<p>SQLite tables mirror the PostgreSQL schema. Each table stores data as JSON blobs
+for compatibility with the existing cache API, keyed by user email.</p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Key format</th>
+<th>Contents</th>
+<th>Mirrors PG table</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>projects</code></td>
+<td><code>{email}</code></td>
+<td>All projects for the user. Shape: <code>{ success, projects: [...], key }</code></td>
+<td><code>projects</code></td>
+</tr>
+<tr>
+<td><code>entries</code></td>
+<td><code>{email}:{project_name}</code></td>
+<td>Per-project entries. Shape: <code>{ success, data: [...], key }</code>. Also <code>{email}:due-soon</code> for computed due-soon entries</td>
+<td><code>entries</code></td>
+</tr>
+<tr>
+<td><code>all_entries</code></td>
+<td><code>{email}</code></td>
+<td>All entries across all projects. Shape: <code>{ success, data: [...], key }</code></td>
+<td><code>entries</code></td>
+</tr>
+<tr>
+<td><code>profile</code></td>
+<td><code>{email}</code></td>
+<td>User profile (username, avatar, name). Shape: <code>{ success, data: {...}, key }</code></td>
+<td><code>users</code></td>
+</tr>
+<tr>
+<td><code>search</code></td>
+<td><code>{email}</code></td>
+<td>Cached search results</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>archives</code></td>
+<td><code>{email}:all</code></td>
+<td>Archived entries and projects. Also <code>archived-projects:{email}</code> and <code>unarchived-projects:{email}</code></td>
+<td><code>projects</code>/<code>entries</code> (archived)</td>
+</tr>
+<tr>
+<td><code>fields</code></td>
+<td><code>{email}</code></td>
+<td>Custom field definitions per table</td>
+<td><code>fields</code></td>
+</tr>
+<tr>
+<td><code>notes</code></td>
+<td><code>notes:{entry_id}</code></td>
+<td>Per-entry notes (text, image, pdf, link)</td>
+<td><code>notes</code></td>
+</tr>
+<tr>
+<td><code>cache_meta</code></td>
+<td><code>{key}</code></td>
+<td>Timestamps for stale-while-revalidate checks. Shape: <code>{ key, timestamp }</code></td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>offline_queue</code></td>
+<td>Auto-increment <code>id</code></td>
+<td>Queued offline actions. Shape: <code>{ action, module, payload, timestamp, attempts }</code></td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="how-tables-map-to-postgresql">How Tables Map to PostgreSQL<a class="headerlink" href="#how-tables-map-to-postgresql" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>PostgreSQL (Supabase)           SQLite (Browser via sql.js)
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>─────────────────────────       ─────────────────────────────
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>users          ──────────→      profile table
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>projects       ──────────→      projects table
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>entries        ──────────→      all_entries table (all rows)
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>                                entries table (per-project slices)
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>fields         ──────────→      fields table
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>notes          ──────────→      notes table
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>activity_log   ──────────→      (not cached — server-only)
+</code></pre></div>
+<h3 id="data-flow">Data Flow<a class="headerlink" href="#data-flow" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>App load</strong> — <code>syncAllData(email)</code> fetches all data from the server and populates every SQLite table. This runs once on login before any page renders.</li>
+<li><strong>Reads</strong> — Pages read exclusively from SQLite via the <code>useCachedData</code> hook. No server calls during navigation.</li>
+<li><strong>Mutations</strong> — Write to SQLite first (optimistic update), then sync to the server. On server failure, the optimistic update is rolled back.</li>
+<li><strong>Real-time</strong> — SSE (Server-Sent Events) invalidate relevant cache stores when other clients make changes.</li>
+<li><strong>Persistence</strong> — After every write, the SQLite database is exported as a binary blob and stored in IndexedDB for durability across page refreshes.</li>
+</ol>
+<h3 id="event-subscription-system">Event Subscription System<a class="headerlink" href="#event-subscription-system" title="Permanent link">&para;</a></h3>
+<p>Components subscribe to cache changes via <code>cacheSubscribe(store, key, callback)</code>. When <code>cacheSet</code> is called, all subscribers for that store+key are notified with the new data. This is what makes the UI reactive without polling.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1">// Example: subscribe to project changes</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kd">const</span><span class="w"> </span><span class="nx">unsub</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">cacheSubscribe</span><span class="p">(</span><span class="s1">'projects'</span><span class="p">,</span><span class="w"> </span><span class="nx">email</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">newProjects</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">  </span><span class="c1">// Re-render with new projects</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="p">});</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="c1">// Later: unsub() to clean up</span>
+</code></pre></div>
+<h3 id="key-files">Key Files<a class="headerlink" href="#key-files" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>frontend/src/lib/cache.js</code></td>
+<td>SQLite layer: cacheGet, cacheSet, cacheSubscribe, etc.</td>
+</tr>
+<tr>
+<td><code>frontend/public/sql-wasm.wasm</code></td>
+<td>SQLite WebAssembly binary (~1MB)</td>
+</tr>
+<tr>
+<td><code>frontend/src/hooks/useCachedData.js</code></td>
+<td>React hook: reads SQLite, subscribes, triggers fetch</td>
+</tr>
+<tr>
+<td><code>frontend/src/CacheFunctions/syncService.js</code></td>
+<td>Central sync: populates all tables from server</td>
+</tr>
+<tr>
+<td><code>frontend/src/CacheFunctions/offlineQueue.js</code></td>
+<td>Offline action queue using SQLite</td>
+</tr>
+<tr>
+<td><code>frontend/src/functions/project/entries.js</code></td>
+<td>Entry CRUD with optimistic updates and rollback</td>
+</tr>
+<tr>
+<td><code>frontend/src/functions/project/project.js</code></td>
+<td>Project CRUD with SQLite-first pattern</td>
+</tr>
+<tr>
+<td><code>frontend/src/functions/profile/profile.js</code></td>
+<td>Profile fetch with SQLite caching</td>
+</tr>
+</tbody>
+</table>
+<h2 id="schema-migrations">Schema Migrations<a class="headerlink" href="#schema-migrations" title="Permanent link">&para;</a></h2>
+<p>Database changes are tracked through versioned SQL migration files in <code>supabase/migrations/</code>, applied in filename order.</p>
+<h3 id="migration-files">Migration Files<a class="headerlink" href="#migration-files" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>000_baseline_full_schema.sql</code></td>
+<td>Idempotent baseline — creates all tables, types, indexes from scratch</td>
+</tr>
+<tr>
+<td><code>001_add_project_description_and_unique_name.sql</code></td>
+<td><code>description</code> column on projects + unique constraint on <code>(user_email, project_name)</code></td>
+</tr>
+<tr>
+<td><code>002_auto_provision_public_users_for_auth.sql</code></td>
+<td>Backfills <code>auth.users</code> into <code>public.users</code> for existing accounts</td>
+</tr>
+<tr>
+<td><code>003_create_activity_log_table.sql</code></td>
+<td>Creates <code>activity_log</code> table with composite index</td>
+</tr>
+<tr>
+<td><code>004_account_deletion_grace_period.sql</code></td>
+<td>Soft-delete columns, <code>delete_user()</code>/<code>restore_user()</code>/<code>purge_deleted_users()</code> RPCs, nightly cron job</td>
+</tr>
+<tr>
+<td><code>005_add_soft_delete_column.sql</code></td>
+<td>Adds <code>deleted</code> boolean to all remaining tables</td>
+</tr>
+<tr>
+<td><code>006_create_health_ping_table.sql</code></td>
+<td><code>health_ping</code> table for Supabase keep-alive daemon with RLS</td>
+</tr>
+<tr>
+<td><code>007_add_summary_column.sql</code></td>
+<td><code>summary TEXT</code> column on entries for AI-generated one-liners</td>
+</tr>
+<tr>
+<td><code>008_add_project_color.sql</code></td>
+<td><code>project_color VARCHAR(7)</code> column on projects for custom colour picker</td>
+</tr>
+<tr>
+<td><code>008_create_field_stats_rpc.sql</code></td>
+<td><code>get_field_stats()</code> RPC — generic per-field statistics (total, groups, series, by-project)</td>
+</tr>
+<tr>
+<td><code>009_create_notes_table.sql</code></td>
+<td><code>notes</code> table for per-entry personalisation (text, image, pdf, link)</td>
+</tr>
+<tr>
+<td><code>010_purge_unconfirmed_signups.sql</code></td>
+<td><code>purge_unconfirmed_users()</code> RPC + nightly cron purging email sign-ups unconfirmed for 3 days</td>
+</tr>
+<tr>
+<td><code>011_create_notifications.sql</code></td>
+<td><code>notifications</code> table (due-soon/overdue feed), <code>users.email_notifications</code> preference, <code>generate_due_notifications()</code> RPC + hourly pg_cron/pg_net cycle</td>
+</tr>
+<tr>
+<td><code>012_add_timer_pause_fields.sql</code></td>
+<td>Timer pause support: <code>target_duration_ms</code>, <code>paused_ms</code>, <code>paused_at</code> columns on <code>entries</code>; updated <code>get_project_stats()</code> to subtract paused time</td>
+</tr>
+<tr>
+<td><code>013_notification_enhancements.sql</code></td>
+<td>Snooze (<code>snoozed_until</code>), dismiss (<code>dismissed</code>) columns on <code>notifications</code>; <code>notification_lead_time</code> on <code>users</code>; updated generator with per-user lead time</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cli-commands">CLI Commands<a class="headerlink" href="#cli-commands" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># Apply all pending migrations (run from project root)</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>npm<span class="w"> </span>run<span class="w"> </span>db:migrate
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># Full database backup (data + schema)</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>npm<span class="w"> </span>run<span class="w"> </span>db:backup
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Restore from backup</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>npm<span class="w"> </span>run<span class="w"> </span>db:restore
+</code></pre></div>
+<p>All migration scripts are in the <code>scripts/</code> directory and require the <code>SUPABASE_URL</code> and <code>SUPABASE_SERVICE_ROLE_KEY</code> environment variables.</p>
+<h3 id="key-files_1">Key Files<a class="headerlink" href="#key-files_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>supabase/setup.sql</code> — Original full schema (for fresh installs)</li>
+<li><code>supabase/migrations/</code> — Incremental migration files</li>
+<li><code>scripts/backup.js</code> — Backup utility</li>
+<li><code>scripts/restore.js</code> — Restore utility</li>
+<li><code>scripts/migrate.js</code> — Migration runner</li>
+</ul>
+<hr />
+<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<h3 id="hosting">Hosting<a class="headerlink" href="#hosting" title="Permanent link">&para;</a></h3>
+<p>The database is a <strong>Supabase-managed PostgreSQL</strong> instance. Supabase provides the PostgreSQL engine, SSL certificates, automatic backups (daily on the free tier), and a web-based SQL editor at <code>supabase.com/dashboard/project/_/sql</code>. There is no self-hosted database server — all infrastructure is managed by Supabase.</p>
+<h3 id="connection-architecture">Connection Architecture<a class="headerlink" href="#connection-architecture" title="Permanent link">&para;</a></h3>
+<p>Each backend service connects to PostgreSQL through a <code>pg.Pool</code> (connection pool) configured in <code>services/project-service/src/db.js</code> and equivalent files in dashboard-service:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">pg</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">'pg'</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Pool</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">pg</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kd">const</span><span class="w"> </span><span class="nx">pool</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">Pool</span><span class="p">({</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="w">  </span><span class="nx">connectionString</span><span class="o">:</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">DATABASE_URL</span><span class="p">,</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="nx">ssl</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">rejectUnauthorized</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span><span class="w"> </span><span class="c1">// Required for Supabase</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">});</span>
+</code></pre></div>
+<ul>
+<li><strong><code>DATABASE_URL</code></strong> — Supabase's direct connection string (provided in the Supabase dashboard under Settings &gt; Database). Contains host, port, database name, user, and password in one URL.</li>
+<li><strong>SSL required</strong> — Supabase enforces SSL for all connections. <code>rejectUnauthorized: false</code> is needed because Supabase uses a self-signed certificate on the free tier.</li>
+<li><strong>Connection pooling</strong> — The <code>pg.Pool</code> manages up to 10 concurrent connections per service instance, reusing them across requests. This prevents connection exhaustion on Supabase's free-tier limit of 60 concurrent connections.</li>
+<li><strong>Startup verification</strong> — Each service runs <code>SELECT 1</code> on startup to verify the pool is connected. If it fails, an error is logged but the service still starts (graceful degradation).</li>
+</ul>
+<h3 id="environment-variables">Environment Variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Used by</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DATABASE_URL</code></td>
+<td>project-service, dashboard-service</td>
+<td>PostgreSQL connection string</td>
+</tr>
+<tr>
+<td><code>SUPABASE_URL</code></td>
+<td>All 4 services, frontend</td>
+<td>Supabase project URL (for Auth client)</td>
+</tr>
+<tr>
+<td><code>SUPABASE_KEY</code></td>
+<td>All 4 services</td>
+<td>Supabase anon/public key (for client-side auth)</td>
+</tr>
+<tr>
+<td><code>SUPABASE_SERVICE_ROLE_KEY</code></td>
+<td>project-service</td>
+<td>Supabase service-role key (bypasses RLS for server operations)</td>
+</tr>
+<tr>
+<td><code>VITE_SUPABASE_URL</code></td>
+<td>frontend</td>
+<td>Build-time Supabase URL (exposed to the browser)</td>
+</tr>
+<tr>
+<td><code>VITE_SUPABASE_ANON_KEY</code></td>
+<td>frontend</td>
+<td>Build-time Supabase anon key (safe to expose — RLS protects data)</td>
+</tr>
+<tr>
+<td><code>BREVO_API_KEY</code></td>
+<td>project-service</td>
+<td>Brevo transactional-email API key (due-date notification emails)</td>
+</tr>
+<tr>
+<td><code>BREVO_SENDER_EMAIL</code></td>
+<td>project-service</td>
+<td>Verified Brevo sender address used for notification emails</td>
+</tr>
+</tbody>
+</table>
+<p>All secrets are configured through the Render dashboard (not in the repository) and injected as environment variables at runtime. Locally, they are loaded from <code>.env</code> files via <code>dotenv</code>.</p>
+<h3 id="which-services-connect">Which Services Connect<a class="headerlink" href="#which-services-connect" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Service</th>
+<th>Connects to PostgreSQL?</th>
+<th>How</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>project-service</strong></td>
+<td>Yes</td>
+<td>Direct <code>pg.Pool</code> via <code>DATABASE_URL</code> — owns projects, entries, fields, archives, activity_log</td>
+</tr>
+<tr>
+<td><strong>dashboard-service</strong></td>
+<td>Yes</td>
+<td>Direct <code>pg.Pool</code> via <code>DATABASE_URL</code> — read-only aggregation for stats and search</td>
+</tr>
+<tr>
+<td><strong>auth-service</strong></td>
+<td>No</td>
+<td>Uses Supabase Auth SDK (<code>SUPABASE_URL</code> + <code>SUPABASE_KEY</code>) — never touches PostgreSQL directly</td>
+</tr>
+<tr>
+<td><strong>profile-service</strong></td>
+<td>No</td>
+<td>Uses Supabase Auth SDK — reads/writes <code>public.users</code> through Supabase client, not raw SQL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="backups-and-restore">Backups and Restore<a class="headerlink" href="#backups-and-restore" title="Permanent link">&para;</a></h3>
+<p>Supabase provides automatic daily backups on all plans (7-day retention on the free tier). Additionally, the project includes custom backup scripts:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1"># Full database backup (data + schema) — outputs to backups/ directory</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>npm<span class="w"> </span>run<span class="w"> </span>db:backup
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="c1"># Restore from a backup file</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>npm<span class="w"> </span>run<span class="w"> </span>db:restore
+</code></pre></div>
+<p>These scripts (<code>scripts/backup.js</code> and <code>scripts/restore.js</code>) use the Supabase service-role key to dump and restore all tables. They require <code>SUPABASE_URL</code> and <code>SUPABASE_SERVICE_ROLE_KEY</code> environment variables.</p>
+<h3 id="health-monitoring">Health Monitoring<a class="headerlink" href="#health-monitoring" title="Permanent link">&para;</a></h3>
+<p>Two mechanisms keep the database active and detect issues:</p>
+<ol>
+<li><strong>Keep-alive daemon</strong> — The dashboard-service runs a background interval that inserts and deletes a row in the <code>health_ping</code> table every 5 minutes. This prevents Supabase's free tier from pausing the database due to inactivity.</li>
+<li><strong>Render health endpoint</strong> — Each service exposes a <code>/service/health-ping</code> endpoint that the keep-alive GitHub/Gitea Action pings every 15 minutes. If the service cannot connect to the database, the health check fails and the action logs a warning.</li>
+</ol>
+<h3 id="row-level-security-rls">Row Level Security (RLS)<a class="headerlink" href="#row-level-security-rls" title="Permanent link">&para;</a></h3>
+<p>Supabase enforces Row Level Security on all tables. The backend services use the <strong>service-role key</strong> (<code>SUPABASE_SERVICE_ROLE_KEY</code>) which bypasses RLS — this is intentional because the services implement their own authorization (JWT verification in middleware). The frontend's Supabase client uses the anon key, which is subject to RLS policies, but the frontend never queries Supabase directly anyway.</p>
+<h3 id="scheduled-jobs">Scheduled Jobs<a class="headerlink" href="#scheduled-jobs" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Job</th>
+<th>Schedule</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>purge-deleted-users</code></td>
+<td><code>0 0 * * *</code> (midnight UTC daily)</td>
+<td>Permanently removes soft-deleted accounts past the 30-day grace period</td>
+</tr>
+<tr>
+<td><code>due-notification-cycle</code></td>
+<td><code>7 * * * *</code> (hourly)</td>
+<td>Inserts due-soon (24h) / overdue notification rows, then pokes project-service to send pending emails via <code>pg_net</code></td>
+</tr>
+</tbody>
+</table>
+<p>Requires the <code>pg_cron</code> Supabase extension. The job calls <code>purge_deleted_users()</code>, which hard-deletes from all tables and removes the <code>auth.users</code> row.</p>
+<p>The notification cycle uses <code>pg_net</code> (best-effort — if project-service is asleep on Render's free tier the POST fails silently and the next hourly run retries, since pending rows keep <code>emailed = false</code>). Any active app session also flushes pending emails opportunistically on its bell polls.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mermaid.js"></script>
+      
+    
+  </body>
+</html>

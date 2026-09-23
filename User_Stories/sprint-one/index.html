@@ -1,0 +1,2777 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentation for the COMS3011A Digital Logbook project">
+      
+      
+      
+      
+        <link rel="prev" href="../../Stakeholder_Interactions/sprint-two/">
+      
+      
+        <link rel="next" href="../sprint-two/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Sprint 1 - Digital Logbook Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:300,300i,400,400i,700,700i%7CFira+Code:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Lora";--md-code-font:"Fira Code"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sprint-1-user-stories" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Digital Logbook Docs" class="md-header__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Digital Logbook Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sprint 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="pink" data-md-color-accent="rose"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Digital Logbook Docs" class="md-nav__button md-logo" aria-label="Digital Logbook Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Digital Logbook Docs
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    codacaine/Digital-Logbook
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Architecture
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Architecture
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/overview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database Schema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/cicd-deployment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CI/CD & Deployment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/api-contracts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    API Contracts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/system-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/teck-stack/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tech Stack
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/ui-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UI Design
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/voice-feature/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Voice Recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/caching/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    IndexedDB Caching
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/sse/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    SSE Real-Time Updates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/daemon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Keep-Alive Daemons
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/entry-summaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entry Summaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/uml-diagrams/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    UML Architecture Diagrams
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Architecture/third-party/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Third-Party Dependencies
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Meetings
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Meetings
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-one-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Meetings/sprint-two-meetings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Stakeholder Interactions
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Stakeholder Interactions
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-one/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Stakeholder_Interactions/sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    User Stories
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    User Stories
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#demo-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us1-sign-in-to-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US1. Sign in to the system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us2-view-dashboard-after-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US2. View dashboard after login
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us3-create-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US3. Create a project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us4-define-the-project-entry-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US4. Define the project entry format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us5-capture-a-logbook-entry-quickly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US5. Capture a logbook entry quickly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us6-view-project-entries-in-a-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US6. View project entries in a timeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us7-view-basic-project-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US7. View basic project statistics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us8-log-out-securely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US8. Log out securely
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us9-archive-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US9. Archive functionality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us10-implement-activity-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US10. Implement Activity Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprint-2-feedback-derived-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 2 Feedback-Derived Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sprint 2 Feedback-Derived Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us11-see-clearly-what-a-task-is-and-how-it-relates-to-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US11. See clearly what a "task" is and how it relates to a project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us12-see-and-reach-the-last-things-i-created-or-opened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US12. See and reach the last things I created or opened
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us13-understand-exactly-what-data-the-app-stores-and-how-ai-is-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US13. Understand exactly what data the app stores and how AI is used
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us14-confirm-destructive-actions-with-an-in-app-dialog-not-a-browser-pop-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US14. Confirm destructive actions with an in-app dialog, not a browser pop-up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us15-give-each-project-its-own-colour-and-pick-a-website-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US15. Give each project its own colour, and pick a website theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us16-see-the-individual-logbook-record-called-by-the-same-word-everywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US16. See the individual logbook record called by the same word everywhere
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sprint-two/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sprint 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Project Management
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Project Management
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/log/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Development Log
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/methodology/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Methodology & Git Workflow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/work-tracker/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Work Tracker
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/decisions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Open Questions & Decisions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/issues/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Issues & Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Project_Management/ai-attribution/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Attribution
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Testing
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/code-quality/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Code Quality Tools
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Testing/testing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Testing & User Feedback
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#demo-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demo flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us1-sign-in-to-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US1. Sign in to the system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us2-view-dashboard-after-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US2. View dashboard after login
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us3-create-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US3. Create a project
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us4-define-the-project-entry-format" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US4. Define the project entry format
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us5-capture-a-logbook-entry-quickly" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US5. Capture a logbook entry quickly
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us6-view-project-entries-in-a-timeline" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US6. View project entries in a timeline
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us7-view-basic-project-statistics" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US7. View basic project statistics
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us8-log-out-securely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US8. Log out securely
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us9-archive-functionality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US9. Archive functionality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us10-implement-activity-log" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US10. Implement Activity Log
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprint-2-feedback-derived-stories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sprint 2 Feedback-Derived Stories
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Sprint 2 Feedback-Derived Stories">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#us11-see-clearly-what-a-task-is-and-how-it-relates-to-a-project" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US11. See clearly what a "task" is and how it relates to a project
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us12-see-and-reach-the-last-things-i-created-or-opened" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US12. See and reach the last things I created or opened
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us13-understand-exactly-what-data-the-app-stores-and-how-ai-is-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US13. Understand exactly what data the app stores and how AI is used
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us14-confirm-destructive-actions-with-an-in-app-dialog-not-a-browser-pop-up" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US14. Confirm destructive actions with an in-app dialog, not a browser pop-up
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us15-give-each-project-its-own-colour-and-pick-a-website-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US15. Give each project its own colour, and pick a website theme
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#us16-see-the-individual-logbook-record-called-by-the-same-word-everywhere" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        US16. See the individual logbook record called by the same word everywhere
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sprint-1-user-stories">Sprint 1 User Stories<a class="headerlink" href="#sprint-1-user-stories" title="Permanent link">&para;</a></h1>
+<p>Sprint 1 scope is limited to the first vertical slice: demonstrating the core
+flow from login through project creation, template definition, entry
+capture, timeline, and basic statistics — not the whole Digital Logbook
+feature set.</p>
+<div class="admonition tip">
+<p class="admonition-title">Feedback traceability</p>
+</div>
+<p>Stories that were <em>refined</em> in Sprint 2 in response to the quick-survey
+are marked with a <strong>Refined by:</strong> note pointing at the originating
+problem, Gitea issue and shipped commit/PR. Stories that were <em>created
+new</em> in Sprint 2 sit under
+<a href="#sprint-2-feedback-derived-stories">Sprint 2 Feedback-Derived Stories</a>
+at the end of this file.</p>
+<h2 id="demo-flow">Demo flow<a class="headerlink" href="#demo-flow" title="Permanent link">&para;</a></h2>
+<ol>
+<li>User signs in.</li>
+<li>Dashboard opens.</li>
+<li>User creates a project.</li>
+<li>User defines the project entry format.</li>
+<li>User captures a logbook entry using that format.</li>
+<li>User views the saved entry in the project timeline.</li>
+<li>User sees basic project statistics update.</li>
+<li>User logs out.</li>
+<li>User archives projects.</li>
+<li>User is able to see recent activity logs.</li>
+</ol>
+<h2 id="us1-sign-in-to-the-system">US1. Sign in to the system<a class="headerlink" href="#us1-sign-in-to-the-system" title="Permanent link">&para;</a></h2>
+<p><strong>Who:</strong> As a registered user
+<strong>What:</strong> I want to sign in using a secure authentication method
+<strong>Why:</strong> So that I can access my own logbook data safely.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>The user is on the login page and has a valid account</td>
+<td>The user enters valid login details and submits the form</td>
+<td>The system authenticates the user and redirects them to the dashboard</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>The user is on the login page</td>
+<td>The user enters invalid login details</td>
+<td>The system shows a clear error message and does not open the dashboard</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>The user is not authenticated</td>
+<td>The user tries to open a protected page</td>
+<td>The system redirects the user to the login page</td>
+</tr>
+</tbody>
+</table>
+<h2 id="us2-view-dashboard-after-login">US2. View dashboard after login<a class="headerlink" href="#us2-view-dashboard-after-login" title="Permanent link">&para;</a></h2>
+<p><strong>Who:</strong> As a signed-in user
+<strong>What:</strong> I want to see a dashboard with my active projects and quick actions
+<strong>Why:</strong> So that I can continue logging work without searching through the app.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>The user has successfully signed in</td>
+<td>The dashboard loads</td>
+<td>The system displays the active projects area and a create-project action</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>The user has no projects yet</td>
+<td>The dashboard loads</td>
+<td>The system shows an empty-state message and a create-project action</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>The user has active projects</td>
+<td>The dashboard loads</td>
+<td>The system lists the active projects with basic summary information</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Refined by:</strong> Sprint 2 Quick-Survey problem 1 ("Projects, calendar, entries
+and activity log feel disconnected"). The dashboard was extended with
+<em>Recently created</em> and <em>Recently viewed</em> quick-jump strips (liveness-filtered
+against the current projects and entries) and every data-loading page was
+subscribed to <code>cacheSubscribe</code> so writes elsewhere appear without a reload.
+Tracked as Gitea issue <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/118">#118</a>
+(closed), shipped in commits <code>dfd6e2b</code>, <code>69e472d</code>, <code>352b5be</code>, <code>121dbae</code>.</p>
+<h2 id="us3-create-a-project">US3. Create a project<a class="headerlink" href="#us3-create-a-project" title="Permanent link">&para;</a></h2>
+<p><strong>Who:</strong> As a signed-in user
+<strong>What:</strong> I want to create a project with a name and optional description
+<strong>Why:</strong> So that I can start keeping logbook entries for a specific piece of work.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>The user is on the dashboard</td>
+<td>The user opens the create-project form</td>
+<td>The system displays fields for project name and description</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>The user enters a valid unique project name</td>
+<td>The user saves the project</td>
+<td>The project is created and appears in the active projects list</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>The user leaves the project name empty</td>
+<td>The user tries to save the project</td>
+<td>The system rejects the form and explains that the project name is required</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Refined by:</strong> Sprint 2 Quick-Survey problems 1 and 5. After creation the
+app now redirects straight to <code>/project/:projectName</code> so the new project's
+owning surface is immediately visible (commit <code>7c2331e</code>), and the projects
+list is patched directly in React state + subscribed via <code>cacheSubscribe</code>,
+so downstream pages see the new project without a reload (issues
+<a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/118">#118</a>,
+<a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/122">#122</a>).</p>
+<h2 id="us4-define-the-project-entry-format">US4. Define the project entry format<a class="headerlink" href="#us4-define-the-project-entry-format" title="Permanent link">&para;</a></h2>
+<p><strong>Who:</strong> As a project owner
+<strong>What:</strong> I want to define fields and field types for the project entry format
+<strong>Why:</strong> So that entries in that project record the information that matters for that project.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>A project has been created</td>
+<td>The owner opens the entry-format builder</td>
+<td>The system allows field names and field types to be added</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>The owner defines at least one valid field</td>
+<td>The owner saves the format</td>
+<td>The system stores the format as the active format for that project</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>The owner tries to save no fields or duplicate field names</td>
+<td>The owner submits the format</td>
+<td>The system rejects the format and shows a clear validation message</td>
+</tr>
+</tbody>
+</table>
+<h2 id="us5-capture-a-logbook-entry-quickly">US5. Capture a logbook entry quickly<a class="headerlink" href="#us5-capture-a-logbook-entry-quickly" title="Permanent link">&para;</a></h2>
+<p><strong>Who:</strong> As a project owner
+<strong>What:</strong> I want to create a logbook entry using the project's active format
+<strong>Why:</strong> So that I can record what I just worked on before I forget.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>The project has an active entry format</td>
+<td>The owner opens quick entry for that project</td>
+<td>The system displays only fields defined in that project's active format</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>The quick-entry form is open</td>
+<td>The owner enters valid values and saves the entry</td>
+<td>The system stores the entry against the selected project and confirms it was saved</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>The entry format contains predictable fields or built-in metadata</td>
+<td>The quick-entry form opens</td>
+<td>The system pre-fills date/time/project where possible while still allowing edits</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Refined by:</strong> Sprint 2 Quick-Survey problems 1, 4 and 5. Every task-creation
+surface (Dashboard FAB, Project page, AllEntries, Calendar, Timeline,
+QuickAdd, voice capture) was unified so the muscle memory transfers
+between pages, and each of them now records the new task into the
+<em>Recently created</em> strip. Task-creation is also protected by a sequence-ref
+race guard so the project the user just created is guaranteed to be
+selectable immediately. Tracked as issues
+<a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/118">#118</a>,
+<a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/121">#121</a>,
+<a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/122">#122</a>
+(closed); shipped in commits <code>7c2331e</code>, <code>f8cdb96</code>, <code>db1b73f</code>.</p>
+<h2 id="us6-view-project-entries-in-a-timeline">US6. View project entries in a timeline<a class="headerlink" href="#us6-view-project-entries-in-a-timeline" title="Permanent link">&para;</a></h2>
+<p><strong>Who:</strong> As a project owner
+<strong>What:</strong> I want to view saved entries in reverse chronological order
+<strong>Why:</strong> So that I can see the history of work done on the project.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>The project has one or more saved entries</td>
+<td>The owner opens the project timeline</td>
+<td>The system displays entries from newest to oldest</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>An entry appears in the timeline</td>
+<td>The owner scans the timeline</td>
+<td>The system shows enough summary information to identify the entry</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>The owner selects a specific project</td>
+<td>The timeline is displayed</td>
+<td>The system shows only entries belonging to that project</td>
+</tr>
+</tbody>
+</table>
+<h2 id="us7-view-basic-project-statistics">US7. View basic project statistics<a class="headerlink" href="#us7-view-basic-project-statistics" title="Permanent link">&para;</a></h2>
+<p><strong>Who:</strong> As a project owner
+<strong>What:</strong> I want to see simple statistics calculated from the project entries
+<strong>Why:</strong> So that I can understand how much work has been recorded for the project.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>A project has entries with duration values</td>
+<td>The owner opens the project statistics view</td>
+<td>The system displays the total time spent on that project</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>New entries are added or edited</td>
+<td>The statistics view is refreshed</td>
+<td>The system updates the total time and entry count</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>The owner opens the dashboard</td>
+<td>There are multiple projects</td>
+<td>The dashboard shows simple cross-project summaries such as total time per project</td>
+</tr>
+</tbody>
+</table>
+<h2 id="us8-log-out-securely">US8. Log out securely<a class="headerlink" href="#us8-log-out-securely" title="Permanent link">&para;</a></h2>
+<p><strong>Who:</strong> As a signed-in user
+<strong>What:</strong> I want to log out of the system
+<strong>Why:</strong> So that another person using the same device cannot access my logbook.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>The user is signed in</td>
+<td>The user selects log out</td>
+<td>The system ends the session and redirects the user to the login page</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>The user has logged out</td>
+<td>The user tries to open the dashboard again</td>
+<td>The system prevents access and asks the user to sign in again</td>
+</tr>
+</tbody>
+</table>
+<h2 id="us9-archive-functionality">US9. Archive functionality<a class="headerlink" href="#us9-archive-functionality" title="Permanent link">&para;</a></h2>
+<p><strong>Who:</strong> As a registered user
+<strong>What:</strong> I want to archive old or completed logbook projects and entries
+<strong>Why:</strong> So that my main dashboard remains uncluttered while still keeping a historical record of my past work.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>The user is on the main dashboard and has active logbook projects</td>
+<td>The user clicks the "Archive" button on a specific project</td>
+<td>The system removes it from the active view and flags it as archived in the database</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>The user wants to review past work</td>
+<td>The user navigates to the "Archived" section</td>
+<td>The system displays a list of all previously archived projects and entries</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>The user accidentally archived a project</td>
+<td>The user clicks "Restore" on an archived item</td>
+<td>The system removes the archive flag and moves the project back to the active dashboard view</td>
+</tr>
+</tbody>
+</table>
+<h2 id="us10-implement-activity-log">US10. Implement Activity Log<a class="headerlink" href="#us10-implement-activity-log" title="Permanent link">&para;</a></h2>
+<p><strong>Who:</strong> As a registered user
+<strong>What:</strong> I want to be able to access my Activity Log
+<strong>Why:</strong> So that I can see a trail of activities I've done before</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>The user is authenticated and logged into the system</td>
+<td>The user navigates to the Activity Log page</td>
+<td>The system displays a chronological list of all past activities, showing the date, time, and description of the action performed, and sorted with the most recent activity displayed first</td>
+</tr>
+</tbody>
+</table>
+<h2 id="sprint-2-feedback-derived-stories">Sprint 2 Feedback-Derived Stories<a class="headerlink" href="#sprint-2-feedback-derived-stories" title="Permanent link">&para;</a></h2>
+<p>These stories were created <em>new</em> in Sprint 2, directly from the quick-survey
+findings. Each cites the originating problem number, the Gitea issue it is
+tracked under, and the PR / merge commit that shipped it — closing the
+feedback → story → implementation loop that the "User Feedback" and
+"Bug Tracker" rubric rows both require.</p>
+<h3 id="us11-see-clearly-what-a-task-is-and-how-it-relates-to-a-project">US11. See clearly what a "task" is and how it relates to a project<a class="headerlink" href="#us11-see-clearly-what-a-task-is-and-how-it-relates-to-a-project" title="Permanent link">&para;</a></h3>
+<p><strong>Source:</strong> Sprint 2 Quick-Survey problem 3 (unclear terminology).
+<strong>Gitea issue:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/120">#120</a> — closed.
+<strong>Shipped:</strong> PR #113 (<code>Replace Entry/Entries with Task/Tasks in UI</code>).</p>
+<p><strong>Who:</strong> As a first-time user
+<strong>What:</strong> I want the app to call the things by names I already understand
+<strong>Why:</strong> So that I do not have to build a new mental model to use it.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>User is on any entry-list surface</td>
+<td>User reads the page</td>
+<td>Labels say "Task" / "Tasks" not "Entry" / "Entries"</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>User opens Project Settings</td>
+<td>User sees the format builder</td>
+<td>Column definitions are labelled "Columns" with a tooltip</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>User hovers a project name in a task row</td>
+<td>A tooltip appears</td>
+<td>The tooltip names the project and the row links to it</td>
+</tr>
+</tbody>
+</table>
+<h3 id="us12-see-and-reach-the-last-things-i-created-or-opened">US12. See and reach the last things I created or opened<a class="headerlink" href="#us12-see-and-reach-the-last-things-i-created-or-opened" title="Permanent link">&para;</a></h3>
+<p><strong>Source:</strong> Sprint 2 Quick-Survey problem 1 (disconnected).
+<strong>Gitea issue:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/118">#118</a> — closed.
+<strong>Shipped:</strong> commits <code>dfd6e2b</code>, <code>69e472d</code>, <code>352b5be</code>, <code>d000307</code>, PR #116.</p>
+<p><strong>Who:</strong> As a returning user
+<strong>What:</strong> I want the dashboard to show me my last few creations and last few views
+<strong>Why:</strong> So that I can pick up where I left off without hunting.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>User just added a task from any surface</td>
+<td>User lands on the Dashboard</td>
+<td>The task appears in <em>Recently created</em> and links to its project</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>User just visited a project</td>
+<td>User navigates back to the Dashboard</td>
+<td>The project appears at the top of <em>Recently viewed</em></td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>A project or task in the recents has been deleted or archived</td>
+<td>Dashboard re-renders</td>
+<td>The stale recents entry is filtered out automatically</td>
+</tr>
+</tbody>
+</table>
+<h3 id="us13-understand-exactly-what-data-the-app-stores-and-how-ai-is-used">US13. Understand exactly what data the app stores and how AI is used<a class="headerlink" href="#us13-understand-exactly-what-data-the-app-stores-and-how-ai-is-used" title="Permanent link">&para;</a></h3>
+<p><strong>Source:</strong> Sprint 2 Quick-Survey problem 7 (data-privacy trust) + external
+tester feedback items 6 and 7.
+<strong>Gitea issue:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/124">#124</a> — closed.
+<strong>Shipped:</strong> commits <code>21d6ce1</code> and predecessor; new pages <code>DataDisclaimer.tsx</code>
+and <code>DataDisclaimer2.tsx</code>.</p>
+<p><strong>Who:</strong> As a privacy-conscious new user
+<strong>What:</strong> I want an upfront, honest disclosure of where my data lives and what the AI does with it
+<strong>Why:</strong> So that I can decide whether to trust the app before entering anything.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>User just completed sign-up</td>
+<td>Router hands off to <code>/data-disclaimer</code></td>
+<td>A one-time page appears listing Supabase, IndexedDB, Render, AI scope, opt-out, export, deletion grace period</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>User accepts the disclaimer</td>
+<td>User clicks Continue</td>
+<td>Flag is cleared and the user lands on the dashboard</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>User is signing in later (not a new signup)</td>
+<td>Route runs <code>routeUser</code></td>
+<td>The disclaimer is skipped; the always-available <code>DataDisclaimer2</code> page is linked from the NavBar drawer</td>
+</tr>
+</tbody>
+</table>
+<h3 id="us14-confirm-destructive-actions-with-an-in-app-dialog-not-a-browser-pop-up">US14. Confirm destructive actions with an in-app dialog, not a browser pop-up<a class="headerlink" href="#us14-confirm-destructive-actions-with-an-in-app-dialog-not-a-browser-pop-up" title="Permanent link">&para;</a></h3>
+<p><strong>Source:</strong> Sprint 2 Quick-Survey problem 6 (native browser alerts) + external
+tester feedback item 3.
+<strong>Gitea issue:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/123">#123</a> — closed.
+<strong>Shipped:</strong> commits touching <code>NewEntry.tsx</code> and <code>Dashboard.tsx</code> in the
+tester-feedback batch.</p>
+<p><strong>Who:</strong> As any user
+<strong>What:</strong> I want delete/undo confirmations to look like the rest of the app
+<strong>Why:</strong> So that the experience feels polished and does not flash a browser chrome.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>User opens the entry row menu</td>
+<td>User clicks <em>Delete</em></td>
+<td>An inline "Delete? / Yes, delete / Cancel" prompt appears in the menu itself</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>Project field-save partially fails on the dashboard</td>
+<td>The failure returns</td>
+<td>The message renders inline in the form; no <code>window.alert</code></td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>User clicks <em>Cancel</em> on any inline prompt</td>
+<td>Prompt disappears</td>
+<td>No mutation was issued to the server</td>
+</tr>
+</tbody>
+</table>
+<h3 id="us15-give-each-project-its-own-colour-and-pick-a-website-theme">US15. Give each project its own colour, and pick a website theme<a class="headerlink" href="#us15-give-each-project-its-own-colour-and-pick-a-website-theme" title="Permanent link">&para;</a></h3>
+<p><strong>Source:</strong> Sprint 2 Quick-Survey feature requests ("different colours so
+that every project can have its own colour" and "customising colours of
+website").
+<strong>Gitea issues:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/issues/93">#93</a> (themes),
+project-colour work tracked with the same feedback tag; migration
+<code>008_add_project_color.sql</code>.
+<strong>Shipped:</strong> PR #93, commit <code>c0c9bce</code>.</p>
+<p><strong>Who:</strong> As a returning user with many projects
+<strong>What:</strong> I want to colour-code projects and pick a global theme
+<strong>Why:</strong> So that the app feels personal and I can recognise projects at a glance.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>User opens Project Settings on any project</td>
+<td>User selects a swatch</td>
+<td><code>project_color</code> is stored server-side, cache is patched optimistically, all surfaces update</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>User reopens the app on a different device</td>
+<td>Dashboard loads</td>
+<td>The stored colour is present cross-device (server-side persistence, not localStorage)</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>User opens Settings → Theme</td>
+<td>User selects a dark variant</td>
+<td>Theme applies instantly via CSS variables and persists in preferences</td>
+</tr>
+</tbody>
+</table>
+<h3 id="us16-see-the-individual-logbook-record-called-by-the-same-word-everywhere">US16. See the individual logbook record called by the same word everywhere<a class="headerlink" href="#us16-see-the-individual-logbook-record-called-by-the-same-word-everywhere" title="Permanent link">&para;</a></h3>
+<p><strong>Source:</strong> Post-Sprint-2 terminology review. The Sprint-2 rename
+(<code>Entry</code> → <code>Task</code>, PR #113) fixed one confusion but created another —
+"task" collided with kanban "task board", with the sprint-planning sense
+of the word used in course material, and with the way our own docs
+described team-internal work. Internal identifiers, CSS classes and
+data-key lookups were never called "task"; only the UI was, so users
+still saw <code>entry</code> / <code>task</code> / <code>item</code> depending on where they looked.</p>
+<p><strong>Gitea PR:</strong> <a href="https://sdp.ms.wits.ac.za/codacaine/Digital-Logbook/pulls/137">#137</a> — merged as <code>cef84ac</code>.
+<strong>Shipped:</strong> commit <code>ff5b77e</code> (19 files, 62 user-facing strings).</p>
+<p><strong>Who:</strong> As any user
+<strong>What:</strong> I want the app to call a single logbook record an <em>"item"</em>
+everywhere it appears on screen, so that the vocabulary matches the
+docs, the DB, the export files, and the code
+<strong>Why:</strong> So that I never have to translate between three words for the
+same thing.</p>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Given</th>
+<th>When</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AT1</td>
+<td>User is on any surface that lists logbook records (Dashboard, All Items, Calendar, Kanban, Today, Timeline, Project detail, Quick Add, Add Entry)</td>
+<td>User reads headings, buttons, tooltips, empty states and messages</td>
+<td>The word is <em>"item" / "items"</em>; the word <em>"task"</em> does not appear anywhere user-facing</td>
+</tr>
+<tr>
+<td>AT2</td>
+<td>User exports data or reads the Data Portability help</td>
+<td>User inspects labels</td>
+<td>Same <em>"item"</em> vocabulary as the UI</td>
+</tr>
+<tr>
+<td>AT3</td>
+<td>Developer greps for user-facing "task" in <code>frontend/src</code></td>
+<td>Only non-user-facing contexts remain</td>
+<td>Remaining matches are identifiers, CSS classes, <code>data-key</code> lookups, and internal comments; no UI string contains "task"</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition info">
+<p class="admonition-title">Scope</p>
+</div>
+<p>Internal identifiers (<code>entry</code>, <code>entries</code>, <code>task</code>, database columns,
+cache keys, event names, CSS classes, <code>data-key</code> attributes, AI
+prompt keys) are unchanged — this is a <strong>UI-only</strong> rename. The
+database still calls the row an "entry" and the code still calls
+it an "entry" in most places; only what the user sees was unified
+to "item". This avoids a costly migration for zero user benefit.</p>
+<!-- AI Attribution: Formatting and table generation provided by Gemini (Model: Gemini 1.5 Pro). Purpose: Agile user story structuring and markdown formatting. -->
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.expand", "navigation.top", "navigation.indexes", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tabs.link", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="../../javascripts/mermaid.js"></script>
+      
+    
+  </body>
+</html>
