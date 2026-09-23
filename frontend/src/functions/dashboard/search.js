@@ -1,4 +1,4 @@
-const url = (import.meta.env.VITE_API_GATEWAY_URL || '') + '/api/dashboard';
+import { DASHBOARD_URL as url } from '../../lib/api';
 
 async function safeFetch(endpoint, body) {
   let res;

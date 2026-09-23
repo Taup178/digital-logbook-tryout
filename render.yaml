@@ -3,13 +3,15 @@ services:
     name: digital-logbook
     env: static
     rootDir: frontend
-    buildCommand: npm install && npm run build
+    buildCommand: npm ci && npm run build
     staticPublishPath: dist
     routes:
       - type: rewrite
         source: /*
         destination: /index.html
     envVars:
+      - key: NODE_VERSION
+        value: 24
       - key: VITE_SUPABASE_URL
         sync: false
       - key: VITE_SUPABASE_ANON_KEY
@@ -26,13 +28,39 @@ services:
         sync: false
 
   - type: web
+    name: api-gateway
+    runtime: node
+    plan: free
+    rootDir: api-gateway
+    buildCommand: npm ci --omit=dev
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: AUTH_SERVICE_URL
+        sync: false
+      - key: DASHBOARD_SERVICE_URL
+        sync: false
+      - key: PROJECT_SERVICE_URL
+        sync: false
+      - key: PROFILE_SERVICE_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
+
+  - type: web
     name: auth-service
     env: node
     plan: free
     rootDir: services/auth-service
-    buildCommand: npm install
+    buildCommand: npm ci --omit=dev
     startCommand: npm start
     envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: CORS_ORIGINS
+        sync: false
       - key: PORT
         value: 5001
       - key: SUPABASE_URL
@@ -45,9 +73,15 @@ services:
     env: node
     plan: free
     rootDir: services/dashboard-service
-    buildCommand: npm install
+    buildCommand: npm ci --omit=dev
     startCommand: npm start
     envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: DATABASE_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
       - key: PORT
         value: 5002
       - key: SUPABASE_URL
@@ -60,9 +94,17 @@ services:
     env: node
     plan: free
     rootDir: services/project-service
-    buildCommand: npm install
+    buildCommand: npm ci --omit=dev
     startCommand: npm start
     envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: DATABASE_URL
+        sync: false
+      - key: SUPABASE_JWKS_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
       - key: PORT
         value: 5003
       - key: SUPABASE_URL
@@ -91,9 +133,15 @@ services:
     env: node
     plan: free
     rootDir: services/profile-service
-    buildCommand: npm install
+    buildCommand: npm ci --omit=dev
     startCommand: npm start
     envVars:
+      - key: NODE_VERSION
+        value: 24
+      - key: DATABASE_URL
+        sync: false
+      - key: CORS_ORIGINS
+        sync: false
       - key: PORT
         value: 5004
       - key: SUPABASE_URL

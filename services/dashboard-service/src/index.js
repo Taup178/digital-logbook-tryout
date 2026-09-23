@@ -11,6 +11,10 @@ const PORT = process.env.PORT || 5002;
 
 // Allowed origins for CORS
 const allowedOrigins = [
+  ...(process.env.CORS_ORIGINS || '')
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean),
   'https://digital-logbook-bxgv.onrender.com',
   'https://digital-logbook-bjev.onrender.com',
   'https://digital-logbook-hlulani.onrender.com',

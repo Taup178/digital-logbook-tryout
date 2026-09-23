@@ -1,3 +1,5 @@
+For Docker Compose, local development, and Render setup, see [Running the application](docs/RUNNING.md).
+
 <<<<<<< HEAD
 
 ## Link to the Documentation site

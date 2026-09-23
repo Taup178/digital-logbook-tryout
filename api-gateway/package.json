@@ -4,6 +4,7 @@
   "description": "API Gateway — single entry point for all frontend requests, proxies to backend microservices",
   "main": "src/index.js",
   "scripts": {
+    "test": "node --test test/*.test.js",
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
     "format": "prettier --write .",

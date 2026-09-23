@@ -20,6 +20,9 @@ import pool from '../db.js';
 // so key rotations are picked up without any config changes.
 const JWKS_URL =
   process.env.SUPABASE_JWKS_URL ||
+  (process.env.SUPABASE_URL
+    ? process.env.SUPABASE_URL.replace(/\/$/, '') + '/auth/v1/.well-known/jwks.json'
+    : '') ||
   'https://bsfbkprmwiwxqxdwisxb.supabase.co/auth/v1/.well-known/jwks.json';
 
 const jwks = jose.createRemoteJWKSet(new URL(JWKS_URL));

@@ -1,4 +1,4 @@
-const GATEWAY = import.meta.env.VITE_API_GATEWAY_URL;
+const GATEWAY = (import.meta.env.VITE_API_GATEWAY_URL || '').replace(/\/$/, '');
 
 export const AUTH_URL = `${GATEWAY}/api/auth`;
 export const DASHBOARD_URL = `${GATEWAY}/api/dashboard`;

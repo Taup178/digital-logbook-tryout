@@ -7,6 +7,10 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 const allowedOrigins = [
+  ...(process.env.CORS_ORIGINS || '')
+    .split(',')
+    .map((origin) => origin.trim())
+    .filter(Boolean),
   'https://digital-logbook-bxgv.onrender.com',
   'https://digital-logbook-bjev.onrender.com',
   'https://digital-logbook-hlulani.onrender.com',
@@ -53,7 +57,7 @@ app.options(
   })
 );
 
-app.use(express.json());
+// Preserve the incoming stream: the destination service parses JSON and uploads.
 
 app.get('/', (req, res) => {
   res.json({ service: 'api-gateway', status: 'healthy' });
@@ -74,7 +78,7 @@ const commonOptions = { changeOrigin: true };
 app.use(
   '/api/auth',
   createProxyMiddleware({
-    target: process.env.AUTH_SERVICE_URL,
+    target: process.env.AUTH_SERVICE_URL || 'http://localhost:5001',
     ...commonOptions,
     pathRewrite: { '^/api/auth': '' },
     on: { error: proxyErrorHandler },
@@ -85,7 +89,7 @@ app.use(
 app.use(
   '/api/dashboard',
   createProxyMiddleware({
-    target: process.env.DASHBOARD_SERVICE_URL,
+    target: process.env.DASHBOARD_SERVICE_URL || 'http://localhost:5002',
     ...commonOptions,
     pathRewrite: { '^/api/dashboard': '' },
     on: { error: proxyErrorHandler },
@@ -96,7 +100,7 @@ app.use(
 app.use(
   '/api/project',
   createProxyMiddleware({
-    target: process.env.PROJECT_SERVICE_URL,
+    target: process.env.PROJECT_SERVICE_URL || 'http://localhost:5003',
     ...commonOptions,
     pathRewrite: { '^/api/project': '' },
     on: { error: proxyErrorHandler },
@@ -107,7 +111,7 @@ app.use(
 app.use(
   '/api/profile',
   createProxyMiddleware({
-    target: process.env.PROFILE_SERVICE_URL,
+    target: process.env.PROFILE_SERVICE_URL || 'http://localhost:5004',
     ...commonOptions,
     pathRewrite: { '^/api/profile': '' },
     on: { error: proxyErrorHandler },
