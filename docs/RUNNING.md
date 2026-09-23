@@ -25,6 +25,11 @@ Requirements: Docker Engine/Desktop with Compose v2 or newer.
    docker compose ps
    ```
 
+With Node 24 installed, run `node scripts/smoke-deployment.mjs http://localhost:8080`
+to check frontend assets, deep links, all gateway routes, and rejection of an
+unauthenticated POST. For Render, pass the frontend URL and gateway URL as the
+first and second arguments. These checks do not create or modify application data.
+
 Open http://localhost:8080. Alternatively, build and start with
 `docker compose up -d --build --wait --wait-timeout 180`.
 Set `WEB_PORT` in root `.env` to change the published port. For a VM, set
@@ -32,6 +37,15 @@ Set `WEB_PORT` in root `.env` to change the published port. For a VM, set
 and allow the selected port in the VM firewall/network rules if public access
 is desired. Only nginx is published; backend container names resolve internally.
 HTTPS is needed for browser features such as microphone recording on remote hosts.
+
+If the VM only permits SSH, open a tunnel from your PC:
+
+```sh
+ssh -N -L 8080:127.0.0.1:8080 azureuser@72.146.216.1
+```
+
+Keep that terminal open and visit http://localhost:8080. This uses the existing
+SSH rule and does not require a public port 8080 firewall rule.
 
 Use `docker compose logs --tail=100 SERVICE` to diagnose a failing container,
 and `docker compose down` to stop the stack. Health checks verify HTTP startup;
