@@ -33,7 +33,7 @@ first and second arguments. These checks do not create or modify application dat
 Open http://localhost:8080. Alternatively, build and start with
 `docker compose up -d --build --wait --wait-timeout 180`.
 Set `WEB_PORT` in root `.env` to change the published port. For a VM, set
-`CORS_ORIGINS=http://YOUR_VM_IP:8080` (comma-separated for multiple origins),
+`CORS_ORIGINS=http://YOUR_VM_HOSTNAME:8080` (comma-separated for multiple origins),
 and allow the selected port in the VM firewall/network rules if public access
 is desired. Only nginx is published; backend container names resolve internally.
 HTTPS is needed for browser features such as microphone recording on remote hosts.
@@ -46,6 +46,27 @@ ssh -N -L 8080:127.0.0.1:8080 azureuser@72.146.216.1
 
 Keep that terminal open and visit http://localhost:8080. This uses the existing
 SSH rule and does not require a public port 8080 firewall rule.
+
+### Google/GitHub login on the VM
+
+Use a DNS hostname, not the public IP address, when opening the app. Supabase's
+redirect validator rejects non-loopback IP addresses before matching its additional
+redirect allowlist. An IP wildcard or exact IP callback therefore does not fix the
+fallback to the configured Site URL. See the [Supabase validator source](https://github.com/supabase/auth/blob/master/internal/utilities/request.go).
+
+The tryout VM's hostname is `dg-logbook-tryout-taup178.italynorth.cloudapp.azure.com`.
+In Supabase project `bsfbkprmwiwxqxdwisxb`, add these Redirect URLs:
+
+```text
+http://dg-logbook-tryout-taup178.italynorth.cloudapp.azure.com:8080/auth/callback
+http://dg-logbook-tryout-taup178.italynorth.cloudapp.azure.com:8080/auth/update-password
+http://dg-logbook-tryout-taup178.italynorth.cloudapp.azure.com:8080/auth/restore
+```
+
+Open `http://dg-logbook-tryout-taup178.italynorth.cloudapp.azure.com:8080` and start
+a fresh login there. The frontend constructs its callback from the current origin.
+Keep the Render and localhost callbacks for those environments. The VM's Azure
+inbound rule must allow 8080 for direct access through this hostname.
 
 Use `docker compose logs --tail=100 SERVICE` to diagnose a failing container,
 and `docker compose down` to stop the stack. Health checks verify HTTP startup;
