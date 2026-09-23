@@ -1,7 +1,7 @@
 import { getSupabase } from '@/lib/supabase';
 
 const API_BASE =
-  import.meta.env.VITE_PROJECT_SERVICE_URL || 'https://project-service-96ml.onrender.com';
+  (import.meta.env.VITE_API_GATEWAY_URL || 'https://api-gateway.onrender.com') + '/api/project';
 
 export interface AttachmentLease {
   id: string;

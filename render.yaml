@@ -22,6 +22,8 @@ services:
         sync: false
       - key: VITE_PROFILE_SERVICE_URL
         sync: false
+      - key: VITE_API_GATEWAY_URL
+        sync: false
 
   - type: web
     name: auth-service

@@ -1,9 +1,9 @@
-export const AUTH_URL = import.meta.env.VITE_AUTH_SERVICE_URL;
-export const DASHBOARD_URL = import.meta.env.VITE_DASHBOARD_SERVICE_URL;
-export const PROJECT_URL =
-  import.meta.env.VITE_PROJECT_SERVICE_URL || 'https://project-service-96ml.onrender.com';
-export const PROFILE_URL =
-  import.meta.env.VITE_PROFILE_SERVICE_URL || 'https://profile-service-0zk7.onrender.com';
+const GATEWAY = import.meta.env.VITE_API_GATEWAY_URL;
+
+export const AUTH_URL = `${GATEWAY}/api/auth`;
+export const DASHBOARD_URL = `${GATEWAY}/api/dashboard`;
+export const PROJECT_URL = `${GATEWAY}/api/project`;
+export const PROFILE_URL = `${GATEWAY}/api/profile`;
 
 const DEFAULT_TIMEOUT_MS = 90_000; // 90s — Render free-tier cold start + AI processing
 
