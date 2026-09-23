@@ -5,8 +5,11 @@ import cors from 'cors';
 import { createProxyMiddleware } from 'http-proxy-middleware';
 
 const app = express();
+
 const PORT = process.env.PORT || 4000;
 const PROXY_TIMEOUT = Number(process.env.PROXY_TIMEOUT_MS || 120000);
+const WAKE_TIMEOUT = 115000;
+const WAKE_TTL = 10 * 60 * 1000;
 
 const allowedOrigins = [
   ...(process.env.CORS_ORIGINS || '')
@@ -92,6 +95,9 @@ const services = {
   ),
 };
 
+let wakePromise = null;
+let lastSuccessfulWake = 0;
+
 app.get('/', (req, res) => {
   res.status(200).json({
     service: 'api-gateway',
@@ -112,7 +118,7 @@ async function wakeService(serviceName, target) {
 
   const timer = setTimeout(() => {
     controller.abort();
-  }, 115000);
+  }, WAKE_TIMEOUT);
 
   const startedAt = Date.now();
 
@@ -127,49 +133,103 @@ async function wakeService(serviceName, target) {
       },
     });
 
-    const elapsed = Date.now() - startedAt;
+    const responseTime = Date.now() - startedAt;
 
-    console.log(`[gateway] ${serviceName} responded with ${response.status} in ${elapsed}ms`);
+    console.log(`[gateway] ${serviceName} awake - HTTP ${response.status} - ${responseTime}ms`);
 
     return {
       service: serviceName,
       status: 'awake',
       httpStatus: response.status,
-      responseTimeMs: elapsed,
+      responseTimeMs: responseTime,
     };
   } catch (error) {
-    const elapsed = Date.now() - startedAt;
+    const responseTime = Date.now() - startedAt;
 
-    console.error(`[gateway] Failed to wake ${serviceName}:`, error.message);
+    console.error(`[gateway] ${serviceName} wake failed: ${error.message}`);
 
     return {
       service: serviceName,
       status: 'failed',
       error: error.message,
-      responseTimeMs: elapsed,
+      responseTimeMs: responseTime,
     };
   } finally {
     clearTimeout(timer);
   }
 }
 
-app.get('/api/wake', async (req, res) => {
-  console.log('[gateway] Wake request received');
+async function wakeAllServices() {
+  const now = Date.now();
 
-  const results = await Promise.all(
+  if (lastSuccessfulWake && now - lastSuccessfulWake < WAKE_TTL) {
+    return;
+  }
+
+  if (wakePromise) {
+    return wakePromise;
+  }
+
+  console.log('[gateway] Waking all backend services...');
+
+  wakePromise = Promise.all(
     Object.entries(services).map(([serviceName, target]) => wakeService(serviceName, target))
   );
 
-  const failed = results.filter((result) => result.status === 'failed');
+  try {
+    const results = await wakePromise;
 
-  res.status(failed.length === 0 ? 200 : 207).json({
-    success: failed.length === 0,
-    message:
-      failed.length === 0
-        ? 'All backend services are awake'
-        : `${failed.length} backend service(s) failed to wake`,
-    services: results,
-  });
+    const failedServices = results.filter((result) => result.status !== 'awake');
+
+    if (failedServices.length === 0) {
+      lastSuccessfulWake = Date.now();
+
+      console.log('[gateway] All backend services are awake');
+    } else {
+      console.error(
+        '[gateway] Some backend services failed to wake:',
+        failedServices.map((service) => service.service)
+      );
+    }
+
+    return results;
+  } finally {
+    wakePromise = null;
+  }
+}
+
+async function ensureAllServicesAwake(req, res, next) {
+  try {
+    await wakeAllServices();
+    next();
+  } catch (error) {
+    console.error('[gateway] Service wake-up error:', error.message);
+
+    res.status(503).json({
+      success: false,
+      error: 'Backend services are starting. Please try again.',
+    });
+  }
+}
+
+app.get('/api/wake', async (req, res) => {
+  try {
+    lastSuccessfulWake = 0;
+
+    const results = await wakeAllServices();
+
+    const failed = results?.filter((result) => result.status === 'failed') || [];
+
+    res.status(failed.length === 0 ? 200 : 207).json({
+      success: failed.length === 0,
+      services: results,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      error: error.message,
+    });
+  }
 });
 
 function createServiceProxy(serviceName, target) {
@@ -220,14 +280,6 @@ function createServiceProxy(serviceName, target) {
             success: false,
             error: 'Backend service unavailable',
             service: serviceName,
-            details:
-              process.env.NODE_ENV === 'production'
-                ? undefined
-                : {
-                    code: err.code,
-                    message: err.message,
-                    target,
-                  },
           })
         );
       },
@@ -235,13 +287,17 @@ function createServiceProxy(serviceName, target) {
   });
 }
 
-app.use('/api/auth', createServiceProxy('auth', services.auth));
+app.use('/api/auth', ensureAllServicesAwake, createServiceProxy('auth', services.auth));
 
-app.use('/api/dashboard', createServiceProxy('dashboard', services.dashboard));
+app.use(
+  '/api/dashboard',
+  ensureAllServicesAwake,
+  createServiceProxy('dashboard', services.dashboard)
+);
 
-app.use('/api/project', createServiceProxy('project', services.project));
+app.use('/api/project', ensureAllServicesAwake, createServiceProxy('project', services.project));
 
-app.use('/api/profile', createServiceProxy('profile', services.profile));
+app.use('/api/profile', ensureAllServicesAwake, createServiceProxy('profile', services.profile));
 
 app.use((req, res) => {
   res.status(404).json({
